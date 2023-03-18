@@ -1,0 +1,75 @@
+{
+  "WELCOME": "مرحبًا بك في سوقنا!",
+  "LOGIN": "تسجيل الدخول",
+  "LOGOUT": "تسجيل الخروج",
+  "REGISTER": "تسجيل",
+  "ACCOUNT": "حساب",
+  "COMPARE": "قارن",
+  "WISHLIST": "قائمة الرغبات",
+  "NAV": {
+    "HOME": "الصفحة الرئيسية",
+    "PAGES": "الصفحات",
+    "SHOP": "محل",
+    "ALL_PRODUCTS": "كل الأصناف",
+    "PRODUCT_DETAIL": "تفاصيل المنتج",
+    "CART": "عربة التسوق",
+    "CHECKOUT": "الدفع",
+    "FAQS": "الأسئلة الشائعة",
+    "PRICING": "التسعير",
+    "TERMS_CONDITIONS": "البنود والشروط",
+    "LANDING": "هبوط",
+    "404_PAGE": "404 صفحة",
+    "OTHERS": "آخرون",
+    "EXTERNAL_LINK": "رابط خارجي",
+    "MENU_ITEM": "عنصر قائمة",
+    "CONTACT": "اتصال",
+    "ABOUT_US": "عن الشركة",
+    "ADMIN": "لوحة التحكم"
+  },
+  "ADMIN_NAV": {
+    "DASHBOARD": "لوحة القيادة",
+    "PRODUCTS": "منتجات",
+    "CATEGORIES": "تصنيفات",
+    "PRODUCT_LIST": "قائمة المنتجات",
+    "PRODUCT_DETAIL": "تفاصيل المنتج",
+    "ADD_PRODUCT": "إضافة منتج",
+    "SALES": "مبيعات",
+    "ORDERS": "طلبات",
+    "TRANSACTIONS": "الحركات",
+    "USERS": "المستخدمون",
+    "CUSTOMERS": "العملاء",
+    "COUPONS": "القسائم",
+    "WITHDRAWAL": "انسحاب",
+    "ANALYTICS": "التحليلات",
+    "REFUND": "المرتجعات",
+    "FOLLOWERS": "متابعون",
+    "SUPPORT": "الدعم",
+    "REVIEWS": "تعليقات",
+    "EXTERNAL_LINK": "رابط خارجي"
+  },
+  "BTN": {
+    "ADD": "إضافة",
+    "SAVE": "حفظ",
+    "SUBMIT": "إعتمد",
+    "CANCEL": "إلغاء",
+    "UPLOAD": "رفع",
+    "REMOVE": "حذف",
+    "YES": "نعم",
+    "NO": "لا",
+    "OK": "موافق"
+  },
+  "MESSAGE": {
+    "SURE_DELETE": "هل ترغب في إتمام عملية الحذف?",
+    "FILE_SIZE": "حجم الملف لا يمكن أن يزيد عن {{param}} kb."
+  },
+  "FIELD": {
+    "NAME": "الاسم"
+  },
+  "PAGINATION":{
+    "ITEMS_PER_PAGE": "منتجات في الصفحة:",
+    "NEXT_PAGE": "الصفحة التالية",
+    "PREV_PAGE": "الصفحة السابقة",
+    "FIRST_PAGE": "أول صفحة",
+    "LAST_PAGE": "آخر صفحة"
+  }
+}
