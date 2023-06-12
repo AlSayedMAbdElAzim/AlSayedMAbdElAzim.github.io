@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  url: ''
+  url: '',
+  comid: 1,
+  braid: 1
 };
 
 /*

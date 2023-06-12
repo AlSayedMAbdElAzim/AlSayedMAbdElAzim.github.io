@@ -13,8 +13,8 @@ export class Settings {
 @Injectable()
 export class AppSettings {
     public settings = new Settings(
-        'Emporium',  // theme name
-        'green',     // green, blue, red, pink, purple, grey
+        'Badraig',  // theme name
+        'blue',     // green, blue, red, pink, purple, grey
         false,       // true = rtl, false = ltr
         true,        // adminSidenavIsOpened
         true,        // adminSidenavIsPinned

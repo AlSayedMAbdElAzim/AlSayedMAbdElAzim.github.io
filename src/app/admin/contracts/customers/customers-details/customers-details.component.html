@@ -1,0 +1,220 @@
+<h1 mat-dialog-title><span *ngIf="!CUS.id">{{ 'BTN.ADD' | translate }}</span><span *ngIf="CUS.id">{{ 'BTN.EDIT' | translate }}</span> {{ 'HTML.TENANT' | translate }}</h1>
+<!-- <div mat-dialog-content> -->
+    <form [formGroup]="form" class="user-form">
+        <mat-tab-group class="vertical-tabs tab-content-wrapped" [backgroundColor]="'primary'" [color]="'warn'">
+             <mat-tab label="{{ 'HTML.TAB_BASIC' | translate }}">
+              <div fxLayout="column" class="form-field-outer">
+                <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+                    <mat-form-field class="w-25">
+                        <mat-label><mat-icon>person</mat-icon> {{ 'HTML.CODE' | translate }}</mat-label>
+                        <input matInput formControlName="code" required>
+                        <mat-error *ngIf="form.controls.code.errors?.required">Code is required</mat-error>
+                        <mat-error *ngIf="form.controls.code.hasError('minlength')">Code isn't long enough, minimum of 4 characters</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="w-70">
+                        <mat-label><mat-icon>person</mat-icon> {{ 'HTML.USERNAME' | translate }}</mat-label>
+                        <input matInput formControlName="username">
+                        <!-- <input matInput formControlName="username" required>
+                        <mat-error *ngIf="form.controls.username.errors?.required">Username is required</mat-error>
+                        <mat-error *ngIf="form.controls.username.hasError('minlength')">Username isn't long enough, minimum of 4 characters</mat-error> -->
+                    </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+                  <mat-form-field class="w-50">
+                    <mat-label><mat-icon>person</mat-icon> {{ 'HTML.FIRST_NAME' | translate }}</mat-label>
+                    <input matInput formControlName="firstname" required>
+                    <mat-error *ngIf="form.controls.firstname.errors?.required">First name is required</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="w-45">
+                    <mat-label><mat-icon>person</mat-icon> {{ 'HTML.LAST_NAME' | translate }}</mat-label>
+                    <input matInput formControlName="lastname" required>
+                    <mat-error *ngIf="form.controls.lastname.errors?.required">Last name is required</mat-error>
+                  </mat-form-field>
+                </div>
+
+                  <mat-form-field class="w-50">
+                    <mat-label>{{ 'HTML.MOBILE' | translate }}</mat-label>
+                    <input matInput formControlName="mobile" required>
+                    <mat-error *ngIf="form.controls.mobile.errors?.required">Mobile is required</mat-error>
+                  </mat-form-field>
+
+                <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+                  <!-- <mat-label>{{ 'HTML.TENANT_NATURE' | translate }}</mat-label> -->
+                  <mat-radio-group formControlName="selftype">
+                    <mat-radio-button value="P" labelPosition="after">{{ 'HTML.NATURE_PERSON' | translate }}</mat-radio-button>
+                    <mat-radio-button value="C" labelPosition="after">{{ 'HTML.NATURE_COMPANY' | translate }}</mat-radio-button>
+                    <mat-radio-button value="O" labelPosition="after">{{ 'HTML.NATURE_OTHER' | translate }}</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                    <!-- <mat-form-field class="w-100"> -->
+                      <!-- <div>
+                        <mat-label>Image url</mat-label>
+                        <img [src]="defaultCusImage" style="width: 150px;height:200px">
+                        <input type="file" formControlName="image" name="image" (change)="handelCUSImgInput($event.target.files)" class="user-img" accept="image/*" />
+                      </div> -->
+          <div class=" p-2 ">
+            <img [src]="defaultCusImage" style="width: 150px;height:200px">
+            <input formControlName="image" name="image" (change)="handelCUSImgInput($event.target.files)" id="upload" class="user-img" type="file" accept="image/*">
+          </div>
+                    <!-- </mat-form-field> -->
+
+              </div>
+            </mat-tab>
+
+
+            <mat-tab label="{{ 'HTML.TAB_PERSONAL' | translate }}" formGroupName="profile">
+                <div fxLayout="column" class="form-field-outer">
+                  <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+                    <mat-radio-group formControlName="gender">
+                      <mat-radio-button value="M" labelPosition="after">{{ 'HTML.MALE' | translate }}</mat-radio-button>
+                      <mat-radio-button value="F" labelPosition="after">{{ 'HTML.FEMALE' | translate }}</mat-radio-button>
+                    </mat-radio-group>
+
+                    <mat-form-field class="w-50">
+                        <mat-label>{{ 'HTML.BIRTH_DATE' | translate }}</mat-label>
+                        <input matInput [matDatepicker]="birthday" formControlName="birthday">
+                        <mat-datepicker-toggle matSuffix [for]="birthday"></mat-datepicker-toggle>
+                        <mat-datepicker #birthday></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+
+                  <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">  
+                    <mat-form-field appearance="outline" class="w-50">
+                      <mat-label>{{ 'HTML.BUILDING' | translate }}</mat-label>
+                      <mat-select (selectionChange)="getUnitsPerBuild($event)" placeholder="{{ 'HTML.BUILDING' | translate }}" formControlName="curbuilding" id="buildOpSel" >
+                      
+                        <mat-option [value]="">-</mat-option>
+                        <mat-option *ngFor="let build of AllBuildings" [value]="build.id">
+                            {{build.BUIName}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="w-45">
+                      <mat-label>{{ 'HTML.UNIT' | translate }}</mat-label>
+                      <mat-select placeholder="{{ 'HTML.UNIT' | translate }}" formControlName="curunit" id="unitOpSel" >
+                      
+                        <mat-option [value]="">-</mat-option>
+                        <mat-option *ngFor="let unit of AllUnits" [value]="unit.id">
+                            {{unit.UNTUnitNumber}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+
+                </div>
+            </mat-tab>
+<!-- tab_work -->
+            <mat-tab label="{{ 'HTML.TAB_ID' | translate }}" formGroupName="work">
+                <div fxLayout="column" class="form-field-outer">
+                    <mat-form-field class="w-100">
+                        <mat-label>{{ 'HTML.GUARANTOR' | translate }}</mat-label>
+                        <input matInput formControlName="company">
+                    </mat-form-field>
+                    <mat-form-field class="w-100">
+                        <mat-label>{{ 'HTML.POSITION' | translate }}</mat-label>
+                        <input matInput formControlName="position">
+                    </mat-form-field>
+                    <mat-radio-group formControlName="nationalIDType">
+                      <mat-radio-button value="N" labelPosition="after">{{ 'OPTIONS.NATIONAL_ID' | translate }}</mat-radio-button>
+                      <mat-radio-button value="F" labelPosition="after">{{ 'OPTIONS.FOREIGN_ID' | translate }}</mat-radio-button>
+                      <mat-radio-button value="K" labelPosition="after">{{ 'OPTIONS.GULF_ID' | translate }}</mat-radio-button>
+                      <mat-radio-button value="S" labelPosition="after">{{ 'OPTIONS.SPECIAL_EQAMA' | translate }}</mat-radio-button>
+                      <mat-radio-button value="O" labelPosition="after">{{ 'OPTIONS.OTHER' | translate }}</mat-radio-button>
+                    </mat-radio-group>
+                    <mat-form-field class="w-100">
+                      <mat-label>{{ 'HTML.IDNUMBER' | translate }}</mat-label>
+                      <input matInput formControlName="nationalID">
+                    </mat-form-field>
+                  <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">  
+                    <mat-form-field class="w-50">
+                      <mat-label>{{ 'HTML.START_DATE' | translate }}</mat-label>
+                      <input matInput [matDatepicker]="natStartDate" formControlName="nationalIDStartDate">
+                      <mat-datepicker-toggle matSuffix [for]="natStartDate"></mat-datepicker-toggle>
+                      <mat-datepicker #natStartDate></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field class="w-45">
+                      <mat-label>{{ 'HTML.END_DATE' | translate }}</mat-label>
+                      <input matInput [matDatepicker]="natEndDate" formControlName="nationalIDEndDate">
+                      <mat-datepicker-toggle matSuffix [for]="natEndDate"></mat-datepicker-toggle>
+                      <mat-datepicker #natEndDate></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+
+                </div> 
+                <div class=" p-2 ">
+                  <img [src]="defaultIDImage" style="width: 250px;height:200px">
+                  <input formControlName="nationalIDPic" (change)="handelIDImgInput($event.target.files)" id="IDupload" class="user-img"  type="file" accept="image/*">
+                </div>
+            </mat-tab>
+
+            <mat-tab label="{{ 'HTML.TAB_CONTACTS' | translate }}" formGroupName="contacts">
+                <div fxLayout="column" class="form-field-outer">
+                  <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">  
+                    <mat-form-field class="w-50">
+                      <mat-label>{{ 'HTML.HOME_PHONE' | translate }}</mat-label>
+                      <input matInput formControlName="homephone">
+                    </mat-form-field>
+                    <mat-form-field class="w-45">
+                      <mat-label>{{ 'HTML.WORK_PHONE' | translate }}</mat-label>
+                      <input matInput formControlName="workphone">
+                    </mat-form-field>
+                  </div>
+                    <mat-form-field class="w-100">
+                        <mat-label>{{ 'HTML.EMAIL' | translate }}</mat-label>
+                        <input matInput formControlName="email" required>
+                        <!-- <mat-error *ngIf="form.controls.email.errors?.required">Email is required</mat-error> -->
+                    </mat-form-field>
+
+                    <mat-form-field class="w-100">
+                        <mat-label>{{ 'HTML.ADDRESS' | translate }}</mat-label>
+                        <input matInput formControlName="address">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="w-100">
+                      <mat-label>{{ 'HTML.COUNTRY' | translate }}</mat-label>
+                          <mat-select placeholder="{{ 'HTML.COUNTRY' | translate }}" formControlName="country" >
+                            <mat-option [value]="">-</mat-option>
+                            <mat-option *ngFor="let country of Countries" [value]="country.id">
+                                {{country.CTTSubjectName}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </mat-tab>
+
+            <mat-tab label="{{ 'HTML.TAB_SOCIAL_LIFE' | translate }}" formGroupName="social">
+                <div fxLayout="column" class="form-field-outer">
+                    <mat-form-field class="w-100">
+                        <mat-label>Facebook</mat-label>
+                        <input matInput formControlName="facebook">
+                    </mat-form-field>
+                    <mat-form-field class="w-100">
+                        <mat-label>Twitter</mat-label>
+                        <input matInput formControlName="twitter">
+                    </mat-form-field>
+                    <mat-form-field class="w-100">
+                        <mat-label>Google</mat-label>
+                        <input matInput formControlName="google">
+                    </mat-form-field>
+                </div>
+            </mat-tab>
+
+            <mat-tab label="{{ 'HTML.TAB_SETTINGS' | translate }}" formGroupName="settings">
+                <div fxLayout="column" class="form-field-outer">
+                    <mat-checkbox formControlName="isActive">{{ 'HTML.ACTIVE' | translate }}</mat-checkbox>
+                    <mat-checkbox formControlName="isDeleted">{{ 'HTML.BLOCKED' | translate }}</mat-checkbox>
+
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </form>
+<!-- </div> -->
+<br>
+<div mat-dialog-actions>
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+        <button mat-raised-button color="primary" (click)="saveUpdate(CUS.id)" [mat-dialog-close]="form.value" [disabled]="!form.valid"><span *ngIf="!CUS.id">Save</span><span *ngIf="CUS.id">Update</span></button>
+        <!-- <button mat-raised-button color="warn" (click)="close()">Cancel</button> -->
+    </div>
+</div>

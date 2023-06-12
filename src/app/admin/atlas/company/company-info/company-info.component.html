@@ -1,0 +1,144 @@
+<!-- <div fxLayout="row wrap">
+  <div *ngFor="let product of products | paginate: { itemsPerPage: count, currentPage: page }" fxFlex="100" [fxFlex.gt-sm]="viewCol" fxFlex.sm="50" class="p-2">
+      <mat-card class="company-block text-center">
+          <mat-chip-listbox *ngIf="product.discount">
+              <mat-chip-option color="warn" highlighted selectable="false">{{product.discount}}% OFF</mat-chip-option>
+          </mat-chip-listbox>
+          <img [src]="product.images[0].medium" alt="">
+          <h4 class="category text-muted">{{ ( appService.Data.categories | filterById : product.categoryId )?.name }}</h4>
+          <div class="title text-truncate">
+              {{product.name}}
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center" class="prices">
+              <div fxLayout="column" fxLayoutAlign="center start">
+                  <p class="old-price text-muted"><span *ngIf="product.oldPrice">${{product.oldPrice | number : '1.2-2'}}</span></p>
+                  <p class="new-price">${{product.newPrice | number : '1.2-2'}}</p>
+              </div>
+              <app-rating [ratingsCount]="product.ratingsCount" [ratingsValue]="product.ratingsValue" [direction]="'column'"></app-rating>
+          </div>
+          <div class="divider mt-2"></div>
+          <div class="icons">
+              <a [routerLink]="['/admin/products/add-product', product.id]" mat-mini-fab color="primary" matTooltip="Edit"><mat-icon>edit</mat-icon></a>
+              <a [routerLink]="['/admin/products/product-detail', product.id]" mat-mini-fab color="primary" matTooltip="View" class="mx-2"><mat-icon>remove_red_eye</mat-icon></a>
+              <button mat-mini-fab color="warn" matTooltip="Remove" (click)="remove(product)"><mat-icon>delete</mat-icon></button>
+          </div>
+      </mat-card>
+  </div>
+</div>
+
+<div *ngIf="products.length > 0" fxLayout="row wrap">
+  <div fxFlex="100" class="p-2">
+      <mat-card class="text-center">
+          <pagination-controls class="product-pagination" autoHide="true" maxSize="5" (pageChange)="onPageChanged($event)"></pagination-controls>
+      </mat-card>
+  </div>
+</div> -->
+
+<!-- ---------------------------------------------------------------------------
+--------------------------------------------------------------------------- -->
+
+<div class="p-2">
+  <mat-card>
+      <mat-card-header>
+          <mat-card-title>{{(curCOMId) ? 'Edit' : 'Add New'}} Company</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="pt-3">
+          <form [formGroup]="companyData_Form" (ngSubmit)="saveEditCompanyData()" autocomplete="off" fxLayout="row wrap">
+              <div fxFlex="100" fxFlex.gt-sm="40" class="px-2">
+                  <img width="200" height="150" id="campanyLogo" [src]="url" />
+                  <div class="file-upload ">
+                      <label for="upload" class="d-block file-upload__label">Logo</label>
+                      <input type="file" id="upload" class="file-upload__input" formControlName="COMLogo" name="COMLogo" (change)="handelFileInput($event.target.files)" accept="image/*">
+                  </div>
+              </div>
+              <div fxFlex="100" fxFlex.gt-sm="60" class="px-2">
+                  <div fxLayout="row wrap">
+                      <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+                          <mat-form-field appearance="outline" class="w-100">
+                              <mat-label>Arabic Name</mat-label>
+                              <input matInput formControlName="COMAraName" required>
+                              <mat-error *ngIf="companyData_Form.controls.COMAraName.errors?.required">Arabic Name is required</mat-error>
+                              <mat-error *ngIf="companyData_Form.controls.COMAraName.hasError('minlength')">Arabic Name isn't long enough, minimum of 4 characters</mat-error>
+                          </mat-form-field>
+                      </div>
+                      <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>English Name</mat-label>
+                            <input matInput formControlName="COMEngName" required readonly>
+                            <mat-error *ngIf="companyData_Form.controls.COMEngName.errors?.required">English Name is required</mat-error>
+                            <mat-error *ngIf="companyData_Form.controls.COMEngName.hasError('minlength')">English Name isn't long enough, minimum of 4 characters</mat-error>
+                        </mat-form-field>
+                      </div>
+
+                      <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Displayed Name</mat-label>
+                            <input matInput formControlName="COMDisplayedName">
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Mobile</mat-label>
+                            <input matInput formControlName="COMMobile">
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Phone</mat-label>
+                            <input matInput formControlName="COMPhone">
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Fax</mat-label>
+                            <input matInput formControlName="COMFax">
+                        </mat-form-field>
+                      </div>
+
+                      <div fxFlex="100" class="px-1">
+                          <mat-form-field appearance="outline" class="w-100">
+                              <mat-label>Address</mat-label>
+                              <textarea matInput formControlName="COMAddress" rows="3"></textarea>
+                          </mat-form-field>
+                      </div>
+
+                      <div fxFlex="100" class="mt-2 text-center w-100">
+                          <button mat-raised-button color="primary" type="submit">SUBMIT</button>
+                      </div>
+                  </div>
+              </div>
+          </form>
+      </mat-card-content>
+
+  </mat-card>
+</div>
+
+
+<!-- ---------------------------------------------------------------------------
+--------------------------------------------------------------------------- -->
+
+
+<!-- <div>
+  <H1>{{companyInfo.COMAraName}} ({{companyInfo.COMEngName}})</H1>
+</div>
+
+<div>
+  <div>
+    <button type="button" routerLink="EditCompanyInfo" >تعديل</button>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="space-around center" class="company-block">
+    <img [src]="companyInfo.COMLogo" alt="Company Logo" width="200" height="100%">
+  </div>
+
+  <div>
+    <div>
+      <mat-label>الهاتف     : <span>{{companyInfo.COMPhone}}</span> </mat-label>
+      <h3>الهاتف     : <span>{{companyInfo.COMPhone}}</span></h3>
+      <h3>الموبايل   : <span>{{companyInfo.COMMobile}}</span></h3>
+      <h3>الفاكس     : <span>{{companyInfo.COMFax}}</span></h3>
+
+      <h3>العنوان    : <span>{{companyInfo.COMAddress}}</span></h3>
+    </div>
+  </div>
+</div> -->

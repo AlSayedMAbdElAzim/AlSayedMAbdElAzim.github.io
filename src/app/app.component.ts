@@ -10,6 +10,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  curLangu: String ;
+  allLangu: String[] ;
   loading: boolean = false;
   public settings: Settings;
   constructor(public appSettings: AppSettings,
@@ -19,8 +21,25 @@ export class AppComponent {
     this.settings = this.appSettings.settings;
     // this.settings.rtl = true ;
     translate.addLangs(['en','de','fr','ru','tr','ar']);
-    translate.setDefaultLang('en');
-    translate.use('en');
+    translate.setDefaultLang('ar');
+    translate.use('ar');
+
+// // ============هذا الجزء للتجربة بعدم الفتح بالانجليزي لو تم تغييره==============
+//     this.curLangu = translate.currentLang ;
+//     this.allLangu = translate.getLangs() ;
+//     console.log("this.curLangu::: "+this.curLangu + "  this.allLangu::: "+this.allLangu);
+//     if (this.allLangu.indexOf(this.curLangu) > -1 && this.curLangu != 'en')
+//       {
+//         console.log("=====Not E======");
+//       }
+//     else
+//       {
+//         console.log("=====is E======");
+//         translate.setDefaultLang('en');
+//         translate.use('en');
+//       }
+// // ==================================================
+
   }
 
   ngOnInit() {

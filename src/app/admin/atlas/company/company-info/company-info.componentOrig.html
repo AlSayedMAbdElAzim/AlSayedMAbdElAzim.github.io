@@ -1,0 +1,84 @@
+<div class="container p-4">
+  <!-- main info -->
+  <div class="row">
+      <div class="col-lg-12 ">
+          <div class="company mt-1 pt-1">
+              <form [formGroup]="companyData_Form" (ngSubmit)="saveEditCompanyData()">
+                  <div class="mainInfo mt-3 m-5">
+                      <div class="row ">
+                          <div class="col-lg-6 ">
+
+                              <div class="form-group w-50">
+                                  <label>الاسم العربي</label>
+                                  <input type="text" class="form-control" formControlName="COMAraName" name="COMAraName">
+                              </div>
+
+                              <div class="form-group">
+                                  <label> الاسم الانجليزي</label>
+                                  <input type="text" class="form-control" formControlName="COMEngName" name="COMEngName">
+                              </div>
+                              <div class="form-group">
+                                  <label> الفاكس </label>
+                                  <input type="text" formControlName="COMFax" class="form-control" name="COMFax">
+                              </div>
+
+                          </div>
+                          <div class="col-lg-6">
+                              <div class="imgcampany w-75 mr-auto">
+                                  <img class="d-block mb-2 mx-auto" width="200" height="150" id="campanyLogo" [src]="url" />
+
+                                  <div class="file-upload ">
+                                      <label for="upload" class="d-block file-upload__label">الشعار</label>
+
+                                      <input type="file" id="upload" class=" file-upload__input " formControlName="COMLogo" name="COMLogo" (change)="handelFileInput($event.target.files)" accept="image/*">
+
+                                  </div>
+                              </div>
+
+
+
+                          </div>
+                      </div>
+                      <div class="row">
+
+                          <div class="col-lg-6">
+                              <div class="form-group">
+                                  <label> الهاتف </label>
+                                  <input type="text" class="form-control" formControlName="COMPhone" name="COMPhone">
+                              </div>
+
+
+                          </div>
+                          <div class="col-lg-6">
+                              <div class="form-group">
+                                  <label> الموبايل </label>
+                                  <input type="text" class="form-control" formControlName="COMMobile" name="COMMobile">
+                              </div>
+                          </div>
+                          <div class="col-lg-12">
+                              <div class="form-group">
+                                  <label> العنوان </label>
+                                  <textarea type="text" formControlName="COMAddress" class="form-control" name="COMAddress"></textarea>
+                              </div>
+
+                          </div>
+                      </div>
+                  </div>
+                  <!-- <div class="w-75 text-center  mx-auto ">
+                      <button type="submit" class="btn btn-save  w-25 ml-3">حفظ</button>
+                  </div> -->
+                  <div class="col-lg-12">
+                      <button  [disabled]="companyData_Form.invalid" type="submit"
+                      class="btn btn-save d-block mt-3 mx-auto">
+                      <i class="fa fa-floppy-o"></i>
+                      حفظ
+                  </button>
+
+                  </div>
+
+              </form>
+
+          </div>
+      </div>
+  </div>
+</div>

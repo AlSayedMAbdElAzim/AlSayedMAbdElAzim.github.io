@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>Application Codes</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
+    <div mat-dialog-content>
+        <div fxLayout="row wrap">
+            <div fxFlex="100">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>{{ 'FIELD.NAME' | translate }}</mat-label>
+                    <input matInput formControlName="CTTSubjectName" required>
+                    <mat-error *ngIf="form.controls.CTTSubjectName.errors?.required">Arabic Name is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div fxFlex="100">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>{{ 'HTML.PARENT' | translate }}</mat-label>
+                    <mat-select formControlName="Parent_CTTKeyField" [disabled]="true">
+                      
+                        <mat-option *ngFor="let cat of data.parentCTT" [value]="cat.id" disabled>
+                            <span>{{cat.CTTSubjectName}}</span> 
+                        </mat-option>
+                    </mat-select>
+
+                </mat-form-field>
+            </div>
+            <div fxFlex="100">
+              <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>{{ 'HTML.RELATED' | translate }}</mat-label>
+                  <mat-select formControlName="Related_CTTKeyField">
+                    <!-- ==relatedCTT==>categories=== -->
+                      <mat-option *ngFor="let cat of data.relatedCTT" [value]="cat.id">
+                          <span>{{cat.CTTSubjectName}}</span>
+                      </mat-option>
+                  </mat-select>
+              </mat-form-field>
+          </div>
+            <div fxFlex="100" class="py-1">
+                <mat-checkbox formControlName="CTTIsDefaultValue" color="primary">Is Default Value</mat-checkbox>
+            </div>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+            <button mat-raised-button color="warn" type="button" mat-dialog-close>Close</button>
+            <button mat-raised-button color="primary" type="submit">Save</button>
+        </div>
+    </div>
+</form>

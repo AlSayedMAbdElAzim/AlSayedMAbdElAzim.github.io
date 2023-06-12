@@ -24,8 +24,15 @@ export class TopMenuComponent implements OnInit {
     this.currency = currency;
   }
 
+  curLangu: String ;
   public changeLang(lang:string){
     this.translateService.use(lang);
+
+    // this.curLangu = this.translateService.currentLang ;
+    // console.log("=top-menu===CurLang is:: "+ this.curLangu + " and new lang is:: "+ lang );
+    // if (this.curLangu != lang) {
+    //   this.translateService.setDefaultLang(lang);
+    // }
   }
 
   public getLangText(lang){

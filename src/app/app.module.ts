@@ -12,8 +12,9 @@ import { menuScrollStrategy } from './theme/utils/scroll-strategy';
 
 import { environment } from 'src/environments/environment';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader'; 
-export function HttpLoaderFactory(httpClient: HttpClient) { 
+// import { NgxTranslateRoutesModule } from 'ngx-translate-routes';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, environment.url +'/assets/i18n/', '.json');
 }
 
@@ -48,6 +49,7 @@ import { FooterComponent } from './theme/components/footer/footer.component';
         deps: [HttpClient]
       }
     }),
+    // NgxTranslateRoutesModule.forRoot({ }),
     SharedModule,
     AppRoutingModule
   ],
@@ -60,14 +62,15 @@ import { FooterComponent } from './theme/components/footer/footer.component';
     SidenavMenuComponent,
     BreadcrumbComponent,
     OptionsComponent,
-    FooterComponent    
-  ], 
+    FooterComponent
+  ],
   providers: [
     AppSettings,
-    AppService,   
+    AppService,
     { provide: OverlayContainer, useClass: CustomOverlayContainer },
     { provide: MAT_MENU_SCROLL_STRATEGY, useFactory: menuScrollStrategy, deps: [Overlay] },
     { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true }
+    
   ],
   bootstrap: [AppComponent]
 })

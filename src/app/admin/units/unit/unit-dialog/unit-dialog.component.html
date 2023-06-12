@@ -1,0 +1,441 @@
+<h1 mat-dialog-title><span *ngIf="!unitForDisplay.id">{{ 'BTN.ADD' | translate }}</span><span *ngIf="unitForDisplay.id">{{ 'BTN.EDIT' | translate }}</span> {{ 'HTML.UNIT' | translate }}</h1>
+<!-- <div mat-dialog-content> -->
+    <form [formGroup]="form" class="user-form">
+        <mat-tab-group class="vertical-tabs tab-content-wrapped" [backgroundColor]="'primary'" [color]="'warn'">
+            <mat-tab label="{{ 'HTML.TAB_BASIC' | translate }}">
+              <div fxLayout="column" class="form-field-outer">
+                <div fxLayout="column" fxLayoutGap="10px grid">
+                  <mat-label> </mat-label>
+                  <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+                    <div fxFlex="100" fxFlex.gt-sm="15.0" class="px-1">
+                      <mat-form-field appearance="outline" class="w-100">
+                          <mat-label> {{ 'HTML.CODE' | translate }}</mat-label>
+                          <input matInput formControlName="UNTCode" required>
+                          <mat-error *ngIf="form.controls.UNTCode.errors?.required">Code is required</mat-error>
+                      </mat-form-field>
+                    </div>
+
+                    <div fxFlex="100" fxFlex.gt-sm="42.8" class="px-1">
+                      <mat-form-field appearance="outline" class="w-100">
+                        <mat-label> {{ 'HTML.BRANCH' | translate }}</mat-label>
+                        <mat-select (selectionChange)="getBuildings($event)" placeholder="{{ 'HTML.BRANCH' | translate }}" formControlName="branch_KeyField" id="branchOpSel" >
+                          <mat-option [value]="">-</mat-option>
+                          <mat-option *ngFor="let branch of AllBranches" [value]="branch.id">
+                              {{branch.BRAArbName}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+
+                      <div fxFlex="100" fxFlex.gt-sm="42.8" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.UnitType' | translate }}</mat-label>
+                          <mat-select placeholder="{{ 'HTML.UnitType' | translate }}" formControlName="UNTUnitType" id="unitTypeOpSel" >
+                            <mat-option [value]="">-</mat-option>
+                            <mat-option [value]="'F'">{{ 'OPTIONS.Flat' | translate }}</mat-option>
+                            <mat-option [value]="'D'">{{ 'OPTIONS.Duplex' | translate }}</mat-option>
+                            <mat-option [value]="'T'">{{ 'OPTIONS.Studio' | translate }}</mat-option>
+                            <mat-option [value]="'R'">{{ 'OPTIONS.RelativeFlat' | translate }}</mat-option>
+                            <mat-option [value]="'V'">{{ 'OPTIONS.Villa' | translate }}</mat-option>
+                            <mat-option [value]="'W'">{{ 'OPTIONS.Warehouse' | translate }}</mat-option>
+                            <mat-option [value]="'S'">{{ 'OPTIONS.Shop' | translate }}</mat-option>
+                            <mat-option [value]="'P'">{{ 'OPTIONS.Palace' | translate }}</mat-option>
+                            <mat-option [value]="'O'">{{ 'OPTIONS.Office' | translate }}</mat-option>
+                            <mat-option [value]="'H'">{{ 'OPTIONS.House' | translate }}</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                  </div>
+
+                </div>
+
+                <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+                  
+                  <div fxFlex="100" fxFlex.gt-sm="49.8" class="px-1">
+                    <mat-form-field appearance="outline" class="w-100">
+                      <mat-label> {{ 'HTML.BUILDING' | translate }}</mat-label>
+                      <mat-select (selectionChange)="readBuilding($event)" placeholder="{{ 'HTML.BUILDING' | translate }}" formControlName="build_KeyField" id="buildOneOpSel" >
+                        <mat-option [value]="">-</mat-option>
+                        <mat-option *ngFor="let build of AllBuilding" [value]="build.id">
+                            {{build.BUIName}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+
+                  <div fxFlex="100" fxFlex.gt-sm="49.8" class="px-1">
+                    <mat-form-field appearance="outline" class="w-100">
+                      <mat-label> {{ 'HTML.OWNER' | translate }}</mat-label>
+                      <mat-select placeholder="{{ 'HTML.OWNER' | translate }}" formControlName="owner_KeyField" id="oneOwnerOpSel" >
+                        <mat-option [value]="">-</mat-option>
+                        <mat-option *ngFor="let owner of AllOwners" [value]="owner.id">
+                            {{owner.OWNName}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                </div>
+
+                <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+                  <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                    <mat-form-field appearance="outline" class="w-100">
+                      <mat-label>{{ 'HTML.FloorNumber' | translate }}</mat-label>
+                      <input matInput formControlName="UNTFloorNumber">
+                    </mat-form-field>
+                  </div>
+                  <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                    <mat-form-field appearance="outline" class="w-100">
+                      <mat-label>{{ 'HTML.UnitNumber' | translate }}</mat-label>
+                      <input matInput formControlName="UNTUnitNumber">
+                    </mat-form-field>
+                  </div>
+                  <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                    <mat-form-field appearance="outline" class="w-100">
+                      <mat-label>{{ 'HTML.FileNumber' | translate }}</mat-label>
+                      <input matInput formControlName="UNTUnitFileNumber">
+                    </mat-form-field>
+                  </div>
+                </div>
+                
+                  <mat-form-field appearance="outline" class="w-100">
+                    <mat-label> {{ 'HTML.UnitDescription' | translate }}</mat-label>
+                    <input matInput formControlName="UNTDescription"> 
+                  </mat-form-field>
+                
+                  <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+                    <div fxFlex="100" fxFlex.gt-sm="24.8" class="px-1">
+                      <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>{{ 'HTML.UnitArea' | translate }}</mat-label>
+                        <input matInput formControlName="UNTUnitArea">
+                      </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="24.8" class="px-1">
+                      <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>{{ 'HTML.MEASURING_UNIT' | translate }}</mat-label>
+                        <mat-select placeholder="{{ 'HTML.MEASURING_UNIT' | translate }}" formControlName="UNTMeasuringUnit" id="untmeasureUnitOpSel" >
+                          <mat-option [value]="">-</mat-option>
+                          <mat-option [value]="'M'">{{ 'OPTIONS.Meter' | translate }}</mat-option>
+                          <mat-option [value]="'C'">{{ 'OPTIONS.Carat' | translate }}</mat-option>
+                          <mat-option [value]="'A'">{{ 'OPTIONS.Acre' | translate }}</mat-option>
+                          <mat-option [value]="'K'">{{ 'OPTIONS.KiloMeter' | translate }}</mat-option>
+                          <mat-option [value]="'F'">{{ 'OPTIONS.Foot' | translate }}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+
+                    <div fxFlex="100" fxFlex.gt-sm="24.8" class="px-1">
+                      <mat-checkbox formControlName="UNTUnitForSale">{{ 'HTML.UnitForSale' | translate }}</mat-checkbox>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="24.8" class="px-1">
+                      <mat-checkbox formControlName="UNTUnitForRent">{{ 'HTML.UnitForRent' | translate }}</mat-checkbox>
+                    </div>
+                  </div>
+                
+                <div class=" p-2 ">
+                  <img [src]="defaultCusImage" style="width: 150px;height:200px">
+                  <input formControlName="UNTPic" name="UNTPic" (change)="handelCUSImgInput($event.target.files)" id="uploadunit" class="user-img" type="file" accept="image/*">
+                </div>
+
+              </div>
+            </mat-tab>
+
+            <mat-tab label="{{ 'HTML.TAB_GeneralDescription' | translate }}" formGroupName="generalDescription">
+              <div fxLayout="column" class="form-field-outer">
+                <div fxLayout="column" fxLayoutGap="10px grid">
+                  <mat-label> </mat-label>
+
+                  <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+
+                    <!-- <div fxFlex="100" fxFlex.gt-sm="48.8" class="px-1">
+                      <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>{{ 'HTML.RECIEVE_DATE' | translate }}</mat-label>
+                        <input matInput [matDatepicker]="uNTCreationDate" formControlName="uNTCreationDate">
+                        <mat-datepicker-toggle matSuffix [for]="uNTCreationDate"></mat-datepicker-toggle>
+                        <mat-datepicker #uNTCreationDate></mat-datepicker>
+                      </mat-form-field>
+                    </div> -->
+
+                    <div fxFlex="100" fxFlex.gt-sm="48.8" class="px-1">
+                      <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>{{ 'HTML.HOUSING_STATUS' | translate }}</mat-label>
+                        <mat-select placeholder="{{ 'HTML.HOUSING_STATUS' | translate }}" formControlName="UNTHousingStatus" id="untHousStatOpSel" >
+                          <mat-option [value]="">-</mat-option>
+                          <mat-option [value]="'E'">{{ 'OPTIONS.EMPTY' | translate }}</mat-option>
+                          <mat-option [value]="'R'">{{ 'OPTIONS.RENTED' | translate }}</mat-option>
+                          <mat-option [value]="'S'">{{ 'OPTIONS.SOLD' | translate }}</mat-option>
+                          <mat-option [value]="'M'">{{ 'OPTIONS.UNDER_MAINTENANCE' | translate }}</mat-option>
+                          <mat-option [value]="'C'">{{ 'OPTIONS.Closed' | translate }}</mat-option>
+                          <mat-option [value]="'B'">{{ 'OPTIONS.BookedUp' | translate }}</mat-option>                          
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+
+                    <div fxFlex="100" fxFlex.gt-sm="48.8" class="px-1">
+                      <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>{{ 'HTML.UnitFacing' | translate }}</mat-label>
+                        <mat-select placeholder="{{ 'HTML.UnitFacing' | translate }}" formControlName="UNTUnitFacing" id="untFaceOpSel" >
+                          <mat-option [value]="">-</mat-option>
+                          <mat-option [value]="'C'">{{ 'OPTIONS.Corner' | translate }}</mat-option>
+                          <mat-option [value]="'F'">{{ 'OPTIONS.Front' | translate }}</mat-option>
+                          <mat-option [value]="'I'">{{ 'OPTIONS.Internal' | translate }}</mat-option>
+                          <mat-option [value]="'T'">{{ 'OPTIONS.ThreeStreets' | translate }}</mat-option>
+                          <mat-option [value]="'D'">{{ 'OPTIONS.FourStreets' | translate }}</mat-option>                          
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                  </div>
+
+                  <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+                    <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                      <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>{{ 'HTML.CONSTRUCTION_STATUS' | translate }}</mat-label>
+                        <mat-select placeholder="{{ 'HTML.CONSTRUCTION_STATUS' | translate }}" formControlName="UNTConstructionStatus" id="untConstrucStatOpSel" >
+                          <mat-option [value]="">-</mat-option>
+                          <mat-option [value]="'E'">{{ 'OPTIONS.EXCELLENT' | translate }}</mat-option>
+                          <mat-option [value]="'V'">{{ 'OPTIONS.VERY_GOOD' | translate }}</mat-option>
+                          <mat-option [value]="'G'">{{ 'OPTIONS.GOOD' | translate }}</mat-option>
+                          <mat-option [value]="'A'">{{ 'OPTIONS.ACCEPTED' | translate }}</mat-option>
+                          <mat-option [value]="'B'">{{ 'OPTIONS.BAD' | translate }}</mat-option>                          
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                      <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>{{ 'HTML.PROPERTY_USAGE_TYPE' | translate }}</mat-label>
+                        <mat-select placeholder="{{ 'HTML.PROPERTY_USAGE_TYPE' | translate }}" formControlName="UNTPropertyUsageType" id="untPropUsageOpSel" >
+                          <mat-option [value]="">-</mat-option>
+                          <mat-option [value]="'F'">{{ 'OPTIONS.Family_Residential' | translate }}</mat-option>
+                          <mat-option [value]="'P'">{{ 'OPTIONS.Personel_Residential' | translate }}</mat-option>
+                          <mat-option [value]="'A'">{{ 'OPTIONS.Administrative' | translate }}</mat-option>
+                          <mat-option [value]="'C'">{{ 'OPTIONS.Commercial' | translate }}</mat-option>
+                          <mat-option [value]="'M'">{{ 'OPTIONS.Mix' | translate }}</mat-option>                          
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                    <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                      <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>{{ 'HTML.PROPERTY_TYPE' | translate }}</mat-label>
+                        <mat-select placeholder="{{ 'HTML.PROPERTY_TYPE' | translate }}" formControlName="UNTPropertyType" id="PropTypOpSel" >
+                          <mat-option [value]="">-</mat-option>
+                          <mat-option [value]="'B'">{{ 'OPTIONS.BUILDING' | translate }}</mat-option>
+                          <mat-option [value]="'P'">{{ 'OPTIONS.PLAZA' | translate }}</mat-option>
+                          <mat-option [value]="'V'">{{ 'OPTIONS.Villa' | translate }}</mat-option>
+                          <mat-option [value]="'W'">{{ 'OPTIONS.Warehouse' | translate }}</mat-option>
+                          <mat-option [value]="'H'">{{ 'OPTIONS.House' | translate }}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+
+                  </div>
+                </div>                  
+                </div>
+            </mat-tab>
+
+            <mat-tab label="{{ 'HTML.TAB_RentValues' | translate }}" formGroupName="rentValues">
+                <div fxLayout="column" class="form-field-outer">
+                  <div fxLayout="column" fxLayoutGap="10px grid">
+                    <mat-label> </mat-label>  
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+
+                      <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.RentalCycle' | translate }}</mat-label>
+                          <mat-select placeholder="{{ 'HTML.RentalCycle' | translate }}" formControlName="UNTRentalCycle" id="rentCyclOpSel" >
+                            <mat-option [value]="">-</mat-option>
+                            <mat-option [value]="'D'">{{ 'OPTIONS.Daily' | translate }}</mat-option>
+                            <mat-option [value]="'M'">{{ 'OPTIONS.Monthly' | translate }}</mat-option>
+                            <mat-option [value]="'Q'">{{ 'OPTIONS.Every3Monthes' | translate }}</mat-option>
+                            <mat-option [value]="'H'">{{ 'OPTIONS.Every6Monthes' | translate }}</mat-option>
+                            <mat-option [value]="'Y'">{{ 'OPTIONS.Yearly' | translate }}</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                  </div>
+                    
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+                      <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.MonthlyRentValue' | translate }}</mat-label>
+                          <input matInput formControlName="UNTMonthlyRentValue">
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.WeeklyRentValue' | translate }}</mat-label>
+                          <input matInput formControlName="UNTWeeklyRentValue">
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.DailyRentValue' | translate }}</mat-label>
+                          <input matInput formControlName="UNTDailyRentValue">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+                      <div fxFlex="100" fxFlex.gt-sm="49.8" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.PayInstallmentEveryMonths' | translate }}</mat-label>
+                          <input matInput formControlName="UNTPayInstallmentEveryMonths">
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="100" fxFlex.gt-sm="49.8" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.NumberOfInstallments' | translate }}</mat-label>
+                          <input matInput formControlName="UNTNumberOfInstallments">
+                        </mat-form-field>
+                      </div>                      
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+                      <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.MonthlyElectricityFee' | translate }}</mat-label>
+                          <input matInput formControlName="UNTMonthlyElectricityFee">
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.MonthlyWaterFee' | translate }}</mat-label>
+                          <input matInput formControlName="UNTMonthlyWaterFee">
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.MonthlyGasFee' | translate }}</mat-label>
+                          <input matInput formControlName="UNTMonthlyGasFee">
+                        </mat-form-field>
+                      </div>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+                      <div fxFlex="100" fxFlex.gt-sm="49.8" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.NumberOfParkingLots' | translate }}</mat-label>
+                          <input matInput formControlName="UNTNumberOfParkingLots">
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="100" fxFlex.gt-sm="49.8" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.MonthlyParkingFee' | translate }}</mat-label>
+                          <input matInput formControlName="UNTMonthlyParkingFee">
+                        </mat-form-field>
+                      </div>                      
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+                      <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.LastElectricityReading' | translate }}</mat-label>
+                          <input matInput formControlName="UNTLastElectricityReading">
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.LastWaterReading' | translate }}</mat-label>
+                          <input matInput formControlName="UNTLastWaterReading">
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.LastGasReading' | translate }}</mat-label>
+                          <input matInput formControlName="UNTLastGasReading">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                </div>
+            </mat-tab>
+<!-- ================================================================== -->
+          <mat-tab label="{{ 'HTML.TAB_UnitDescription' | translate }}" formGroupName="unitDescription">
+                <div fxLayout="column" class="form-field-outer">
+                  <div fxLayout="column" fxLayoutGap="10px grid">
+                    <mat-label> </mat-label>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+                      <div fxFlex="100" fxFlex.gt-sm="49.8" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.NumberOfBedRooms' | translate }}</mat-label>
+                          <input matInput formControlName="UNTNumberOfBedRooms">
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="100" fxFlex.gt-sm="49.8" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.NumberOfBathRooms' | translate }}</mat-label>
+                          <input matInput formControlName="UNTNumberOfBathRooms">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                  </div>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+                      <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.UnitKitchen' | translate }}</mat-label>
+                          <input matInput formControlName="UNTUnitKitchen">
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.UnitHall' | translate }}</mat-label>
+                          <input matInput formControlName="UNTUnitHall">
+                        </mat-form-field>
+                      </div>
+                      <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.UnitBalacona' | translate }}</mat-label>
+                          <input matInput formControlName="UNTUnitBalacona">
+                        </mat-form-field>
+                      </div>
+
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+                      <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+                        <mat-checkbox formControlName="UNTIsFurnitured">{{ 'HTML.IsFurnitured' | translate }}</mat-checkbox>
+                      </div>
+                      
+                      <div fxFlex="100" fxFlex.gt-sm="66.6" class="px-1">
+                        <mat-form-field appearance="outline" class="w-100">
+                          <mat-label>{{ 'HTML.FurnitureStatus' | translate }}</mat-label>
+                          <mat-select placeholder="{{ 'HTML.FurnitureStatus' | translate }}" formControlName="UNTFurnitureStatus" id="furnStOpSel" >
+                            <mat-option [value]="">-</mat-option>
+                            <mat-option [value]="'N'">{{ 'OPTIONS.NEW' | translate }}</mat-option>
+                            <mat-option [value]="'U'">{{ 'OPTIONS.USED' | translate }}</mat-option>
+                            <mat-option [value]="'F'">{{ 'OPTIONS.NotFound' | translate }}</mat-option>                            
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+                      <div fxFlex="100" fxFlex.gt-sm="39.8" class="px-1">
+                        <mat-checkbox formControlName="UNTUnitElevator">{{ 'HTML.UNTUnitElevator' | translate }}</mat-checkbox>
+                      </div>
+                      <div fxFlex="100" fxFlex.gt-sm="39.8" class="px-1">
+                        <mat-checkbox formControlName="UNTUnitAirCondition">{{ 'HTML.UNTUnitAirCondition' | translate }}</mat-checkbox>
+                      </div>
+                      <div fxFlex="100" fxFlex.gt-sm="39.8" class="px-1">
+                        <mat-checkbox formControlName="UNTUnitMainRoad">{{ 'HTML.UNTUnitMainRoad' | translate }}</mat-checkbox>
+                      </div>                      
+                    </div>
+
+                </div>
+            </mat-tab> 
+<!-- ========================================================== -->
+            <mat-tab label="{{ 'HTML.TAB_SETTINGS' | translate }}" formGroupName="settings">
+                <div fxLayout="column" class="form-field-outer">
+                    <mat-checkbox formControlName="isActive">{{ 'HTML.ACTIVE' | translate }}</mat-checkbox>
+                    <mat-checkbox formControlName="isDeleted">{{ 'HTML.BLOCKED' | translate }}</mat-checkbox>
+
+                </div>
+            </mat-tab> 
+        </mat-tab-group>
+    </form>
+
+<br>
+<div mat-dialog-actions>
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+        <button mat-raised-button color="primary" (click)="saveUpdate(unitForDisplay.id)" [mat-dialog-close]="form.value" [disabled]="!form.valid"><span *ngIf="!unitForDisplay.id">Save</span><span *ngIf="unitForDisplay.id">Update</span></button>
+        <!-- <button mat-raised-button color="warn" (click)="close()">Cancel</button> -->
+    </div>
+</div>
