@@ -2,8 +2,8 @@
     <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
         <div fxLayout="row" fxLayoutAlign="center center">
             <div class="logo-section" fxShow="false" fxShow.gt-xs>
-                <a routerLink="/admin" fxLayout="row" fxLayoutAlign="start center" class="logo">
-                    <span>Emporium</span>
+                <a routerLink="/" fxLayout="row" fxLayoutAlign="start center" class="logo">
+                    <span>{{ 'COMPANY.NAME' | translate }}</span>
                 </a>
             </div>
             <button mat-icon-button (click)="toggleSidenav()">
@@ -56,7 +56,7 @@
                     <button mat-icon-button><mat-icon>mail_outline</mat-icon></button>
                     <a mat-icon-button (click)="logout()" routerLink="/sign-in">
                         <mat-icon>logout</mat-icon>
-                    </a>                    
+                    </a>
                 </div>
             </div>
             <app-admin-menu [menuItems]="menuItems" [menuParentId]="0"></app-admin-menu>

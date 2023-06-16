@@ -49,12 +49,18 @@ export class UnitForm {
     UNTUnitHotOffer: string;
     UNTUnitSold: string;
     UNTSoldValue: number;
+    UNTContractValue: number;
+    UNTInsuranceValue: number;
+    UNTSeekingValue: number;
+    UNTMonthlyExpense: number;
+    UNTExpenseDesc: string;
+    UNTOtherValue: number;
   }
 
   export class UnitDescription{
     UNTIsFurnitured: boolean;
     UNTFurnitureStatus: string;
-    UNTKitchenCabinets: string;
+    UNTKitchenCabinets: boolean;
     UNTNumberOfBedRooms: number;
     UNTNumberOfBathRooms: number;
     UNTUnitKitchen: number;

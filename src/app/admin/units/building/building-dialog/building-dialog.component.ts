@@ -258,6 +258,7 @@ fillForm(tent: Building){
   if (tent.RowDelete == 1) {this.is_delete = true;}
   else { this.is_delete = false; }
 
+  console.log("==****tent.BUIRecieveDate****==" + tent.BUIRecieveDate);
   this.form.patchValue({
     id: tent.id,
     code: tent.BUICode,

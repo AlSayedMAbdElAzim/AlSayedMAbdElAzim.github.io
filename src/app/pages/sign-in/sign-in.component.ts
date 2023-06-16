@@ -77,7 +77,7 @@ export class SignInComponent implements OnInit {
     // }
     // // ----------------------------------------------------------------------
 
-    // this.prepareMsgLanguage() ;
+    this.prepareMsgLanguage() ;
 
     this.setInitialValues();
   }
@@ -121,6 +121,9 @@ export class SignInComponent implements OnInit {
           this.localStore.setItem('token', response['token']);
           this.global.me = response['user'];
           this.global.userLoggedIn = true ;
+          console.log("**** =====Start===this.global.me======= ****") ;
+          console.log(response['user']) ;
+          console.log("**** ========this.global.me===End==== ****") ;
           this.prepareMsgLanguage() ;
 
           // this.snackBar.open('You are logged in!', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
@@ -142,12 +145,21 @@ export class SignInComponent implements OnInit {
   // ==================================================================
 
   public onRegisterFormSubmit(values:Object):void {
+    console.log("************************************************");
+    console.log("=====values[username]" + values["username"]) ;
+    console.log("=====values[email]" + values["email"]) ;
     if (this.registerForm.valid) {
       this.userService.registerUser(this.registerForm).subscribe(
         response => {
+          // this.registerForm["username"].reset();
+          // this.registerForm["first_name"].reset();
+          // this.registerForm["email"].reset();
+          // this.registerForm["password"].reset();
+          // this.registerForm["confirmPassword"].reset();
           // this.snackBar.open('You registered successfully!', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
           this.snackBar.open(this.registeredMsg, '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
-          this.router.navigate(['/sign-in']);
+          // this.router.navigate(['/sign-in']);
+          this.router.navigate(['/units/unit']);
         },
         error => {
           console.log('error', error) ;

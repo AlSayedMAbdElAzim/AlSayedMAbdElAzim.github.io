@@ -21,6 +21,10 @@ export class CustomerService {
     return this._HttpClient.get(this.baseUrl + this.secondPartUrl + 'contracts/customer/customersOnly?M='+comId+'&C='+periorty , this.globalServ.getAuthHeaders());
   }
 // =======================================================================
+  getCustomersPerParent(comId: number, periorty: number, parent: number): Observable<any> {
+    return this._HttpClient.get(this.baseUrl + this.secondPartUrl + 'contracts/customer/customerPerSpec?M='+comId+'&C='+periorty+'&getrelated=T&customer='+parent , this.globalServ.getAuthHeaders());
+  }
+// =======================================================================
   getOneCustomer(id: number): Observable<any> {
     return this._HttpClient.get<Customer>(this.baseUrl + this.secondPartUrl + 'contracts/customer/' + id  , this.globalServ.getAuthHeaders());
   }

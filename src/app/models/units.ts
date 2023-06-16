@@ -65,5 +65,11 @@ export class Units {
     RowConfirm: number;
     RowDelete: number;
     RowStatus: number;
+    UNTContractValue: number;
+    UNTInsuranceValue: number;
+    UNTSeekingValue: number;
+    UNTMonthlyExpense: number;
+    UNTExpenseDesc: string;
+    UNTOtherValue: number;
   }
 

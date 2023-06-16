@@ -99,7 +99,7 @@ export class UnitDialogComponent {
           UNTMonthlyWaterFee : 0.0, // [{value:null}], // [{value:null,disabled:true}],
           UNTMonthlyGasFee : 0.0, // [{value:null}], // [{value:null,disabled:true}],
           UNTNumberOfParkingLots: 0,
-          UNTMonthlyParkingFee: 0.0,          
+          UNTMonthlyParkingFee: 0.0,
           UNTLastElectricityReading: 0.0,
           UNTLastWaterReading: 0.0,
           UNTLastGasReading: 0.0,
@@ -107,12 +107,18 @@ export class UnitDialogComponent {
           UNTUnitHotOffer: "F",
           UNTUnitSold: "F",
           UNTSoldValue: null,
-          
+          UNTContractValue: 0.0,
+          UNTInsuranceValue: 0.0,
+          UNTSeekingValue: 0.0,
+          UNTMonthlyExpense: 0.0,
+          UNTOtherValue: 0.0,
+          UNTExpenseDesc: null,
+
         }),
         unitDescription: this.fb.group({
           UNTIsFurnitured: false,
           UNTFurnitureStatus: "F",
-          UNTKitchenCabinets: "F",
+          UNTKitchenCabinets: false,
           UNTNumberOfBedRooms: null,
           UNTNumberOfBathRooms: null,
           UNTUnitKitchen: null,
@@ -133,8 +139,8 @@ export class UnitDialogComponent {
       this.getAllBranches(this.curCOMId,this.account.periorty) ; // ===استرجاع الفروع===
       this.getAllOwnerss(this.curCOMId,this.account.periorty) ; // ===استرجاع الملاك===
       this.getOwnershipDocType(this.curCOMId,this.account.periorty); //====استرجاع انواع مستندات الملكية====
-      
-      
+
+
       this.sub = this.activatedRoute.params.subscribe(params => { //====لتحديد هل تم فتح الشاشة بمعلومية المستأجر====
 
         if(params['id']){
@@ -187,11 +193,12 @@ unitFurniture: string ;
 unitElevator: string ;
 unitAirCodition: string ;
 unitMainRoad: string ;
+unitKitchenCabinets: string;
 // =================================================================
 mapFormvalue_to_UnitClass()
 {
   // 'en-GB'  'en-US'
-  // const unitCreationDate = new DatePipe('en-GB').transform(this.form.value.generalDescription.uNTCreationDate, 'dd/MM/yyyy')
+  const unitCreationDate = new DatePipe('en-GB').transform(this.form.value.generalDescription.uNTCreationDate, 'dd/MM/yyyy')
 
   if (this.form.value.UNTUnitForSale) {this.unitForSale = 'T';}
   else { this.unitForSale = 'F'; }
@@ -205,6 +212,10 @@ mapFormvalue_to_UnitClass()
 
   if (this.form.value.unitDescription.UNTIsFurnitured) {this.unitFurniture = 'T';}
   else { this.unitFurniture = 'F' ; }
+
+  if (this.form.value.unitDescription.UNTKitchenCabinets) {this.unitKitchenCabinets = 'T';}
+  else { this.unitKitchenCabinets = 'F' ; }
+
 
   if (this.form.value.unitDescription.UNTUnitElevator) {this.unitElevator = 'T';}
   else { this.unitElevator = 'F' ; }
@@ -230,16 +241,16 @@ mapFormvalue_to_UnitClass()
     this.unitForDisplay.UNTUnitForSale= this.unitForSale;
     this.unitForDisplay.UNTUnitForRent= this.unitForRent;
 
-    // if (this.form.value.generalDescription.uNTCreationDate != null){
-    //   this.unitForDisplay.UNTCreationDate= unitCreationDate;  }
+    if (this.form.value.generalDescription.uNTCreationDate != null){
+      this.unitForDisplay.UNTCreationDate= unitCreationDate;  }
 
     this.unitForDisplay.UNTHousingStatus= this.form.value.generalDescription.UNTHousingStatus;
     this.unitForDisplay.UNTConstructionStatus= this.form.value.generalDescription.UNTConstructionStatus;
-    this.unitForDisplay.UNTPropertyUsageType= this.form.value.generalDescription.UNTPropertyUsageType;    
+    this.unitForDisplay.UNTPropertyUsageType= this.form.value.generalDescription.UNTPropertyUsageType;
     this.unitForDisplay.UNTPropertyType= this.form.value.generalDescription.UNTPropertyType;
     this.unitForDisplay.UNTUnitFacing= this.form.value.generalDescription.UNTUnitFacing;
     this.unitForDisplay.UNTUnitDirection= this.form.value.generalDescription.UNTUnitDirection;
-    
+
     this.unitForDisplay.UNTRentalCycle= this.form.value.rentValues.UNTRentalCycle;
     this.unitForDisplay.UNTMonthlyRentValue= this.form.value.rentValues.UNTMonthlyRentValue;
     this.unitForDisplay.UNTWeeklyRentValue= this.form.value.rentValues.UNTWeeklyRentValue;
@@ -258,10 +269,17 @@ mapFormvalue_to_UnitClass()
     this.unitForDisplay.UNTUnitHotOffer= this.form.value.rentValues.UNTUnitHotOffer;
     this.unitForDisplay.UNTUnitSold= this.form.value.rentValues.UNTUnitSold;
     this.unitForDisplay.UNTSoldValue= this.form.value.rentValues.UNTSoldValue;
-    
+
+    this.unitForDisplay.UNTContractValue= this.form.value.rentValues.UNTContractValue;
+    this.unitForDisplay.UNTInsuranceValue= this.form.value.rentValues.UNTInsuranceValue;
+    this.unitForDisplay.UNTSeekingValue= this.form.value.rentValues.UNTSeekingValue;
+    this.unitForDisplay.UNTMonthlyExpense= this.form.value.rentValues.UNTMonthlyExpense;
+    this.unitForDisplay.UNTOtherValue= this.form.value.rentValues.UNTOtherValue;
+    this.unitForDisplay.UNTExpenseDesc= this.form.value.rentValues.UNTExpenseDesc;
+
     this.unitForDisplay.UNTIsFurnitured= this.unitFurniture ; // this.form.value.unitDescription.UNTIsFurnitured ;
     this.unitForDisplay.UNTFurnitureStatus= this.form.value.unitDescription.UNTFurnitureStatus ;
-    this.unitForDisplay.UNTKitchenCabinets= this.form.value.unitDescription.UNTKitchenCabinets ;
+    this.unitForDisplay.UNTKitchenCabinets= this.unitKitchenCabinets; // this.form.value.unitDescription.UNTKitchenCabinets ;
     this.unitForDisplay.UNTNumberOfBedRooms= this.form.value.unitDescription.UNTNumberOfBedRooms ;
     this.unitForDisplay.UNTNumberOfBathRooms= this.form.value.unitDescription.UNTNumberOfBathRooms ;
     this.unitForDisplay.UNTUnitKitchen= this.form.value.unitDescription.UNTUnitKitchen ;
@@ -279,7 +297,7 @@ getUnitById(id:number)
 {
   this.unitsService.getOneUnit(id).subscribe( (oneUnit:Units)=>
   {
-    
+
     this.fillForm(oneUnit);
     this.unitForDisplay = oneUnit;
   } )
@@ -294,12 +312,16 @@ is_Furniture: Boolean ;
 is_Elevator: Boolean ;
 is_AirCondition: Boolean ;
 is_MainRoad: Boolean ;
-fillForm(tent: Units){  
+is_KitchenCabinet: Boolean ;
+fillForm(tent: Units){
   if (tent.UNTActive == 'T') {this.is_active = true;}
   else { this.is_active = false; }
   // ==========================================================
   if (tent.UNTIsFurnitured == 'T') {this.is_Furniture = true;}
   else { this.is_Furniture = false; }
+  // ==========================================================
+  if (tent.UNTKitchenCabinets == 'T') {this.is_KitchenCabinet = true;}
+  else { this.is_KitchenCabinet = false; }
   // ==========================================================
   if (tent.UNTUnitElevator == 'T') {this.is_Elevator = true;}
   else { this.is_Elevator = false; }
@@ -350,7 +372,7 @@ fillForm(tent: Units){
       uNTCreationDate: tent.UNTCreationDate,
       UNTHousingStatus: tent.UNTHousingStatus,
       UNTConstructionStatus: tent.UNTConstructionStatus,
-      UNTPropertyUsageType: tent.UNTPropertyUsageType,      
+      UNTPropertyUsageType: tent.UNTPropertyUsageType,
       UNTPropertyType: tent.UNTPropertyType,
       UNTUnitFacing: tent.UNTUnitFacing,
       UNTUnitDirection: tent.UNTUnitDirection,
@@ -375,12 +397,19 @@ fillForm(tent: Units){
       UNTUnitHotOffer: tent.UNTUnitHotOffer,
       UNTUnitSold: tent.UNTUnitSold,
       UNTSoldValue: tent.UNTSoldValue,
+
+      UNTContractValue: tent.UNTContractValue,
+      UNTInsuranceValue: tent.UNTInsuranceValue,
+      UNTSeekingValue: tent.UNTSeekingValue,
+      UNTMonthlyExpense: tent.UNTMonthlyExpense,
+      UNTOtherValue: tent.UNTOtherValue,
+      UNTExpenseDesc: tent.UNTExpenseDesc,
     },
 
     unitDescription: {
       UNTIsFurnitured: this.is_Furniture, // tent.UNTIsFurnitured,
       UNTFurnitureStatus: tent.UNTFurnitureStatus,
-      UNTKitchenCabinets: tent.UNTKitchenCabinets,
+      UNTKitchenCabinets: this.is_KitchenCabinet, //tent.UNTKitchenCabinets,
       UNTNumberOfBedRooms: tent.UNTNumberOfBedRooms,
       UNTNumberOfBathRooms: tent.UNTNumberOfBathRooms,
       UNTUnitKitchen: tent.UNTUnitKitchen,
@@ -512,7 +541,7 @@ getBuildingPerBranch(comId: number, periorty: number, related: number)
 // ===============================================================
 curOwnerId ;
 readBuilding(event){
-  console.log("====Selected Build:: " + event.value) ; 
+  console.log("====Selected Build:: " + event.value) ;
   this.unitsService.getOneBuilding(event.value).subscribe(
     responseBuild => {
     this.curOwnerId = responseBuild['owner_KeyField'] ;

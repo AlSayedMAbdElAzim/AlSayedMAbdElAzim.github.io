@@ -6,6 +6,10 @@
   "ACCOUNT": "Konto",
   "COMPARE": "Vergleichen Sie",
   "WISHLIST": "Wunschzettel",
+  "COMPANY": {
+    "NAME": "Badraig Key",
+    "COLOR": "red"
+  },
   "NAV": {
     "HOME": "Zuhause",
     "PAGES": "Seiten",
@@ -36,6 +40,7 @@
     "REGION": "Regions",
     "BUILDFEATURE": "Build Features",
     "COMPANY": "Company",
+    "OWNERS": "Owners",
     "MENU_BUILDING": "Buildings and Tenant",
     "BUILDING": "Buildings",
     "UNITS": "Units",
@@ -62,7 +67,9 @@
     "ONETIP": "One tip",
     "OWNERSHIP_DOC": "Ownership Doc Types",
     "RentContracts": "Rent Contracts",
-    "Contracts": "Contracts"
+    "Contracts": "Contracts",
+    "AddContracts": "Add Contracts",
+    "ADD_TENANT": "Add Tenant"
   },
   "BTN": {
     "ADD": "Hinzufügen",
@@ -84,7 +91,8 @@
     "REGISTERD": "Successfully, You create a new Account!",
     "NOTREGISTERD": "Sorry, con't create a new Account!",
     "RETRIEVE_ERROR": "Data not retrieved",
-    "DELETED": "Delete done"
+    "DELETED": "Delete done",
+    "RegisterMsg": "Don't have an account? Sign up now!"
   },
   "FIELD": {
     "NAME": "Name"
@@ -141,11 +149,15 @@
     "Yearly": "Yearly",
     "NEW": "New",
     "USED": "Used",
-    "NotFound": "Not Found"
+    "NotFound": "Not Found",
+    "ReNew": "ReNew",
+    "Canceld": "Canceld",
+    "Finished": "Finished"
   },
   "HTML": {
     "SIGNIN": "Sign In",
     "USERNAME": "User Name",
+    "PASSWORD": "Password",
     "USERNAMEREQ": "User name is required",
     "VISITOR": "Visitor",
     "DEFAULT": "Default value",
@@ -171,8 +183,12 @@
     "TAB_BUILDING_DESCRIPTION": "Property Description",
     "TAB_GeneralDescription": "General Description",
     "TAB_RentValues": "Rent Values",
+    "TAB_ContractPersons": "Contract Persons",
     "TAB_UnitDescription": "Unit Description",
+    "TAB_ContractUnit": "Unit for Contract",
+    "TAB_ContractValues": "Contract Values",
     "CODE": "Code",
+    "SUBCODE": "Sub Code",
     "FIRST_NAME": "First Name",
     "LAST_NAME": "Last Name",
     "BIRTH_DATE": "Birth date",
@@ -196,8 +212,11 @@
     "TENANTS_LIST": "Tenants List",
     "BUILDING_LIST": "Properties List",
     "UNIT_LIST": "Units List",
+    "Contract_List": "Contracts List",
     "BRANCH": "Branch",
     "OWNER": "Owner",
+    "OwnerRepresentative": "Owner Representative",
+    "TenantRepresentative": "Tenant Representative",
     "PROPERTY_TYPE": "Property Type",
     "PROPERTY_USAGE_TYPE": "Property Usage Type",
     "PROPERTY_DESC": "Property Description",
@@ -212,7 +231,7 @@
     "GOVERN": "Governorate",
     "CITY": "City",
     "REGION": "Region",
-    "HOUSING_STATUS": "Housing Status",    
+    "HOUSING_STATUS": "Housing Status",
     "CONSTRUCTION_STATUS": "Construction Status",
     "FLOORS_NUMBER": "Number Of Floors",
     "FLATS_NUMBER": "Number Of Flats",
@@ -255,7 +274,29 @@
     "FurnitureStatus": "Furniture Status",
     "UNTUnitElevator": "Unit has an Elevator",
     "UNTUnitAirCondition": "Unit has an AirCondition",
-    "UNTUnitMainRoad": "Unit on Main Road"
+    "UNTUnitMainRoad": "Unit on Main Road",
+    "IsKitchenCabinets": "Is Kitchen Cabinets",
+    "ContractDate": "Contracts Date",
+    "ContractCode": "Contracts Code",
+    "ContractSubCode": "Contracts Sub Code",
+    "RentContract": "Rent Contract",
+    "ContractStartDate": "Contract Start Date",
+    "ContractEndDate": "Contract End Date",
+    "ContractStatus": "Contract Status",
+    "ContractValue": "Contract Value",
+    "PayEveryMonthesNo": "Pay Every Monthes No",
+    "MonthValue": "Month Value",
+    "InsuranceValue": "Insurance Value",
+    "SeekingValue": "Seeking Value",
+    "MonthlyExpense": "Monthly Expense",
+    "ExpenseDesc": "Expense Description",
+    "OtherValue": "Other Value",
+    "MonthlyElectricValue": "Monthly Electric Value",
+    "ElectricCounterReading": "Electric Counter Reading",
+    "MonthlyWaterValue": "Monthly Water Value",
+    "WaterCounterReading": "Water Counter Reading",
+    "MonthlyGasValue": "Monthly Gas Value",
+    "GasCounterReading": "Gas Counter Reading"
   },
   "PAGINATION":{
     "ITEMS_PER_PAGE": "Objekte pro seite:",

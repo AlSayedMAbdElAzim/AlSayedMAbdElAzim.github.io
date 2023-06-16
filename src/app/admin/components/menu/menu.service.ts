@@ -9,13 +9,29 @@ import { menuItems } from './menu';
   providedIn: 'root'
 })
 export class MenuService {
-  constructor(private location:Location,
-              private router:Router){ } 
- 
 
-  public getMenuItems():Array<Menu> {
-    return menuItems;
+  constructor(private location:Location,
+              private router:Router){ }
+  // ===========================================================
+  isRowConfirmed(element, index, array) {
+    return (element['RowConfirm'] <= 0 );
   }
+  // ===============================================================
+  // public getMenuItems(periority: number):Array<Menu> {
+  //   return menuItems.filter(this.isRowConfirmed);
+  // }
+
+  public getMenuItems(periority: number):Array<Menu> {
+    const result = menuItems.filter( (obj) => {
+      return obj.RowConfirm <= periority;
+      });
+      return result
+
+  }
+
+  // public getMenuItems():Array<Menu> {
+  //   return menuItems;
+  // }
 
   public expandActiveSubMenu(menu:Array<Menu>){
     let url = this.location.path();
@@ -23,7 +39,7 @@ export class MenuService {
     let activeMenuItem = menu.find(item => item.routerLink === routerLink);
     if (activeMenuItem) {
       let menuItem = activeMenuItem;
-      while (menuItem.parentId != 0){  
+      while (menuItem.parentId != 0){
         let parentMenuItem = menu.find(item => item.id == menuItem.parentId);
         menuItem = parentMenuItem;
         this.toggleMenuItem(menuItem.id);
@@ -42,7 +58,7 @@ export class MenuService {
       else{
         subMenu.classList.add('show');
         menuItem.classList.add('expanded');
-      }      
+      }
     }
   }
 
@@ -56,13 +72,13 @@ export class MenuService {
           if(subMenu.classList.contains('show')){
             subMenu.classList.remove('show');
             menuItem.classList.remove('expanded');
-          }              
-        } 
+          }
+        }
       }
     });
-  } 
+  }
 
-  public closeAllSubMenus(){        
+  public closeAllSubMenus(){
     menuItems.forEach(item => {
       let subMenu = document.getElementById('sub-menu-'+item.id);
       let menuItem = document.getElementById('menu-item-'+item.id);
@@ -70,9 +86,9 @@ export class MenuService {
         if(subMenu.classList.contains('show')){
           subMenu.classList.remove('show');
           menuItem.classList.remove('expanded');
-        }              
-      } 
-    });           
+        }
+      }
+    });
   }
 
 }

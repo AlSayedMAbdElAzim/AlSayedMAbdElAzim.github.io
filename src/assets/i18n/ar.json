@@ -1,11 +1,15 @@
 {
-  "WELCOME": "مرحبًا بك في سوقنا!",
+  "WELCOME": "مرحبًا بك في عالمنا!",
   "LOGIN": "تسجيل الدخول",
   "LOGOUT": "تسجيل الخروج",
   "REGISTER": "تسجيل",
   "ACCOUNT": "حساب",
   "COMPARE": "قارن",
   "WISHLIST": "قائمة الرغبات",
+  "COMPANY": {
+    "NAME": "بادريق للعقارات",
+    "COLOR": "red"
+  },
   "NAV": {
     "HOME": "الصفحة الرئيسية",
     "PAGES": "الصفحات",
@@ -36,6 +40,7 @@
     "REGION": "المناطق",
     "BUILDFEATURE": "مميزات العقار",
     "COMPANY": "الشركة",
+    "OWNERS": "المالك",
     "MENU_BUILDING": "العقارات والمستأجرين",
     "BUILDING": "العقارات",
     "UNITS": "الوحدات العقارية",
@@ -62,7 +67,9 @@
     "ONETIP": "نصيحة",
     "OWNERSHIP_DOC": "أنواع مستندات الملكية",
     "RentContracts": "عقود الإيجار",
-    "Contracts": "العقد"
+    "Contracts": "العقد",
+    "AddContracts": "إضافة عقد",
+    "ADD_TENANT": "إضافة مستأجر"
   },
   "BTN": {
     "ADD": "إضافة",
@@ -84,7 +91,8 @@
     "REGISTERD": "مبروك، تم انشاء حساب جديد",
     "NOTREGISTERD": "عذراً، لم يتم فتح حساب جديد",
     "RETRIEVE_ERROR": "خطأ في استرجاع البيانات",
-    "DELETED": "تم الحذف"
+    "DELETED": "تم الحذف",
+    "RegisterMsg": "لا تمتلك حساب؟ قم بإنشاء حساب جديد"
   },
   "FIELD": {
     "NAME": "الاسم"
@@ -141,11 +149,15 @@
     "Yearly": "سنوي",
     "NEW": "جديد",
     "USED": "مستعمل",
-    "NotFound": "لا يوجد"
+    "NotFound": "لا يوجد",
+    "ReNew": "مجدد",
+    "Canceld": "ملغي",
+    "Finished": "انتهى"
   },
   "HTML": {
     "SIGNIN": "تسجيل الدخول",
     "USERNAME": "اسم المستخدم",
+    "PASSWORD": "كلمة المرور",
     "USERNAMEREQ": "يجب إدخال اسم المستخدم",
     "VISITOR": "زائر",
     "DEFAULT": "القيمة الافتراضية",
@@ -171,8 +183,12 @@
     "TAB_BUILDING_DESCRIPTION": "وصف العقار",
     "TAB_GeneralDescription": "وصف عام",
     "TAB_RentValues": "قيم الإيجار",
+    "TAB_ContractPersons": "طرفي العقد",
     "TAB_UnitDescription": "وصف الوحدة",
+    "TAB_ContractUnit": "بيانات الوحدة",
+    "TAB_ContractValues": "قيم العقد",
     "CODE": "الكود",
+    "SUBCODE": "الكود الفرعي",
     "FIRST_NAME": "الاسم الأول",
     "LAST_NAME": "الاسم الأخير",
     "BIRTH_DATE": "تاريخ الميلاد",
@@ -196,8 +212,11 @@
     "TENANTS_LIST": "قائمة المستأجرين",
     "BUILDING_LIST": "قائمة العقارات",
     "UNIT_LIST": "قائمة الوحدات",
+    "Contract_List": "قائمة العقود",
     "BRANCH": "الفرع",
     "OWNER": "المالك",
+    "OwnerRepresentative": "ممثل المالك",
+    "TenantRepresentative": "ممثل المستأجر",
     "PROPERTY_TYPE": "نوع بناء العقار",
     "PROPERTY_USAGE_TYPE": "نوع استخدام العقار",
     "PROPERTY_DESC": "وصف العقار",
@@ -212,7 +231,7 @@
     "GOVERN": "المحافظة",
     "CITY": "المدينة",
     "REGION": "المنطقة",
-    "HOUSING_STATUS": "حالة السكن",    
+    "HOUSING_STATUS": "حالة السكن",
     "CONSTRUCTION_STATUS": "الحالة الانشائية للعقار",
     "FLOORS_NUMBER": "عدد الطوابق",
     "FLATS_NUMBER": "عدد الشقق",
@@ -255,7 +274,29 @@
     "FurnitureStatus": "حالة الأثاث",
     "UNTUnitElevator": "يوجد مصعد",
     "UNTUnitAirCondition": "يوجد تكييف",
-    "UNTUnitMainRoad": "على طريق رئيسي"
+    "UNTUnitMainRoad": "على طريق رئيسي",
+    "IsKitchenCabinets": "خزائن مطبخ مركبة",
+    "ContractDate": "تاريخ العقد",
+    "ContractCode": "رقم العقد",
+    "ContractSubCode": "رقم فرعي للعقد",
+    "RentContract": "عقد الإيجار",
+    "ContractStartDate": "تاريخ بداية العقد",
+    "ContractEndDate": "تاريخ نهاية العقد",
+    "ContractStatus": "حالة العقد",
+    "ContractValue": "قيمة العقد السنوية",
+    "PayEveryMonthesNo": "الدفع كل عدد أشهر",
+    "MonthValue": "القيمة الشهرية",
+    "InsuranceValue": "قيمة التأمين",
+    "SeekingValue": "قيمة السعي",
+    "MonthlyExpense": "مصروف شهري للوحدة",
+    "ExpenseDesc": "وصف المصروف الشهري",
+    "OtherValue": "إجمالي قيم أخرى",
+    "MonthlyElectricValue": "قيمة شهرية للكهرباء",
+    "ElectricCounterReading": "قراءة عداد الكهرباء",
+    "MonthlyWaterValue": "قيمة شهرية للمياة",
+    "WaterCounterReading": "قراءة عداد المياة",
+    "MonthlyGasValue": "قيمة شهرية للغاز",
+    "GasCounterReading": "قراءة عداد الغاز"
   },
   "TS": {
     "COMPANYDATA": "بيانات الشركة"

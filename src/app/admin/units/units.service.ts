@@ -280,6 +280,13 @@ export class UnitsService {
 
       formData.append('UNTActive',unit.UNTActive.toString() );
       formData.append('RowDelete',unit.RowDelete.toString());
+
+      if(unit.UNTContractValue){formData.append('UNTContractValue',unit.UNTContractValue.toString());}
+      if(unit.UNTInsuranceValue){formData.append('UNTInsuranceValue',unit.UNTInsuranceValue.toString());}
+      if(unit.UNTSeekingValue){formData.append('UNTSeekingValue',unit.UNTSeekingValue.toString());}
+      if(unit.UNTMonthlyExpense){formData.append('UNTMonthlyExpense',unit.UNTMonthlyExpense.toString());}
+      if(unit.UNTOtherValue){formData.append('UNTOtherValue',unit.UNTOtherValue.toString());}
+      formData.append('UNTExpenseDesc',unit.UNTExpenseDesc);
       
       return this.http.post<Units>(URL, formData, this.globalServ.getAuthHeaders_for_files())
       }
@@ -358,6 +365,13 @@ export class UnitsService {
 
       formData.append('UNTActive',unit.UNTActive.toString() );
       formData.append('RowDelete',unit.RowDelete.toString());
+
+      if(unit.UNTContractValue){formData.append('UNTContractValue',unit.UNTContractValue.toString());}
+      if(unit.UNTInsuranceValue){formData.append('UNTInsuranceValue',unit.UNTInsuranceValue.toString());}
+      if(unit.UNTSeekingValue){formData.append('UNTSeekingValue',unit.UNTSeekingValue.toString());}
+      if(unit.UNTMonthlyExpense){formData.append('UNTMonthlyExpense',unit.UNTMonthlyExpense.toString());}
+      if(unit.UNTOtherValue){formData.append('UNTOtherValue',unit.UNTOtherValue.toString());}
+      formData.append('UNTExpenseDesc',unit.UNTExpenseDesc);
       
       return this.http.put<Units>(URL, formData, this.globalServ.getAuthHeaders_for_files())
       

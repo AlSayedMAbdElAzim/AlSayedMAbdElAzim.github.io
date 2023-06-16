@@ -50,7 +50,7 @@ export class TopMenuComponent implements OnInit {
     }
     else if(lang == 'ar'){
     //   this.settings = (
-    //     name:'Emporium',  // theme name
+    //     name:'{{ 'COMPANY.NAME' | translate }}',  // theme name
     //     theme: 'green',     // green, blue, red, pink, purple, grey
     //     rtl: true,       // true = rtl, false = ltr
     //     adminSidenavIsOpened: true,        // adminSidenavIsOpened

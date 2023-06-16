@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomersListComponent } from './customers/customers-list/customers-list.component';
 import { CustomersDialogComponent } from './customers/customers-dialog/customers-dialog.component';
+import { ContractListComponent } from './rentContracts/contract-list/contract-list.component';
+import { ContractDialogComponent } from './rentContracts/contract-dialog/contract-dialog.component';
 // -------------------------------------------------
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
@@ -14,8 +16,7 @@ import { CustomersDetailsComponent } from 'src/app/admin/contracts/customers/cus
 
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { InputFileModule } from 'ngx-input-file-uploader';
-import { ContractListComponent } from './rentContracts/contract-list/contract-list.component';
-import { ContractDialogComponent } from './rentContracts/contract-dialog/contract-dialog.component';
+
 
 // import { MatDatepickerModule } from '@angular/material/datepicker';
 // import { MatNativeDateModule } from '@angular/material/core';
@@ -41,6 +42,8 @@ export const routes: Routes = [
   { path: 'tenant-add', component: CustomersDetailsComponent, data: { breadcrumb: 'Add Tenant' } },
 
   { path: 'contract-list', component: ContractListComponent, data: { breadcrumb: 'Rent Contracts' } },
+  { path: 'contract-add/:id', component: ContractDialogComponent, data: { breadcrumb: 'Edit Contract' } },
+  { path: 'contract-add', component: ContractDialogComponent, data: { breadcrumb: 'Add Contract' } }
 
 ];
 

@@ -17,6 +17,8 @@ export class GlobalService {
   constructor(private localStore: LocalService) {}
 // ============================================================
   set me(user: User) {
+    // console.log("JSON.stringify(user)");
+    // console.log(JSON.stringify(user));
     // localStorage.setItem('account', JSON.stringify(user));
     this.localStore.setItem('account', JSON.stringify(user));
     this.userSource.next(user);
@@ -47,5 +49,5 @@ getAuthHeaders_for_files() {
   set userLoggedIn(indecator: boolean){
     this.isUserLoggedIn = indecator
   }
-// ============================================================  
+// ============================================================
 }

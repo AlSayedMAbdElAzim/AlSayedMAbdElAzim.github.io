@@ -32,6 +32,7 @@ export class AdminComponent implements OnInit {
     this.settings = this.appSettings.settings;
   }
   // ==================================================================
+  accountValues ;
   accountID ;
   ngOnInit() {
     this.urlAccountImage= new ApiConstant().noImage;
@@ -41,7 +42,19 @@ export class AdminComponent implements OnInit {
     );
     // -------------Check if current user Connected-------------------------
     if (this.localStore.getItem('token') && this.localStore.getItem('account') ) {
+      this.accountValues = JSON.parse(this.localStore.getItem("account")) ;
       var values = JSON.parse(this.localStore.getItem("account")) ;
+      // // ===**************************************************************
+      //   console.log("=======this.global.me AlSayed 111=========") ;
+      //   console.log(JSON.parse(this.localStore.getItem('account'))['first_name']) ;
+      //   console.log(JSON.parse(this.localStore.getItem('account'))['branch_KeyField']) ;
+      //   console.log(JSON.parse(this.localStore.getItem('account'))['is_employee']) ;
+
+      //   console.log("=======this.global.me AlSayed 222=========") ;
+      //   var passed = [12, 5, 8, 130, 44].filter(this.isBigEnough);
+      //   console.log("Test Value : " + passed );
+      //   console.log("=======this.global.me AlSayed 333=========") ;
+      // // ===**************************************************************
       this.accountID = values['id'] ;
       this.getOneUser(this.accountID) ;
       // this.router.navigate(['/']);
@@ -54,7 +67,8 @@ export class AdminComponent implements OnInit {
     setTimeout(() => {
       this.settings.theme = new AppConstant().themeColor ; // 'blue';
     });
-    this.menuItems = this.menuService.getMenuItems();
+    console.log("=====this.accountValues['RowConfirm']111::: "+ this.accountValues['RowConfirm']);
+    this.menuItems = this.menuService.getMenuItems(this.accountValues['RowConfirm']);
   }
   // ==================================================================
   getOneUser(id:number)
@@ -93,7 +107,8 @@ export class AdminComponent implements OnInit {
         this.sidenav.close();
       }
     });
-    this.menuService.expandActiveSubMenu(this.menuService.getMenuItems());
+    console.log("=====this.accountValues['RowConfirm']222::: "+ this.accountValues['RowConfirm']);
+    this.menuService.expandActiveSubMenu(this.menuService.getMenuItems(this.accountValues['RowConfirm']));
   }
 
   public toggleSidenav(){
