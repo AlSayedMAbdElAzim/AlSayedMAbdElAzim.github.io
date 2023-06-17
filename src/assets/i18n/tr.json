@@ -92,7 +92,9 @@
     "NOTREGISTERD": "Sorry, con't create a new Account!",
     "RETRIEVE_ERROR": "Data not retrieved",
     "DELETED": "Delete done",
-    "RegisterMsg": "Don't have an account? Sign up now!"
+    "RegisterMsg": "Don't have an account? Sign up now!",
+    "MinLength": "number of Char isn't long enough!, minimum of 3 characters",
+    "MinLength6": "number of Char isn't long enough!, minimum of 6 characters"
   },
   "FIELD": {
     "NAME": "İsim"
@@ -158,7 +160,14 @@
     "SIGNIN": "Sign In",
     "USERNAME": "User Name",
     "PASSWORD": "Password",
+    "ConfirmPassword": "Confirm Password",
     "USERNAMEREQ": "User name is required",
+    "PasswordREQ": "Password is required",
+    "ConfirmPasswordREQ": "Confirm Password is required",
+    "MismatchPassword": "Passwords do not match",
+    "FirstNameREQ": "First name is required",
+    "EmailREQ": "Email is required",
+    "InvalidEmail": "Invalid email address",
     "VISITOR": "Visitor",
     "DEFAULT": "Default value",
     "PARENT": "Parent",
@@ -296,7 +305,10 @@
     "MonthlyWaterValue": "Monthly Water Value",
     "WaterCounterReading": "Water Counter Reading",
     "MonthlyGasValue": "Monthly Gas Value",
-    "GasCounterReading": "Gas Counter Reading"
+    "GasCounterReading": "Gas Counter Reading",
+    "Profile": "Profile",
+    "Settings": "Settings",
+    "LockScreen": "Lock screen"
   },
   "PAGINATION":{
     "ITEMS_PER_PAGE": "Sayfa başına öğeler:",

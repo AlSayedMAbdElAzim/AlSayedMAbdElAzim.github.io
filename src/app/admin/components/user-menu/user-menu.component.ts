@@ -28,13 +28,18 @@ export class UserMenuComponent implements OnInit {
   // ==================================================================
   logout()
   {
-    // console.log("======User-menu Logout========");
+
     this.urlAccountImage= new ApiConstant().noImage;
     this.global.me = new User();
     this.localStore.removeItem('token');
     this.localStore.removeItem('account');
-    this.router.navigate(['/sign-in']);
     this.global.userLoggedIn = false ;
+    // this.router.navigate(['/sign-in']);
+
+    this.router.navigate(['/']) .then(() => {
+                                        window.location.reload();
+                                      });
+
   }
   // ==================================================================
 

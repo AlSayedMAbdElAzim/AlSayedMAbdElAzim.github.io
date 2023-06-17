@@ -67,7 +67,7 @@ export class AdminComponent implements OnInit {
     setTimeout(() => {
       this.settings.theme = new AppConstant().themeColor ; // 'blue';
     });
-    console.log("=====this.accountValues['RowConfirm']111::: "+ this.accountValues['RowConfirm']);
+    // console.log("=====this.accountValues['RowConfirm']111::: "+ this.accountValues['RowConfirm']);
     this.menuItems = this.menuService.getMenuItems(this.accountValues['RowConfirm']);
   }
   // ==================================================================
@@ -91,8 +91,12 @@ export class AdminComponent implements OnInit {
     this.global.me = new User();
     this.localStore.removeItem('token');
     this.localStore.removeItem('account');
-    this.router.navigate(['/sign-in']);
     this.global.userLoggedIn = false ;
+    // this.router.navigate(['/sign-in']);
+
+    this.router.navigate(['/']) .then(() => {
+                                        window.location.reload();
+                                      });
   }
   // ==================================================================
   ngAfterViewInit(){
@@ -107,7 +111,7 @@ export class AdminComponent implements OnInit {
         this.sidenav.close();
       }
     });
-    console.log("=====this.accountValues['RowConfirm']222::: "+ this.accountValues['RowConfirm']);
+    // console.log("=====this.accountValues['RowConfirm']222::: "+ this.accountValues['RowConfirm']);
     this.menuService.expandActiveSubMenu(this.menuService.getMenuItems(this.accountValues['RowConfirm']));
   }
 

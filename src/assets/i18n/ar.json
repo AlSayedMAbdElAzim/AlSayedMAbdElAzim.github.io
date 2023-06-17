@@ -92,7 +92,9 @@
     "NOTREGISTERD": "عذراً، لم يتم فتح حساب جديد",
     "RETRIEVE_ERROR": "خطأ في استرجاع البيانات",
     "DELETED": "تم الحذف",
-    "RegisterMsg": "لا تمتلك حساب؟ قم بإنشاء حساب جديد"
+    "RegisterMsg": "لا تمتلك حساب؟ قم بإنشاء حساب جديد",
+    "MinLength": "عدد الأحرف غير كافي، على الأقل 3أحرف",
+    "MinLength6": "عدد الأحرف غير كافي، على الأقل 6أحرف"
   },
   "FIELD": {
     "NAME": "الاسم"
@@ -158,7 +160,14 @@
     "SIGNIN": "تسجيل الدخول",
     "USERNAME": "اسم المستخدم",
     "PASSWORD": "كلمة المرور",
+    "ConfirmPassword": "تأكيد كلمة المرور",
     "USERNAMEREQ": "يجب إدخال اسم المستخدم",
+    "PasswordREQ": "يجب إدخال كلمة المرور",
+    "ConfirmPasswordREQ": "يجب إدخال تأكيد كلمة المرور",
+    "MismatchPassword": "كلمات المرور غير متطابقة",
+    "FirstNameREQ": "يجب إدخال الاسم الأول",
+    "EmailREQ": "يجب إدخال البريد الاليكتروني",
+    "InvalidEmail": "البريد الإليكتروني غير صحيح",
     "VISITOR": "زائر",
     "DEFAULT": "القيمة الافتراضية",
     "PARENT": "النوع",
@@ -296,7 +305,10 @@
     "MonthlyWaterValue": "قيمة شهرية للمياة",
     "WaterCounterReading": "قراءة عداد المياة",
     "MonthlyGasValue": "قيمة شهرية للغاز",
-    "GasCounterReading": "قراءة عداد الغاز"
+    "GasCounterReading": "قراءة عداد الغاز",
+    "Profile": "الملف الشخصي",
+    "Settings": "الإعدادات",
+    "LockScreen": "شاشة الحماية"
   },
   "TS": {
     "COMPANYDATA": "بيانات الشركة"

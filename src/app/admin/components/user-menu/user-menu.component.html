@@ -15,28 +15,28 @@
         <!-- <a mat-menu-item routerLink="/admin"></a> -->
         <a mat-menu-item routerLink="/">
             <mat-icon>person</mat-icon>
-            <span>Profile</span>
+            <span>{{ 'HTML.Profile' | translate }}</span>
         </a>
-        <a mat-menu-item routerLink="/">
+        <!-- <a mat-menu-item routerLink="/">
             <mat-icon>edit</mat-icon>
             <span>Edit Profile</span>
-        </a>
+        </a> -->
         <a mat-menu-item routerLink="/">
             <mat-icon>settings</mat-icon>
-            <span>Settings</span>
+            <span>{{ 'HTML.Settings' | translate }}</span>
         </a>
         <a mat-menu-item routerLink="/">
             <mat-icon>lock</mat-icon>
-            <span>Lock screen</span>
+            <span>{{ 'HTML.LockScreen' | translate }}</span>
         </a>
-        <a mat-menu-item routerLink="/">
+        <!-- <a mat-menu-item routerLink="/">
             <mat-icon>help</mat-icon>
             <span>Help</span>
-        </a>
+        </a> -->
         <div class="divider"></div>
         <a mat-menu-item (click)="logout()" routerLink="/sign-in">
             <mat-icon>logout</mat-icon>
-            <span>Log out</span>
+            <span>{{ 'LOGOUT' | translate }}</span>
         </a>
     </span>
 </mat-menu>

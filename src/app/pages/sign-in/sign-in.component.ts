@@ -128,7 +128,11 @@ export class SignInComponent implements OnInit {
 
           // this.snackBar.open('You are logged in!', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
           this.snackBar.open(this.loggedInMsg , '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
-          this.router.navigate(['/']);
+          // this.router.navigate(['/']);
+          this.router.navigate(['/']) .then(() => {
+                                                  window.location.reload();
+                                                });
+
         },
         error => {
           this.global.userLoggedIn = false ;
