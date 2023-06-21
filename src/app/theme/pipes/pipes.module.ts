@@ -6,24 +6,27 @@ import { FilterBrandsPipe } from './filter-brands.pipe';
 import { BrandSearchPipe } from './brand-search.pipe';
 import { ProfilePicturePipe } from './profilePicture.pipe';
 import { UserSearchPipe } from './user-search.pipe';
+import { EmpSearchPipe } from './user-search.pipe';
 
 @NgModule({
-    imports: [ 
-        CommonModule 
+    imports: [
+        CommonModule
     ],
     declarations: [
         FilterByIdPipe,
         FilterBrandsPipe,
         BrandSearchPipe,
         ProfilePicturePipe,
-        UserSearchPipe
+        UserSearchPipe,
+        EmpSearchPipe
     ],
     exports: [
         FilterByIdPipe,
         FilterBrandsPipe,
         BrandSearchPipe,
         ProfilePicturePipe,
-        UserSearchPipe
+        UserSearchPipe,
+        EmpSearchPipe
     ]
 })
 export class PipesModule { }

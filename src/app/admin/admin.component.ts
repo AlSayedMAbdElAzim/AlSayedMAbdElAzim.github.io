@@ -56,6 +56,8 @@ export class AdminComponent implements OnInit {
       //   console.log("=======this.global.me AlSayed 333=========") ;
       // // ===**************************************************************
       this.accountID = values['id'] ;
+      // console.log("===***admin.component ngOnInit line 59 this.accountID:: "+ this.accountID);
+      // console.log("===***admin.component ngOnInit line 60 values['id']:: "+ values['id']);
       this.getOneUser(this.accountID) ;
       // this.router.navigate(['/']);
     }
@@ -73,6 +75,7 @@ export class AdminComponent implements OnInit {
   // ==================================================================
   getOneUser(id:number)
     {
+      // console.log("**** admin.component line 76 *****getOneUser::: "+id);
       this.staff.getOneUserbyId(id).subscribe((oneUser:User)=>{
       // this.userPic=oneUser.userPicture;
       // this.userCode=oneUser.UserCode;

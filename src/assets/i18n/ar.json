@@ -69,7 +69,8 @@
     "RentContracts": "عقود الإيجار",
     "Contracts": "العقد",
     "AddContracts": "إضافة عقد",
-    "ADD_TENANT": "إضافة مستأجر"
+    "ADD_TENANT": "إضافة مستأجر",
+    "EMPLOYEES": "الموظفين"
   },
   "BTN": {
     "ADD": "إضافة",
@@ -308,7 +309,8 @@
     "GasCounterReading": "قراءة عداد الغاز",
     "Profile": "الملف الشخصي",
     "Settings": "الإعدادات",
-    "LockScreen": "شاشة الحماية"
+    "LockScreen": "شاشة الحماية",
+    "EMPLOYEE": "الموظف"
   },
   "TS": {
     "COMPANYDATA": "بيانات الشركة"

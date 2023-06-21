@@ -13,9 +13,9 @@
                 <mat-form-field appearance="outline" class="w-100">
                     <mat-label>{{ 'HTML.PARENT' | translate }}</mat-label>
                     <mat-select formControlName="Parent_CTTKeyField" [disabled]="true">
-                      
+
                         <mat-option *ngFor="let cat of data.parentCTT" [value]="cat.id" disabled>
-                            <span>{{cat.CTTSubjectName}}</span> 
+                            <span>{{cat.CTTSubjectName}}</span>
                         </mat-option>
                     </mat-select>
 
@@ -39,8 +39,8 @@
     </div>
     <div mat-dialog-actions>
         <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
-            <button mat-raised-button color="warn" type="button" mat-dialog-close>Close</button>
-            <button mat-raised-button color="primary" type="submit">Save</button>
+            <button mat-raised-button color="warn" type="button" mat-dialog-close>{{ 'BTN.CANCEL' | translate }}</button>
+            <button mat-raised-button color="primary" type="submit">{{ 'BTN.SAVE' | translate }}</button>
         </div>
     </div>
 </form>

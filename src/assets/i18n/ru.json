@@ -69,7 +69,8 @@
     "RentContracts": "Rent Contracts",
     "Contracts": "Contracts",
     "AddContracts": "Add Contracts",
-    "ADD_TENANT": "Add Tenant"
+    "ADD_TENANT": "Add Tenant",
+    "EMPLOYEES": "Employees"
   },
   "BTN": {
     "ADD": "Добавить",
@@ -308,7 +309,8 @@
     "GasCounterReading": "Gas Counter Reading",
     "Profile": "Profile",
     "Settings": "Settings",
-    "LockScreen": "Lock screen"
+    "LockScreen": "Lock screen",
+    "EMPLOYEE": "Employee"
   },
   "PAGINATION":{
     "ITEMS_PER_PAGE": "Пункты на странице:",

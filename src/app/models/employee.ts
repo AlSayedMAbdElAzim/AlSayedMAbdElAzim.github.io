@@ -1,6 +1,7 @@
-export class User {
+export class Employee{
     id : number ;
     username :  string  ;
+    password :  string  ;
     UserCode : number ;
     first_name :  string  ;
     last_name :  string  ;
@@ -14,10 +15,6 @@ export class User {
     is_active : boolean ;
     is_employee :  string  ;
     is_teacher :  string  ;
-    //  // groups : [{
-    //  //      name:string
-    //  // }]    ;
-    //  groups : number ;
     periorty : number ;
     COMId : number ;
     branch_KeyField : number ;
@@ -30,7 +27,4 @@ export class User {
     userTwitter :  string  ;
     userGoogle :  string  ;
     userAddress :  string  ;
-    password:string;
-    repassword:string
 }
-

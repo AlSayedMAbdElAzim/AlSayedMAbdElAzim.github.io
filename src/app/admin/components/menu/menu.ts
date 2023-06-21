@@ -20,6 +20,7 @@ export const menuItems = [
     new Menu (180, 'ADMIN_NAV.RentContracts', null, null, 'note', null, true, 0, 0),
     new Menu (181, 'ADMIN_NAV.Contracts', '/contracts/contract-list', null, 'note', null, false, 180, 0),
     new Menu (182, 'ADMIN_NAV.AddContracts', '/contracts/contract-add', null, 'note_add', null, false, 180, 0),
+    new Menu (190, 'ADMIN_NAV.EMPLOYEES', '/hr', null, 'group_add', null, false, 0, 0),
     new Menu (20, 'ADMIN_NAV.PRODUCTS', null, null, 'grid_on', null, true, 0,9),
     new Menu (21, 'ADMIN_NAV.CATEGORIES', '/products/categories', null, 'category', null, false, 20, 0),
     new Menu (22, 'ADMIN_NAV.PRODUCT_LIST', '/products/product-list', null, 'list', null, false, 20, 0),
@@ -29,6 +30,7 @@ export const menuItems = [
     new Menu (31, 'ADMIN_NAV.ORDERS', '/sales/orders', null, 'list_alt', null, false, 30, 0),
     new Menu (32, 'ADMIN_NAV.TRANSACTIONS', '/sales/transactions', null, 'local_atm', null, false, 30, 0),
     new Menu (40, 'ADMIN_NAV.USERS', '/users', null, 'group_add', null, false, 0,9),
+
     new Menu (50, 'ADMIN_NAV.CUSTOMERS', '/customers', null, 'supervisor_account', null, false, 0,9),
     new Menu (60, 'ADMIN_NAV.COUPONS', '/coupons', null, 'card_giftcard', null, false, 0,9),
     new Menu (70, 'ADMIN_NAV.WITHDRAWAL', '/withdrawal', null, 'credit_card', null, false, 0,9),

@@ -25,6 +25,7 @@ export const routes: Routes = [
         { path: 'atlas', loadChildren: () => import('./admin/atlas/atlas.module').then(m => m.AtlasModule) },
         { path: 'contracts', loadChildren: () => import('./admin/contracts/contracts.module').then(m => m.ContractsModule) },
         { path: 'units', loadChildren: () => import('./admin/units/units.module').then(m => m.UnitsModule) },
+        { path: 'hr', loadChildren: () => import('./admin/employees/employees.module').then(m => m.EmployeesModule) },
         { path: 'products', loadChildren: () => import('./admin/products/products.module').then(m => m.ProductsModule) },
         { path: 'sales', loadChildren: () => import('./admin/sales/sales.module').then(m => m.SalesModule) },
         { path: 'users', loadChildren: () => import('./admin/users/users.module').then(m => m.UsersModule), data: { breadcrumb: 'Users' } },

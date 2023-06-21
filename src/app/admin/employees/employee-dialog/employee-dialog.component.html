@@ -5,20 +5,28 @@
             <mat-tab label="{{ 'HTML.TAB_BASIC' | translate }}">
                 <div fxLayout="column" class="form-field-outer">
                   <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
-                    <mat-form-field class="w-45">
+                    <mat-form-field class="w-20">
                       <mat-label><mat-icon>person</mat-icon> {{ 'HTML.CODE' | translate }}</mat-label>
-                      <input matInput formControlName="UserCode" >
+                      <input matInput formControlName="UserCode" required>
                       <!-- <input matInput formControlName="UserCode" required>
                       <mat-error *ngIf="form.controls.code.errors?.required">Code is required</mat-error>
                       <mat-error *ngIf="form.controls.code.hasError('minlength')">Code isn't long enough, minimum of 4 characters</mat-error> -->
                     </mat-form-field>
 
-                    <mat-form-field class="w-50">
+                    <mat-form-field class="w-30">
                         <mat-label><mat-icon>person</mat-icon> {{ 'HTML.USERNAME' | translate }}</mat-label>
                         <input matInput formControlName="username" required>
                         <mat-error *ngIf="form.controls.username.errors?.required">Username is required</mat-error>
                         <mat-error *ngIf="form.controls.username.hasError('minlength')">Username isn't long enough, minimum of 3 characters</mat-error>
                     </mat-form-field>
+
+                    <mat-form-field *ngIf="!user.id" class="w-45">
+                      <mat-label><mat-icon>vpn_key</mat-icon> {{ 'HTML.PASSWORD' | translate }}</mat-label>
+                      <input matInput formControlName="password" required [type]="passwordHide ? 'password' : 'text'">
+                      <mat-icon matSuffix (click)="passwordHide = !passwordHide">{{passwordHide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                      <mat-error *ngIf="form.controls.password.errors?.required">Password is required</mat-error>
+                      <mat-error *ngIf="form.controls.password.hasError('minlength')">Password isn't long enough, minimum of 6 characters</mat-error>
+                  </mat-form-field>
                   </div>
 
                   <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
@@ -49,9 +57,10 @@
                   </div>
 
                   <div class=" p-2 ">
-                    <img [src]="defaultCusImage" style="width: 250px;height:200px">
-                    <input formControlName="userPicture" (change)="handelEmpImgInput($event.target.files)" id="EmpPicupload" class="user-img"  type="file" accept="image/*">
+                    <img [src]="defaultCusImage" style="width: 150px;height:200px">
+                    <input formControlName="userPicture" name="userPicture" (change)="handelEmpImgInput($event.target.files)" id="EmpPicupload" class="user-img" type="file" accept="image/*">
                   </div>
+
                 </div>
             </mat-tab>
 
@@ -142,7 +151,7 @@
 </div>
 <div mat-dialog-actions>
     <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
-        <button mat-raised-button color="primary" [mat-dialog-close]="form.value" [disabled]="!form.valid"><span *ngIf="!user.id">{{ 'BTN.SAVE' | translate }}</span><span *ngIf="user.id">{{ 'BTN.EDIT' | translate }}</span></button>
-        <button mat-raised-button color="warn" (click)="close()">{{ 'BTN.CANCEL' | translate }}</button>
+      <button mat-raised-button color="primary" (click)="onSave()" [mat-dialog-close]="form.value" [disabled]="!form.valid"><span *ngIf="!user.id">{{ 'BTN.SAVE' | translate }}</span><span *ngIf="user.id">{{ 'BTN.EDIT' | translate }}</span></button>
+      <button mat-raised-button color="warn" (click)="close()">{{ 'BTN.CANCEL' | translate }}</button>
     </div>
 </div>

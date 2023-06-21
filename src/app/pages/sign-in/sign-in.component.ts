@@ -100,6 +100,7 @@ export class SignInComponent implements OnInit {
   // ==================================================================
   getOneUser(id:number)
     {
+      console.log("**** sign-in.component line 103 *****getOneUser::: "+id);
       this.staff.getOneUserbyId(id).subscribe((oneUser:User)=>{
       // this.userPic=oneUser.userPicture;
       // this.userCode=oneUser.UserCode;
@@ -185,6 +186,8 @@ export class SignInComponent implements OnInit {
       first_name :  ""  ,
       last_name :  ""  ,
       UserBirthDate :  null  ,
+      EntryDate :  null  ,
+      joinedDate :  null  ,
       UserMobile : "" ,
       email : ""   ,
       is_superuser : false ,
@@ -197,7 +200,15 @@ export class SignInComponent implements OnInit {
       userPicture : null ,
       gender :  ""  ,
       password:"",
-      repassword:""
+      repassword:"",
+      is_teacher: "F",
+      RowDelete : 0,
+      LoginFrom :  "N" ,
+      userJobName :  "" ,
+      userFacebook :  "" ,
+      userTwitter :  "" ,
+      userGoogle :  "" ,
+      userAddress :  "" ,
     }
   }
   // ============================

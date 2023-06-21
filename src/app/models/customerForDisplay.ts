@@ -13,6 +13,7 @@ export class Tenant {
   contacts: TenantContacts;
   social: TenantSocial;
   settings: TenantSettings;
+  docs: TenantDoc;
 }
 
 export class TenantProfile {
@@ -53,6 +54,10 @@ export class TenantSettings{
   isDeleted: boolean;
   registrationDate: Date;
   joinedDate: Date;
+}
+
+export class TenantDoc{
+  docPic: File;
 }
 
 // =====================================================

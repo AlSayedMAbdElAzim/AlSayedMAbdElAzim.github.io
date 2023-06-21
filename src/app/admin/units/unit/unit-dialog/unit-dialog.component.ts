@@ -432,10 +432,10 @@ saveUpdate(rowId): void {
   this.mapFormvalue_to_UnitClass();
   if (!rowId) {
     // ====في حالة إضافة سطر جديد====
-    console.log(this.unitForDisplay)
+    // console.log(this.unitForDisplay)
   this.unitsService.addUnit(this.unitForDisplay,this.CusImageToUpload).subscribe(
     res=>{
-     console.log("yes",res);
+    //  console.log("yes",res);
      this.snackBar.open('تم إضافة بيانات الوحدة', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
      this.router.navigate(["units/unit"]);
     } ,
@@ -449,7 +449,7 @@ saveUpdate(rowId): void {
 
   this.unitsService.editUnit(this.unitForDisplay, this.CusImageToUpload)
   .subscribe(res=>{
-    console.log("yes updated",res);
+    // console.log("yes updated",res);
     this.snackBar.open('تم تعديل بيانات الوحدة', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
     this.router.navigate(["units/unit"]);
   },

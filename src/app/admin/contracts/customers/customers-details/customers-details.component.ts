@@ -124,6 +124,9 @@ export class CustomersDetailsComponent implements OnInit {
         settings: this.fb.group({
           isActive: null,
           isDeleted: null //,
+        }),
+        docs: this.fb.group({
+          docPic: null
         })
       });
 // ===================================================
@@ -271,11 +274,26 @@ mapFormvalue_to_CustomerClass()
     // console.log("this.CUS.CUSNationalIDEndDate:: "+ this.CUS.CUSNationalIDEndDate) ;
 }
 // ===============================================================
+
+// =====================================================================
 getTenantById(id:number)
 {
+  const images: any[] = [];
   this._CustomerService.getOneCustomer(id).subscribe((oneTenant:Customer)=>
   {
-    this.fillForm(oneTenant);
+        this._CustomerService.getOneCustomerDocs(this.curCOMId, this.account.periorty, id)
+        .subscribe((docs:any)=> {
+          for (var onedoc of docs) {
+            let image = {
+              link: onedoc.CUDPic,
+              preview: onedoc.CUDPic
+            }
+            images.push(image);
+          }
+          //this.form.controls.docPic.setValue(images);
+
+        })
+    this.fillForm(oneTenant, images);
     this.CUS=oneTenant;
     // this.govern(this.curCOMId,this.account.periorty)
     // this.city(this.curCOMId,this.account.periorty);
@@ -288,7 +306,7 @@ getTenantById(id:number)
 // --------------Form fill values----------------
 is_active: Boolean ;
 is_delete: Boolean ;
-fillForm(tent: Customer){
+fillForm(tent: Customer, tentDocs: any){
   if (tent.CUSActive == 'T') {this.is_active = true;}
   else { this.is_active = false; }
   // ==========================================================
@@ -355,6 +373,9 @@ fillForm(tent: Customer){
     settings: {
       isActive: this.is_active,
       isDeleted: this.is_delete
+    },
+    docs: {
+      docPic: tentDocs
     }
   });
 }

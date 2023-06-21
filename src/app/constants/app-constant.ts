@@ -1,5 +1,5 @@
 export class AppConstant {
-  themeColor=  "green";   // green, blue, red, pink, purple, grey, other
+  themeColor=  "blue";   // green, blue, red, pink, purple, grey, other
 
 
 }

@@ -1,8 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { UntypedFormGroup, UntypedFormBuilder, Validators} from '@angular/forms';
-import { Employee, UserWork, UserContacts, UserSocial, UserSettings } from '../employeeForDisplay';
-import { oneUser } from 'src/app/models/userForEdit' ;
+
+// import { oneUser } from 'src/app/models/userForEdit' ;
+import { Employee } from 'src/app/models/employee';
 
 import { User } from 'src/app/models/user';
 import { environment } from 'src/environments/environment';
@@ -24,16 +25,12 @@ export class EmployeeDialogComponent {
   public form:UntypedFormGroup;
   public passwordHide:boolean = true;
   constructor(public dialogRef: MatDialogRef<EmployeeDialogComponent>,
-              @Inject(MAT_DIALOG_DATA) public user: oneUser,
-              // private localStore: LocalService,
-              // private global: GlobalService,
+              @Inject(MAT_DIALOG_DATA) public user: Employee,
               public fb: UntypedFormBuilder) { }
 // =============================================================================
 // ================================================================
 defaultCusImage=new ApiConstant().noImage;
 CusImageToUpload:File=null;
-// defaultIDImage=new ApiConstant().noImage;
-// IDImageToUpload:File=null;
 // ========================================================
 handelEmpImgInput(file:FileList)
 {
@@ -45,11 +42,14 @@ handelEmpImgInput(file:FileList)
   CUSImgreader.readAsDataURL(this.CusImageToUpload);
 }
 // ===============================================================
+action:string;
+// ===============================================================
   ngOnInit() {
 // ------------------------------------------------------------------------
           this.form = this.fb.group({
             id: null,
             username: [null, Validators.compose([Validators.required, Validators.minLength(3)])],
+            password: null,
             UserCode: [null, Validators.compose([Validators.required, Validators.minLength(1)])],
 
             first_name: null,
@@ -84,11 +84,13 @@ handelEmpImgInput(file:FileList)
           });
 // -------------------------------------------------------------------------
       if(this.user){
+        this.action = "Patch" ;
         // this.form.setValue(this.user);
         this.fillForm(this.user) ;
       }
       else{
-        this.user = new oneUser();
+        this.action = "Post" ;
+        this.user = new Employee();
         // this.user.profile = new UserProfile();
         // this.user.work = new UserWork();
         // this.user.contacts = new UserContacts();
@@ -102,7 +104,7 @@ handelEmpImgInput(file:FileList)
 is_active: Boolean ;
 is_delete: Boolean ;
 is_Employee: Boolean ;
-fillForm(curUser: oneUser){
+fillForm(curUser: Employee){
   // if (curUser.BUIActive == 'T') {this.is_active = true;}
   // else { this.is_active = false; }
   // ==========================================================
@@ -128,6 +130,7 @@ fillForm(curUser: oneUser){
   this.form.patchValue({
     id: curUser.id,
     username: curUser.username,
+    password: curUser.password,
     UserCode: curUser.UserCode,
 
       first_name: curUser.first_name,
@@ -156,10 +159,19 @@ fillForm(curUser: oneUser){
     }
   });
 }
-// ===============================================================
-// ============================================================================
-  close(): void {
-    this.dialogRef.close();
+// ==========================================================================
+public onSave(){
+  console.log("===***Press Save button***===") ;
+  if(this.form.valid){
+    // this.dialogRef.close(this.form.value);
+    this.dialogRef.close({event:this.action, data:this.form.value, empPic:this.CusImageToUpload});
   }
-
+}
+// ==========================================================================
+  close(): void {
+    this.action = "Cancel" ;
+    console.log("===***Press Close button***===") ;
+    this.dialogRef.close({event:this.action});
+  }
+// ==========================================================================
 }

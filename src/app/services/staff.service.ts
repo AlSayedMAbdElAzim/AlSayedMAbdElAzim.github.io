@@ -22,6 +22,7 @@ export class StaffService {
   getOneUserbyId(id:number): Observable<any>
   {
     return this._HttpClient.get(`${this.baseUrl}users/customemp/${id}`, this.globalServ.getAuthHeaders());
+    // return this._HttpClient.get(`${this.baseUrl}users/customemp/customEmpPerSpec/?id=${id}`, this.globalServ.getAuthHeaders());
   }
   // =========================================================================
   deleteOneUser(id:number):Observable<any>

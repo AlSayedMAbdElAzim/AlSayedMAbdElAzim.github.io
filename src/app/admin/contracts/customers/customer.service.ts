@@ -28,6 +28,10 @@ export class CustomerService {
   getOneCustomer(id: number): Observable<any> {
     return this._HttpClient.get<Customer>(this.baseUrl + this.secondPartUrl + 'contracts/customer/' + id  , this.globalServ.getAuthHeaders());
   }
+// =======================================================================
+getOneCustomerDocs(comId: number, periorty: number, id: number): Observable<any> {
+  return this._HttpClient.get<Customer>(this.baseUrl + this.secondPartUrl + 'contracts/customerdocs/CustomersDocsPerSpec?M='+comId+'&C='+periorty+'&customer=' + id  , this.globalServ.getAuthHeaders());
+}
   // =================add new customer====================== File
   addCustomer(newCus: Customer,fileToUploade: File,fileIDPicToUploade: File): Observable<Customer> {
  var URL=this.baseUrl + this.secondPartUrl + 'contracts/customer/';
@@ -92,7 +96,7 @@ formData.append('CUSNationalID',newCus.CUSNationalID);
  formData.append('RowDelete',newCus.RowDelete.toString());
 
  formData.append('CUSEmail',newCus.CUSEmail);
- 
+
  formData.append('CUSGender',newCus.CUSGender);
 
  if(newCus.current_building){
@@ -148,14 +152,14 @@ addOneCustomer(oneCustomer: Customer): Observable<any> {
         formData.append('CUSBirthDate',newRelCus.CUSBirthDate.toString()); }
       if(newRelCus.Related_CUSKeyField){
         formData.append('Related_CUSKeyField',newRelCus.Related_CUSKeyField.toString()); }
-      
+
         if(newRelCus.CUSNationalIDStartDate)
         { formData.append('CUSNationalIDStartDate',newRelCus.CUSNationalIDStartDate.toString()); }
         if(newRelCus.CUSNationalIDEndDate)
         { formData.append('CUSNationalIDEndDate',newRelCus.CUSNationalIDEndDate.toString()); }
         formData.append('CUSNationalIDType',newRelCus.CUSNationalIDType);
         formData.append('CUSNationalID',newRelCus.CUSNationalID);
-    
+
       formData.append('CUSGuarantor',newRelCus.CUSGuarantor);
       formData.append('CUSJobName',newRelCus.CUSJobName);
 
@@ -227,7 +231,7 @@ addOneCustomer(oneCustomer: Customer): Observable<any> {
 
     formData.append('CUSNationalIDType',oneCustomer.CUSNationalIDType);
     formData.append('CUSNationalID',oneCustomer.CUSNationalID);
-    
+
     formData.append('CUSGuarantor',oneCustomer.CUSGuarantor);
     formData.append('CUSJobName',oneCustomer.CUSJobName);
 
