@@ -125,6 +125,10 @@ isBigEnough(element, index, array) {
         settings: this.fb.group({
           isActive: null,
           isDeleted: null //,
+        }),
+        docs: this.fb.group({
+          docOnePic: null,
+          docPic: null
         })
       });
 // ===================================================
@@ -147,7 +151,18 @@ isBigEnough(element, index, array) {
     }
     // --------------------------
   }
-
+// ================================================================
+DocImageToUpload:File=null;
+defaultDocImage=new ApiConstant().noImage;
+// ================================================================
+onFileChange(file: FileList) {
+  this.DocImageToUpload=file.item(0);
+  var DOCImgreader=new FileReader();
+  DOCImgreader.onload=(event:any)=>{
+                                    this.defaultDocImage=event.target.result;
+                                  }
+  DOCImgreader.readAsDataURL(this.DocImageToUpload);
+}
 // ================================================================
 defaultCusImage=new ApiConstant().noImage;
 CusImageToUpload:File=null;
@@ -226,10 +241,22 @@ mapFormvalue_to_ContractClass()
 // ===============================================================
 getContractById(id:number)
 {
+  const images: any[] = [];
   this.contractService.getOneContract(id).subscribe( (oneContract:RentContract)=>
   {
-
-    this.fillForm(oneContract);
+    // ==============================================================================
+    this.contractService.getOneContractDocs(this.curCOMId, this.account.periorty, id)
+        .subscribe((docs:any)=> {
+          for (var onedoc of docs) {
+            let image = {
+              link: onedoc.RCDPic,
+              preview: onedoc.RCDPic
+            }
+            images.push(image);
+          }
+        })
+// =========================================================================  ===
+    this.fillForm(oneContract, images);
     this.contractForDisplay = oneContract;
   } )
 }
@@ -238,7 +265,7 @@ getContractById(id:number)
 is_active: Boolean ;
 is_delete: Boolean ;
 s_rcoDate: any;
-fillForm(contract: RentContract){
+fillForm(contract: RentContract, contDocs: any){
   if (contract.RCOActive == 'T') {this.is_active = true;}
   else { this.is_active = false; }
   // ==========================================================
@@ -247,7 +274,7 @@ fillForm(contract: RentContract){
   }
   // ==========================================================
   if (contract.build_KeyField != null){
-    this.getUnitsPerBuilding(this.curCOMId, this.account.periorty, contract.build_KeyField);
+    this.getUnitsPerBuilding(this.curCOMId, this.account.periorty, contract.build_KeyField, "");
   }
   // ==========================================================
   if (contract.owner_KeyField != null){
@@ -304,20 +331,126 @@ fillForm(contract: RentContract){
     settings: {
       isActive: this.is_active,
       isDeleted: this.is_delete
+    },
+    docs: {
+      docPic: contDocs
     }
   });
 }
 // ===============================================================
+async handleInstallment(res: any){
+  let noOfInstallment = 12 / res.RCOPayEveryMonthesNo ;
+  let monthsPeriod = res.RCOPayEveryMonthesNo ;
+  let installmentDate = res.RCOStartDate ;
+  let installmentValue = res.RCOMonthValue ;
+
+  for (let i = 0; i < noOfInstallment; i++) {
+    if(i == 0) {
+      var tempDate = new Date(installmentDate) ;
+    }
+    else{
+      const thatDate = new Date(installmentDate) ;
+      var tempDate = this.addMonths(thatDate, (i * monthsPeriod) ) ;
+    }
+    var lastDate = new Date(new DatePipe('en-GB').transform(tempDate, 'yyyy/MM/dd') ) ;
+    let dataToUpdate = {
+      contract_KeyField: res.id,
+      branch_KeyField: res.branch_KeyField,
+      owner_KeyField: res.owner_KeyField,
+      build_KeyField: res.build_KeyField,
+      unit_KeyField: res.unit_KeyField,
+      customer_KeyField: res.customer_KeyField,
+      INSCode: (i + 1),
+      INSContractTyps: "I",
+      INSStatus: "N",
+      INSValue: installmentValue
+      ,INSDueDate: lastDate
+    }
+
+    await this.insertInstallment(dataToUpdate) ;
+  }
+}
+// =============================================================
+insertInstallment(dataToUpdate: any){
+
+    this.contractService.addInstallments(dataToUpdate)
+        .subscribe(res=>{
+          // console.log("------Insert one Installment------");
+          // console.log(res) ;
+          // console.log("-----------------------------------");
+        });
+
+}
+// ===============================================================
 saveUpdate(rowId): void {
-  console.log("=============saveUpdate()===============") ;
   // ====SaveNew or Update لو عاوز أعمل حاجة هنا قبل طريق الحفظ====
   this.mapFormvalue_to_ContractClass();
   if (!rowId) {
     // ====في حالة إضافة سطر جديد====
-    console.log(this.contractForDisplay)
+    
   this.contractService.addContract(this.contractForDisplay).subscribe(
     res=>{
-      console.log("yes",res);
+      // ==================Handle Documents=====================
+      if (this.DocImageToUpload != null) {
+        this.contractService.addContractDocs(res.id, this.DocImageToUpload).subscribe( doc => {
+        } );
+      }
+      // ========================================================
+      // ==========Handle Customer Unit&Building================
+      this.contractService.updateCustomerUnitFromContract(res.customer_KeyField, res.build_KeyField, res.unit_KeyField).subscribe( customer => {
+        // console.log("==customer after Update:: "+ customer);
+      } );
+
+      // =======================================================
+      // =================Handle Units==========================editOneUnit
+      let unitData = {
+        id: res.unit_KeyField,
+        UNTHousingStatus: 'R'
+      }
+      this.unitsService.editOneUnit(unitData).subscribe( unit => {
+        // console.log("==unit after Update:: "+ unit);
+      } );
+      // =======================================================
+      // ==================Handle Installments==================
+      this.handleInstallment(res);
+      // =======================================================
+    // let noOfInstallment = 12 / res.RCOPayEveryMonthesNo ;
+    // let monthsPeriod = res.RCOPayEveryMonthesNo ;
+    // let installmentDate = res.RCOStartDate ;
+    // let installmentValue = res.RCOMonthValue ;
+
+    // for (let i = 0; i < noOfInstallment; i++) {
+    //   if(i == 0) {
+    //     var tempDate = new Date(installmentDate) ;
+    //   }
+    //   else{
+    //     const thatDate = new Date(installmentDate) ;
+    //     var tempDate = this.addMonths(thatDate, (i * monthsPeriod) ) ;
+    //     // thatDate.setMonth(thatDate.getMonth() + (monthsPeriod)  ) ;
+    //   }
+    //   var lastDate = new Date(new DatePipe('en-GB').transform(tempDate, 'yyyy/MM/dd') ) ;
+    //   let dataToUpdate = {
+    //     contract_KeyField: res.id,
+    //     branch_KeyField: res.branch_KeyField,
+    //     owner_KeyField: res.owner_KeyField,
+    //     build_KeyField: res.build_KeyField,
+    //     unit_KeyField: res.unit_KeyField,
+    //     customer_KeyField: res.customer_KeyField,
+    //     INSCode: (i + 1),
+    //     INSContractTyps: "I",
+    //     INSStatus: "N",
+    //     INSValue: installmentValue
+    //     ,INSDueDate: lastDate
+    //   }
+    //   this.contractService.addInstallments(dataToUpdate)
+    //     .subscribe(res=>{
+    //       // console.log("------Insert one Installment------");
+    //       // console.log(res) ;
+    //       // console.log("-----------------------------------");
+    //     });
+
+    // }
+    //   // =======================================================
       this.snackBar.open('تم إضافة العقد', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
       this.router.navigate(["contracts/contract-list"]);
     } ,
@@ -331,7 +464,26 @@ saveUpdate(rowId): void {
 
   this.contractService.editContract(this.contractForDisplay)
   .subscribe(res=>{
-    console.log("yes updated",res);
+    // ==================Handle Documents=====================
+    if (this.DocImageToUpload != null) {
+      this.contractService.addContractDocs(this.contractForDisplay.id, this.DocImageToUpload).subscribe( doc => {
+
+      } );
+    }
+    // =======================================================
+    // ==========Handle Customer Unit&Building================
+    this.contractService.updateCustomerUnitFromContract(this.contractForDisplay.customer_KeyField, this.contractForDisplay.build_KeyField, this.contractForDisplay.unit_KeyField).subscribe( customer => {
+
+    } );
+
+    // =======================================================
+    // ==Not here===Handle Installments=====when insert new Contract Only=====
+    // console.log("قيمة التعاقد:: "+ res.RCOContractValue);
+    // console.log("عدد الدفعات:: " + (12/res.RCOPayEveryMonthesNo) );
+    // console.log("قيمة القسط:: " + res.RCOMonthValue);
+    // console.log("تاريخ بداية العقد:: " + res.RCOStartDate);
+    // ===============================================================
+
     this.snackBar.open('تم تعديل بيانات العقد', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
     this.router.navigate(["contracts/contract-list"]);
   },
@@ -343,13 +495,49 @@ saveUpdate(rowId): void {
   }
 }
 // =========================================================
+
 // =========================================================
   close(): void {
     // ============Cancel عند الضغط على مفتاح===============
     // this.dialogRef.close();
   }
 // =============================================================
-// ====================================================
+// ================================================================
+addDays(date: Date, days: number): Date {
+  date.setDate(date.getDate() + days);
+  return date;
+}
+// ================================================================
+addMonths(date: Date, months: number): Date {
+  // console.log("---Function---before addMonths date:: "+ date);
+  // console.log("---Function---addMonths months:: "+ months);
+  date.setMonth(date.getMonth() + months);
+  // console.log("---Function---after addMonths date:: "+ date);
+  return date;
+}
+// ================================================================
+addMonths2(date, months) {
+  var d = date.getDate();
+  date.setMonth(date.getMonth() + +months);
+  if (date.getDate() != d) {
+    date.setDate(0);
+  }
+  return date;
+}
+// ===========Examples to use addMonthes2=============
+// // Add 12 months to 29 Feb 2016 -> 28 Feb 2017
+// console.log(this.addMonths2(new Date(2016,1,29),12).toString());
+
+// // Subtract 1 month from 1 Jan 2017 -> 1 Dec 2016
+// console.log(this.addMonths2(new Date(2017,0,1),-1).toString());
+
+// // Subtract 2 months from 31 Jan 2017 -> 30 Nov 2016
+// console.log(this.addMonths2(new Date(2017,0,31),-2).toString());
+
+// // Add 2 months to 31 Dec 2016 -> 28 Feb 2017
+// console.log(this.addMonths2(new Date(2016,11,31),2).toString());
+// ================================================================
+// =============================================================
 public compareFunction(o1: any, o2: any) {
   return (o1.username == o2.username && o1.code == o2.code);
 }
@@ -389,6 +577,33 @@ getOwnershipDocType(comId: number, periorty: number)
 //   }
 // }
 // // ===============================================================
+onChangeContractValue(event: any){
+  // console.log("=======onChangeContractValue========");
+  // console.log(event.target.value);
+  // console.log(this.form.value.contractValues.RCOPayEveryMonthesNo);
+  // console.log("====================================");
+  let contValue = event.target.value ;
+  let months = this.form.value.contractValues.RCOPayEveryMonthesNo ;
+  if (months == 0) {months=1 ;}
+  this.form.patchValue({
+    contractValues: {
+      RCOMonthValue: (contValue / (12/months) ) } }) ;
+}
+// ===================================================================
+onChangePayEvery(event: any){
+  // console.log("=======onChangePayEvery========");
+  // console.log(event.target.value);
+  // console.log(this.form.value.contractValues.RCOContractValue);
+  // console.log("====================================");
+  let contValue = this.form.value.contractValues.RCOContractValue ;
+  let months = event.target.value ;
+  if (months == 0) {months=1 ;}
+  this.form.patchValue({
+    contractValues: {
+      RCOMonthValue: (contValue / (12/months) ) } }) ;
+
+}
+// ====================================================================
 Countries=[]
 getCountries(comId: number, periorty: number)
 {
@@ -440,14 +655,14 @@ readBuilding(event){
     }
   );
 
-  this.getUnitsPerBuilding(this.curCOMId, this.account.periorty, event.value);
+  this.getUnitsPerBuilding(this.curCOMId, this.account.periorty, event.value, "E");
 
 }
 // ===============================================================
 AllUnitsForBuilding=[]
-getUnitsPerBuilding(comId: number, periorty: number, build: number)
+getUnitsPerBuilding(comId: number, periorty: number, build: number, empty: string)
 {
-  this.unitsService.getAllUnitsPerBuilding(comId, periorty, build).subscribe(
+  this.unitsService.getAllUnitsPerBuilding(comId, periorty, build, empty).subscribe(
     responseBuild => {
     this.AllUnitsForBuilding = responseBuild;
     },

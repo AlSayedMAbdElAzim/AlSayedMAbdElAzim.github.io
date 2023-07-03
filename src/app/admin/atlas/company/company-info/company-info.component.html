@@ -40,14 +40,15 @@
 <div class="p-2">
   <mat-card>
       <mat-card-header>
-          <mat-card-title>{{(curCOMId) ? 'Edit' : 'Add New'}} Company</mat-card-title>
+          <!-- <mat-card-title>{{(curCOMId) ? 'Edit' : 'Add New'}} Company</mat-card-title> -->
+          <mat-card-title><h1><span *ngIf="!curCOMId">{{ 'BTN.ADD' | translate }}</span><span *ngIf="curCOMId">{{ 'BTN.EDIT' | translate }}</span> {{ 'HTML.COMPANYDATA' | translate }}</h1></mat-card-title>
       </mat-card-header>
       <mat-card-content class="pt-3">
           <form [formGroup]="companyData_Form" (ngSubmit)="saveEditCompanyData()" autocomplete="off" fxLayout="row wrap">
               <div fxFlex="100" fxFlex.gt-sm="40" class="px-2">
                   <img width="200" height="150" id="campanyLogo" [src]="url" />
                   <div class="file-upload ">
-                      <label for="upload" class="d-block file-upload__label">Logo</label>
+                      <label for="upload" class="d-block file-upload__label">{{ 'HTML.Logo' | translate }}</label>
                       <input type="file" id="upload" class="file-upload__input" formControlName="COMLogo" name="COMLogo" (change)="handelFileInput($event.target.files)" accept="image/*">
                   </div>
               </div>
@@ -55,7 +56,7 @@
                   <div fxLayout="row wrap">
                       <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
                           <mat-form-field appearance="outline" class="w-100">
-                              <mat-label>Arabic Name</mat-label>
+                              <mat-label>{{ 'HTML.ArabicName' | translate }}</mat-label>
                               <input matInput formControlName="COMAraName" required>
                               <mat-error *ngIf="companyData_Form.controls.COMAraName.errors?.required">Arabic Name is required</mat-error>
                               <mat-error *ngIf="companyData_Form.controls.COMAraName.hasError('minlength')">Arabic Name isn't long enough, minimum of 4 characters</mat-error>
@@ -63,7 +64,7 @@
                       </div>
                       <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
                         <mat-form-field appearance="outline" class="w-100">
-                            <mat-label>English Name</mat-label>
+                            <mat-label>{{ 'HTML.EnglishName' | translate }}</mat-label>
                             <input matInput formControlName="COMEngName" required readonly>
                             <mat-error *ngIf="companyData_Form.controls.COMEngName.errors?.required">English Name is required</mat-error>
                             <mat-error *ngIf="companyData_Form.controls.COMEngName.hasError('minlength')">English Name isn't long enough, minimum of 4 characters</mat-error>
@@ -72,38 +73,38 @@
 
                       <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
                         <mat-form-field appearance="outline" class="w-100">
-                            <mat-label>Displayed Name</mat-label>
+                            <mat-label>{{ 'HTML.DisplayedName' | translate }}</mat-label>
                             <input matInput formControlName="COMDisplayedName">
                         </mat-form-field>
                       </div>
                       <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
                         <mat-form-field appearance="outline" class="w-100">
-                            <mat-label>Mobile</mat-label>
+                            <mat-label>{{ 'HTML.MOBILE' | translate }}</mat-label>
                             <input matInput formControlName="COMMobile">
                         </mat-form-field>
                       </div>
                       <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
                         <mat-form-field appearance="outline" class="w-100">
-                            <mat-label>Phone</mat-label>
+                            <mat-label>{{ 'HTML.WORK_PHONE' | translate }}</mat-label>
                             <input matInput formControlName="COMPhone">
                         </mat-form-field>
                       </div>
                       <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
                         <mat-form-field appearance="outline" class="w-100">
-                            <mat-label>Fax</mat-label>
+                            <mat-label>{{ 'HTML.Fax' | translate }}</mat-label>
                             <input matInput formControlName="COMFax">
                         </mat-form-field>
                       </div>
 
                       <div fxFlex="100" class="px-1">
                           <mat-form-field appearance="outline" class="w-100">
-                              <mat-label>Address</mat-label>
+                              <mat-label>{{ 'HTML.ADDRESS' | translate }}</mat-label>
                               <textarea matInput formControlName="COMAddress" rows="3"></textarea>
                           </mat-form-field>
                       </div>
 
                       <div fxFlex="100" class="mt-2 text-center w-100">
-                          <button mat-raised-button color="primary" type="submit">SUBMIT</button>
+                          <button mat-raised-button color="primary" type="submit">{{ 'BTN.SAVE' | translate }}</button>
                       </div>
                   </div>
               </div>

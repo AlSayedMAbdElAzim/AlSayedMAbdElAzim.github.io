@@ -11,6 +11,7 @@ import { UnitsService } from 'src/app/admin/units/units.service';
 import { GlobalService } from 'src/app/services/global.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LocalService } from 'src/app/services/local.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-building-list',
@@ -39,6 +40,7 @@ export class BuildingListComponent {
                 private router: Router,
                 private global: GlobalService,
                 private localStore: LocalService,
+                public translateService: TranslateService,
                 public snackBar: MatSnackBar){
         this.settings = this.appSettings.settings;
     }
@@ -50,7 +52,7 @@ export class BuildingListComponent {
         if (this.localStore.getItem('token') && this.localStore.getItem('account')) {
           this.global.me = JSON.parse(this.localStore.getItem('account'));
 
-          //this.prepareMsgLanguage() ;  //  for translation
+          this.prepareMsgLanguage() ;  //  for translation
           this.getBuildings();
 
 
@@ -66,7 +68,9 @@ export class BuildingListComponent {
     }
 // ===========================================================
 public removeBuild(tenId: number){
-  this.unitsService.deleteBuilding(tenId).subscribe(user => this.getBuildings());
+  if(confirm(this.askToDeletedMsg)) {
+    this.unitsService.deleteBuilding(tenId).subscribe(user => this.getBuildings());
+  }
 }
 // ===========================================================
 public featuresBuild(tenId: number){
@@ -87,6 +91,21 @@ public featuresBuild(tenId: number){
 gotoNewBuild(){
   this.router.navigate(["/units/building-add/"]);
 }
+// ====================================================================
+errorRetrieveMsg ;
+askToDeletedMsg ;
+deletedMsg ;
+prepareMsgLanguage(){
+  this.translateService.get('MESSAGE.RETRIEVE_ERROR', ).subscribe((res: string) => {
+    this.errorRetrieveMsg = res ;  });
+    this.translateService.get('MESSAGE.SURE_DELETE', ).subscribe((res: string) => {
+      this.askToDeletedMsg = res ;  });
+      this.translateService.get('MESSAGE.DELETED', ).subscribe((res: string) => {
+        this.deletedMsg = res ;  });
+
+}
+// ====================================================================
+
 // // ===================================================================
 //     public openTenantDialog(user: Tenant){
 //         let dialogRef = this.dialog.open(BuildingDialogComponent, {

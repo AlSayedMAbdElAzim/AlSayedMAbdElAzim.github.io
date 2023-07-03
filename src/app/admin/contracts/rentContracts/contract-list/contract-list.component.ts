@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 // import { MatDialog } from '@angular/material/dialog';
+
 import { AppSettings, Settings } from 'src/app/app.settings';
 // import { Units } from 'src/app/models/units' ;
 import { RentContract } from 'src/app/models/rentContract' ;
@@ -12,7 +13,8 @@ import { ContractsService } from 'src/app/admin/contracts/contracts.service' ;
 import { GlobalService } from 'src/app/services/global.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LocalService } from 'src/app/services/local.service';
-
+import { TranslateService } from '@ngx-translate/core';
+import { InstallmentComponent } from '../installment/installment.component';
 @Component({
   selector: 'app-contract-list',
   templateUrl: './contract-list.component.html',
@@ -39,6 +41,7 @@ export class ContractListComponent {
                 private router: Router,
                 private global: GlobalService,
                 private localStore: LocalService,
+                public translateService: TranslateService,
                 public snackBar: MatSnackBar){
         this.settings = this.appSettings.settings;
     }
@@ -50,7 +53,7 @@ export class ContractListComponent {
         if (this.localStore.getItem('token') && this.localStore.getItem('account')) {
           this.global.me = JSON.parse(this.localStore.getItem('account'));
 
-          //this.prepareMsgLanguage() ;  //  for translation
+          this.prepareMsgLanguage() ;  //  for translation
           this.getContracts();
 
 
@@ -66,9 +69,21 @@ export class ContractListComponent {
     }
 // ===========================================================
 public removeContract(contractId: number){
-  this.contractService.deleteContract(contractId).subscribe(user => this.getContracts());
+  if(confirm(this.askToDeletedMsg)) {
+    this.contractService.deleteContract(contractId).subscribe(user => this.getContracts());
+  }
 }
 // ===========================================================
+public contractInstallments(contractId: number){
+  // let dialogRef = this.dialog.open(InstallmentComponent, {
+  //   data: contractId
+  // });
+
+  // dialogRef.afterClosed().subscribe((result) => {
+  // });
+
+}
+// ===============================================================
     public onPageChanged(event){
         this.page = event;
         this.getContracts();
@@ -78,7 +93,20 @@ public removeContract(contractId: number){
 gotoNewContract(){
   this.router.navigate(["/contracts/contract-add/"]);
 }
+// ====================================================================
+errorRetrieveMsg ;
+askToDeletedMsg ;
+deletedMsg ;
+prepareMsgLanguage(){
+  this.translateService.get('MESSAGE.RETRIEVE_ERROR', ).subscribe((res: string) => {
+    this.errorRetrieveMsg = res ;  });
+    this.translateService.get('MESSAGE.SURE_DELETE', ).subscribe((res: string) => {
+      this.askToDeletedMsg = res ;  });
+      this.translateService.get('MESSAGE.DELETED', ).subscribe((res: string) => {
+        this.deletedMsg = res ;  });
 
+}
+// ====================================================================
 }
 
 // this.snackBar.open(this.deletedMsg, '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });

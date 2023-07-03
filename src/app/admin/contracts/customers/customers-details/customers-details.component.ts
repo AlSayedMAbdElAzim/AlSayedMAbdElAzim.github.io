@@ -67,11 +67,10 @@ export class CustomersDetailsComponent implements OnInit {
               public snackBar: MatSnackBar)
               {
                 // this.dateAdapter.setLocale('en-GB'); //dd/MM/yyyy
-               }
+              }
 
 // ===========================================================
   ngOnInit() {
-    console.log("=====**** ngOnInit.111 ****=======");
     this.userSUb = this.global.user.subscribe(
       me => { this.account = me; }
     );
@@ -126,6 +125,7 @@ export class CustomersDetailsComponent implements OnInit {
           isDeleted: null //,
         }),
         docs: this.fb.group({
+          docOnePic: null,
           docPic: null
         })
       });
@@ -150,6 +150,30 @@ export class CustomersDetailsComponent implements OnInit {
     // --------------------------
   }
 
+// ================================================================
+// myFiles:File [] = [];
+DocImageToUpload:File=null;
+defaultDocImage=new ApiConstant().noImage;
+// onFileChange(event:any) {
+//   console.log("===onFileChange length:: "+ event.target.files.length );
+//   for (var i = 0; i < event.target.files.length; i++) {
+//     console.log("=======i:: "+ i + " :: PicName:: "+ event.target.files[i] );
+//       this.myFiles.push(event.target.files[i]);
+//   }
+// }
+// ================================================================
+onFileChange(file: FileList) {
+    this.DocImageToUpload=file.item(0);
+    var DOCImgreader=new FileReader();
+    DOCImgreader.onload=(event:any)=>{
+                                      this.defaultDocImage=event.target.result;
+                                    }
+    DOCImgreader.readAsDataURL(this.DocImageToUpload);
+}
+// ========================================================
+onFileRemove(file: FileList) {
+  console.log("====On Remove:: " + file) 
+}
 // ================================================================
 defaultCusImage=new ApiConstant().noImage;
 CusImageToUpload:File=null;
@@ -180,21 +204,6 @@ handelIDImgInput(file:FileList)
   // this.form.patchValue({ image: this.IDImageToUpload })
 }
 // ===============================================================
-// handelCUSImgInput4(event:any) {
-//   const CUSImgreader = new FileReader();
-//   this.CusImageToUpload = event.target.files[0];
-//   this.form.patchValue({
-//     image: this.CusImageToUpload
-//   })
-//   if(!this.CusImageToUpload) return
-//   CUSImgreader.readAsDataURL(this.CusImageToUpload);
-
-//   CUSImgreader.onload = () => {
-//     this.defaultCusImage = CUSImgreader.result as string;
-
-//   };
-// }
-// // ===============================================================
 tenActive: String ;
 tenDeleted: number ;
 CUS:Customer;
@@ -208,6 +217,7 @@ CUS:Customer;
 // =================================================================
 mapFormvalue_to_CustomerClass()
 {
+
   // 'en-GB'  'en-US'
   const dateOfBirthDay = new DatePipe('en-GB').transform(this.form.value.profile.birthday, 'dd/MM/yyyy')
   const dateOfIDStartDate = new DatePipe('en-GB').transform(this.form.value.work.nationalIDStartDate, 'dd/MM/yyyy')
@@ -281,6 +291,7 @@ getTenantById(id:number)
   const images: any[] = [];
   this._CustomerService.getOneCustomer(id).subscribe((oneTenant:Customer)=>
   {
+    // ===================================================================================
         this._CustomerService.getOneCustomerDocs(this.curCOMId, this.account.periorty, id)
         .subscribe((docs:any)=> {
           for (var onedoc of docs) {
@@ -290,9 +301,9 @@ getTenantById(id:number)
             }
             images.push(image);
           }
-          //this.form.controls.docPic.setValue(images);
 
         })
+      // =======================================================================================
     this.fillForm(oneTenant, images);
     this.CUS=oneTenant;
     // this.govern(this.curCOMId,this.account.periorty)
@@ -379,9 +390,9 @@ fillForm(tent: Customer, tentDocs: any){
     }
   });
 }
-// ===============================================================
+// =======================================================
 saveUpdate(rowId): void {
-  console.log("=============saveUpdate()===============") ;
+  console.log("=============saveUpdate()===============") ; //
   // ====SaveNew or Update لو عاوز أعمل حاجة هنا قبل طريق الحفظ====
   this.mapFormvalue_to_CustomerClass();
   if (!rowId) {
@@ -389,7 +400,11 @@ saveUpdate(rowId): void {
     console.log(this.CUS)
   this._CustomerService.addCustomer(this.CUS,this.CusImageToUpload, this.IDImageToUpload).subscribe(
     res=>{
-     console.log("yes",res);
+      if (this.DocImageToUpload != null) {
+        this._CustomerService.addCustomerDocs(res.id, this.DocImageToUpload).subscribe( doc => {console.log("====yes from insert====",doc);} );
+      }
+
+
      this.snackBar.open('تم إضافة بيانات العميل', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
      this.router.navigate(["contracts/tenant-list"]);
     } ,
@@ -403,7 +418,9 @@ saveUpdate(rowId): void {
 
   this._CustomerService.editCustomer(this.CUS,this.CusImageToUpload, this.IDImageToUpload)
   .subscribe(res=>{
-    console.log("yes updated",res);
+    if (this.DocImageToUpload != null) {
+      this._CustomerService.addCustomerDocs(this.CUS.id, this.DocImageToUpload).subscribe( doc => {console.log("====yes from update====",doc);} );
+    }
     this.snackBar.open('تم تعديل بيانات العميل', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
     this.router.navigate(["contracts/tenant-list"]);
   },
@@ -463,7 +480,7 @@ getUnitsPerBuild(event){
 }
 // ====================================================================
 getAllUnits(comId: number, periorty: number, buildId: number) {
-  this.unitsService.getAllUnitsPerBuilding(comId, periorty, buildId).subscribe(
+  this.unitsService.getAllUnitsPerBuilding(comId, periorty, buildId,"").subscribe(
     responseCountries => {
     this.AllUnits = responseCountries;
     },

@@ -210,10 +210,22 @@
             </mat-tab>
 
             <mat-tab label="{{ 'HTML.TAB_DOCS' | translate }}" formGroupName="docs">
+
               <div fxFlex="100" fxFlex.gt-sm="100" class="px-2">
-                <p class="mt-1"><span class="uppercase fw-500">Gallery</span><span class="text-muted px-1">(max 8 images)</span></p>
-                <input-file formControlName="docPic" fileLimit="8" fileAccept="image/*"></input-file>
+                <!-- <p class="mt-1"><span class="uppercase fw-500">Gallery</span><span class="text-muted px-1">(max 8 images)</span></p> -->
+                <div class=" p-2 ">
+                  <img [src]="defaultDocImage" style="width: 150px;height:200px">
+                  <input hidden #fileInput formControlName="docOnePic" name="docOnePic" (change)="onFileChange($event.target.files)" id="uploadonedoc" class="user-img" type="file" accept="image/*">
+                  <button type="button" mat-raised-button (click)="fileInput.click()">{{ 'HTML.AddPic' | translate }}</button>
+                </div>
+                <mat-divider></mat-divider>
+                <input-file formControlName="docPic" fileAccept="image/*"></input-file>
               </div>
+              <!-- (change)="onFileChange($event)"  fileLimit="8" -->
+
+              <!-- <input formControlName="docPic" id="docPic" type="file" multiple
+                      class="form-control" (change)="onFileChange($event)"> -->
+
           </mat-tab>
         </mat-tab-group>
     </form>

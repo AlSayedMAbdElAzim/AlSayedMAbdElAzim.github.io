@@ -62,25 +62,16 @@ export class EmployeeListComponent implements OnInit {
             data: user
         });
         // dialogRef.afterClosed().subscribe((user: Employee) => {
-        //   console.log("=======dialogRef.afterClosed()=======");
         //     if (user) {
-        //       console.log("=====Display User before Update or Insert==");
-        //       console.log(user);
-        //       console.log("============================================");
         //         (user.id) ? this.updateUser(user) : this.addUser(user);
         //     }
         // });
         dialogRef.afterClosed().subscribe((result) => {
-
-          console.log("=======dialogRef.afterClosed()=======");
-          if(result.event == 'Cancel'){
-            console.log("=====Cancel Pressed=====");
-          }else if(result.event == 'Patch'){
-            console.log("=====Update Pressed=====");
+          if(result.event == 'Cancel'){            
+          }else if(result.event == 'Patch'){            
             this.mapFormvalue_to_EmpClass(result.data);
             this.updateUser(this.unitForDisplay, result.empPic) ;
-          }else if(result.event == 'Post'){
-            console.log("=====Insert Pressed=====");
+          }else if(result.event == 'Post'){            
             this.mapFormvalue_to_EmpClass(result.data);
             this.addUser(this.unitForDisplay, result.empPic) ;
           }

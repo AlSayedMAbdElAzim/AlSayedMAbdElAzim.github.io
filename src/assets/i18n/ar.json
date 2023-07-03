@@ -70,7 +70,10 @@
     "Contracts": "العقد",
     "AddContracts": "إضافة عقد",
     "ADD_TENANT": "إضافة مستأجر",
-    "EMPLOYEES": "الموظفين"
+    "EMPLOYEES": "الموظفين",
+    "Documents": "السندات",
+    "ReceivableDoc": "سند القبض",
+    "PayableDoc": "سند الصرف"
   },
   "BTN": {
     "ADD": "إضافة",
@@ -82,7 +85,8 @@
     "YES": "نعم",
     "NO": "لا",
     "OK": "موافق",
-    "EDIT": "تعديل"
+    "EDIT": "تعديل",
+    "INSTALLMENT": "الأقساط"
   },
   "MESSAGE": {
     "SURE_DELETE": "هل ترغب في إتمام عملية الحذف?",
@@ -155,7 +159,10 @@
     "NotFound": "لا يوجد",
     "ReNew": "مجدد",
     "Canceld": "ملغي",
-    "Finished": "انتهى"
+    "Finished": "انتهى",
+    "NotPayed": "لم يسدد",
+    "Payed": "مدفوع",
+    "PartialPayed": "مسدد جزء"
   },
   "HTML": {
     "SIGNIN": "تسجيل الدخول",
@@ -197,6 +204,8 @@
     "TAB_UnitDescription": "وصف الوحدة",
     "TAB_ContractUnit": "بيانات الوحدة",
     "TAB_ContractValues": "قيم العقد",
+    "TAB_DOCS": "المرفقات",
+    "AddPic": "إضافة صورة",
     "CODE": "الكود",
     "SUBCODE": "الكود الفرعي",
     "FIRST_NAME": "الاسم الأول",
@@ -219,10 +228,13 @@
     "END_DATE": "تاريخ النهاية",
     "HOME_PHONE": "هاتف المنزل",
     "WORK_PHONE": "هاتف العمل",
+    "Fax": "الفاكس",
     "TENANTS_LIST": "قائمة المستأجرين",
     "BUILDING_LIST": "قائمة العقارات",
     "UNIT_LIST": "قائمة الوحدات",
     "Contract_List": "قائمة العقود",
+    "ReceivableDoc_List": "سندات القبض",
+    "PayableDoc_List": "سندات الصرف",
     "BRANCH": "الفرع",
     "OWNER": "المالك",
     "OwnerRepresentative": "ممثل المالك",
@@ -295,6 +307,11 @@
     "ContractStatus": "حالة العقد",
     "ContractValue": "قيمة العقد السنوية",
     "PayEveryMonthesNo": "الدفع كل عدد أشهر",
+    "InstallmentValue": "قيمة القسط",
+    "DueDate": "تاريخ الاستحقاق",
+    "PayedDate": "تاريخ السداد",
+    "InstallmentStatus": "حالة القسط",
+    "PayedValue": "القيمة المسددة",
     "MonthValue": "القيمة الشهرية",
     "InsuranceValue": "قيمة التأمين",
     "SeekingValue": "قيمة السعي",
@@ -310,7 +327,24 @@
     "Profile": "الملف الشخصي",
     "Settings": "الإعدادات",
     "LockScreen": "شاشة الحماية",
-    "EMPLOYEE": "الموظف"
+    "EMPLOYEE": "الموظف",
+    "AddCode": "إضافة كود",
+    "AddInstallment": "إضافة قسط",
+    "IsDefaultValue": "قيمة إفتراضية",
+    "InstallmentData": "بيانات القسط",
+    "Notes": "ملاحظات",
+    "DocDate": "تاريخ السند",
+    "DocValue": "قيمة السند",
+    "DocPrintedNo": "الرقم المطبوع",
+    "DocSecondPart_ReceivableDoc": "اسم من قام بالسداد",
+    "DocSecondPart_PayableDoc": "اسم من قام بالاستلام",
+    "COMPANYDATA": "بيانات الشركة",
+    "ReceivableDoc": "سند القبض",
+    "PayableDoc": "سند الصرف",
+    "Logo": "الشعار",
+    "ArabicName": "الاسم العربي",
+    "EnglishName": "الاسم الانجليزي",
+    "DisplayedName": "اسم الشهرة"
   },
   "TS": {
     "COMPANYDATA": "بيانات الشركة"

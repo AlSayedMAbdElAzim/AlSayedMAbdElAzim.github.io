@@ -1,15 +1,16 @@
-<h1 mat-dialog-title>Application Codes</h1>
+<h1 mat-dialog-title>{{ 'ADMIN_NAV.SYSTEMCODES' | translate }}</h1>
 <form [formGroup]="form" (ngSubmit)="onSubmit()" autocomplete="off">
     <div mat-dialog-content>
         <div fxLayout="row wrap">
-            <div fxFlex="100">
+            <div fxFlex="100" fxFlex.gt-sm="49.8" class="px-1">
                 <mat-form-field appearance="outline" class="w-100">
                     <mat-label>{{ 'FIELD.NAME' | translate }}</mat-label>
                     <input matInput formControlName="CTTSubjectName" required>
                     <mat-error *ngIf="form.controls.CTTSubjectName.errors?.required">Arabic Name is required</mat-error>
                 </mat-form-field>
             </div>
-            <div fxFlex="100">
+            <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+            <div fxFlex="100" fxFlex.gt-sm="49.8" class="px-1">
                 <mat-form-field appearance="outline" class="w-100">
                     <mat-label>{{ 'HTML.PARENT' | translate }}</mat-label>
                     <mat-select formControlName="Parent_CTTKeyField" [disabled]="true">
@@ -21,7 +22,7 @@
 
                 </mat-form-field>
             </div>
-            <div fxFlex="100">
+            <div fxFlex="100" fxFlex.gt-sm="49.8" class="px-1">
               <mat-form-field appearance="outline" class="w-100">
                   <mat-label>{{ 'HTML.RELATED' | translate }}</mat-label>
                   <mat-select formControlName="Related_CTTKeyField">
@@ -32,8 +33,9 @@
                   </mat-select>
               </mat-form-field>
           </div>
+        </div>
             <div fxFlex="100" class="py-1">
-                <mat-checkbox formControlName="CTTIsDefaultValue" color="primary">Is Default Value</mat-checkbox>
+                <mat-checkbox formControlName="CTTIsDefaultValue" color="primary">{{ 'HTML.IsDefaultValue' | translate }}</mat-checkbox>
             </div>
         </div>
     </div>

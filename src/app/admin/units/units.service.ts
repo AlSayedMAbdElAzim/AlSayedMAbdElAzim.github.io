@@ -29,7 +29,7 @@ export class UnitsService {
   }
   // =================================================================
   getBuildingsPerBranch(comId: number, periorty: number, curbra: number): Observable<any> {
-    return this.http.get(this.baseUrl + this.secondPartUrl + 'units/building/buildingsPerSpec/?M='+comId+'&C='+periorty+'&branch='+curbra, this.globalServ.getAuthHeaders() );
+    return this.http.get(this.baseUrl + this.secondPartUrl + 'units/building/buildingsPerSpec/?M='+comId+'&C='+periorty+'&active=T&branch='+curbra, this.globalServ.getAuthHeaders() );
   }
   // =================================================================
   getAllUnits(comId: number, periorty: number): Observable<any> {
@@ -48,11 +48,18 @@ export class UnitsService {
     return this.http.delete<void>(this.baseUrl + this.secondPartUrl + 'units/unit/' + id , this.globalServ.getAuthHeaders());
   }
 // ===========================================================================
-  getAllUnitsPerBuilding(comId: number, periorty: number, buidId: number): Observable<any> {
-    return this.http.get(this.baseUrl + this.secondPartUrl + 'units/unit/unitsPerSpec/?M='+comId+'&C='+periorty+'&building='+buidId, this.globalServ.getAuthHeaders() );
+  getAllUnitsPerBuilding(comId: number, periorty: number, buidId: number, empty: string): Observable<any> {
+    let emptyArguments = "" ;
+    if (empty == "E"){ emptyArguments = "&active=T&housingStatus=E" ; }
+    return this.http.get(this.baseUrl + this.secondPartUrl + 'units/unit/unitsPerSpec/?M='+comId+'&C='+periorty+emptyArguments+'&building='+buidId, this.globalServ.getAuthHeaders() );
 
   }
-  // =================================================================
+// =================================================================
+// getAllUnitsPerBuilding_ActiveEmpty(comId: number, periorty: number, buidId: number): Observable<any> {
+//   return this.http.get(this.baseUrl + this.secondPartUrl + 'units/unit/unitsPerSpec/?M='+comId+'&C='+periorty+'&active=T&housingStatus=E&building='+buidId, this.globalServ.getAuthHeaders() );
+
+// }
+// =================================================================
     // =================add new Building===============================
     addBuild(newBuild: Building,fileToUploade: File ): Observable<Building> {
       var URL=this.baseUrl + this.secondPartUrl + 'units/building/';
@@ -377,6 +384,14 @@ export class UnitsService {
       
       }
      // ========================================================================
+     // ========================================================================== 
+  editOneUnit(unitData: any ): Observable<any> {
+    var id = unitData.id;
+    var URL=this.baseUrl + this.secondPartUrl + 'units/unit/'+ id + "/";
+    
+    return this.http.patch<any>(URL, unitData, this.globalServ.getAuthHeaders_for_files())
+  }
+  // ===========================================================================
 
 
 }

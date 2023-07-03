@@ -23,6 +23,10 @@ export class PaymentsService {
     return this.http.get(this.baseUrl + this.secondPartUrl + 'contracts/paydoc/PayDocsPerSpec/?type=R&M='+comId+'&C='+periorty, this.globalServ.getAuthHeaders() );
   }
   // ================================================================
+  getAllPayableDocuments(comId: number, periorty: number): Observable<any> {
+    return this.http.get(this.baseUrl + this.secondPartUrl + 'contracts/paydoc/PayDocsPerSpec/?type=P&M='+comId+'&C='+periorty, this.globalServ.getAuthHeaders() );
+  }
+  // ================================================================
   deleteDocument(id: number): Observable<void> {
     return this.http.delete<void>(this.baseUrl + this.secondPartUrl + 'contracts/paydoc/' + id , this.globalServ.getAuthHeaders());
   }

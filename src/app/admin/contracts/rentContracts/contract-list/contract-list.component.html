@@ -58,6 +58,8 @@
             <div class="p-2 actions">
                 <a [routerLink]="['/contracts/contract-add/', oneContract.id]" mat-mini-fab color="primary" matTooltip="{{ 'BTN.EDIT' | translate }}"><mat-icon>edit</mat-icon></a>
                 <button mat-mini-fab color="warn" matTooltip="{{ 'BTN.REMOVE' | translate }}" (click)="removeContract(oneContract.id)"><mat-icon>delete</mat-icon></button>
+                <!-- <button mat-mini-fab color="warn" matTooltip="{{ 'BTN.INSTALLMENT' | translate }}" (click)="contractInstallments(oneContract.id)"><mat-icon>assignment</mat-icon></button> -->
+                <a [routerLink]="['/contracts/installment-list/', oneContract.id]" mat-mini-fab color="primary" matTooltip="{{ 'BTN.INSTALLMENT' | translate }}"><mat-icon>receipt</mat-icon></a>
             </div>
         </div>
     </div>

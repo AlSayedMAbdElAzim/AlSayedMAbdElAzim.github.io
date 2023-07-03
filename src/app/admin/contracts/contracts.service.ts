@@ -4,7 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GlobalService } from 'src/app/services/global.service';
 import { ApiConstant } from 'src/app/constants/api-constant';
 import { environment } from 'src/environments/environment';
-import { RentContract } from 'src/app/models/rentContract'
+import { RentContract } from 'src/app/models/rentContract';
+import { ContractDocs } from 'src/app/models/rentContractsDocs';
 
 @Injectable({
   providedIn: 'root'
@@ -31,13 +32,27 @@ export class ContractsService {
   getOneContract(id: number): Observable<RentContract> {
     return this.http.get<RentContract>(this.baseUrl + this.secondPartUrl + 'contracts/contract/' + id  , this.globalServ.getAuthHeaders());
   }
+  // =======================================================================
+  getOneContractDocs(comId: number, periorty: number, id: number): Observable<any> {
+    return this.http.get<ContractDocs>(this.baseUrl + this.secondPartUrl + 'contracts/contractdocs/ContractDocsPerSpec?M='+comId+'&C='+periorty+'&rcontract=' + id  , this.globalServ.getAuthHeaders());
+  }
   // ================================================================
   deleteContract(id: number): Observable<void> {
     return this.http.delete<void>(this.baseUrl + this.secondPartUrl + 'contracts/contract/' + id , this.globalServ.getAuthHeaders());
   }
+  // =======================add Contract Docs=================
+addContractDocs(contractId: number, docs: File ): Observable<ContractDocs> {
+  var URL=this.baseUrl + this.secondPartUrl + 'contracts/contractdocs/';
+  const formData:FormData=new FormData();
+  
+  if(docs!==null){ formData.append('RCDPic',docs); }
+  if(contractId !== null) { formData.append('contract_KeyField',contractId.toString()); }
+
+  return this.http.post<ContractDocs>(URL, formData, this.globalServ.getAuthHeaders_for_files())
+}
 // ===========================================================================
     // =================add new Contracts===============================
-    addContract(contract: RentContract ): Observable<RentContract> {
+    addContract(contract: any ): Observable<any> {
       var URL=this.baseUrl + this.secondPartUrl + 'contracts/contract/';
       const formData:FormData=new FormData();
       
@@ -95,11 +110,11 @@ export class ContractsService {
       formData.append('RCOActive',contract.RCOActive.toString() );
       formData.append('RowDelete',contract.RowDelete.toString());
       
-      return this.http.post<RentContract>(URL, formData, this.globalServ.getAuthHeaders_for_files())
+      return this.http.post<any>(URL, formData, this.globalServ.getAuthHeaders_for_files())
       }
      // ========================================================================
   // =================add new Contracts===============================
-  editContract(contract: RentContract ): Observable<RentContract> {
+  editContract(contract: any ): Observable<any> {
     var id = contract.id;
     var URL=this.baseUrl + this.secondPartUrl + 'contracts/contract/'+ id + "/";
     const formData:FormData=new FormData();
@@ -158,8 +173,136 @@ export class ContractsService {
     formData.append('RCOActive',contract.RCOActive.toString() );
     formData.append('RowDelete',contract.RowDelete.toString());
     
-    return this.http.put<RentContract>(URL, formData, this.globalServ.getAuthHeaders_for_files())
+    return this.http.put<any>(URL, formData, this.globalServ.getAuthHeaders_for_files())
     
     }
    // ========================================================================
+  getInstallmentsPerContract(comId: number, periorty: number, id: number): Observable<any> {
+    return this.http.get(this.baseUrl + this.secondPartUrl + 'contracts/installment/InstallmentPerSpec/?M='+comId+'&C='+periorty+'&contract='+id, this.globalServ.getAuthHeaders() );
+  }
+  // ================================================================
+  getInstallmentsPerCustomer_Payed(comId: number, periorty: number, customerId: number, payedStatue: string): Observable<any> {
+    return this.http.get(this.baseUrl + this.secondPartUrl + 'contracts/installment/InstallmentPerSpec/?M='+comId+'&C='+periorty+'&payed='+payedStatue+'&customer='+customerId, this.globalServ.getAuthHeaders() );
+  }
+  // ===============================================================================
+  getInstallmentsPerCustomer_All(comId: number, periorty: number, id: number): Observable<any> {
+    return this.http.get(this.baseUrl + this.secondPartUrl + 'contracts/installment/InstallmentPerSpec/?M='+comId+'&C='+periorty+'&customer='+id, this.globalServ.getAuthHeaders() );
+  }
+  // ===============================================================================
+  getOneInstallment(id: number): Observable<void> {
+    return this.http.get<void>(this.baseUrl + this.secondPartUrl + 'contracts/installment/' + id , this.globalServ.getAuthHeaders());
+  }
+  // ===============================================================================
+  deleteInstallment(id: number): Observable<void> {
+    return this.http.delete<void>(this.baseUrl + this.secondPartUrl + 'contracts/installment/' + id , this.globalServ.getAuthHeaders());
+  }
+  // ========================================================================== 
+  addInstallments(installmentData: any ): Observable<any> {
+    var URL=this.baseUrl + this.secondPartUrl + 'contracts/installment/';
+    // const formData:FormData=new FormData();
+
+    return this.http.post<any>(URL, installmentData, this.globalServ.getAuthHeaders_for_files())
+  }
+  // ===========================================================================
+  // =================add new Installment===============================
+  addOneInstallment(insta: any ): Observable<any> {
+    var URL=this.baseUrl + this.secondPartUrl + 'contracts/installment/';
+    const formData:FormData=new FormData();
+
+    if(insta.contract_KeyField)
+      { formData.append('contract_KeyField',insta.contract_KeyField.toString()); }
+    if(insta.branch_KeyField)
+      { formData.append('branch_KeyField',insta.branch_KeyField.toString()); }
+    if(insta.owner_KeyField)
+      { formData.append('owner_KeyField',insta.owner_KeyField.toString()); }
+    if(insta.build_KeyField)
+      { formData.append('build_KeyField',insta.build_KeyField.toString()); }
+    if(insta.unit_KeyField)
+      { formData.append('unit_KeyField',insta.unit_KeyField.toString()); }
+    if(insta.customer_KeyField)
+      { formData.append('customer_KeyField',insta.customer_KeyField.toString()); }
+
+
+    if(insta.INSCode)
+      { formData.append('INSCode',insta.INSCode.toString()); }
+    if(insta.INSValue)
+      { formData.append('INSValue',insta.INSValue.toString()); }
+    if(insta.INSPayedValue)
+      { formData.append('INSPayedValue',insta.INSPayedValue.toString()); }
+
+    formData.append('INSContractTyps',insta.INSContractTyps);
+    formData.append('INSStatus',insta.INSStatus);
+    formData.append('INSPersonPayName',insta.INSPersonPayName);
+    formData.append('INSNotes',insta.INSNotes);
+
+    formData.append('RowDelete',insta.RowDelete.toString());
+    formData.append('RowConfirm',insta.RowConfirm.toString());
+    formData.append('RowStatus',insta.RowStatus.toString());
+      
+    return this.http.post<any>(URL, formData, this.globalServ.getAuthHeaders_for_files())
+
+  }
+  // ============================================================================
+  // ========================================================================== 
+  editInstallments(installmentData: any ): Observable<any> {
+    var id = installmentData.id;
+    var URL=this.baseUrl + this.secondPartUrl + 'contracts/installment/'+ id + "/";
+    
+    return this.http.patch<any>(URL, installmentData, this.globalServ.getAuthHeaders_for_files())
+  }
+  // ===========================================================================
+  // =================add new Installment===============================
+  editOneInstallment(insta: any ): Observable<any> {
+    var id = insta.id;
+    var URL=this.baseUrl + this.secondPartUrl + 'contracts/installment/'+ id + "/";
+console.log("---editOneInstallment URL:: "+ URL);
+    const formData:FormData=new FormData();
+
+    if(insta.INSDueDate)
+      { formData.append('INSDueDate',insta.INSDueDate.toString()); }
+    if(insta.INSPayDate)
+      { formData.append('INSPayDate',insta.INSPayDate.toString()); }
+
+    if(insta.contract_KeyField)
+      { formData.append('contract_KeyField',insta.contract_KeyField.toString()); }
+    if(insta.branch_KeyField)
+      { formData.append('branch_KeyField',insta.branch_KeyField.toString()); }
+    if(insta.owner_KeyField)
+      { formData.append('owner_KeyField',insta.owner_KeyField.toString()); }
+    if(insta.build_KeyField)
+      { formData.append('build_KeyField',insta.build_KeyField.toString()); }
+    if(insta.unit_KeyField)
+      { formData.append('unit_KeyField',insta.unit_KeyField.toString()); }
+    if(insta.customer_KeyField)
+      { formData.append('customer_KeyField',insta.customer_KeyField.toString()); }
+
+
+    if(insta.INSCode)
+      { formData.append('INSCode',insta.INSCode.toString()); }
+    if(insta.INSValue)
+      { formData.append('INSValue',insta.INSValue.toString()); }
+    if(insta.INSPayedValue)
+      { formData.append('INSPayedValue',insta.INSPayedValue.toString()); }
+
+    formData.append('INSContractTyps',insta.INSContractTyps);
+    formData.append('INSStatus',insta.INSStatus);
+    formData.append('INSPersonPayName',insta.INSPersonPayName);
+    formData.append('INSNotes',insta.INSNotes);
+
+    formData.append('RowDelete',insta.RowDelete.toString());
+    formData.append('RowConfirm',insta.RowConfirm.toString());
+    formData.append('RowStatus',insta.RowStatus.toString());
+      
+    return this.http.put<any>(URL, formData, this.globalServ.getAuthHeaders_for_files())
+
+  }
+  // ============================================================================
+  updateCustomerUnitFromContract(customerId: number, current_building: number, unitID: number): Observable<any> {
+    let dataToUpdate = {
+      current_building: current_building,
+      current_unit: unitID
+    }
+    return this.http.patch<any>(this.baseUrl + this.secondPartUrl + 'contracts/customer/' + customerId + "/", dataToUpdate , this.globalServ.getAuthHeaders_for_files());
+  }
+  // ============================================================================
 }

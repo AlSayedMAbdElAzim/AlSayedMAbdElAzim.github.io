@@ -1,0 +1,45 @@
+<div class="p-2">
+  <mat-card>
+    <div fxLayout="row wrap" fxLayoutAlign="space-between center" class="w-100 p-3">
+          <h2>{{ 'BTN.INSTALLMENT' | translate }}</h2>
+          <button mat-raised-button color="primary" (click)="openCategoryDialog(null)">{{ 'HTML.AddInstallment' | translate }}</button>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="mat-mdc-table admin-table">
+          <div class="mat-mdc-header-row">
+              <div class="mat-mdc-header-cell"><h2> {{ 'HTML.CODE' | translate }} </h2></div>
+              <div class="mat-mdc-header-cell"><h2> {{ 'HTML.InstallmentValue' | translate }} </h2></div>
+              <div class="mat-mdc-header-cell"><h2> {{ 'HTML.DueDate' | translate }} </h2></div>
+              <div class="mat-mdc-header-cell"><h2> {{ 'HTML.InstallmentStatus' | translate }} </h2></div>
+              <div class="mat-mdc-header-cell"><h2> {{ 'HTML.PayedValue' | translate }} </h2></div>
+              <div class="mat-mdc-header-cell"></div>
+          </div>
+          <div *ngFor="let cat of contractInstallmentsArray | paginate: { itemsPerPage: count, currentPage: page }" class="mat-mdc-row">
+              <div class="mat-mdc-cell">{{cat.INSCode}}</div>
+              <div class="mat-mdc-cell">{{cat.INSValue}}</div>
+              <div class="mat-mdc-cell">{{cat.INSDueDate | date : 'yyyy-MM-dd'}}</div>
+              <div class="mat-mdc-cell">{{cat.INSStatusDisplay}}</div>
+              <div class="mat-mdc-cell">{{cat.INSPayedValue}}</div>
+              <div class="mat-mdc-cell">
+                  <div class="p-2 actions">
+                      <button mat-mini-fab color="primary" matTooltip="{{ 'BTN.EDIT' | translate }}" (click)="openCategoryDialog(cat)">
+                          <mat-icon>edit</mat-icon>
+                      </button>
+                      <button mat-mini-fab color="warn" matTooltip="{{ 'BTN.REMOVE' | translate }}" class="mx-1" (click)="remove(cat.id)">
+                          <mat-icon>delete</mat-icon>
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </mat-card>
+
+  <div *ngIf="contractInstallmentsArray.length > 0" fxLayout="row wrap">
+      <div fxFlex="100">
+          <mat-card class="p-0 text-center">
+              <pagination-controls class="product-pagination" autoHide="true" maxSize="5" (pageChange)="onPageChanged($event)"></pagination-controls>
+          </mat-card>
+      </div>
+  </div>
+</div>
+

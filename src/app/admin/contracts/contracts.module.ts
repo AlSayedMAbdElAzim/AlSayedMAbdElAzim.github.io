@@ -16,6 +16,8 @@ import { CustomersDetailsComponent } from 'src/app/admin/contracts/customers/cus
 
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { InputFileModule } from 'ngx-input-file-uploader';
+import { InstallmentComponent } from './rentContracts/installment/installment.component';
+import { InstallmentDialogComponent } from './rentContracts/installment-dialog/installment-dialog.component';
 
 
 // import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -43,7 +45,9 @@ export const routes: Routes = [
 
   { path: 'contract-list', component: ContractListComponent, data: { breadcrumb: 'Rent Contracts' } },
   { path: 'contract-add/:id', component: ContractDialogComponent, data: { breadcrumb: 'Edit Contract' } },
-  { path: 'contract-add', component: ContractDialogComponent, data: { breadcrumb: 'Add Contract' } }
+  { path: 'contract-add', component: ContractDialogComponent, data: { breadcrumb: 'Add Contract' } },
+
+  { path: 'installment-list/:id', component: InstallmentComponent, data: { breadcrumb: 'Contract Installments' } }
 
 ];
 
@@ -53,7 +57,9 @@ export const routes: Routes = [
     CustomersDialogComponent,
     CustomersDetailsComponent,
     ContractListComponent,
-    ContractDialogComponent
+    ContractDialogComponent,
+    InstallmentComponent,
+    InstallmentDialogComponent
   ],
   imports: [
     HttpClientModule,

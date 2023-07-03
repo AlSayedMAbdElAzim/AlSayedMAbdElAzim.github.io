@@ -15,19 +15,19 @@ import { ActivatedRoute } from '@angular/router';
 
 import { PaymentsService } from 'src/app/admin/payments/payments.service' ;
 import { CustomerService } from 'src/app/admin/contracts/customers/customer.service' ;
-import { ContractsService } from 'src/app/admin/contracts/contracts.service';
+// import { ContractsService } from 'src/app/admin/contracts/contracts.service';
 import { PayDocument } from 'src/app/models/paymentDocument' ;
 import { DatePipe } from '@angular/common';
 
 import { TranslateService } from '@ngx-translate/core';
 
-@Component({
-  selector: 'app-receivable-doc-dialog',
-  templateUrl: './receivable-doc-dialog.component.html',
-  styleUrls: ['./receivable-doc-dialog.component.scss']
-})
-export class ReceivableDocDialogComponent {
 
+@Component({
+  selector: 'app-payable-doc-dialog',
+  templateUrl: './payable-doc-dialog.component.html',
+  styleUrls: ['./payable-doc-dialog.component.scss']
+})
+export class PayableDocDialogComponent {
 
   curCOMId: number = environment.comid;
   account: User = new User();
@@ -45,7 +45,7 @@ export class ReceivableDocDialogComponent {
               public snackBar: MatSnackBar,
               public docsService:PaymentsService,
               public tenantsService:CustomerService,
-              private contractService: ContractsService,
+              // private contractService: ContractsService,
               public translateService: TranslateService,
               private fb:FormBuilder) {
 
@@ -77,8 +77,8 @@ payDocForDisplay: PayDocument;
       PDOCode: null,
       PDOValue: {value:null, disabled: this.id},
       PDODocDate: null,
-      PDODocType: "R",
-      PDODocClassType: "A",
+      PDODocType: "P",
+      PDODocClassType: "H",
       PDOPrintedCode: null,
       PDODocSecondPerson: null,
       PDONotes: null,
@@ -146,62 +146,13 @@ readCustumer(event){
   // console.log("====Selected readCustumer:: " + event.value) ;
   this.tenantsService.getOneCustomer(event.value).subscribe
       (tenant => {
-        console.log("==tenantName:: "+ tenant['CUSName']);
+        // console.log("==tenantName:: "+ tenant['CUSName']);
         this.docData_Form.patchValue({
           PDODocSecondPerson: tenant['CUSName']
-         });
+        });
       }  );
-  this.getCustomerInstallmentsNotPayed(this.curCOMId, this.account.periorty, event.value);
 }
 // ===============================================================
-curOwnerId ;
-curContract;
-curBranch;
-curBuild;
-curUnit;
-curInstallment;
-curDocValue = 0.0;
-curDocPayedValue = 0.0;
-// ===============================================================
-AllNotPayedInstallments=[]
-getCustomerInstallmentsNotPayed(comId: number, periorty: number, customer: number)
-{
-  this.contractService.getInstallmentsPerCustomer_Payed(comId, periorty, customer,"F").subscribe(
-    responseInstallments => {
-      
-    this.AllNotPayedInstallments = responseInstallments;
-    //===get value from first Row put it in field DocValue===
-    this.curOwnerId = responseInstallments[0]['owner_KeyField'] ;
-    this.curContract = responseInstallments[0]['contract_KeyField'] ;
-    this.curBranch = responseInstallments[0]['branch_KeyField'] ;
-    this.curBuild = responseInstallments[0]['build_KeyField'] ;
-    this.curUnit = responseInstallments[0]['unit_KeyField'] ;
-    this.curInstallment = responseInstallments[0]['id'] ;
-    // '', ''
-    this.curDocValue = responseInstallments[0]['INSValue'] ;
-    this.curDocPayedValue = responseInstallments[0]['INSPayedValue'] ;
-    if(this.curDocValue == null) {this.curDocValue = 0.0 ;}
-    if(this.curDocPayedValue == null) {this.curDocPayedValue = 0.0 ;}
-    
-    this.docData_Form.patchValue({      
-      contract_KeyField: this.curContract ,
-      branch_KeyField: this.curBranch ,
-      build_KeyField: this.curBuild ,
-      unit_KeyField: this.curUnit ,
-      owner_KeyField: this.curOwnerId ,
-      installment_KeyField: this.curInstallment ,
-      PDOValue: ( this.curDocValue - this.curDocPayedValue )
-    }) ;
-
-
-    },
-    error => {
-      this.snackBar.open('خطأ في استرجاع الأقساط', '×', { panelClass: 'error', verticalPosition: 'top', duration: 3000 });
-    }
-  );
-}
-// =========================================================
-// ==========================================================
   AllTenants=[]
   public getTenants(): void {
     this.AllTenants = null;
@@ -233,49 +184,15 @@ mappingFormValue_ToPayDocClass()
   this.payDocForDisplay.PDONotes=this.docData_Form.value.PDONotes;
 }
 // =================================================================================
-insStatus ;
-manageInstallmetPayedValue(installmentId: number, installmentValue: number, installmentPayedValue: number, docPayedValue: number, curPayDocDate: any){
-  if(installmentPayedValue == null){installmentPayedValue = 0.0}
-  if(docPayedValue == null){docPayedValue = 0.0}
-  if(installmentValue == null){installmentValue = 0.0}
-  let totalPayed = +installmentPayedValue + +docPayedValue ;
-
-  // console.log("===installmentPayedValue:: "+ installmentPayedValue);
-  // console.log("===docPayedValue:: "+ docPayedValue);
-  // console.log("===totalPayed:: "+ totalPayed);
-
-  if ( (totalPayed) < installmentValue ){ this.insStatus = 'T' ;}
-  else { this.insStatus = 'P' ;}
-
-  let installData = {
-    id: installmentId,
-    INSStatus: this.insStatus,
-    INSPayedValue: totalPayed,
-    INSPayDate: curPayDocDate,
-    INSPersonPayName: this.payDocForDisplay.PDODocSecondPerson
-  }
-  console.log("===installData:: " + installData );
-  this.contractService.editInstallments(installData).subscribe( installment => {
-    console.log("==installment after Update:: "+ installment);
-  },
-  error=>{
-    console.log(error);
-  }
-   );
-}
-// =================================================================================
 saveEditDocData(rowId)
 {
-  const curPayDocDate2 = new DatePipe('en-GB').transform(this.docData_Form.value.PDODocDate, 'dd/MM/yyyy')
-this.mappingFormValue_ToPayDocClass();
+  this.mappingFormValue_ToPayDocClass();
   if (!rowId) {
     // ====في حالة إضافة سطر جديد====
   this.docsService.addDoc(this.payDocForDisplay).subscribe(
     res=>{
-      console.log("----Will Call manageInstallmetPayedValue") ;
-      this.manageInstallmetPayedValue(this.curInstallment, this.curDocValue, this.curDocPayedValue, this.payDocForDisplay.PDOValue, curPayDocDate2) ;
     this.snackBar.open('تم إضافة بيانات المستند', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
-    this.router.navigate(["payments/receivable-list"]);
+    this.router.navigate(["payments/payable-list"]);
     } ,
     error=>{
       this.snackBar.open(' خطأ في اضافه مستند', '×', { panelClass: 'error', verticalPosition: 'top', duration: 3000 });
@@ -288,7 +205,7 @@ this.mappingFormValue_ToPayDocClass();
   this.docsService.editDoc(this.payDocForDisplay)
   .subscribe(res=>{
     this.snackBar.open('تم تعديل بيانات المستند', '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
-    this.router.navigate(["payments/receivable-list"]);
+    this.router.navigate(["payments/payable-list"]);
   },
   error=>{
     this.snackBar.open(' خطأ في تعديل بيانات مستند', '×', { panelClass: 'error', verticalPosition: 'top', duration: 3000 });

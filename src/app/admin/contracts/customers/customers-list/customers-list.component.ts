@@ -18,6 +18,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { LocalService } from 'src/app/services/local.service';
 import { ApiConstant } from 'src/app/constants/api-constant';
 import { DatePipe } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-customers-list',
@@ -47,6 +48,7 @@ export class CustomersListComponent implements OnInit {
                 private global: GlobalService,
                 private localStore: LocalService,
                 public snackBar: MatSnackBar,
+                public translateService: TranslateService,
                 private datePipe: DatePipe){
         this.settings = this.appSettings.settings;
     }
@@ -72,7 +74,7 @@ CUSImgreader.readAsDataURL(this.CusImageToUpload);
         if (this.localStore.getItem('token') && this.localStore.getItem('account')) {
           this.global.me = JSON.parse(this.localStore.getItem('account'));
 
-          //this.prepareMsgLanguage() ;  //  for translation
+          this.prepareMsgLanguage() ;  //  for translation
           this.getTenants();
 
 
@@ -102,11 +104,15 @@ CUSImgreader.readAsDataURL(this.CusImageToUpload);
     }
 // =================================================================
     public deleteTenant(user:Customer){
-       this.usersService.deleteCustomer(user.id).subscribe(user => this.getTenants());
+      if(confirm(this.askToDeletedMsg)) {
+        this.usersService.deleteCustomer(user.id).subscribe(user => this.getTenants());
+      }
     }
 // ===========================================================
 public removeTenant(tenId: number){
-  this.usersService.deleteCustomer(tenId).subscribe(user => this.getTenants());
+  if(confirm(this.askToDeletedMsg)) {
+    this.usersService.deleteCustomer(tenId).subscribe(user => this.getTenants());
+  }
 }
 // ===========================================================
     public onPageChanged(event){
@@ -184,7 +190,20 @@ gotoNewTenant(){
       this.curTenant.CUSFirstName = user.firstname ;
       this.curTenant.CUSLastName = user.lastname ;
     }
+// ====================================================================
+errorRetrieveMsg ;
+askToDeletedMsg ;
+deletedMsg ;
+prepareMsgLanguage(){
+  this.translateService.get('MESSAGE.RETRIEVE_ERROR', ).subscribe((res: string) => {
+    this.errorRetrieveMsg = res ;  });
+    this.translateService.get('MESSAGE.SURE_DELETE', ).subscribe((res: string) => {
+      this.askToDeletedMsg = res ;  });
+      this.translateService.get('MESSAGE.DELETED', ).subscribe((res: string) => {
+        this.deletedMsg = res ;  });
 
+}
+// ====================================================================
 
 }
 

@@ -1,5 +1,9 @@
 <h1 mat-dialog-title><span *ngIf="!contractForDisplay.id">{{ 'BTN.ADD' | translate }}</span><span *ngIf="contractForDisplay.id">{{ 'BTN.EDIT' | translate }}</span> {{ 'HTML.RentContract' | translate }}</h1>
-<!-- <div mat-dialog-content> -->
+<!-- <mat-card>
+  <mat-card-header>
+      <mat-card-title><span *ngIf="!contractForDisplay.id">{{ 'BTN.ADD' | translate }}</span><span *ngIf="contractForDisplay.id">{{ 'BTN.EDIT' | translate }}</span> {{ 'HTML.RentContract' | translate }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="pt-3"> -->
     <form [formGroup]="form" class="user-form">
         <mat-tab-group class="vertical-tabs tab-content-wrapped" [backgroundColor]="'primary'" [color]="'warn'">
             <mat-tab label="{{ 'HTML.TAB_BASIC' | translate }}">
@@ -192,19 +196,19 @@
                       <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
                         <mat-form-field appearance="outline" class="w-100">
                           <mat-label>{{ 'HTML.ContractValue' | translate }}</mat-label>
-                          <input matInput formControlName="RCOContractValue">
+                          <input matInput formControlName="RCOContractValue" (change)="onChangeContractValue($event)" required>
                         </mat-form-field>
                       </div>
                       <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
                         <mat-form-field appearance="outline" class="w-100">
                           <mat-label>{{ 'HTML.PayEveryMonthesNo' | translate }}</mat-label>
-                          <input matInput formControlName="RCOPayEveryMonthesNo">
+                          <input matInput formControlName="RCOPayEveryMonthesNo" (change)="onChangePayEvery($event)" required>
                         </mat-form-field>
                       </div>
                       <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
                         <mat-form-field appearance="outline" class="w-100">
-                          <mat-label>{{ 'HTML.MonthValue' | translate }}</mat-label>
-                          <input matInput formControlName="RCOMonthValue">
+                          <mat-label>{{ 'HTML.InstallmentValue' | translate }}</mat-label>
+                          <input matInput formControlName="RCOMonthValue" required>
                         </mat-form-field>
                       </div>
                     </div>
@@ -302,13 +306,29 @@
                     
                 </div>
             </mat-tab> 
+
+            <mat-tab label="{{ 'HTML.TAB_DOCS' | translate }}" formGroupName="docs">
+              <div fxFlex="100" fxFlex.gt-sm="100" class="px-2">
+                <div class=" p-2 ">
+                  <img [src]="defaultDocImage" style="width: 150px;height:200px">
+                  <input hidden #fileInput formControlName="docOnePic" name="docOnePic" (change)="onFileChange($event.target.files)" id="uploadonedoc" class="user-img" type="file" accept="image/*">
+                  <button type="button" mat-raised-button (click)="fileInput.click()">{{ 'HTML.AddPic' | translate }}</button>
+                </div>
+                <mat-divider></mat-divider>
+                <input-file formControlName="docPic" fileAccept="image/*"></input-file>
+              </div>
+          </mat-tab>
+
         </mat-tab-group>
     </form>
 
 <br>
-<div mat-dialog-actions>
-    <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
-        <button mat-raised-button color="primary" (click)="saveUpdate(contractForDisplay.id)" [mat-dialog-close]="form.value" [disabled]="!form.valid"><span *ngIf="!contractForDisplay.id">Save</span><span *ngIf="contractForDisplay.id">Update</span></button>
-        <!-- <button mat-raised-button color="warn" (click)="close()">Cancel</button> -->
-    </div>
-</div>
+  <div mat-dialog-actions>
+      <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
+          <button mat-raised-button color="primary" (click)="saveUpdate(contractForDisplay.id)" [mat-dialog-close]="form.value" [disabled]="!form.valid"><span *ngIf="!contractForDisplay.id">Save</span><span *ngIf="contractForDisplay.id">Update</span></button>
+          <!-- <button mat-raised-button color="warn" (click)="close()">Cancel</button> -->
+      </div>
+  </div>
+
+<!-- </mat-card-content>
+</mat-card> -->

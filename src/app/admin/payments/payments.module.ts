@@ -9,6 +9,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SharedModule } from '../../shared/shared.module';
 import { PipesModule } from '../../theme/pipes/pipes.module';
+import { PayableDocListComponent } from './payable-doc-list/payable-doc-list.component';
+import { PayableDocDialogComponent } from './payable-doc-dialog/payable-doc-dialog.component';
 
 
 export const routes: Routes = [
@@ -18,12 +20,18 @@ export const routes: Routes = [
   { path: 'receivable-add/:id', component: ReceivableDocDialogComponent, data: { breadcrumb: 'Edit Receipt Voucher' } },
   { path: 'receivable-add', component: ReceivableDocDialogComponent, data: { breadcrumb: 'Add Receipt Voucher' } },
 
+  { path: 'payable-list', component: PayableDocListComponent, data: { breadcrumb: 'Payment Vouchers' } },
+  { path: 'payable-add/:id', component: PayableDocDialogComponent, data: { breadcrumb: 'Edit Payment Voucher' } },
+  { path: 'payable-add', component: PayableDocDialogComponent, data: { breadcrumb: 'Add Payment Voucher' } },
+
 ];
 
 @NgModule({
   declarations: [
     ReceivableDocListComponent,
-    ReceivableDocDialogComponent
+    ReceivableDocDialogComponent,
+    PayableDocListComponent,
+    PayableDocDialogComponent
   ],
   imports: [
     HttpClientModule,

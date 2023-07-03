@@ -1,8 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-// import { MatDialog } from '@angular/material/dialog';
-
 import { AppSettings, Settings } from 'src/app/app.settings';
-// import { Units } from 'src/app/models/units' ;
 import { PayDocument } from 'src/app/models/paymentDocument' ;
 import { environment } from 'src/environments/environment';
 import { User } from 'src/app/models/user';
@@ -14,17 +11,18 @@ import { GlobalService } from 'src/app/services/global.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LocalService } from 'src/app/services/local.service';
 
-import { InstallmentComponent } from 'src/app/admin/contracts/rentContracts/installment/installment.component';
-import { ContractsService } from 'src/app/admin/contracts/contracts.service';
+// import { ContractsService } from 'src/app/admin/contracts/contracts.service';
 import { TranslateService } from '@ngx-translate/core';
+
+
 @Component({
-  selector: 'app-receivable-doc-list',
-  templateUrl: './receivable-doc-list.component.html',
-  styleUrls: ['./receivable-doc-list.component.scss'],
+  selector: 'app-payable-doc-list',
+  templateUrl: './payable-doc-list.component.html',
+  styleUrls: ['./payable-doc-list.component.scss'],
   encapsulation: ViewEncapsulation.None,
   providers: [ PaymentsService ]
 })
-export class ReceivableDocListComponent {
+export class PayableDocListComponent {
     public documentsAll: PayDocument[];
     public searchText: string;
     public page:any;
@@ -42,7 +40,7 @@ export class ReceivableDocListComponent {
                 private router: Router,
                 private global: GlobalService,
                 private localStore: LocalService,
-                private contractService: ContractsService,
+                // private contractService: ContractsService,
                 public translateService: TranslateService,
                 public snackBar: MatSnackBar){
         this.settings = this.appSettings.settings;
@@ -67,63 +65,16 @@ export class ReceivableDocListComponent {
 // ================================================================
     public getDocuments(): void {
         this.documentsAll = null; //for show spinner each time
-        this.paymentService.getAllReceivableDocuments(this.curCOMId, this.account.periorty)
-        .subscribe(builds => this.documentsAll = builds);
+        this.paymentService.getAllPayableDocuments(this.curCOMId, this.account.periorty)
+        .subscribe(docs => this.documentsAll = docs);
     }
 // ===========================================================
-oneDocValue ;
-curInstallmentValue;
-curInstallmentPayedValue;
 public removeDocument(contractId: number){
-  if(confirm(this.askToDeletedMsg)) {
-    this.paymentService.getOneDocs(contractId).subscribe(doc => {
-      if (doc.installment_KeyField != null){
-        this.oneDocValue = doc.PDOValue ;
-        this.contractService.getOneInstallment(doc.installment_KeyField).subscribe(insta => {
-          this.curInstallmentValue = insta['INSValue'] ;
-          this.curInstallmentPayedValue = insta['INSPayedValue'] ;
-          if(this.curInstallmentValue == null) {this.curInstallmentValue = 0.0 ;}
-          if(this.curInstallmentPayedValue == null) {this.curInstallmentPayedValue = 0.0 ;}
-
-          this.manageInstallmetPayedValue(doc.installment_KeyField, this.curInstallmentValue, this.curInstallmentPayedValue, this.oneDocValue)
-        });
-      
-      }
-    });
+  if(confirm(this.askToDeletedMsg)) {    
     this.paymentService.deleteDocument(contractId).subscribe(docs => this.getDocuments());
   }
 }
 // ===========================================================
-// =================================================================================
-insStatus ;
-manageInstallmetPayedValue(installmentId: number, installmentValue: number, installmentPayedValue: number, docPayedValue: number){
-  if(installmentPayedValue == null){installmentPayedValue = 0.0}
-  if(docPayedValue == null){docPayedValue = 0.0}
-  if(installmentValue == null){installmentValue = 0.0}
-  let totalPayed = +installmentPayedValue - +docPayedValue ;
-
-  // console.log("===installmentPayedValue:: "+ installmentPayedValue);
-  // console.log("===docPayedValue:: "+ docPayedValue);
-  // console.log("===totalPayed:: "+ totalPayed);
-  if ( (totalPayed) <= 0 ) { totalPayed = 0 ;}
-  if ( (totalPayed) == 0 ){ this.insStatus = 'N' ;}
-  else { this.insStatus = 'T' ;}
-
-  let installData = {
-    id: installmentId,
-    INSStatus: this.insStatus,
-    INSPayedValue: totalPayed
-  }
-  console.log("===installData:: " + installData );
-  this.contractService.editInstallments(installData).subscribe( installment => {
-    console.log("==installment after Update:: "+ installment);
-  },
-  error=>{
-    console.log(error);
-  }
-   );
-}
-// =================================================================================
 // ===============================================================
     public onPageChanged(event){
         this.page = event;
@@ -132,7 +83,7 @@ manageInstallmetPayedValue(installmentId: number, installmentValue: number, inst
     }
 // ===================================================================
 gotoNewDocument(){
-  this.router.navigate(["/payments/receivable-add/"]);
+  this.router.navigate(["/payments/payable-add/"]);
 }
 // ====================================================================
 errorRetrieveMsg ;

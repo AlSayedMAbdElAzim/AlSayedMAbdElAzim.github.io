@@ -1,13 +1,13 @@
 <div class="p-2">
     <mat-card>
         <mat-card-header>
-            <mat-card-title><h1><span *ngIf="!payDocForDisplay.id">{{ 'BTN.ADD' | translate }}</span><span *ngIf="payDocForDisplay.id">{{ 'BTN.EDIT' | translate }}</span> {{ 'HTML.ReceivableDoc' | translate }}</h1></mat-card-title>
+            <mat-card-title><h1><span *ngIf="!payDocForDisplay.id">{{ 'BTN.ADD' | translate }}</span><span *ngIf="payDocForDisplay.id">{{ 'BTN.EDIT' | translate }}</span> {{ 'HTML.PayableDoc' | translate }}</h1></mat-card-title>
             <!-- <h1 mat-dialog-title><span *ngIf="!curCOMId">{{ 'BTN.ADD' | translate }}</span><span *ngIf="curCOMId">{{ 'BTN.EDIT' | translate }}</span> {{ 'ADMIN_NAV.COMPANY' | translate }}</h1> -->
         </mat-card-header>
         <mat-card-content class="pt-3">
             <form [formGroup]="docData_Form" (ngSubmit)="saveEditDocData(payDocForDisplay.id)" autocomplete="off" fxLayout="row wrap">
                 <div fxFlex="100" fxFlex.gt-sm="40" class="px-2">
-                    <img width="400" height="300" id="campanyLogo" [src]="'assets/images/paymentDocs/receivable.png'" />                    
+                    <img width="400" height="300" id="campanyLogo" [src]="'assets/images/paymentDocs/payable.png'" />                    
                 </div>
                 <div fxFlex="100" fxFlex.gt-sm="60" class="px-2">
                   <div fxLayout="row wrap">
@@ -23,7 +23,7 @@
                       <div fxFlex="100" fxFlex.gt-sm="75" class="px-1">
                         <mat-form-field appearance="outline" class="w-100">
                           <mat-label> {{ 'HTML.TENANT' | translate }}</mat-label>
-                          <mat-select (selectionChange)="readCustumer($event)" placeholder="{{ 'HTML.TENANT' | translate }}" formControlName="customer_KeyField" id="oneCustomOpSel" required>
+                          <mat-select (selectionChange)="readCustumer($event)" placeholder="{{ 'HTML.TENANT' | translate }}" formControlName="customer_KeyField" id="oneCustomOpSel">
                             <mat-option [value]="">-</mat-option>
                             <mat-option *ngFor="let tenant of AllTenants" [value]="tenant.id">
                                 {{tenant.CUSName}}
@@ -54,7 +54,7 @@
                       </div>
                       <div fxFlex="100" fxFlex.gt-sm="100" class="px-1">
                         <mat-form-field appearance="outline" class="w-100">
-                            <mat-label>{{ 'HTML.DocSecondPart_ReceivableDoc' | translate }}</mat-label>
+                            <mat-label>{{ 'HTML.DocSecondPart_PayableDoc' | translate }}</mat-label>
                             <input matInput formControlName="PDODocSecondPerson" required>
                         </mat-form-field>
                       </div>

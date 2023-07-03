@@ -70,7 +70,10 @@
     "Contracts": "Contracts",
     "AddContracts": "Add Contracts",
     "ADD_TENANT": "Add Tenant",
-    "EMPLOYEES": "Employees"
+    "EMPLOYEES": "Employees",
+    "Documents": "Documents",
+    "ReceivableDoc": "Receivable Document",
+    "PayableDoc": "Payable Document"
   },
   "BTN": {
     "ADD": "Ekle",
@@ -82,7 +85,8 @@
     "YES": "Evet",
     "NO": "Hayır",
     "OK": "Tamam",
-    "EDIT": "Edit"
+    "EDIT": "Edit",
+    "INSTALLMENT": "Installments"
   },
   "MESSAGE": {
     "SURE_DELETE": "Silmek istediğine emin misin?",
@@ -155,7 +159,10 @@
     "NotFound": "Not Found",
     "ReNew": "ReNew",
     "Canceld": "Canceld",
-    "Finished": "Finished"
+    "Finished": "Finished",
+    "NotPayed": "Not Payed",
+    "Payed": "Payed",
+    "PartialPayed": "Partial Payed"
   },
   "HTML": {
     "SIGNIN": "Sign In",
@@ -197,6 +204,8 @@
     "TAB_UnitDescription": "Unit Description",
     "TAB_ContractUnit": "Unit for Contract",
     "TAB_ContractValues": "Contract Values",
+    "TAB_DOCS": "Attachments",
+    "AddPic": "Add Image",
     "CODE": "Code",
     "SUBCODE": "Sub Code",
     "FIRST_NAME": "First Name",
@@ -219,10 +228,13 @@
     "END_DATE": "End Date",
     "HOME_PHONE": "Home Phone",
     "WORK_PHONE": "Work Phone",
+    "Fax": "Fax",
     "TENANTS_LIST": "Tenants List",
     "BUILDING_LIST": "Properties List",
     "UNIT_LIST": "Units List",
     "Contract_List": "Contracts List",
+    "ReceivableDoc_List": "Receivable Documents List",
+    "PayableDoc_List": "Payment Documents List",
     "BRANCH": "Branch",
     "OWNER": "Owner",
     "OwnerRepresentative": "Owner Representative",
@@ -295,6 +307,11 @@
     "ContractStatus": "Contract Status",
     "ContractValue": "Contract Value",
     "PayEveryMonthesNo": "Pay Every Monthes No",
+    "InstallmentValue": "Installment Value",
+    "DueDate": "Due Date",
+    "PayedDate": "Payed Date",
+    "InstallmentStatus": "Installment Status",
+    "PayedValue": "Payed Value",
     "MonthValue": "Month Value",
     "InsuranceValue": "Insurance Value",
     "SeekingValue": "Seeking Value",
@@ -310,7 +327,24 @@
     "Profile": "Profile",
     "Settings": "Settings",
     "LockScreen": "Lock screen",
-    "EMPLOYEE": "Employee"
+    "EMPLOYEE": "Employee",
+    "AddCode": "Add Code",
+    "AddInstallment": "Add Installment",
+    "IsDefaultValue": "Is Default Value",
+    "InstallmentData": "Installment Data",
+    "Notes": "Notes",
+    "DocDate": "Document Date",
+    "DocValue": "Document Value",
+    "DocPrintedNo": "Document Printed No",
+    "DocSecondPart_ReceivableDoc": "Name of person",
+    "DocSecondPart_PayableDoc": "Name of person",
+    "COMPANYDATA": "Company Data",
+    "ReceivableDoc": "Receipt Voucher",
+    "PayableDoc": "Payment Voucher",
+    "Logo": "Logo",
+    "ArabicName": "Arabic Name",
+    "EnglishName": "English Name",
+    "DisplayedName": "Displayed Name"
   },
   "PAGINATION":{
     "ITEMS_PER_PAGE": "Sayfa başına öğeler:",

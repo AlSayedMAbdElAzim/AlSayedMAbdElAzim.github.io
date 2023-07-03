@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GlobalService } from 'src/app/services/global.service';
 import { Customer } from 'src/app/models/customer';
+import { CustomerDocs } from 'src/app/models/customersDocs' ;
 import { RelativeCustomer } from 'src/app/models/RelativeCustomer';
 import { ApiConstant } from 'src/app/constants/api-constant';
 
@@ -30,25 +31,40 @@ export class CustomerService {
   }
 // =======================================================================
 getOneCustomerDocs(comId: number, periorty: number, id: number): Observable<any> {
-  return this._HttpClient.get<Customer>(this.baseUrl + this.secondPartUrl + 'contracts/customerdocs/CustomersDocsPerSpec?M='+comId+'&C='+periorty+'&customer=' + id  , this.globalServ.getAuthHeaders());
+  return this._HttpClient.get<CustomerDocs>(this.baseUrl + this.secondPartUrl + 'contracts/customerdocs/CustomersDocsPerSpec?M='+comId+'&C='+periorty+'&customer=' + id  , this.globalServ.getAuthHeaders());
 }
-  // =================add new customer====================== File
+// =======================add Customer Docs=================
+addCustomerDocs(cusId: number, docs: File ): Observable<CustomerDocs> {
+  // console.log("====cusId:: " + cusId) ;
+  // console.log("====docs:: " + docs) ;
+  var URL=this.baseUrl + this.secondPartUrl + 'contracts/customerdocs/';
+  const formData:FormData=new FormData();
+  
+  if(docs!==null){ formData.append('CUDPic',docs); }
+  if(cusId !== null) { formData.append('customer_KeyField',cusId.toString()); }
+
+  // for (var i = 0; i < docs.length; i++) { 
+  //   if(cusId !== null) { formData.append('customer_KeyField',cusId.toString()); }
+  //   formData.append("CUDPic[]", docs[i]);
+  // }
+
+  return this._HttpClient.post<CustomerDocs>(URL, formData, this.globalServ.getAuthHeaders_for_files())
+}
+// =================add new customer====================== File
   addCustomer(newCus: Customer,fileToUploade: File,fileIDPicToUploade: File): Observable<Customer> {
- var URL=this.baseUrl + this.secondPartUrl + 'contracts/customer/';
- const formData:FormData=new FormData();
- if(fileToUploade!==null){
-  formData.append('CUSPic',fileToUploade);
+    var URL=this.baseUrl + this.secondPartUrl + 'contracts/customer/';
+    const formData:FormData=new FormData();
+    if(fileToUploade!==null){
+      formData.append('CUSPic',fileToUploade);
+    }
+  if(fileIDPicToUploade){
+    formData.append('CUSIDPic',fileIDPicToUploade);
+  }
 
- }
- if(fileIDPicToUploade){
-  formData.append('CUSIDPic',fileIDPicToUploade);
-}
-
- if(newCus.CUSCode!==null)
- {
+if(newCus.CUSCode!==null)
+{
   formData.append('CUSCode',newCus.CUSCode.toString());
-
- }
+}
 //  if(newCus.City_CTTKeyField!==null)
 //  {
 //   formData.append('City_CTTKeyField',newCus.City_CTTKeyField.toString());
