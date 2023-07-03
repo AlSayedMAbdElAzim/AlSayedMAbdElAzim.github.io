@@ -13,7 +13,8 @@ import { LocalService } from 'src/app/services/local.service';
 
 // import { ContractsService } from 'src/app/admin/contracts/contracts.service';
 import { TranslateService } from '@ngx-translate/core';
-
+import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-payable-doc-list',
@@ -35,12 +36,11 @@ export class PayableDocListComponent {
     public count = 4;
 
     constructor(public appSettings:AppSettings,
-                // public dialog: MatDialog,
+                public dialog: MatDialog,
                 public paymentService:PaymentsService,
                 private router: Router,
                 private global: GlobalService,
                 private localStore: LocalService,
-                // private contractService: ContractsService,
                 public translateService: TranslateService,
                 public snackBar: MatSnackBar){
         this.settings = this.appSettings.settings;
@@ -70,9 +70,21 @@ export class PayableDocListComponent {
     }
 // ===========================================================
 public removeDocument(contractId: number){
-  if(confirm(this.askToDeletedMsg)) {    
-    this.paymentService.deleteDocument(contractId).subscribe(docs => this.getDocuments());
-  }
+  // if(confirm(this.askToDeletedMsg)) {    
+  //   this.paymentService.deleteDocument(contractId).subscribe(docs => this.getDocuments());
+  // }
+  const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+    maxWidth: "400px",
+    data: {
+      title: this.deletedTitleMsg,
+      message: this.askToDeletedMsg
+    }
+  }); 
+  dialogRef.afterClosed().subscribe(dialogResult => { 
+    if(dialogResult){
+      this.paymentService.deleteDocument(contractId).subscribe(docs => this.getDocuments());
+    } 
+  }); 
 }
 // ===========================================================
 // ===============================================================
@@ -89,13 +101,16 @@ gotoNewDocument(){
 errorRetrieveMsg ;
 askToDeletedMsg ;
 deletedMsg ;
+deletedTitleMsg;
 prepareMsgLanguage(){
   this.translateService.get('MESSAGE.RETRIEVE_ERROR', ).subscribe((res: string) => {
     this.errorRetrieveMsg = res ;  });
-    this.translateService.get('MESSAGE.SURE_DELETE', ).subscribe((res: string) => {
-      this.askToDeletedMsg = res ;  });
-      this.translateService.get('MESSAGE.DELETED', ).subscribe((res: string) => {
-        this.deletedMsg = res ;  });
+  this.translateService.get('MESSAGE.SURE_DELETE', ).subscribe((res: string) => {
+    this.askToDeletedMsg = res ;  });
+  this.translateService.get('MESSAGE.DELETED', ).subscribe((res: string) => {
+    this.deletedMsg = res ;  });
+  this.translateService.get('MESSAGE.ConfirmAction', ).subscribe((res: string) => {
+    this.deletedTitleMsg = res ;  });
 
 }
 // ====================================================================

@@ -4,25 +4,22 @@ import { User } from 'src/app/models/user';
 import { Subscription } from 'rxjs';
 import { GlobalService } from 'src/app/services/global.service';
 import { Router } from '@angular/router';
-
-// import { CodetabletreeService } from 'src/app/services/codetabletree.service';
 import { ContractsService } from 'src/app/admin/contracts/contracts.service' ;
-
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormBuilder } from '@angular/forms';
-// import { CodeTableTree } from 'src/app/models/codetabletree';
 import { Installments } from 'src/app/models/installments';
 
 import { LocalService } from 'src/app/services/local.service';
 import { NavigationEnd, ActivatedRoute } from '@angular/router';
 import { CodeTableTreeConstants } from 'src/app/constants/app-constant';
-
 import { InstallmentDialogComponent } from '../installment-dialog/installment-dialog.component';
 
-import { MatDialog } from '@angular/material/dialog';
 import { AppSettings, Settings } from 'src/app/app.settings';
 import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
+
+import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 declare let $ : any;
 
 @Component({
@@ -234,30 +231,48 @@ getInstallmentsPerContract(comId: number, periorty: number, id: number) {
 }
 // ==============================================================
 remove(codeId) {
-  if(confirm(this.askToDeletedMsg)) {
-
-    this._contractService.deleteInstallment(codeId)
+  // if(confirm(this.askToDeletedMsg)) {
+  //   this._contractService.deleteInstallment(codeId)
+  //   .subscribe(() =>
+  //   {
+  //     this.snackBar.open(this.deletedMsg, '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
+  //     this.getInstallmentsPerContract(this.curCOMId,this.account.periorty,codeId)
+  //   })
+  // }
+  // ----------------------------------
+  const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+    maxWidth: "400px",
+    data: {
+      title: this.deletedTitleMsg,
+      message: this.askToDeletedMsg
+    }
+  }); 
+  dialogRef.afterClosed().subscribe(dialogResult => { 
+    if(dialogResult){
+      this._contractService.deleteInstallment(codeId)
     .subscribe(() =>
     {
       this.snackBar.open(this.deletedMsg, '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
       this.getInstallmentsPerContract(this.curCOMId,this.account.periorty,codeId)
     })
-
-  }
+    } 
+  }); 
 
 }
 // ====================================================================
 errorRetrieveMsg ;
 askToDeletedMsg ;
 deletedMsg ;
+deletedTitleMsg;
 prepareMsgLanguage(){
   this.translateService.get('MESSAGE.RETRIEVE_ERROR', ).subscribe((res: string) => {
     this.errorRetrieveMsg = res ;  });
-    this.translateService.get('MESSAGE.SURE_DELETE', ).subscribe((res: string) => {
-      this.askToDeletedMsg = res ;  });
-      this.translateService.get('MESSAGE.DELETED', ).subscribe((res: string) => {
-        this.deletedMsg = res ;  });
-
+  this.translateService.get('MESSAGE.SURE_DELETE', ).subscribe((res: string) => {
+    this.askToDeletedMsg = res ;  });
+  this.translateService.get('MESSAGE.DELETED', ).subscribe((res: string) => {
+    this.deletedMsg = res ;  });
+  this.translateService.get('MESSAGE.ConfirmAction', ).subscribe((res: string) => {
+    this.deletedTitleMsg = res ;  });
 }
 // ====================================================================
 

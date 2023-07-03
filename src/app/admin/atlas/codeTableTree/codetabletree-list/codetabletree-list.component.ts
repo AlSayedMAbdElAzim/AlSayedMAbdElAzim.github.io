@@ -13,9 +13,10 @@ import { NavigationEnd, ActivatedRoute } from '@angular/router';
 import { CodeTableTreeConstants } from 'src/app/constants/app-constant';
 import { CodetabletreeDialogComponent } from '../codetabletree-dialog/codetabletree-dialog.component';
 
-import { MatDialog } from '@angular/material/dialog';
 import { AppSettings, Settings } from 'src/app/app.settings';
 import { TranslateService } from '@ngx-translate/core';
+import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 declare let $ : any;
 
@@ -201,29 +202,42 @@ getCodeTableTreePerRelated(comId: number, periorty: number) {
 }
 // =============================================================================
 remove(codeId) {
-  if(confirm(this.askToDeletedMsg)) {
-
-    this._codesService.deleteCode(codeId)
+  // if(confirm(this.askToDeletedMsg)) {    
+  // }
+  // -----------------------------------------
+  const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+    maxWidth: "400px",
+    data: {
+      title: this.deletedTitleMsg,
+      message: this.askToDeletedMsg
+    }
+  }); 
+  dialogRef.afterClosed().subscribe(dialogResult => { 
+    if(dialogResult){
+      this._codesService.deleteCode(codeId)
     .subscribe(() =>
     {
       this.snackBar.open(this.deletedMsg, '×', { panelClass: 'success', verticalPosition: 'top', duration: 3000 });
       this.getCodeTableTreePerParent(this.curCOMId,this.account.periorty)
     })
-
-  }
+    } 
+  });
 
 }
 // ====================================================================
 errorRetrieveMsg ;
 askToDeletedMsg ;
 deletedMsg ;
+deletedTitleMsg;
 prepareMsgLanguage(){
   this.translateService.get('MESSAGE.RETRIEVE_ERROR', ).subscribe((res: string) => {
     this.errorRetrieveMsg = res ;  });
-    this.translateService.get('MESSAGE.SURE_DELETE', ).subscribe((res: string) => {
-      this.askToDeletedMsg = res ;  });
-      this.translateService.get('MESSAGE.DELETED', ).subscribe((res: string) => {
-        this.deletedMsg = res ;  });
+  this.translateService.get('MESSAGE.SURE_DELETE', ).subscribe((res: string) => {
+    this.askToDeletedMsg = res ;  });
+  this.translateService.get('MESSAGE.DELETED', ).subscribe((res: string) => {
+    this.deletedMsg = res ;  });
+  this.translateService.get('MESSAGE.ConfirmAction', ).subscribe((res: string) => {
+    this.deletedTitleMsg = res ;  });
 
 }
 // ====================================================================

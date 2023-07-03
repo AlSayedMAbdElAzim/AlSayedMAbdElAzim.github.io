@@ -103,7 +103,8 @@
     "DELETED": "Delete done",
     "RegisterMsg": "Don't have an account? Sign up now!",
     "MinLength": "number of Char isn't long enough!, minimum of 3 characters",
-    "MinLength6": "number of Char isn't long enough!, minimum of 6 characters"
+    "MinLength6": "number of Char isn't long enough!, minimum of 6 characters",
+    "ConfirmAction": "Confirm Action"
   },
   "FIELD": {
     "NAME": "Nom"

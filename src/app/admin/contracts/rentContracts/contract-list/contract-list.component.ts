@@ -1,8 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-// import { MatDialog } from '@angular/material/dialog';
-
 import { AppSettings, Settings } from 'src/app/app.settings';
-// import { Units } from 'src/app/models/units' ;
 import { RentContract } from 'src/app/models/rentContract' ;
 import { environment } from 'src/environments/environment';
 import { User } from 'src/app/models/user';
@@ -14,7 +11,9 @@ import { GlobalService } from 'src/app/services/global.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { LocalService } from 'src/app/services/local.service';
 import { TranslateService } from '@ngx-translate/core';
-import { InstallmentComponent } from '../installment/installment.component';
+
+import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-contract-list',
   templateUrl: './contract-list.component.html',
@@ -36,7 +35,7 @@ export class ContractListComponent {
     public count = 4;
 
     constructor(public appSettings:AppSettings,
-                // public dialog: MatDialog,
+                public dialog: MatDialog,
                 public contractService:ContractsService,
                 private router: Router,
                 private global: GlobalService,
@@ -69,9 +68,22 @@ export class ContractListComponent {
     }
 // ===========================================================
 public removeContract(contractId: number){
-  if(confirm(this.askToDeletedMsg)) {
-    this.contractService.deleteContract(contractId).subscribe(user => this.getContracts());
-  }
+  // if(confirm(this.askToDeletedMsg)) {
+  //   this.contractService.deleteContract(contractId).subscribe(user => this.getContracts());
+  // }
+  const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+    maxWidth: "400px",
+    data: {
+      title: this.deletedTitleMsg,
+      message: this.askToDeletedMsg
+    }
+  }); 
+  dialogRef.afterClosed().subscribe(dialogResult => { 
+    if(dialogResult){
+      this.contractService.deleteContract(contractId).subscribe(user => this.getContracts());    
+    } 
+  }); 
+
 }
 // ===========================================================
 public contractInstallments(contractId: number){
@@ -97,13 +109,16 @@ gotoNewContract(){
 errorRetrieveMsg ;
 askToDeletedMsg ;
 deletedMsg ;
+deletedTitleMsg;
 prepareMsgLanguage(){
   this.translateService.get('MESSAGE.RETRIEVE_ERROR', ).subscribe((res: string) => {
     this.errorRetrieveMsg = res ;  });
-    this.translateService.get('MESSAGE.SURE_DELETE', ).subscribe((res: string) => {
-      this.askToDeletedMsg = res ;  });
-      this.translateService.get('MESSAGE.DELETED', ).subscribe((res: string) => {
-        this.deletedMsg = res ;  });
+  this.translateService.get('MESSAGE.SURE_DELETE', ).subscribe((res: string) => {
+    this.askToDeletedMsg = res ;  });
+  this.translateService.get('MESSAGE.DELETED', ).subscribe((res: string) => {
+    this.deletedMsg = res ;  });
+  this.translateService.get('MESSAGE.ConfirmAction', ).subscribe((res: string) => {
+    this.deletedTitleMsg = res ;  });
 
 }
 // ====================================================================

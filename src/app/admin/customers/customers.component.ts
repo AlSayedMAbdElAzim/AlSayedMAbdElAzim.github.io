@@ -6,6 +6,8 @@ import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-di
 import { customers } from './customers';
 import { AppSettings, Settings } from 'src/app/app.settings';
 
+import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
@@ -21,13 +23,18 @@ export class CustomersComponent implements OnInit {
   public page: any;
   public count = 6;
   public settings:Settings;
-  constructor(public appService:AppService, public dialog: MatDialog, public appSettings:AppSettings) {
-    this.settings = this.appSettings.settings;
-  }
+  constructor(
+              public appService:AppService, 
+              public dialog: MatDialog, 
+              public translateService: TranslateService,
+              public appSettings:AppSettings) {
+            this.settings = this.appSettings.settings;
+          }
 
   ngOnInit(): void {
     this.countries = this.appService.getCountries();
     this.customers = customers; 
+    this.prepareMsgLanguage() ;  //  for translation
   }
 
   public onPageChanged(event){
@@ -65,8 +72,10 @@ export class CustomersComponent implements OnInit {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       maxWidth: "400px",
       data: {
-        title: "Confirm Action",
-        message: "Are you sure you want remove this customer?"
+        // title: "Confirm Action",
+        // message: "Are you sure you want remove this customer?"
+        title: this.deletedTitleMsg,
+        message: this.askToDeletedMsg
       }
     }); 
     dialogRef.afterClosed().subscribe(dialogResult => { 
@@ -78,5 +87,15 @@ export class CustomersComponent implements OnInit {
       } 
     }); 
   }
+// ====================================================================
+askToDeletedMsg ;
+deletedTitleMsg ;
+prepareMsgLanguage(){
+      this.translateService.get('MESSAGE.SURE_DELETE', ).subscribe((res: string) => {
+            this.askToDeletedMsg = res ;  });
+      this.translateService.get('MESSAGE.ConfirmAction', ).subscribe((res: string) => {
+            this.deletedTitleMsg = res ;  });
 
+}
+// ====================================================================
 }

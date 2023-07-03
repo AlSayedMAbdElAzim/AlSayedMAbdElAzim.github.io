@@ -1,8 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-// import { MatDialog } from '@angular/material/dialog';
-
 import { AppSettings, Settings } from 'src/app/app.settings';
-// import { Units } from 'src/app/models/units' ;
 import { PayDocument } from 'src/app/models/paymentDocument' ;
 import { environment } from 'src/environments/environment';
 import { User } from 'src/app/models/user';
@@ -17,6 +14,9 @@ import { LocalService } from 'src/app/services/local.service';
 import { InstallmentComponent } from 'src/app/admin/contracts/rentContracts/installment/installment.component';
 import { ContractsService } from 'src/app/admin/contracts/contracts.service';
 import { TranslateService } from '@ngx-translate/core';
+
+import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-receivable-doc-list',
   templateUrl: './receivable-doc-list.component.html',
@@ -37,7 +37,7 @@ export class ReceivableDocListComponent {
     public count = 4;
 
     constructor(public appSettings:AppSettings,
-                // public dialog: MatDialog,
+                public dialog: MatDialog,
                 public paymentService:PaymentsService,
                 private router: Router,
                 private global: GlobalService,
@@ -75,23 +75,36 @@ oneDocValue ;
 curInstallmentValue;
 curInstallmentPayedValue;
 public removeDocument(contractId: number){
-  if(confirm(this.askToDeletedMsg)) {
-    this.paymentService.getOneDocs(contractId).subscribe(doc => {
-      if (doc.installment_KeyField != null){
-        this.oneDocValue = doc.PDOValue ;
-        this.contractService.getOneInstallment(doc.installment_KeyField).subscribe(insta => {
-          this.curInstallmentValue = insta['INSValue'] ;
-          this.curInstallmentPayedValue = insta['INSPayedValue'] ;
-          if(this.curInstallmentValue == null) {this.curInstallmentValue = 0.0 ;}
-          if(this.curInstallmentPayedValue == null) {this.curInstallmentPayedValue = 0.0 ;}
-
-          this.manageInstallmetPayedValue(doc.installment_KeyField, this.curInstallmentValue, this.curInstallmentPayedValue, this.oneDocValue)
-        });
-      
-      }
-    });
-    this.paymentService.deleteDocument(contractId).subscribe(docs => this.getDocuments());
-  }
+  // if(confirm(this.askToDeletedMsg)) {    
+  // }
+  // ------------------------
+  const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+    maxWidth: "400px",
+    data: {
+      title: this.deletedTitleMsg,
+      message: this.askToDeletedMsg
+    }
+  }); 
+  dialogRef.afterClosed().subscribe(dialogResult => { 
+    if(dialogResult){
+      this.paymentService.getOneDocs(contractId).subscribe(doc => {
+        if (doc.installment_KeyField != null){
+          this.oneDocValue = doc.PDOValue ;
+          this.contractService.getOneInstallment(doc.installment_KeyField).subscribe(insta => {
+            this.curInstallmentValue = insta['INSValue'] ;
+            this.curInstallmentPayedValue = insta['INSPayedValue'] ;
+            if(this.curInstallmentValue == null) {this.curInstallmentValue = 0.0 ;}
+            if(this.curInstallmentPayedValue == null) {this.curInstallmentPayedValue = 0.0 ;}
+  
+            this.manageInstallmetPayedValue(doc.installment_KeyField, this.curInstallmentValue, this.curInstallmentPayedValue, this.oneDocValue)
+          });
+        
+        }
+      });
+      this.paymentService.deleteDocument(contractId).subscribe(docs => this.getDocuments());
+    } 
+  });
+  // -------------------------
 }
 // ===========================================================
 // =================================================================================
@@ -138,13 +151,16 @@ gotoNewDocument(){
 errorRetrieveMsg ;
 askToDeletedMsg ;
 deletedMsg ;
+deletedTitleMsg;
 prepareMsgLanguage(){
   this.translateService.get('MESSAGE.RETRIEVE_ERROR', ).subscribe((res: string) => {
     this.errorRetrieveMsg = res ;  });
-    this.translateService.get('MESSAGE.SURE_DELETE', ).subscribe((res: string) => {
-      this.askToDeletedMsg = res ;  });
-      this.translateService.get('MESSAGE.DELETED', ).subscribe((res: string) => {
-        this.deletedMsg = res ;  });
+  this.translateService.get('MESSAGE.SURE_DELETE', ).subscribe((res: string) => {
+    this.askToDeletedMsg = res ;  });
+  this.translateService.get('MESSAGE.DELETED', ).subscribe((res: string) => {
+    this.deletedMsg = res ;  });
+  this.translateService.get('MESSAGE.ConfirmAction', ).subscribe((res: string) => {
+    this.deletedTitleMsg = res ;  });
 
 }
 // ====================================================================
