@@ -73,11 +73,7 @@
     "EMPLOYEES": "Employees",
     "Documents": "Documents",
     "ReceivableDoc": "Receivable Document",
-    "PayableDoc": "Payable Document",
-    "Logo": "Logo",
-    "ArabicName": "Arabic Name",
-    "EnglishName": "English Name",
-    "DisplayedName": "Displayed Name"
+    "PayableDoc": "Payable Document"
   },
   "BTN": {
     "ADD": "Ajouter",
@@ -90,7 +86,10 @@
     "NO": "Non",
     "OK": "D'accord",
     "EDIT": "Edit",
-    "INSTALLMENT": "Installments"
+    "INSTALLMENT": "Installments",
+    "Statements": "Tenant Statements",
+    "DownloadPDF": "Download PDF",
+    "Print": "Print"
   },
   "MESSAGE": {
     "SURE_DELETE": "Etes-vous sûr que vous voulez supprimer?",
@@ -345,7 +344,15 @@
     "DocSecondPart_PayableDoc": "Name of person",
     "COMPANYDATA": "Company Data",
     "ReceivableDoc": "Receipt Voucher",
-    "PayableDoc": "Payment Voucher"
+    "PayableDoc": "Payment Voucher",
+    "Logo": "Logo",
+    "ArabicName": "Arabic Name",
+    "EnglishName": "English Name",
+    "DisplayedName": "Displayed Name",
+    "Date": "Date",
+    "Debit": "Debit value",
+    "Credit": "Credit value",
+    "Balance": "Balance"
   },
   "PAGINATION":{
     "ITEMS_PER_PAGE": "Objets par page:",

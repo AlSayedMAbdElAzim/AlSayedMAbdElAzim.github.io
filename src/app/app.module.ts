@@ -72,6 +72,7 @@ import { FooterComponent } from './theme/components/footer/footer.component';
     { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true }
     
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  // exports: [OptionsComponent],
 })
 export class AppModule { }

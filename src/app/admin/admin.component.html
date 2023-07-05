@@ -1,3 +1,4 @@
+<!-- <app-options></app-options> -->
 <mat-toolbar color="primary" class="admin-toolbar mat-elevation-z2">
     <div fxLayout="row" fxLayoutAlign="space-between center" class="w-100">
         <div fxLayout="row" fxLayoutAlign="center center">
@@ -39,6 +40,8 @@
         </div>
     </div>
 </mat-toolbar>
+
+
 <mat-drawer-container class="admin-container">
     <mat-drawer #sidenav [opened]="settings.adminSidenavIsOpened" [mode]="(settings.adminSidenavIsPinned) ? 'side' : 'over'" class="admin-sidenav mat-elevation-z6" autoFocus="false">
         <ng-scrollbar pointerEventsMethod="scrollbar">

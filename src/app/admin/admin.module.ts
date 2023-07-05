@@ -13,7 +13,10 @@ import { MenuComponent } from './components/menu/menu.component';
 import { UserMenuComponent } from './components/user-menu/user-menu.component';
 import { FullScreenComponent } from './components/fullscreen/fullscreen.component'; 
 import { MessagesComponent } from './components/messages/messages.component';
-import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component'; 
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+// import { AdminOptionsComponent } from './admin-options/admin-options.component'; 
+
+// import { OptionsComponent } from 'src/app/theme/components/options/options.component';
 
 export const routes = [ 
   { 
@@ -41,14 +44,17 @@ export const routes = [
     MenuComponent,
     UserMenuComponent,
     FullScreenComponent,
-    MessagesComponent,
-    BreadcrumbComponent
+    MessagesComponent,      
+    BreadcrumbComponent, 
+    // AdminOptionsComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     SharedModule,
     InputFileModule.forRoot(config),
-  ]
+  ],
+  // schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  // exports: [AdminComponent, AdminOptionsComponent],
 })
 export class AdminModule { }

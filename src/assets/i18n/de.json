@@ -86,7 +86,10 @@
     "NO": "Nein",
     "OK": "in Ordnung",
     "EDIT": "Edit",
-    "INSTALLMENT": "Installments"
+    "INSTALLMENT": "Installments",
+    "Statements": "Tenant Statements",
+    "DownloadPDF": "Download PDF",
+    "Print": "Print"
   },
   "MESSAGE": {
     "SURE_DELETE": "Sind Sie sicher, dass Sie löschen möchten?",
@@ -345,7 +348,11 @@
     "Logo": "Logo",
     "ArabicName": "Arabic Name",
     "EnglishName": "English Name",
-    "DisplayedName": "Displayed Name"
+    "DisplayedName": "Displayed Name",
+    "Date": "Date",
+    "Debit": "Debit value",
+    "Credit": "Credit value",
+    "Balance": "Balance"
   },
   "PAGINATION":{
     "ITEMS_PER_PAGE": "Objekte pro seite:",

@@ -66,7 +66,7 @@
                   <a [routerLink]="['/contracts/tenant-add/', oneuser.id]" mat-mini-fab color="primary" matTooltip="{{ 'BTN.EDIT' | translate }}"><mat-icon>edit</mat-icon></a>
                   <!-- <a [routerLink]="['/products/product-detail/', oneuser.id]" mat-mini-fab color="primary" matTooltip="View" class="mx-2"><mat-icon>remove_red_eye</mat-icon></a> -->
                   <button mat-mini-fab color="warn" matTooltip="{{ 'BTN.REMOVE' | translate }}" (click)="removeTenant(oneuser.id)"><mat-icon>delete</mat-icon></button>
-                  
+                  <a [routerLink]="['/contracts/statements-list/', oneuser.id]" mat-mini-fab color="primary" matTooltip="{{ 'BTN.Statements' | translate }}"><mat-icon>receipt</mat-icon></a>
               </div>
           </div>
       </div>

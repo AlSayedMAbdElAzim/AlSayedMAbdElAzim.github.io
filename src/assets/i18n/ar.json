@@ -86,7 +86,10 @@
     "NO": "لا",
     "OK": "موافق",
     "EDIT": "تعديل",
-    "INSTALLMENT": "الأقساط"
+    "INSTALLMENT": "الأقساط",
+    "Statements": "كشف حساب",
+    "DownloadPDF": "PDF ملف",
+    "Print": "طباعة"
   },
   "MESSAGE": {
     "SURE_DELETE": "هل ترغب في إتمام عملية الحذف؟",
@@ -345,7 +348,11 @@
     "Logo": "الشعار",
     "ArabicName": "الاسم العربي",
     "EnglishName": "الاسم الانجليزي",
-    "DisplayedName": "اسم الشهرة"
+    "DisplayedName": "اسم الشهرة",
+    "Date": "التاريخ",
+    "Debit": "مدين",
+    "Credit": "دائن",
+    "Balance": "الرصيد"
   },
   "TS": {
     "COMPANYDATA": "بيانات الشركة"
