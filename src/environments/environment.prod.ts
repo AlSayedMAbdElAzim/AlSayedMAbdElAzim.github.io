@@ -1,4 +1,6 @@
 export const environment = {
   production: true,
-  url: ''
+  url: '',
+  comid: 1,
+  braid: 1
 };
