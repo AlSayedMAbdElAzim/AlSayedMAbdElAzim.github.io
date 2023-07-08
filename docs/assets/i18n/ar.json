@@ -6,6 +6,9 @@
   "ACCOUNT": "حساب",
   "COMPARE": "قارن",
   "WISHLIST": "قائمة الرغبات",
+  "Company": "الشركة",
+  "Countries": "الأكواد/الدول",
+  "Governorates": "الأكواد/المحافظات",
   "COMPANY": {
     "NAME": "بادريق للعقارات",
     "COLOR": "red"
@@ -178,6 +181,7 @@
     "ConfirmPasswordREQ": "يجب إدخال تأكيد كلمة المرور",
     "MismatchPassword": "كلمات المرور غير متطابقة",
     "FirstNameREQ": "يجب إدخال الاسم الأول",
+    "LastNameREQ": "يجب إدخال الاسم الأخير" ,
     "EmailREQ": "يجب إدخال البريد الاليكتروني",
     "InvalidEmail": "البريد الإليكتروني غير صحيح",
     "VISITOR": "زائر",

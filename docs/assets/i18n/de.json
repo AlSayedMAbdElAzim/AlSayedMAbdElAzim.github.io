@@ -178,6 +178,7 @@
     "ConfirmPasswordREQ": "Confirm Password is required",
     "MismatchPassword": "Passwords do not match",
     "FirstNameREQ": "First name is required",
+    "LastNameREQ": "Last name is required" ,
     "EmailREQ": "Email is required",
     "InvalidEmail": "Invalid email address",
     "VISITOR": "Visitor",
