@@ -7,12 +7,15 @@
   "COMPARE": "Comparer",
   "WISHLIST": "Liste de souhaits",
   "Company": "Company Data",
+  "Branch": "Branch Data",
   "Countries": "AppCodes/Countries",
   "Governorates": "AppCodes/Governorates",
   "Cities": "AppCodes/Cities",
   "Regions": "AppCodes/Regions",
   "PropertyFeatures": "AppCodes/Property Features",
   "OwnershipDocTypes": "AppCodes/Ownership Doc Types",
+  "Currency": "AppCodes/Currencies",
+  "Expenses": "AppCodes/Expenses",
   "SIGNIN": "Sign in",
   "Tenants": "Tenants",
   "EditTenant": "Edit Tenant",
@@ -34,6 +37,7 @@
   "PaymentVouchers": "Payment Vouchers",
   "EditPaymentVoucher": "Edit Payment Voucher",
   "AddPaymentVoucher": "Add Payment Voucher",
+  "Notification": "Notifications List",
   "Employees": "Employees",
   "COMPANY": {
     "NAME": "Badraig Key",
@@ -69,6 +73,7 @@
     "REGION": "Regions",
     "BUILDFEATURE": "Build Features",
     "COMPANY": "Company",
+    "BRANCH": "Branch",
     "OWNERS": "Owners",
     "MENU_BUILDING": "Buildings and Tenant",
     "BUILDING": "Buildings",
@@ -95,6 +100,8 @@
     "TIPS": "Tips",
     "ONETIP": "One tip",
     "OWNERSHIP_DOC": "Ownership Doc Types",
+    "Currency": "Currencies",
+    "Expenses": "Expenses",
     "RentContracts": "Rent Contracts",
     "Contracts": "Contracts",
     "AddContracts": "Add Contracts",
@@ -118,7 +125,10 @@
     "INSTALLMENT": "Installments",
     "Statements": "Tenant Statements",
     "DownloadPDF": "Download PDF",
-    "Print": "Print"
+    "Print": "Print",
+    "Building": "Buildings",
+    "Security": "Security",
+    "View": "View"
   },
   "MESSAGE": {
     "SURE_DELETE": "Etes-vous sûr que vous voulez supprimer?",
@@ -132,7 +142,8 @@
     "RegisterMsg": "Don't have an account? Sign up now!",
     "MinLength": "number of Char isn't long enough!, minimum of 3 characters",
     "MinLength6": "number of Char isn't long enough!, minimum of 6 characters",
-    "ConfirmAction": "Confirm Action"
+    "ConfirmAction": "Confirm Action",
+    "DataSaved": "Data saved"
   },
   "FIELD": {
     "NAME": "Nom"
@@ -215,6 +226,7 @@
     "PARENT": "Parent",
     "RELATED": "Related to",
     "SEARCH_TENANT": "Search Tenant by name...",
+    "SEARCH_Employee": "Search Employee by name...",
     "MOBILE": "Mobile",
     "BUILDING": "Building",
     "ACTIVATED": "is Activated",
@@ -293,6 +305,12 @@
     "FLATS_NUMBER": "Number Of Flats",
     "SHOPS_NUMBER": "Number Of Shops",
     "STORES_NUMBER": "Number Of Stores",
+    "ElectricityCountersNumber": "Electricity Counters Number",
+    "ElectricityCountersCodes": "Electricity Counters Codes",
+    "WaterCountersNumber": "Water Counters Number",
+    "WaterCountersCodes": "Water Counters Codes",
+    "GasCountersNumber": "Gas Counters Number",
+    "GasCountersCodes": "Gas Counters Codes",
     "ELEVATORS_NUMBER": "Number Of Elevators",
     "PARKINGLOTS_NUMBER": "Number Of ParkingLots",
     "ENTERINGGATE_NUMBER": "Number Of Entering Gate",
@@ -385,7 +403,12 @@
     "Date": "Date",
     "Debit": "Debit value",
     "Credit": "Credit value",
-    "Balance": "Balance"
+    "Balance": "Balance",
+    "Currency": "Currency",
+    "EmpBuildings": "Building relayed to an Employee",
+    "Expenses": "Expenses",
+    "UnitExpenses": "Unit Expenses",
+    "Notifications": "Notifications"
   },
   "PAGINATION":{
     "ITEMS_PER_PAGE": "Objets par page:",

@@ -7,12 +7,15 @@
   "COMPARE": "قارن",
   "WISHLIST": "قائمة الرغبات",
   "Company": "الشركة",
+  "Branch": "الفروع",
   "Countries": "الأكواد/الدول",
   "Governorates": "الأكواد/المحافظات",
   "Cities": "الأكواد/المدن",
   "Regions": "الأكواد/المناطق",
   "PropertyFeatures": "الأكواد/مميزات العقار",
   "OwnershipDocTypes": "الأكواد/أنواع مستندات الملكية",
+  "Currency": "الأكواد/عملات النظام",
+  "Expenses": "الأكواد/أنواع المصروف",
   "SIGNIN": "تسجيل الدخول",
   "Tenants": "المستأجرين",
   "EditTenant": "تعديل بيانات مستأجر",
@@ -34,6 +37,7 @@
   "PaymentVouchers": "سندات الصرف",
   "EditPaymentVoucher": "تعديل سند صرف",
   "AddPaymentVoucher": "إضافة سند صرف",
+  "Notification": "قائمة التنبيهات",
   "Employees": "الموظفين",
   "COMPANY": {
     "NAME": "بادريق للعقارات",
@@ -69,11 +73,12 @@
     "REGION": "المناطق",
     "BUILDFEATURE": "مميزات العقار",
     "COMPANY": "الشركة",
+    "BRANCH": "الفروع",
     "OWNERS": "المالك",
     "MENU_BUILDING": "العقارات والمستأجرين",
     "BUILDING": "العقارات",
     "UNITS": "الوحدات العقارية",
-    "TENANT": "المستأجرين",
+    "TENANT": "المستأجر",
     "PRODUCTS": "منتجات",
     "CATEGORIES": "تصنيفات",
     "PRODUCT_LIST": "قائمة المنتجات",
@@ -95,6 +100,8 @@
     "TIPS": "النصائح والتنبيهات",
     "ONETIP": "نصيحة",
     "OWNERSHIP_DOC": "أنواع مستندات الملكية",
+    "Currency": "العملات",
+    "Expenses": "المصاريف",
     "RentContracts": "عقود الإيجار",
     "Contracts": "العقد",
     "AddContracts": "إضافة عقد",
@@ -118,7 +125,10 @@
     "INSTALLMENT": "الأقساط",
     "Statements": "كشف حساب",
     "DownloadPDF": "PDF ملف",
-    "Print": "طباعة"
+    "Print": "طباعة",
+    "Building": "العقارات",
+    "Security": "الصلاحيات",
+    "View": "عرض"
   },
   "MESSAGE": {
     "SURE_DELETE": "هل ترغب في إتمام عملية الحذف؟",
@@ -132,7 +142,8 @@
     "RegisterMsg": "لا تمتلك حساب؟ قم بإنشاء حساب جديد",
     "MinLength": "عدد الأحرف غير كافي، على الأقل 3أحرف",
     "MinLength6": "عدد الأحرف غير كافي، على الأقل 6أحرف",
-    "ConfirmAction": "تأكيد العملية"
+    "ConfirmAction": "تأكيد العملية",
+    "DataSaved": "تم حفظ البيانات"
   },
   "FIELD": {
     "NAME": "الاسم"
@@ -215,6 +226,7 @@
     "PARENT": "النوع",
     "RELATED": "تابع لـ",
     "SEARCH_TENANT": ".... ابحث عن مستأجر بالاسم",
+    "SEARCH_Employee": ".... ابحث عن موظف بالاسم",
     "MOBILE": "الموبيل",
     "BUILDING": "العقار",
     "ACTIVATED": "فعال",
@@ -247,7 +259,7 @@
     "BIRTH_DATE": "تاريخ الميلاد",
     "MALE": "ذكر",
     "FEMALE": "أنثى",
-    "GUARANTOR": "الكفيل",
+    "GUARANTOR": "جهة العمل",
     "POSITION": "الوظيفة",
     "EMAIL": "البريد الإليكتروني",
     "ADDRESS": "العنوان",
@@ -293,6 +305,12 @@
     "FLATS_NUMBER": "عدد الشقق",
     "SHOPS_NUMBER": "عدد المحلات",
     "STORES_NUMBER": "عدد المستودعات",
+    "ElectricityCountersNumber": "عدد عدادات الكهرباء",
+    "ElectricityCountersCodes": "أرقام عدادات الكهرباء",
+    "WaterCountersNumber": "عدد عدادات المياة",
+    "WaterCountersCodes": "أرقام عدادات المياة",
+    "GasCountersNumber": "عدد عدادات الغاز",
+    "GasCountersCodes": "أرقام عدادات الغاز",
     "ELEVATORS_NUMBER": "عدد المصاعد",
     "PARKINGLOTS_NUMBER": "عدد المواقف",
     "ENTERINGGATE_NUMBER": "عدد بوابات الدخول",
@@ -385,7 +403,13 @@
     "Date": "التاريخ",
     "Debit": "مدين",
     "Credit": "دائن",
-    "Balance": "الرصيد"
+    "Balance": "الرصيد",
+    "Currency": "العملة",
+    "EmpBuildings": "العقارات المرتبطة بالموظف",
+    "Expenses": "المصروف",
+    "UnitExpenses": "مصروف الوحدة",
+    "Notifications": "التنبيهات"
+    
   },
   "TS": {
     "COMPANYDATA": "بيانات الشركة"
