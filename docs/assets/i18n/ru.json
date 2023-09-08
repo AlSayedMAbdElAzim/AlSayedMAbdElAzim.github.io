@@ -22,12 +22,16 @@
   "AddTenant": "Add Tenant",
   "RentContracts": "Rent Contracts",
   "EditContract": "Edit Contract",
+  "RenewContract": "Renew Contract",
   "AddContract": "Add Contract",
   "ContractInstallments": "Contract Installments",
   "TenantStatements": "Account Statements",
+  "CustomerDebtRPT": "Customer Debt rpt",
   "Building": "Properties",
   "EditBuilding": "Edit Property",
   "AddBuilding": "Add Property",
+  "Parameters": "System Options",
+  "EditParameter": "Edit System Option",
   "Units": "Units",
   "EditUnit": "Edit Unit",
   "AddUnit": "Add Unit",
@@ -66,6 +70,8 @@
   "ADMIN_NAV": {
     "DASHBOARD": "Приборная панель",
     "MAINDATA": "Main data",
+    "SETTINGS": "Settings",
+    "ApplicationParam": "Application Options",
     "SYSTEMCODES": "System Codes",
     "COUNTRY": "Countries",
     "GOVERN": "Governorates",
@@ -109,7 +115,9 @@
     "EMPLOYEES": "Employees",
     "Documents": "Documents",
     "ReceivableDoc": "Receivable Document",
-    "PayableDoc": "Payable Document"
+    "PayableDoc": "Payable Document",
+    "Notification": "Notifications",
+    "Statements": "Statements"
   },
   "BTN": {
     "ADD": "Добавить",
@@ -128,7 +136,11 @@
     "Print": "Print",
     "Building": "Buildings",
     "Security": "Security",
-    "View": "View"
+    "View": "View",
+    "Accompany": "Accompany",
+    "Menu": "Menu",
+    "Retrieve": "Retrieve",
+    "ReNewContract": "renew Contract"
   },
   "MESSAGE": {
     "SURE_DELETE": "Вы уверены, что хотите удалить?",
@@ -359,6 +371,11 @@
     "RentContract": "Rent Contract",
     "ContractStartDate": "Contract Start Date",
     "ContractEndDate": "Contract End Date",
+    "ContractNoOfDaysForAlarm": "No Of Days For Alarm",
+    "ContractNoOfDaysForEjarAlarm": "No Of Days For Alarm in Ejar",
+    "ContractEjarCode": "Contract Ejar Code",
+    "ContractAlarmCounter": "current counter for Alarm",
+    "ContractAlarmStartDate": "Contract Alarm Start Date",
     "ContractStatus": "Contract Status",
     "ContractValue": "Contract Value",
     "PayEveryMonthesNo": "Pay Every Monthes No",
@@ -373,6 +390,7 @@
     "MonthlyExpense": "Monthly Expense",
     "ExpenseDesc": "Expense Description",
     "OtherValue": "Other Value",
+    "ExpenseValue": "Expense Value",
     "MonthlyElectricValue": "Monthly Electric Value",
     "ElectricCounterReading": "Electric Counter Reading",
     "MonthlyWaterValue": "Monthly Water Value",
@@ -408,7 +426,25 @@
     "EmpBuildings": "Building relayed to an Employee",
     "Expenses": "Expenses",
     "UnitExpenses": "Unit Expenses",
-    "Notifications": "Notifications"
+    "Notifications": "Notifications",
+    "Subject": "Subject",
+    "Relative": "Relative",
+    "Value": "Value",
+    "ValuePayed": "Payed value",
+    "Remainder": "Remainder",
+    "CUSTOMERDEBT": "Customer Debt",
+    "CustomerDebt_NoOfDays": "No of Days",
+    "ContractEndLT30": "Finished from 30Days",
+    "ContractEndLT60": "Finished less 60Days",
+    "ContractEndGT60": "Finished greater 60Days",
+    "ContractInAlarmTime": "In Alarm Period",
+    "DailyWork": "Daily Work"
+  },
+  "MENU": {
+    "CUSTOMERDEBT": "Customer debt"
+  },
+  "TS": {
+    "COMPANYDATA": "Company Data 789"
   },
   "PAGINATION":{
     "ITEMS_PER_PAGE": "Пункты на странице:",

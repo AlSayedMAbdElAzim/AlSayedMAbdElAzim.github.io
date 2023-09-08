@@ -22,12 +22,16 @@
   "AddTenant": "إضافة مستأجر",
   "RentContracts": "عقود الإيجار",
   "EditContract": "تعديل العقد",
+  "RenewContract": "تجديد العقد",
   "AddContract": "إضافة عقد",
   "ContractInstallments": "الأقساط",
   "TenantStatements": "كشف حساب مستأجر",
+  "CustomerDebtRPT": "مديونية العملاء",
   "Building": "العقارات",
   "EditBuilding": "تعديل بيانات عقار",
   "AddBuilding": "إضافة عقار",
+  "Parameters": "خيارات النظام",
+  "EditParameter": "تعديل خيارات النظام",
   "Units": "الوحدات العقارية",
   "EditUnit": "تعديل بيانات وحدة عقارية",
   "AddUnit": "إضافة وحدة عقارية",
@@ -66,6 +70,8 @@
   "ADMIN_NAV": {
     "DASHBOARD": "لوحة القيادة",
     "MAINDATA": "البيانات الأساسية",
+    "SETTINGS": "الإعدادات",
+    "ApplicationParam": "خيارات النظام",
     "SYSTEMCODES": "أكواد النظام",
     "COUNTRY": "الدول",
     "GOVERN": "المحافظات",
@@ -109,7 +115,9 @@
     "EMPLOYEES": "الموظفين",
     "Documents": "السندات",
     "ReceivableDoc": "سند القبض",
-    "PayableDoc": "سند الصرف"
+    "PayableDoc": "سند الصرف",
+    "Notification": "التنبيهات",
+    "Statements": "كشف حساب"
   },
   "BTN": {
     "ADD": "إضافة",
@@ -128,7 +136,11 @@
     "Print": "طباعة",
     "Building": "العقارات",
     "Security": "الصلاحيات",
-    "View": "عرض"
+    "View": "عرض",
+    "Accompany": "المرافقين",
+    "Menu": "قائمة",
+    "Retrieve": "استرجع",
+    "ReNewContract": "تجديد العقد"
   },
   "MESSAGE": {
     "SURE_DELETE": "هل ترغب في إتمام عملية الحذف؟",
@@ -355,10 +367,15 @@
     "IsKitchenCabinets": "خزائن مطبخ مركبة",
     "ContractDate": "تاريخ العقد",
     "ContractCode": "رقم العقد",
-    "ContractSubCode": "رقم فرعي للعقد",
+    "ContractSubCode": "رقم فرعي",
     "RentContract": "عقد الإيجار",
     "ContractStartDate": "تاريخ بداية العقد",
     "ContractEndDate": "تاريخ نهاية العقد",
+    "ContractNoOfDaysForAlarm": "عدد أيام التنبيه لإنتهاء العقد",
+    "ContractNoOfDaysForEjarAlarm": "عدد أيام التنبيه في إيجار",
+    "ContractEjarCode": "رقم العقد في إيجار",
+    "ContractAlarmCounter": "عدد مرات التنبيه",
+    "ContractAlarmStartDate": "تاريخ بداية التنبيه",
     "ContractStatus": "حالة العقد",
     "ContractValue": "قيمة العقد السنوية",
     "PayEveryMonthesNo": "الدفع كل عدد أشهر",
@@ -373,6 +390,7 @@
     "MonthlyExpense": "مصروف شهري للوحدة",
     "ExpenseDesc": "وصف المصروف الشهري",
     "OtherValue": "إجمالي قيم أخرى",
+    "ExpenseValue": "قيمة المصروف",
     "MonthlyElectricValue": "قيمة شهرية للكهرباء",
     "ElectricCounterReading": "قراءة عداد الكهرباء",
     "MonthlyWaterValue": "قيمة شهرية للمياة",
@@ -408,8 +426,23 @@
     "EmpBuildings": "العقارات المرتبطة بالموظف",
     "Expenses": "المصروف",
     "UnitExpenses": "مصروف الوحدة",
-    "Notifications": "التنبيهات"
-    
+    "Notifications": "التنبيهات",
+    "Subject": "الموضوع",
+    "Relative": "المرافقين",
+    "Value": "القيمة",
+    "ValuePayed": "القيمة المسددة",
+    "Remainder": "الباقي",
+    "CUSTOMERDEBT": "مديونية العملاء",
+    "CustomerDebt_NoOfDays": "عدد الأيام لمديونية العملاء",
+    "ContractEndLT30": "انتهت حتى 30يوم",
+    "ContractEndLT60": "انتهت حتى 60يوم",
+    "ContractEndGT60": "انتهت أكثر 60يوم",
+    "ContractInAlarmTime": "فترة التنبيه بالتجديد",
+    "DailyWork": "العمل اليومي"
+
+  },
+  "MENU": {
+    "CUSTOMERDEBT": "مديونية العملاء"
   },
   "TS": {
     "COMPANYDATA": "بيانات الشركة"
