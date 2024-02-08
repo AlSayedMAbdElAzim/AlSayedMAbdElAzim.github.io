@@ -243,7 +243,8 @@
     "MinLength": "number of Char isn't long enough!, minimum of 3 characters",
     "MinLength6": "number of Char isn't long enough!, minimum of 6 characters",
     "ConfirmAction": "Confirm Action",
-    "DataSaved": "Data saved"
+    "DataSaved": "Data saved",
+    "EnterMsgSentTo": "Enter msg sent to"
   },
   "FIELD": {
     "NAME": "Name"
@@ -312,6 +313,7 @@
   },
   "HTML": {
     "SIGNIN": "Sign In",
+    "OTPCode": "Enter Code",
     "USERNAME": "User Name",
     "PASSWORD": "Password",
     "ConfirmPassword": "Confirm Password",
@@ -327,6 +329,8 @@
     "DEFAULT": "Default value",
     "PARENT": "Parent",
     "RELATED": "Related to",
+    "LastSeen": "Last Seen",
+    "RegisterDate": "Register Date",
     "SEARCH_TENANT": "Search Tenant by name...",
     "SEARCH_Employee": "Search Employee by name...",
     "SEARCH_Owner": "Search Owners by name...",
@@ -369,6 +373,9 @@
     "ADDRESS": "Address",
     "ACTIVE": "Active",
     "BLOCKED": "Blocked",
+    "IsSUPERUSER": "is Admin",
+    "IsSTAFF": "is Staff",
+    "IsEMPLOYEE": "is Employee",
     "TENANT_NATURE": "Tenant nature",
     "NATURE_PERSON": "Person",
     "NATURE_COMPANY": "Company",

@@ -307,7 +307,8 @@
     "MinLength": "عدد الأحرف غير كافي، على الأقل 3أحرف",
     "MinLength6": "عدد الأحرف غير كافي، على الأقل 6أحرف",
     "ConfirmAction": "تأكيد العملية",
-    "DataSaved": "تم حفظ البيانات"
+    "DataSaved": "تم حفظ البيانات",
+    "EnterMsgSentTo": "تم ارسال الكود الى"
   },
   "FIELD": {
     "NAME": "الاسم"
@@ -376,6 +377,7 @@
   },
   "HTML": {
     "SIGNIN": "تسجيل الدخول",
+    "OTPCode": "أدخل الكود",
     "USERNAME": "اسم المستخدم",
     "PASSWORD": "كلمة المرور",
     "ConfirmPassword": "تأكيد كلمة المرور",
@@ -391,6 +393,8 @@
     "DEFAULT": "القيمة الافتراضية",
     "PARENT": "النوع",
     "RELATED": "تابع لـ",
+    "LastSeen": "آخر دخول",
+    "RegisterDate": "تاريخ التسجيل",
     "SEARCH_TENANT": ".... ابحث عن مستأجر بالاسم",
     "SEARCH_Employee": ".... ابحث عن موظف بالاسم",
     "SEARCH_Owner": ".... ابحث عن مالك بالاسم",
@@ -432,7 +436,10 @@
     "EMAIL": "البريد الإليكتروني",
     "ADDRESS": "العنوان",
     "ACTIVE": "نشط",
-    "BLOCKED": "محذوف",
+    "BLOCKED": "موقوف",
+    "IsSUPERUSER": "ضمن الأدمن",
+    "IsSTAFF": "ضمن الفريق",
+    "IsEMPLOYEE": "ضمن الموظفين",
     "TENANT_NATURE": "طبيعة المستأجر",
     "NATURE_PERSON": "شخص",
     "NATURE_COMPANY": "هيئة-شركة",
