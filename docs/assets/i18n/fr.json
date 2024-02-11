@@ -100,6 +100,7 @@
     "view_dash_DailyWork_recievableTotal": "Dashboard- Receivable voucher- Totals",
     "view_dash_DailyWork_payable": "Dashboard- Payable voucher",
     "view_dash_DailyWork_payableTotal": "Dashboard- Payable voucher- Totals",
+    "view_dash_DocNotInAccount": "Dashboard- Doc value not in Account",
     "add_country": "add Country",
     "change_country": "change Country",
     "delete_country": "delete Country",
@@ -309,7 +310,11 @@
     "Finished": "Finished",
     "NotPayed": "Not Payed",
     "Payed": "Payed",
-    "PartialPayed": "Partial Payed"
+    "PartialPayed": "Partial Payed",
+    "Cash": "Cash",
+    "Bank": "Bank",
+    "Ejar": "Ejar",
+    "Transfere": "Transfere"
   },
   "HTML": {
     "SIGNIN": "Sign In",
@@ -392,6 +397,7 @@
     "OWNER_LIST": "Owners List",
     "UNIT_LIST": "Units List",
     "Contract_List": "Contracts List",
+    "ReceivableDoc_ValueNotInAccount_List": "Receivable Doc, Value not in Account",
     "ReceivableDoc_List": "Receivable Documents List",
     "PayableDoc_List": "Payment Documents List",
     "BRANCH": "Branch",
@@ -512,6 +518,8 @@
     "DocDate": "Document Date",
     "DocValue": "Document Value",
     "DocPrintedNo": "Document Printed No",
+    "DocPayType": "Payment type",
+    "DocPayDate": "Date of Receive Value",
     "DocSecondPart_ReceivableDoc": "Name of person",
     "DocSecondPart_PayableDoc": "Name of person",
     "COMPANYDATA": "Company Data",
@@ -542,7 +550,8 @@
     "ContractEndGT60": "Finished greater 60Days",
     "ContractInAlarmTime": "In Alarm Period",
     "DailyWork": "Daily Work",
-    "Permissions": "Permissions"
+    "Permissions": "Permissions",
+    "DocNotInAccount": "Doc not in Account"
   },
   "MENU": {
     "CUSTOMERDEBT": "Customer debt"

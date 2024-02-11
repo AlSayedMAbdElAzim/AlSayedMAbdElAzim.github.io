@@ -100,6 +100,7 @@
     "view_dash_DailyWork_recievableTotal": "لوحة القيادة- العمل اليومي- إجمالي سندات القبض",
     "view_dash_DailyWork_payable": "لوحة القيادة- العمل اليومي- سندات الصرف",
     "view_dash_DailyWork_payableTotal": "لوحة القيادة- العمل اليومي- إجمالي سندات الصرف",
+    "view_dash_DocNotInAccount": "لوحة القيادة- سندات لم تنزل قيمتها في الحساب",
     "add_country": "إضافة بيانات دولة",
     "change_country": "تعديل بيانات دولة",
     "delete_country": "حذف بيانات دولة",
@@ -373,7 +374,11 @@
     "Finished": "انتهى",
     "NotPayed": "لم يسدد",
     "Payed": "مدفوع",
-    "PartialPayed": "مسدد جزء"
+    "PartialPayed": "مسدد جزء",
+    "Cash": "نقدي",
+    "Bank": "حساب بنك",
+    "Ejar": "في إيجار",
+    "Transfere": "حوالة"
   },
   "HTML": {
     "SIGNIN": "تسجيل الدخول",
@@ -456,6 +461,7 @@
     "OWNER_LIST": "قائمة الملاك",
     "UNIT_LIST": "قائمة الوحدات",
     "Contract_List": "قائمة العقود",
+    "ReceivableDoc_ValueNotInAccount_List": "سندات القبض التي لم تنزل في الحساب",
     "ReceivableDoc_List": "سندات القبض",
     "PayableDoc_List": "سندات الصرف",
     "BRANCH": "الفرع",
@@ -576,6 +582,8 @@
     "DocDate": "تاريخ السند",
     "DocValue": "قيمة السند",
     "DocPrintedNo": "الرقم المطبوع",
+    "DocPayType": "نوع السداد",
+    "DocPayDate": "تاريخ الدخول للحساب",
     "DocSecondPart_ReceivableDoc": "اسم من قام بالسداد",
     "DocSecondPart_PayableDoc": "اسم من قام بالاستلام",
     "COMPANYDATA": "بيانات الشركة",
@@ -606,7 +614,8 @@
     "ContractEndGT60": "انتهت أكثر 60يوم",
     "ContractInAlarmTime": "فترة التنبيه بالتجديد",
     "DailyWork": "العمل اليومي",
-    "Permissions": "الصلاحيات"
+    "Permissions": "الصلاحيات",
+    "DocNotInAccount": "سندات لم تدخل الحساب"
 
   },
   "MENU": {
