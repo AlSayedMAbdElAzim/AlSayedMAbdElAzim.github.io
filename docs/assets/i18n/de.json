@@ -24,11 +24,15 @@
   "EditOwner": "Edit Owner data",
   "AddOwner": "Add Owner",
   "RentContracts": "Rent Contracts",
+  "RentContractsForTenant": "Rent Contracts for Tenant",
   "EditContract": "Edit Contract",
   "RenewContract": "Renew Contract",
   "AddContract": "Add Contract",
   "ContractInstallments": "Contract Installments",
   "TenantStatements": "Account Statements",
+  "TenantLeave": "Tenant Leave",
+  "AddTenantLeave": "Add Tenant Leave",
+  "EditTenantLeave": "Edit Tenant Leave",
   "CustomerDebtRPT": "Customer Debt rpt",
   "Building": "Properties",
   "EditBuilding": "Edit Property",
@@ -47,6 +51,8 @@
   "Notification": "Notifications List",
   "Employees": "Employees",
   "Permissions": "Permissions",
+  "WorkPlaces": "Work Places",
+  "Jobs": "Jobs",
   "SECURITY": {
     "view_permission": "can View Permissions",
     "add_permission": "can Add Permissions",
@@ -72,6 +78,8 @@
     "view_currency": "can View Currency Screen",
     "view_expenses": "can View Unit Expenses Screen",
     "view_notification": "can View Notifications Types Screen",
+    "view_workplaces": "can View Work places Screen",
+    "view_jobs": "can View Jobs Screen",
     "view_dashboard": "can View Dashboard",
     "view_documentsmenu": "display Menu for Vouchers",
     "view_receivable": "can View Receivable voucher Screen",
@@ -205,7 +213,9 @@
     "ReceivableDoc": "Receivable Document",
     "PayableDoc": "Payable Document",
     "Notification": "Notifications",
-    "Statements": "Statements"
+    "WorkPlace": "Work Places",
+    "Statements": "Statements",
+    "Jobs": "Jobs"
   },
   "BTN": {
     "ADD": "Hinzufügen",
@@ -218,8 +228,10 @@
     "NO": "Nein",
     "OK": "in Ordnung",
     "EDIT": "Edit",
+    "LEAVE": "Leave",
     "INSTALLMENT": "Installments",
     "Statements": "Tenant Statements",
+    "ContractForTenant": "Contract for Tenant",
     "DownloadPDF": "Download PDF",
     "Print": "Print",
     "Building": "Buildings",
@@ -317,6 +329,8 @@
     "Transfere": "Transfere"
   },
   "HTML": {
+    "WorkPlace": "Work Place",
+    "Job": "Job",
     "SIGNIN": "Sign In",
     "OTPCode": "Enter Code",
     "USERNAME": "User Name",
@@ -336,7 +350,9 @@
     "RELATED": "Related to",
     "LastSeen": "Last Seen",
     "RegisterDate": "Register Date",
+    "SEARCH_CONTRACT": "Search Contracts...",
     "SEARCH_TENANT": "Search Tenant by name...",
+    "SEARCH_TENANT_AnyValue": "Search Tenant by name-mobile-unit-Other...",
     "SEARCH_Employee": "Search Employee by name...",
     "SEARCH_Owner": "Search Owners by name...",
     "MOBILE": "Mobile",
@@ -479,6 +495,8 @@
     "RentContract": "Rent Contract",
     "ContractStartDate": "Contract Start Date",
     "ContractEndDate": "Contract End Date",
+    "ContractLeaveDate": "Leave date",
+    "DaysDiff": "Days Diff",
     "ContractNoOfDaysForAlarm": "No Of Days For Alarm",
     "ContractNoOfDaysForEjarAlarm": "No Of Days For Alarm in Ejar",
     "ContractEjarCode": "Contract Ejar Code",
@@ -535,6 +553,7 @@
     "Balance": "Balance",
     "Currency": "Currency",
     "EmpBuildings": "Building relayed to an Employee",
+    "OwnerBuilding": "Buildings relayed to an Owner",
     "Expenses": "Expenses",
     "UnitExpenses": "Unit Expenses",
     "Notifications": "Notifications",
@@ -551,7 +570,10 @@
     "ContractInAlarmTime": "In Alarm Period",
     "DailyWork": "Daily Work",
     "Permissions": "Permissions",
-    "DocNotInAccount": "Doc not in Account"
+    "DocNotInAccount": "Doc not in Account",
+    "TenantLeave": "Tenant Leave",
+    "Deduction": "Deduction",
+    "Addition": "Addition"
   },
   "MENU": {
     "CUSTOMERDEBT": "Customer debt"
