@@ -461,7 +461,7 @@
     "BIRTH_DATE": "تاريخ الميلاد",
     "MALE": "ذكر",
     "FEMALE": "أنثى",
-    "GUARANTOR": "جهة العمل",
+    "GUARANTOR": "جهة العمل (الكفيل)",
     "POSITION": "الوظيفة",
     "EMAIL": "البريد الإليكتروني",
     "ADDRESS": "العنوان",
@@ -573,6 +573,7 @@
     "ContractNoOfDaysForAlarm": "عدد أيام التنبيه لإنتهاء العقد",
     "ContractNoOfDaysForEjarAlarm": "عدد أيام التنبيه في إيجار",
     "ContractEjarCode": "رقم العقد في إيجار",
+    "RemainingInstallments": "المتبقي من الأقساط",
     "ContractAlarmCounter": "عدد مرات التنبيه",
     "ContractAlarmStartDate": "تاريخ بداية التنبيه",
     "ContractStatus": "حالة العقد",
@@ -657,7 +658,8 @@
     "AdditionInsuranceValue": "استحقاق قيمة التأمين",
     "AdditionCutFromRentValue": "استحقاق مردود من الايجار",
     "AdditionOtherValue": "استحقاق قيم أخرى",
-    "AdditionTotalValue": "إجمالي الاستحقاقات"
+    "AdditionTotalValue": "إجمالي الاستحقاقات",
+    "NetValue": "الصافي"
 
   },
   "MENU": {

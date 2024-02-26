@@ -500,6 +500,7 @@
     "ContractNoOfDaysForAlarm": "No Of Days For Alarm",
     "ContractNoOfDaysForEjarAlarm": "No Of Days For Alarm in Ejar",
     "ContractEjarCode": "Contract Ejar Code",
+    "RemainingInstallments": "Remaining Installments",
     "ContractAlarmCounter": "current counter for Alarm",
     "ContractAlarmStartDate": "Contract Alarm Start Date",
     "ContractStatus": "Contract Status",
@@ -573,7 +574,19 @@
     "DocNotInAccount": "Doc not in Account",
     "TenantLeave": "Tenant Leave",
     "Deduction": "Deduction",
-    "Addition": "Addition"
+    "DeductionElectricValue": "Deduction Electric Value",
+    "DeductionInstallmentValue": "Deduction Installment Value",
+    "DeductionDamageValue": "Deduction Damage Value",
+    "DeductionMonthlyExpensesValue": "Deduction Monthly Expenses Value",
+    "DeductionCutFromAdditionValue": "Cut from Addition Value",
+    "DeductionOtherValue": "Deduction Other Value",
+    "DeductionTotalValue": "Deduction Total Value",
+    "Addition": "Addition",
+    "AdditionInsuranceValue": "Addition Insurance Value",
+    "AdditionCutFromRentValue": "Addition Cut from Rent Value",
+    "AdditionOtherValue": "Addition Other Value",
+    "AdditionTotalValue": "Addition Total Value",
+    "NetValue": "Net Value"
   },
   "MENU": {
     "CUSTOMERDEBT": "Customer debt"
