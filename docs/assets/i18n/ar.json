@@ -203,12 +203,16 @@
     "change_propertyowner": "تعديل بيانات مالك",
     "delete_propertyowner": "حذف بيانات الملاك",
     "view_oneowner": "عرض بيانات مالك",
+    "view_owner_securitybuildings": "عرض الصلاحيات- للمالك العقارات",
+    "add_owner_security_onebuilding": "اضافة عقار في صلاحيات المالك",
+    "delete_owner_security_onebuilding": "حذف عقار من صلاحيات المالك",
     "add_jobs": "إضافة بيانات وظيفة",
     "change_jobs": "تعديل بيانات وظيفة",
     "delete_jobs": "حذف وظيفة",
     "add_workplaces": "إضافة بيانات مكان العمل",
     "change_workplaces": "تعديل بيانات مكان العمل",
-    "delete_workplaces": "حذف مكان العمل"
+    "delete_workplaces": "حذف مكان العمل",
+    "view_emp_last_seen": "اخر دخول للموظف"
   },
   "COMPANY": {
     "NAME": "بادريق للعقارات",
