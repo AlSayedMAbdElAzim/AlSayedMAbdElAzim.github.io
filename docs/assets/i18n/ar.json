@@ -53,6 +53,7 @@
   "Permissions": "الصلاحيات",
   "WorkPlaces": "أماكن العمل",
   "Jobs": "الوظائف",
+  "ChangePassword": "تغيير كلمة المرور",
   "SECURITY": {
     "view_permission": "عرض شاشة تحديد الصلاحيات",
     "add_permission": "إضافة صلاحية لمستخدم",
@@ -212,7 +213,10 @@
     "add_workplaces": "إضافة بيانات مكان العمل",
     "change_workplaces": "تعديل بيانات مكان العمل",
     "delete_workplaces": "حذف مكان العمل",
-    "view_emp_last_seen": "اخر دخول للموظف"
+    "view_emp_last_seen": "اخر دخول للموظف",
+    "change_emp_password": "تغيير كلمة مرور الموظف",
+    "change_owner_password": "تغيير كلمة مرور المالك",
+    "change_tenant_password": "تغيير كلمة مرور المستأجر"
   },
   "COMPANY": {
     "NAME": "بادريق للعقارات",
@@ -319,11 +323,14 @@
     "Menu": "قائمة",
     "Retrieve": "استرجع",
     "ReNewContract": "تجديد العقد",
-    "Transfer": "إرسال"
+    "Transfer": "إرسال",
+    "PasswordChange": "تغيير كلمة المرور"
   },
   "MESSAGE": {
     "SURE_DELETE": "هل ترغب في إتمام عملية الحذف؟",
     "FILE_SIZE": "حجم الملف لا يمكن أن يزيد عن {{param}} kb.",
+    "PasswordChanged": "تم تغيير كلمة المرور",
+    "PasswordNotChanged": "لم يتم تغيير كلمة المرور",
     "LOGGEDIN": "تم تسجيل الدخول",
     "NOTLOGGEDIN": "عذراً، لم يتم تسجيل الدخول",
     "REGISTERD": "مبروك، تم انشاء حساب جديد",

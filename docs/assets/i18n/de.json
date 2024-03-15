@@ -53,6 +53,7 @@
   "Permissions": "Permissions",
   "WorkPlaces": "Work Places",
   "Jobs": "Jobs",
+  "ChangePassword": "Change Password",
   "SECURITY": {
     "view_permission": "can View Permissions",
     "add_permission": "can Add Permissions",
@@ -242,11 +243,14 @@
     "Menu": "Menu",
     "Retrieve": "Retrieve",
     "ReNewContract": "renew Contract",
-    "Transfer": "Transfer"
+    "Transfer": "Transfer",
+    "PasswordChange": "change Password"
   },
   "MESSAGE": {
     "SURE_DELETE": "Sind Sie sicher, dass Sie löschen möchten?",
     "FILE_SIZE": "Die Dateigröße darf {{param}} kb nicht überschreiten.",
+    "PasswordChanged": "Password Changed",
+    "PasswordNotChanged": "Password not Changed",
     "LOGGEDIN": "You are logged in!",
     "NOTLOGGEDIN": "Sorry, You are not logged in!",
     "REGISTERD": "Successfully, You create a new Account!",
