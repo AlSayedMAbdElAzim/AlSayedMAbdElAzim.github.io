@@ -391,6 +391,8 @@
     "AddPic": "Add Image",
     "CODE": "Code",
     "SUBCODE": "Sub Code",
+    "CODE_DOCUMENT": "Document Code",
+    "CODE_TENANT": "Tenant Code",
     "FIRST_NAME": "First Name",
     "LAST_NAME": "Last Name",
     "BIRTH_DATE": "Birth date",

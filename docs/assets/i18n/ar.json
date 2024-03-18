@@ -471,6 +471,8 @@
     "AddPic": "إضافة صورة",
     "CODE": "الكود",
     "SUBCODE": "الكود الفرعي",
+    "CODE_DOCUMENT": "كود السند",
+    "CODE_TENANT": "كود المستأجر",
     "FIRST_NAME": "الاسم الأول",
     "LAST_NAME": "الاسم الأخير",
     "BIRTH_DATE": "تاريخ الميلاد",
