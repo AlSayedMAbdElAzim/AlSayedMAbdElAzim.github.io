@@ -440,6 +440,7 @@
     "STREET_NAME": "Street Name",
     "BUILDING_NUMBER": "building Number",
     "ZIP": "ZIB Code",
+    "TaxNumber": "Tax Number",
     "ADDRESS_DESC": "Address Description",
     "COUNTRY": "Country",
     "GOVERN": "Governorate",

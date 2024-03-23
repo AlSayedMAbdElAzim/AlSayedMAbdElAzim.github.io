@@ -520,6 +520,7 @@
     "STREET_NAME": "الشارع",
     "BUILDING_NUMBER": "رقم المبنى",
     "ZIP": "صندوق البريد",
+    "TaxNumber": "الرقم الضريبي",
     "ADDRESS_DESC": "وصف العنوان",
     "COUNTRY": "الدولة",
     "GOVERN": "المحافظة",
