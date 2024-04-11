@@ -244,7 +244,10 @@
     "Retrieve": "Retrieve",
     "ReNewContract": "renew Contract",
     "Transfer": "Transfer",
-    "PasswordChange": "change Password"
+    "PasswordChange": "change Password",
+    "TaxInvoice": "Tax invoice",
+    "TaxSimpleInvoice": "Simple Invoice",
+    "TaxRequest": "Finaical Request"
   },
   "MESSAGE": {
     "SURE_DELETE": "Вы уверены, что хотите удалить?",
@@ -411,6 +414,10 @@
     "NATURE_PERSON": "Person",
     "NATURE_COMPANY": "Company",
     "NATURE_OTHER": "Other",
+    "EInvoiceType": "Electronic Invoice",
+    "EType_Without": "Without",
+    "EType_Personal": "Personal",
+    "EType_Business": "Business",
     "IDNUMBER": "ID Number",
     "IDTYPE": "ID Type",
     "START_DATE": "Start Date",
@@ -445,6 +452,9 @@
     "BankName": "Bank Name",
     "AccountNumber": "Account Number",
     "AccountOwnerName": "Account Owner Name",
+    "InvoiceMask": "Invoice Mask",
+    "InvoiceCodeLength": "Invoice Code Length",
+    "InvoiceLastCode": "Last Code for Invoices", 
     "ADDRESS_DESC": "Address Description",
     "COUNTRY": "Country",
     "GOVERN": "Governorate",

@@ -324,7 +324,10 @@
     "Retrieve": "استرجع",
     "ReNewContract": "تجديد العقد",
     "Transfer": "إرسال",
-    "PasswordChange": "تغيير كلمة المرور"
+    "PasswordChange": "تغيير كلمة المرور",
+    "TaxInvoice": "فاتورة ضريبية",
+    "TaxSimpleInvoice": "فاتورة ضريبية مبسطة",
+    "TaxRequest": "مطالبة مالية"
   },
   "MESSAGE": {
     "SURE_DELETE": "هل ترغب في إتمام عملية الحذف؟",
@@ -491,6 +494,10 @@
     "NATURE_PERSON": "شخص",
     "NATURE_COMPANY": "هيئة-شركة",
     "NATURE_OTHER": "أخرى",
+    "EInvoiceType": "الفاتورة الالكترونية",
+    "EType_Without": "بدون",
+    "EType_Personal": "مبسطة",
+    "EType_Business": "ضريبية",
     "IDNUMBER": "رقم الهوية",
     "IDTYPE": "نوع الهوية",
     "START_DATE": "تاريخ البداية",
@@ -525,6 +532,9 @@
     "BankName": "اسم البنك",
     "AccountNumber": "رقم الحساب",
     "AccountOwnerName": "اسم المستفيد",
+    "InvoiceMask": "قناع يسبق رقم الفاتورة",
+    "InvoiceCodeLength": "طول رقم الفاتورة",
+    "InvoiceLastCode": "آخر رقم للفواتير",
     "ADDRESS_DESC": "وصف العنوان",
     "COUNTRY": "الدولة",
     "GOVERN": "المحافظة",
