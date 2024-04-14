@@ -12,6 +12,7 @@
   "Governorates": "AppCodes/Governorates",
   "Cities": "AppCodes/Cities",
   "Regions": "AppCodes/Regions",
+  "DOCTypes": "AppCodes/Document Types",
   "PropertyFeatures": "AppCodes/Property Features",
   "OwnershipDocTypes": "AppCodes/Ownership Doc Types",
   "Currency": "AppCodes/Currencies",
@@ -54,6 +55,9 @@
   "WorkPlaces": "Work Places",
   "Jobs": "Jobs",
   "ChangePassword": "Change Password",
+  "ExpensesInvoice": "Expenses Invoices",
+  "EditExpensesInvoice": "Edit Expenses Invoice",
+  "AddExpensesInvoice": "Add Expenses Invoice",
   "SECURITY": {
     "view_permission": "can View Permissions",
     "add_permission": "can Add Permissions",
@@ -216,7 +220,9 @@
     "Notification": "Notifications",
     "WorkPlace": "Work Places",
     "Statements": "Statements",
-    "Jobs": "Jobs"
+    "Jobs": "Jobs",
+    "DocType": "Document types",
+    "ExpensesInv": "Expenses Invoices"
   },
   "BTN": {
     "ADD": "Ekle",

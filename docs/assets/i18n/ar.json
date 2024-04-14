@@ -12,6 +12,7 @@
   "Governorates": "الأكواد/المحافظات",
   "Cities": "الأكواد/المدن",
   "Regions": "الأكواد/المناطق",
+  "DOCTypes": "الأكواد/أنواع المستندات",
   "PropertyFeatures": "الأكواد/مميزات العقار",
   "OwnershipDocTypes": "الأكواد/أنواع مستندات الملكية",
   "Currency": "الأكواد/عملات النظام",
@@ -54,6 +55,9 @@
   "WorkPlaces": "أماكن العمل",
   "Jobs": "الوظائف",
   "ChangePassword": "تغيير كلمة المرور",
+  "ExpensesInvoice": "فواتير المصروفات",
+  "EditExpensesInvoice": "تعديل فاتورة مصروفات",
+  "AddExpensesInvoice": "إضافة فاتورة مصروفات",
   "SECURITY": {
     "view_permission": "عرض شاشة تحديد الصلاحيات",
     "add_permission": "إضافة صلاحية لمستخدم",
@@ -216,7 +220,11 @@
     "view_emp_last_seen": "اخر دخول للموظف",
     "change_emp_password": "تغيير كلمة مرور الموظف",
     "change_owner_password": "تغيير كلمة مرور المالك",
-    "change_tenant_password": "تغيير كلمة مرور المستأجر"
+    "change_tenant_password": "تغيير كلمة مرور المستأجر",
+    "view_doctypes": "عرض بيانات أنواع المستندات",
+    "add_doctypes": "إضافة أنواع المستندات",
+    "change_doctypes": "تعديل بيانات أنواع المستندات",
+    "delete_doctypes": "حذف أنواع المستندات"
   },
   "COMPANY": {
     "NAME": "بادريق للعقارات",
@@ -296,7 +304,9 @@
     "Notification": "التنبيهات",
     "WorkPlace": "أماكن العمل",
     "Statements": "كشف حساب",
-    "Jobs": "الوظائف"
+    "Jobs": "الوظائف",
+    "DocType": "أنواع المستندات",
+    "ExpensesInv": "فاتورة مصروفات"
   },
   "BTN": {
     "ADD": "إضافة",
