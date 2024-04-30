@@ -58,6 +58,9 @@
   "ExpensesInvoice": "Expenses Invoices",
   "EditExpensesInvoice": "Edit Expenses Invoice",
   "AddExpensesInvoice": "Add Expenses Invoice",
+  "DocSerials": "Document Serials",
+  "EditDocSerials": "Edit Document Serials",
+  "AddDocSerials": "Add Document Serials",
   "SECURITY": {
     "view_permission": "can View Permissions",
     "add_permission": "can Add Permissions",
@@ -171,6 +174,7 @@
     "MAINDATA": "Main data",
     "SETTINGS": "Settings",
     "ApplicationParam": "Application Options",
+    "DocumentSerials": "Document Serials",
     "SYSTEMCODES": "System Codes",
     "OTP": "One time Password",
     "COUNTRY": "Countries",
@@ -253,7 +257,8 @@
     "PasswordChange": "change Password",
     "TaxInvoice": "Tax invoice",
     "TaxSimpleInvoice": "Simple Invoice",
-    "TaxRequest": "Finaical Request"
+    "TaxRequest": "Finaical Request",
+    "CreateSerial": "Create Serial Structure"
   },
   "MESSAGE": {
     "SURE_DELETE": "Are you sure you want to delete?",
@@ -340,7 +345,20 @@
     "Cash": "Cash",
     "Bank": "Bank",
     "Ejar": "Ejar",
-    "Transfere": "Transfere"
+    "Transfere": "Transfere",
+    "General": "General",
+    "PerPart": "Per Part",
+    "Year": "Year",
+    "Month": "Month",
+    "Branch": "Branch",
+    "Owner": "Owner",
+    "Property": "Property",
+    "Unit": "Unit",
+    "Tenant": "Tenant",
+    "Contract": "Contract",
+    "Employee": "Employee",
+    "FixedCharacters": "Fixed Characters",
+    "DocumentSerial": "Document Serial"
   },
   "HTML": {
     "WorkPlace": "Work Place",
@@ -618,7 +636,14 @@
     "AdditionCutFromRentValue": "Addition Cut from Rent Value",
     "AdditionOtherValue": "Addition Other Value",
     "AdditionTotalValue": "Addition Total Value",
-    "NetValue": "Net Value"
+    "NetValue": "Net Value",
+    "DocumentsType": "Document Type",
+    "SerialType": "Serial Type",
+    "PartsNumber": "Number of Parts",
+    "PartType": "Part Type",
+    "PartDigitNumber": "Part No of Digits",
+    "PartStartWith": "Part start with",
+    "SerialParts": "Serial Parts"
   },
   "MENU": {
     "CUSTOMERDEBT": "Customer debt"

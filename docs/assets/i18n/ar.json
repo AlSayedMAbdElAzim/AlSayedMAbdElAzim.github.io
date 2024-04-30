@@ -58,6 +58,9 @@
   "ExpensesInvoice": "فواتير المصروفات",
   "EditExpensesInvoice": "تعديل فاتورة مصروفات",
   "AddExpensesInvoice": "إضافة فاتورة مصروفات",
+  "DocSerials": "تسلسل المستند",
+  "EditDocSerials": "تعديل تسلسل مستند",
+  "AddDocSerials": "إضافة تسلسل مستند",
   "SECURITY": {
     "view_permission": "عرض شاشة تحديد الصلاحيات",
     "add_permission": "إضافة صلاحية لمستخدم",
@@ -255,6 +258,7 @@
     "MAINDATA": "البيانات الأساسية",
     "SETTINGS": "الإعدادات",
     "ApplicationParam": "خيارات النظام",
+    "DocumentSerials": "تسلسل المستندات",
     "SYSTEMCODES": "أكواد النظام",
     "OTP": "كلمة مرور لمرة واحدة",
     "COUNTRY": "الدول",
@@ -337,7 +341,8 @@
     "PasswordChange": "تغيير كلمة المرور",
     "TaxInvoice": "فاتورة ضريبية",
     "TaxSimpleInvoice": "فاتورة ضريبية مبسطة",
-    "TaxRequest": "مطالبة مالية"
+    "TaxRequest": "مطالبة مالية",
+    "CreateSerial": "تركيب التسلسل"
   },
   "MESSAGE": {
     "SURE_DELETE": "هل ترغب في إتمام عملية الحذف؟",
@@ -424,7 +429,20 @@
     "Cash": "نقدي",
     "Bank": "حساب بنك",
     "Ejar": "في إيجار",
-    "Transfere": "حوالة"
+    "Transfere": "حوالة",
+    "General": "عام",
+    "PerPart": "حسب المقطع",
+    "Year": "السنة",
+    "Month": "الشهر",
+    "Branch": "الفرع",
+    "Owner": "المالك",
+    "Property": "العقار",
+    "Unit": "الوحدة",
+    "Tenant": "المستأجر",
+    "Contract": "العقد",
+    "Employee": "الموظف",
+    "FixedCharacters": "أحرف ثابتة",
+    "DocumentSerial": "تسلسل المستند"
   },
   "HTML": {
     "WorkPlace": "مكان العمل",
@@ -702,7 +720,14 @@
     "AdditionCutFromRentValue": "استحقاق مردود من الايجار",
     "AdditionOtherValue": "استحقاق قيم أخرى",
     "AdditionTotalValue": "إجمالي الاستحقاقات",
-    "NetValue": "الصافي"
+    "NetValue": "الصافي",
+    "DocumentsType": "نوع المستند",
+    "SerialType": "نوع التسلسل",
+    "PartsNumber": "عدد المقاطع",
+    "PartType": "نوع المقطع",
+    "PartDigitNumber": "عدد خانات المقطع",
+    "PartStartWith": "المقطع يبدأ ب",
+    "SerialParts": "مقاطع التسلسل"
 
   },
   "MENU": {
