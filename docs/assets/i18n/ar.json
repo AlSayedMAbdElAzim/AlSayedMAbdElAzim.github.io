@@ -61,6 +61,9 @@
   "DocSerials": "تسلسل المستند",
   "EditDocSerials": "تعديل تسلسل مستند",
   "AddDocSerials": "إضافة تسلسل مستند",
+  "TaxInvoice": "فواتير ضريبية",
+  "EditTaxInvoice": "تعديل فاتورة ضريبية",
+  "AddTaxInvoice": "إضافة فاتورة ضريبية",
   "SECURITY": {
     "view_permission": "عرض شاشة تحديد الصلاحيات",
     "add_permission": "إضافة صلاحية لمستخدم",
@@ -227,7 +230,30 @@
     "view_doctypes": "عرض بيانات أنواع المستندات",
     "add_doctypes": "إضافة أنواع المستندات",
     "change_doctypes": "تعديل بيانات أنواع المستندات",
-    "delete_doctypes": "حذف أنواع المستندات"
+    "delete_doctypes": "حذف أنواع المستندات",
+    "print_contractlist": "طباعة العقود",
+    "print_taxinvoice": "طباعة الفواتير الضريبية",
+    "print_expensesinv": "طباعة فواتير المصروفات",
+    "view_expensesinv": "عرض جدول فواتير المصروفات",
+    "view_oneexpensesinv": "عرض بيانات فاتورة مصروفات",
+    "add_expensesinv": "إضافة فاتورة مصروفات",
+    "change_expensesinv": "تعديل بيانات فاتورة مصروفات",
+    "delete_expensesinv": "حذف فاتورة مصروفات",
+    "view_taxinvoice": "عرض جدول الفواتير",
+    "view_onetaxinvoice": "عرض بيانات فاتورة",
+    "add_taxinvoice": "إضافة فاتورة",
+    "change_taxinvoice": "تعديل بيانات فاتورة",
+    "delete_taxinvoice": "حذف فاتورة",
+    "view_expensesinv_dt": "عرض جدول تفاصيل فاتورة المصروفات",
+    "view_oneexpensesinv_dt": "عرض بيانات تفاصيل فاتورة مصروفات",
+    "add_expensesinv_dt": "إضافة أحد تفاصيل فاتورة المصروفات",
+    "change_expensesinv_dt": "تعديل أحد تفاصيل فاتورة المصروفات",
+    "delete_expensesinv_dt": "حذف أحد تفاصيل فاتورة المصروفات",
+    "view_taxinvoice_dt": "عرض جدول تفاصيل الفاتورة",
+    "view_onetaxinvoice_dt": "عرض بيانات تفاصيل فاتورة",
+    "add_taxinvoice_dt": "إضافة أحد تفاصيل فاتورة",
+    "change_taxinvoice_dt": "تعديل أحد تفاصيل فاتورة",
+    "delete_taxinvoice_dt": "حذف أحد تفاصيل فاتورة"
   },
   "COMPANY": {
     "NAME": "بادريق للعقارات",
@@ -310,7 +336,8 @@
     "Statements": "كشف حساب",
     "Jobs": "الوظائف",
     "DocType": "أنواع المستندات",
-    "ExpensesInv": "فاتورة مصروفات"
+    "ExpensesInv": "فاتورة مصروفات",
+    "TaxInvoice": "فاتورة ضريبية"
   },
   "BTN": {
     "ADD": "إضافة",
@@ -467,6 +494,7 @@
     "LastSeen": "آخر دخول",
     "RegisterDate": "تاريخ التسجيل",
     "SEARCH_CONTRACT": "ابحث عن عقد....",
+    "SEARCH_INVOICE": ".... ابحث عن فاتورة",
     "SEARCH_TENANT": ".... ابحث عن مستأجر بالاسم",
     "SEARCH_TENANT_AnyValue": "ابحث عن مستأجر بالاسم -الموبيل -العقار -رقم الوحدة -الوظيفة -مكان العمل .....",
     "SEARCH_BUILDING": ".... ابحث عن عقار",
@@ -500,6 +528,7 @@
     "TAB_ContractValues": "قيم العقد",
     "TAB_DOCS": "المرفقات",
     "AddPic": "إضافة صورة",
+    "Serial": "تسلسل",
     "CODE": "الكود",
     "SUBCODE": "الكود الفرعي",
     "CODE_DOCUMENT": "كود السند",
@@ -538,6 +567,7 @@
     "OWNER_LIST": "قائمة الملاك",
     "UNIT_LIST": "قائمة الوحدات",
     "Contract_List": "قائمة العقود",
+    "Invoice_List": "قائمة الفواتير",
     "ReceivableDoc_ValueNotInAccount_List": "سندات القبض التي لم تنزل في الحساب",
     "ReceivableDoc_List": "سندات القبض",
     "PayableDoc_List": "سندات الصرف",
@@ -727,8 +757,11 @@
     "PartType": "نوع المقطع",
     "PartDigitNumber": "عدد خانات المقطع",
     "PartStartWith": "المقطع يبدأ ب",
-    "SerialParts": "مقاطع التسلسل"
-
+    "SerialParts": "مقاطع التسلسل",
+    "TotalValueWithoutTax": "الإجمالي بدون ضريبة",
+    "NetValueWithTax": "الصافي مع الضريبة",
+    "TaxPercent": "نسبة الضريبة",
+    "TaxValue": "قيمة الضريبة"
   },
   "MENU": {
     "CUSTOMERDEBT": "مديونية العملاء"

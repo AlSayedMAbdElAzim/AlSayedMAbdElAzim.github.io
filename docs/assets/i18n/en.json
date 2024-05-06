@@ -61,6 +61,9 @@
   "DocSerials": "Document Serials",
   "EditDocSerials": "Edit Document Serials",
   "AddDocSerials": "Add Document Serials",
+  "TaxInvoice": "Tax Invoices",
+  "EditTaxInvoice": "Edit Tax Invoice",
+  "AddTaxInvoice": "Add Tax Invoice",
   "SECURITY": {
     "view_permission": "can View Permissions",
     "add_permission": "can Add Permissions",
@@ -226,7 +229,8 @@
     "Statements": "Statements",
     "Jobs": "Jobs",
     "DocType": "Document types",
-    "ExpensesInv": "Expenses Invoices"
+    "ExpensesInv": "Expenses Invoices",
+    "TaxInvoice": "Tax Invoice"
   },
   "BTN": {
     "ADD": "Add",
@@ -383,6 +387,7 @@
     "LastSeen": "Last Seen",
     "RegisterDate": "Register Date",
     "SEARCH_CONTRACT": "Search Contracts...",
+    "SEARCH_INVOICE": "Search Invoice...",
     "SEARCH_TENANT": "Search Tenant by name...",
     "SEARCH_TENANT_AnyValue": "Search Tenant by name-mobile-unit-Other...",
     "SEARCH_BUILDING": "Search Buildings ...",
@@ -416,6 +421,7 @@
     "TAB_ContractValues": "Contract Values",
     "TAB_DOCS": "Attachments",
     "AddPic": "Add Image",
+    "Serial": "Serial",
     "CODE": "Code",
     "SUBCODE": "Sub Code",
     "CODE_DOCUMENT": "Document Code",
@@ -454,6 +460,7 @@
     "OWNER_LIST": "Owners List",
     "UNIT_LIST": "Units List",
     "Contract_List": "Contracts List",
+    "Invoice_List": "Invoice List",
     "ReceivableDoc_ValueNotInAccount_List": "Receivable Doc, Value not in Account",
     "ReceivableDoc_List": "Receivable Documents List",
     "PayableDoc_List": "Payment Documents List",
@@ -643,7 +650,11 @@
     "PartType": "Part Type",
     "PartDigitNumber": "Part No of Digits",
     "PartStartWith": "Part start with",
-    "SerialParts": "Serial Parts"
+    "SerialParts": "Serial Parts",
+    "TotalValueWithoutTax": "Total value without Tax",
+    "NetValueWithTax": "Net value with Tax",
+    "TaxPercent": "Tax Percentage",
+    "TaxValue": "Tax Value"
   },
   "MENU": {
     "CUSTOMERDEBT": "Customer debt"
