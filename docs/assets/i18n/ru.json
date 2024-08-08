@@ -64,6 +64,11 @@
   "TaxInvoice": "Tax Invoices",
   "EditTaxInvoice": "Edit Tax Invoice",
   "AddTaxInvoice": "Add Tax Invoice",
+  "RequestInvoice": "Financial Request",
+  "EditRequestInvoice": "Edit Financial Request",
+  "E-Invoice": "Electronic Invoice",
+  "Categories": "Categories",
+  "Product_List": "Products and Services List",
   "SECURITY": {
     "view_permission": "can View Permissions",
     "add_permission": "can Add Permissions",
@@ -149,7 +154,7 @@
     "delete_notification": "delete Notification types"
   },
   "COMPANY": {
-    "NAME": "Badraig Key",
+    "NAME": "Ejar Ashal",
     "COLOR": "red"
   },
   "NAV": {
@@ -230,7 +235,9 @@
     "Jobs": "Jobs",
     "DocType": "Document types",
     "ExpensesInv": "Expenses Invoices",
-    "TaxInvoice": "Tax Invoice"
+    "TaxInvoice": "Tax Invoice",
+    "RequestInvoice": "Request Invoice",
+    "Services": "Services"
   },
   "BTN": {
     "ADD": "Добавить",
@@ -262,7 +269,8 @@
     "TaxInvoice": "Tax invoice",
     "TaxSimpleInvoice": "Simple Invoice",
     "TaxRequest": "Finaical Request",
-    "CreateSerial": "Create Serial Structure"
+    "CreateSerial": "Create Serial Structure",
+    "ExpenseInv": "Expense Invoice"
   },
   "MESSAGE": {
     "SURE_DELETE": "Вы уверены, что хотите удалить?",
@@ -283,7 +291,11 @@
     "EnterMsgSentTo": "Enter msg sent to"
   },
   "FIELD": {
-    "NAME": "Имя"
+    "NAME": "Имя",
+    "MainCategory": "Main Category",
+    "SubCategory": "Sub Category",
+    "SubSubCategory": "Last Category",
+    "ItemCost": "Item Cost"
   },
   "OPTIONS": {
     "NATIONAL_ID": "NationalID",
@@ -362,7 +374,11 @@
     "Contract": "Contract",
     "Employee": "Employee",
     "FixedCharacters": "Fixed Characters",
-    "DocumentSerial": "Document Serial"
+    "DocumentSerial": "Document Serial",
+    "TYPEEjar": "Ejar",
+    "TYPEProduct": "Product",
+    "TYPEService": "Service",
+    "TYPEOther": "Other"
   },
   "HTML": {
     "WorkPlace": "Work Place",
@@ -388,6 +404,7 @@
     "RegisterDate": "Register Date",
     "SEARCH_CONTRACT": "Search Contracts...",
     "SEARCH_INVOICE": "Search Invoice...",
+    "SEARCH_REQUEST": "Search Request...",
     "SEARCH_TENANT": "Search Tenant by name...",
     "SEARCH_TENANT_AnyValue": "Search Tenant by name-mobile-unit-Other...",
     "SEARCH_BUILDING": "Search Buildings ...",
@@ -395,6 +412,8 @@
     "SEARCH_Employee": "Search Employee by name...",
     "SEARCH_Owner": "Search Owners by name...",
     "SEARCH_PayDocument": "Search Pay Documents by ...",
+    "SEARCH_Product": "Search Products/Services by ...",
+    "SEARCH_CTT": "Search System Codes by ....",
     "MOBILE": "Mobile",
     "WHATSAPP": "Whats App",
     "BUILDING": "Building",
@@ -422,6 +441,7 @@
     "TAB_DOCS": "Attachments",
     "AddPic": "Add Image",
     "Serial": "Serial",
+    "INVNumber": "Invoice Number",
     "CODE": "Code",
     "SUBCODE": "Sub Code",
     "CODE_DOCUMENT": "Document Code",
@@ -461,6 +481,7 @@
     "UNIT_LIST": "Units List",
     "Contract_List": "Contracts List",
     "Invoice_List": "Invoice List",
+    "Request_List": "Request List",
     "ReceivableDoc_ValueNotInAccount_List": "Receivable Doc, Value not in Account",
     "ReceivableDoc_List": "Receivable Documents List",
     "PayableDoc_List": "Payment Documents List",
@@ -486,6 +507,10 @@
     "InvoiceMask": "Invoice Mask",
     "InvoiceCodeLength": "Invoice Code Length",
     "InvoiceLastCode": "Last Code for Invoices", 
+    "InvoiceDate": "Invoice date",
+    "EjarPeriod": "Rent value for period",
+    "FromDate": "From date",
+    "ToDate": "To date",
     "ADDRESS_DESC": "Address Description",
     "COUNTRY": "Country",
     "GOVERN": "Governorate",
@@ -654,7 +679,12 @@
     "TotalValueWithoutTax": "Total value without Tax",
     "NetValueWithTax": "Net value with Tax",
     "TaxPercent": "Tax Percentage",
-    "TaxValue": "Tax Value"
+    "TaxValue": "Tax Value",
+    "CategoryName": "Category Name",
+    "HasSub": "Has Sub",
+    "HisParent": "His Parent",
+    "ItemType": "Item type (Product-Service)",
+    "ExpensesInvoice": "Expenses Invoice"
   },
   "MENU": {
     "CUSTOMERDEBT": "Customer debt"
