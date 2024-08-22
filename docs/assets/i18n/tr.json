@@ -125,6 +125,14 @@
     "view_dash_DailyWork_payable": "Dashboard- Payable voucher",
     "view_dash_DailyWork_payableTotal": "Dashboard- Payable voucher- Totals",
     "view_dash_DocNotInAccount": "Dashboard- Doc value not in Account",
+    "view_mobileapp_show_per_bulding": "Display Units per Buildings",
+    "view_mobileapp_show_per_owner": "Display Units per Owners",
+    "view_mobileapp_show_per_emp": "Display Units per Employee",
+    "view_mobileapp_show_per_debit": "Display Units per debits",
+    "view_mobileapp_show_per_unittype": "Display Units per Units types",
+    "view_mobileapp_show_per_country": "Display Units per Countries",
+    "view_mobileapp_show_per_govern": "Display Units per Governoments",
+    "view_mobileapp_show_per_city": "Display Units per Cities",
     "add_country": "add Country",
     "change_country": "change Country",
     "delete_country": "delete Country",
@@ -378,7 +386,18 @@
     "TYPEEjar": "Ejar",
     "TYPEProduct": "Product",
     "TYPEService": "Service",
-    "TYPEOther": "Other"
+    "TYPEOther": "Other",
+    "ReceivableDocInstallment": "Receivable Doc for Installment",
+    "ReceivableDocService": "Receivable Doc for Service",
+    "ReceivableDocDeposit": "Receivable Doc for Deposit",
+    "ReceivableDocArrest": "Receivable Doc for Arrest",
+    "ReceivableDocInsurance": "Receivable Doc for Insurance",
+    "ReceivableDocExpense": "Receivable Doc for Expense",
+    "ReceivableDocClearance": "Receivable Doc for Clearance",
+    "PayableDocGeneral": "Payable Doc",
+    "PayableDocArrestReturn": "Payable Doc for Arrest return",
+    "PayableDocClearance": "Payable Doc for Clearance",
+    "PayableDocDepositReturn": "Payable Doc for Deposit return"
   },
   "HTML": {
     "WorkPlace": "Work Place",
@@ -619,6 +638,7 @@
     "DocDate": "Document Date",
     "DocValue": "Document Value",
     "DocPrintedNo": "Document Printed No",
+    "DocClassType": "Document Classification",
     "DocPayType": "Payment type",
     "DocPayDate": "Date of Receive Value",
     "DocSecondPart_ReceivableDoc": "Name of person",
@@ -684,7 +704,11 @@
     "HasSub": "Has Sub",
     "HisParent": "His Parent",
     "ItemType": "Item type (Product-Service)",
-    "ExpensesInvoice": "Expenses Invoice"
+    "ExpensesInvoice": "Expenses Invoice",
+    "Barcode": "Barcode",
+    "ProductName": "Product name",
+    "QTY": "Qty",
+    "Price": "Price"
   },
   "MENU": {
     "CUSTOMERDEBT": "Customer debt"
