@@ -269,6 +269,7 @@
     "Security": "Security",
     "View": "View",
     "Accompany": "Accompany",
+    "WorkRelated": "Work related",
     "Menu": "Menu",
     "Retrieve": "Retrieve",
     "ReNewContract": "renew Contract",
@@ -714,7 +715,8 @@
     "Barcode": "Barcode",
     "ProductName": "Product name",
     "QTY": "Qty",
-    "Price": "Price"
+    "Price": "Price",
+    "WorkNature": "Work nature"
   },
   "MENU": {
     "CUSTOMERDEBT": "Customer debt"

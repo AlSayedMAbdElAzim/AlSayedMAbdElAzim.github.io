@@ -202,6 +202,9 @@
     "view_tenantrelative": "عرض بيانات المرافقين",
     "add_tenantrelative": "إضافة مرافق",
     "delete_tenantrelative": "حذف مرافق",
+    "view_tenant_workrelated": "عرض بيانات التابعين",
+    "add_tenant_workrelated": "إضافة تابع",
+    "delete_tenant_workrelated": "حذف تابع",
     "view_onereceivable": "عرض بيانات سند قبض",
     "view_onepayable": "عرض بيانات سند صرف",
     "add_onereceivable": "إضافة سند قبض",
@@ -400,6 +403,7 @@
     "Security": "الصلاحيات",
     "View": "عرض",
     "Accompany": "المرافقين",
+    "WorkRelated": "التابعين بالعمل",
     "Menu": "قائمة",
     "Retrieve": "استرجع",
     "ReNewContract": "تجديد العقد",
@@ -845,7 +849,8 @@
     "Barcode": "الباركود",
     "ProductName": "الصنف",
     "QTY": "الكمية",
-    "Price": "السعر"
+    "Price": "السعر",
+    "WorkNature": "مختص بـ"
   },
   "MENU": {
     "CUSTOMERDEBT": "مديونية العملاء"
