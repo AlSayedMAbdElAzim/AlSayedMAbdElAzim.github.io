@@ -850,7 +850,8 @@
     "ProductName": "الصنف",
     "QTY": "الكمية",
     "Price": "السعر",
-    "WorkNature": "مختص بـ"
+    "WorkNature": "مختص بـ",
+    "TradeMark": "العلامة التجارية"
   },
   "MENU": {
     "CUSTOMERDEBT": "مديونية العملاء"

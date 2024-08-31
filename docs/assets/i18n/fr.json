@@ -716,7 +716,8 @@
     "ProductName": "Product name",
     "QTY": "Qty",
     "Price": "Price",
-    "WorkNature": "Work nature"
+    "WorkNature": "Work nature",
+    "TradeMark": "Trade Mark"
   },
   "MENU": {
     "CUSTOMERDEBT": "Customer debt"
