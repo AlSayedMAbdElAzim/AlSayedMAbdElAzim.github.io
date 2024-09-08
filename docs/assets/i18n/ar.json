@@ -432,7 +432,7 @@
     "MinLength6": "عدد الأحرف غير كافي، على الأقل 6أحرف",
     "ConfirmAction": "تأكيد العملية",
     "DataSaved": "تم حفظ البيانات",
-    "EnterMsgSentTo": "تم ارسال الكود الى"
+    "EnterMsgSentTo": "برجاء إدخال الكود المرسل الى"
   },
   "FIELD": {
     "NAME": "الاسم",
@@ -569,6 +569,7 @@
     "SEARCH_PayDocument": ".... ابحث عن مستند ب",
     "SEARCH_Product": "....ابحث عن سلعة/خدمة ب",
     "SEARCH_CTT": ".....ابحث في أكواد النظام",
+    "SEARCH_Window": "ابحث عن الصلاحيات باسم الشاشة",
     "MOBILE": "الموبيل",
     "WHATSAPP": "الواتس اب",
     "BUILDING": "العقار",
@@ -773,6 +774,7 @@
     "AddCode": "إضافة كود",
     "AddInstallment": "إضافة قسط",
     "IsDefaultValue": "قيمة إفتراضية",
+    "IsRepresentative": "معه وكالة",
     "InstallmentData": "بيانات القسط",
     "Notes": "ملاحظات",
     "Description": "الوصف",
