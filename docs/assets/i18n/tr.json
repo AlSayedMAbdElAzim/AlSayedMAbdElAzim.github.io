@@ -685,6 +685,7 @@
     "PayEveryMonthesNo": "Pay Every Monthes No",
     "InstallmentValue": "Installment Value",
     "DueDate": "Due Date",
+    "DueToDate": "To Date",
     "PayedDate": "Payed Date",
     "InstallmentStatus": "Installment Status",
     "PayedValue": "Payed Value",

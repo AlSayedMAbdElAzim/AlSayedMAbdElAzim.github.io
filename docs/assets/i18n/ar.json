@@ -840,6 +840,7 @@
     "PayEveryMonthesNo": "الدفع كل عدد أشهر",
     "InstallmentValue": "قيمة القسط",
     "DueDate": "تاريخ الاستحقاق",
+    "DueToDate": "حتى تاريخ",
     "PayedDate": "تاريخ السداد",
     "InstallmentStatus": "حالة القسط",
     "PayedValue": "القيمة المسددة",
