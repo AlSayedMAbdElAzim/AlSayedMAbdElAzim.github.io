@@ -682,6 +682,7 @@
     "ContractAlarmCounter": "current counter for Alarm",
     "ContractAlarmStartDate": "Contract Alarm Start Date",
     "ContractStatus": "Contract Status",
+    "ContractNoOfMonths": "Contract No Of Months",
     "ContractValue": "Contract Value",
     "PayEveryMonthesNo": "Pay Every Monthes No",
     "InstallmentValue": "Installment Value",

@@ -836,6 +836,7 @@
     "ContractAlarmCounter": "عدد مرات التنبيه",
     "ContractAlarmStartDate": "تاريخ بداية التنبيه",
     "ContractStatus": "حالة العقد",
+    "ContractNoOfMonths": "عدد أشهر العقد",
     "ContractValue": "قيمة العقد السنوية",
     "PayEveryMonthesNo": "الدفع كل عدد أشهر",
     "InstallmentValue": "قيمة القسط",
