@@ -314,6 +314,7 @@
     "change_taxinvoice_dt": "تعديل أحد تفاصيل فاتورة",
     "delete_taxinvoice_dt": "حذف أحد تفاصيل فاتورة",
     "allow_ejarcode_empty": "السماح رقم العقد في إيجار خالياً",
+    "edit_rentalcontract_noofmonths": "تغيير عدد أشهر العقد",
     "add_ejar_pdf": "اضافة نسخة عقد إيجار PDF",
     "view_ejar_pdf": "استعراض نسخة عقد إيجار PDF",
     "view_documentserial_list": "عرض بيانات تسلسل المستندات",
