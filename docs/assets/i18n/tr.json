@@ -356,6 +356,9 @@
     "ItemCost": "Item Cost"
   },
   "OPTIONS": {
+    "Simple": "Simple",
+    "Standard": "Standard",
+    "SimpleStandard": "Simple and Standard",
     "NATIONAL_ID": "NationalID",
     "FOREIGN_ID": "Foreign ID",
     "GULF_ID": "GulfID",
@@ -450,6 +453,12 @@
     "PayableDocDepositReturn": "Payable Doc for Deposit return"
   },
   "HTML": {
+    "OrganizationName": "Organization Name",
+    "OrganizationUnit": "Organization Unit",
+    "CommonName": "Common Name",
+    "BusinessCategory": "Business Category",
+    "OWNERSerialNumber": "Owner Serial Number",
+    "TypeOfInvoices": "Type of Invoices",
     "WorkPlace": "Work Place",
     "Job": "Job",
     "SIGNIN": "Sign In",
@@ -500,6 +509,7 @@
     "TAB_CONTACTS": "Contacts data",
     "TAB_SOCIAL_LIFE": "Social Pages",
     "TAB_SETTINGS": "Setting",
+    "TAB_EINVOICE": "E-Invoice Setting",
     "TAB_OWNER": "Owner Data",
     "TAB_ADDRESS": "Location",
     "TAB_BUILDING_DESCRIPTION": "Property Description",

@@ -512,6 +512,9 @@
     "ItemCost": "تكلفة الصنف"
   },
   "OPTIONS": {
+    "Simple": "مبسطة",
+    "Standard": "قياسية",
+    "SimpleStandard": "مبسطة وقياسية",
     "NATIONAL_ID": "هوية وطنية",
     "FOREIGN_ID": "هوية مقيم",
     "GULF_ID": "هوية مواطني دول مجلس التعاون الخليجي",
@@ -606,6 +609,12 @@
     "PayableDocDepositReturn": "سند صرف مردود عربون"
   },
   "HTML": {
+    "OrganizationName": "اسم المنشأة",
+    "OrganizationUnit": "وحدة المنشأة",
+    "CommonName": "الاسم الشائع",
+    "BusinessCategory": "تصنيف العمل",
+    "OWNERSerialNumber": "رقم تسلسلي للمالك",
+    "TypeOfInvoices": "نوع الفواتير",
     "WorkPlace": "مكان العمل",
     "Job": "الوظيفة",
     "SIGNIN": "تسجيل الدخول",
@@ -656,6 +665,7 @@
     "TAB_CONTACTS": "بيانات الاتصال",
     "TAB_SOCIAL_LIFE": "صفحات التواصل",
     "TAB_SETTINGS": "الاعدادات",
+    "TAB_EINVOICE": "إعدادات الفاتورة",
     "TAB_OWNER": "بيانات الملكية",
     "TAB_ADDRESS": "موقع العقار",
     "TAB_BUILDING_DESCRIPTION": "وصف العقار",
