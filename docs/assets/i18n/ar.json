@@ -279,6 +279,11 @@
     "view_emp_last_seen": "اخر دخول للموظف",
     "change_emp_password": "تغيير كلمة مرور الموظف",
     "change_owner_password": "تغيير كلمة مرور المالك",
+    "view_owner_einvoice_data": "عرض بيانات تجهيز الفاتورة الالكترونية",
+    "add_owner_einvoice_data": "إضافة بيانات تجهيز الفاتورة الالكترونية ",
+    "edit_owner_einvoice_data": "تعديل بيانات تجهيز الفاتورة الالكترونية",
+    "delete_owner_einvoice_data": "حذف بيانات تجهيز الفاتورة الالكترونية",
+    "setup_einvoice_phase2": "ضبط وتجهيز متطلبات الفاتورة الالكترونية المرحلة الثانية",
     "change_tenant_password": "تغيير كلمة مرور المستأجر",
     "view_doctypes": "عرض بيانات أنواع المستندات",
     "add_doctypes": "إضافة أنواع المستندات",
@@ -448,6 +453,7 @@
     "Services": "الخدمات"
   },
   "BTN": {
+    "InvPhase2Setup": "ضبط وتهيئة الفاتورة الاليكترونية",
     "ADD": "إضافة",
     "SAVE": "حفظ",
     "SUBMIT": "إعتمد",
@@ -480,7 +486,8 @@
     "TaxSimpleInvoice": "فاتورة ضريبية مبسطة",
     "TaxRequest": "مطالبة مالية",
     "CreateSerial": "تركيب التسلسل",
-    "ExpenseInv": "فاتورة مصروفات"
+    "ExpenseInv": "فاتورة مصروفات",
+    "ViewReceivable": "سند القبض"
   },
   "MESSAGE": {
     "SURE_DELETE": "هل ترغب في إتمام عملية الحذف؟",
@@ -643,6 +650,7 @@
     "SEARCH_TENANT_AnyValue": "ابحث عن مستأجر بالاسم -الموبيل -العقار -رقم الوحدة -الوظيفة -مكان العمل .....",
     "SEARCH_BUILDING": ".... ابحث عن عقار",
     "SEARCH_UNITS": ".... ابحث عن وحدة عقارية",
+    "SEARCH_CustomerDebit": ".... ابحث في مديونية العملاء",
     "SEARCH_Employee": ".... ابحث عن موظف بالاسم",
     "SEARCH_Owner": ".... ابحث عن مالك بالاسم",
     "SEARCH_PayDocument": ".... ابحث عن مستند ب",

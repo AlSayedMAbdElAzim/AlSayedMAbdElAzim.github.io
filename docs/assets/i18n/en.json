@@ -293,6 +293,7 @@
     "Services": "Services"
   },
   "BTN": {
+    "InvPhase2Setup": "eInvoice Phase2 Setup",
     "ADD": "Add",
     "SAVE": "Save",
     "SUBMIT": "Submit",
@@ -325,7 +326,8 @@
     "TaxSimpleInvoice": "Simple Invoice",
     "TaxRequest": "Finaical Request",
     "CreateSerial": "Create Serial Structure",
-    "ExpenseInv": "Expense Invoice"
+    "ExpenseInv": "Expense Invoice",
+    "ViewReceivable": "Receivable Document"
   },
   "MESSAGE": {
     "SURE_DELETE": "Are you sure you want to delete?",
@@ -488,6 +490,7 @@
     "SEARCH_TENANT_AnyValue": "Search Tenant by name-mobile-unit-Other...",
     "SEARCH_BUILDING": "Search Buildings ...",
     "SEARCH_UNITS": "Search Property Units ...",
+    "SEARCH_CustomerDebit": "Search in Customers Debit ...",
     "SEARCH_Employee": "Search Employee by name...",
     "SEARCH_Owner": "Search Owners by name...",
     "SEARCH_PayDocument": "Search Pay Documents by ...",
