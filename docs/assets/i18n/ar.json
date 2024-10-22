@@ -921,6 +921,7 @@
     "DocDate": "تاريخ السند",
     "DocValue": "قيمة السند",
     "DocPrintedNo": "الرقم المطبوع",
+    "DocReferenceCode": "الرقم المرجعي",
     "DocClassType": "تصنيف السند",
     "DocPayType": "نوع السداد",
     "DocPayDate": "تاريخ الدخول للحساب",
