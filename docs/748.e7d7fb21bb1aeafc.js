@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkemporium=self.webpackChunkemporium||[]).push([[748],{1748:(l,e,a)=>{a.r(e),a.d(e,{MaintenanceModule:()=>n});var u=a(6895),o=a(4650);class n{}n.\u0275fac=function(M){return new(M||n)},n.\u0275mod=o.oAB({type:n}),n.\u0275inj=o.cJS({imports:[u.ez]})}}]);
