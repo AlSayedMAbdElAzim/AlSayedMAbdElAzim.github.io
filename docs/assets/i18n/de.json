@@ -22,6 +22,7 @@
   "PropertyFeatures": "AppCodes/Property Features",
   "OwnershipDocTypes": "AppCodes/Ownership Doc Types",
   "Currency": "AppCodes/Currencies",
+  "Banks": "AppCodes/Banks",
   "Expenses": "AppCodes/Expenses",
   "SIGNIN": "Sign in",
   "Tenants": "Tenants",
@@ -156,6 +157,8 @@
     "view_dash_CustomerDebtRecievable": "Dashboard- add Recievable Doc.",
     "view_dash_CustomerDebtPrintRequest": "Dashboard- print Customer debt request",
     "view_dash_CustomerDebtPrintTable": "Dashboard- print Customer debt table",
+    "view_dash_CustomerDebtSendSMS": "Dashboard- Send SMS msg",
+    "view_dash_CustomerDebtRetrieve": "Dashboard- Retrive Customer debt data with new interval",
     "view_dash_Contracts": "Dashboard- Contracts ended till 30 day",
     "view_dash_Contracts_showContract": "Dashboard- Contracts ended till 30 day- view contract",
     "view_dash_Contracts_showInstallments": "Dashboard- Contracts ended till 30 day- view payments",
@@ -203,6 +206,9 @@
     "add_currency": "add Currency",
     "change_currency": "change Currency",
     "delete_currency": "delete Currency",
+    "add_banks": "add Bank",
+    "change_banks": "change Bank",
+    "delete_banks": "delete Bank",
     "add_expenses": "add Expenses types",
     "change_expenses": "change Expenses types",
     "delete_expenses": "delete Expenses types",
@@ -331,9 +337,12 @@
     "ExpensesInv": "Expenses Invoices",
     "TaxInvoice": "Tax Invoice",
     "RequestInvoice": "Request Invoice",
-    "Services": "Services"
+    "Services": "Services",
+    "InvMasterDetail": "INV MD",
+    "InvAddMaster": "Add Master inv"
   },
   "BTN": {
+    "BankAccounts": "Bank Accounts",
     "InvPhase2Setup": "eInvoice Phase2 Setup",
     "ADD": "Hinzufügen",
     "SAVE": "Speichern",
@@ -647,6 +656,7 @@
     "CommercialRegister": "Commercial Register",
     "BankName": "Bank Name",
     "AccountNumber": "Account Number",
+    "AccountIBan": "IBan Number",
     "AccountOwnerName": "Account Owner Name",
     "InvoiceMask": "Invoice Mask",
     "InvoiceCodeLength": "Invoice Code Length",
@@ -846,6 +856,8 @@
     "SMSTemplateType": "SMS Template Type",
     "SMSTemplateName": "SMS Template Name",
     "SMSTemplateText": "SMS Template Text",
+    "SelectSMSTemplate": "Select SMS Template",
+    "SendSMS": "Send SMS",
     "CategoryName": "Category Name",
     "HasSub": "Has Sub",
     "HisParent": "His Parent",
@@ -857,7 +869,8 @@
     "Price": "Price",
     "WorkNature": "Work nature",
     "TradeMark": "Trade Mark",
-    "FamousName": "Famous Name"
+    "FamousName": "Famous Name",
+    "BankAccounts": "Bank Accounts"
   },
   "MENU": {
     "CUSTOMERDEBT": "Customer debt"
