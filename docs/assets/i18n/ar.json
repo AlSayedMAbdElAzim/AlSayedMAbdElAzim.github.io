@@ -824,6 +824,7 @@
     "ADDRESS_DESC": "وصف العنوان",
     "ShortAddress": "العنوان المختصر",
     "BUILDING_SubNUMBER": "الرقم الفرعي",
+    "Nationality": "دولة الجنسية",
     "COUNTRY": "الدولة",
     "GOVERN": "المحافظة",
     "CITY": "المدينة",
