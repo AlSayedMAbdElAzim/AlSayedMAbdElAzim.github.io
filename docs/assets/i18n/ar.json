@@ -600,6 +600,7 @@
     "PasswordNotChanged": "لم يتم تغيير كلمة المرور",
     "LOGGEDIN": "تم تسجيل الدخول",
     "NOTLOGGEDIN": "عذراً، لم يتم تسجيل الدخول",
+    "COMPANY_NOTLOGGEDIN": "هذا المستخدم لا يتبع الشركة",
     "REGISTERD": "مبروك، تم انشاء حساب جديد",
     "NOTREGISTERD": "عذراً، لم يتم فتح حساب جديد",
     "RETRIEVE_ERROR": "خطأ في استرجاع البيانات",

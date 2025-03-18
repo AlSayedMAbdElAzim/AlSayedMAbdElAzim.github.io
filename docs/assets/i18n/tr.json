@@ -436,6 +436,7 @@
     "PasswordNotChanged": "Password not Changed",
     "LOGGEDIN": "You are logged in!",
     "NOTLOGGEDIN": "Sorry, You are not logged in!",
+    "COMPANY_NOTLOGGEDIN": "User not related to this Company",
     "REGISTERD": "Successfully, You create a new Account!",
     "NOTREGISTERD": "Sorry, con't create a new Account!",
     "RETRIEVE_ERROR": "Data not retrieved",
