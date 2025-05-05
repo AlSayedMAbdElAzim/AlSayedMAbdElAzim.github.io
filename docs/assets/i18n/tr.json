@@ -474,6 +474,17 @@
     "SubSubCategory": "Last Category",
     "ItemCost": "Item Cost"
   },
+  "ERROR": {
+    "REQUIRED_USERNAME": "Username is required",
+    "MIN_LENGTH_USERNAME": "Username must contain at least 3 characters",
+    "REQUIRED_PASSWORD": "Password is required",
+    "MIN_LENGTH_PASSWORD": "Password must contain at least 6 characters",
+    "REQUIRED_FIRST_NAME": "First name is required",
+    "REQUIRED_LAST_NAME": "Last name is required",
+    "REQUIRED_BRANCH": "Branch is required",
+    "INVALID_EMAIL": "Email is invalid",
+    "INVALID_MOBILE": "Mobile number is invalid"
+  },
   "OPTIONS": {
     "Simple": "Simple",
     "Standard": "Standard",
@@ -939,7 +950,9 @@
     "WorkNature": "Work nature",
     "TradeMark": "Trade Mark",
     "FamousName": "Famous Name",
-    "BankAccounts": "Bank Accounts"
+    "BankAccounts": "Bank Accounts",
+    "UPLOAD_IMAGE": "Upload Image",
+    "SELECT_BRANCH": "Select Branch"
   },
   "MENU": {
     "CUSTOMERDEBT": "Customer debt",

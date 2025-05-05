@@ -638,6 +638,17 @@
     "SubSubCategory": "التصنيف الأخير",
     "ItemCost": "تكلفة الصنف"
   },
+  "ERROR": {
+    "REQUIRED_USERNAME": "اسم المستخدم مطلوب",
+    "MIN_LENGTH_USERNAME": "اسم المستخدم يجب أن يحتوي على 3 أحرف على الأقل",
+    "REQUIRED_PASSWORD": "كلمة المرور مطلوبة",
+    "MIN_LENGTH_PASSWORD": "كلمة المرور يجب أن تحتوي على 6 أحرف على الأقل",
+    "REQUIRED_FIRST_NAME": "الاسم الأول مطلوب",
+    "REQUIRED_LAST_NAME": "الاسم الأخير مطلوب",
+    "REQUIRED_BRANCH": "الفرع مطلوب",
+    "INVALID_EMAIL": "البريد الإلكتروني غير صالح",
+    "INVALID_MOBILE": "رقم الجوال غير صالح"
+  },
   "OPTIONS": {
     "Simple": "مبسطة",
     "Standard": "قياسية",
@@ -1103,7 +1114,9 @@
     "WorkNature": "مختص بـ",
     "TradeMark": "العلامة التجارية",
     "FamousName": "اسم الشهرة",
-    "BankAccounts": "الحسابات البنكية"
+    "BankAccounts": "الحسابات البنكية",
+    "UPLOAD_IMAGE": "رفع صورة",
+    "SELECT_BRANCH": "اختر فرعًا"
   },
   "MENU": {
     "CUSTOMERDEBT": "مديونية العملاء",
