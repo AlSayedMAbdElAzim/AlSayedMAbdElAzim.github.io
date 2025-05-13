@@ -484,7 +484,9 @@
     "REQUIRED_LAST_NAME": "Last name is required",
     "REQUIRED_BRANCH": "Branch is required",
     "INVALID_EMAIL": "Email is invalid",
-    "INVALID_MOBILE": "Mobile number is invalid"
+    "INVALID_MOBILE": "Mobile number is invalid",
+    "REQUIRED": "Required field",
+    "MINLENGTH": "Min Length is {{min}} letters"
   },
   "OPTIONS": {
     "Simple": "Simple",
@@ -584,6 +586,7 @@
     "PayableDocDepositReturn": "Payable Doc for Deposit return"
   },
   "HTML": {
+    "ThemeColor": "Theme Color",
     "SystemSetup": "System Setup",
     "OrganizationName": "Organization Name",
     "OrganizationUnit": "Organization Unit",

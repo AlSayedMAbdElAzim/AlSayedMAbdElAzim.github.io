@@ -647,7 +647,9 @@
     "REQUIRED_LAST_NAME": "الاسم الأخير مطلوب",
     "REQUIRED_BRANCH": "الفرع مطلوب",
     "INVALID_EMAIL": "البريد الإلكتروني غير صالح",
-    "INVALID_MOBILE": "رقم الجوال غير صالح"
+    "INVALID_MOBILE": "رقم الجوال غير صالح",
+    "REQUIRED": "هذا الحقل مطلوب",
+    "MINLENGTH": "الحد الأدنى للطول هو {{min}} أحرف"
   },
   "OPTIONS": {
     "Simple": "مبسطة",
@@ -747,6 +749,7 @@
     "PayableDocDepositReturn": "سند صرف مردود عربون"
   },
   "HTML": {
+    "ThemeColor": "لون التطبيق",
     "SystemSetup": "ضبط النظام",
     "OrganizationName": "اسم المنشأة",
     "OrganizationUnit": "وحدة المنشأة",
