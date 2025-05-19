@@ -63,7 +63,7 @@
 </html> -->
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
@@ -95,16 +95,134 @@
 
 <body>
 
-    <!-- الشعار -->
+    /*    الشعار  */
     <img src="assets/images/logo/logo.png" alt="بوابة إيجار">
 
     <h1>غير مصرح لك بالدخول على (بوابــة إيجــار)</h1>
-    <p>غير مصرح بإستخدام النسخة التجريبية، يجب إنشاء نسخة تجريبية أولاً.</p>
+    /* <p>غير مصرح بإستخدام النسخة التجريبية، يجب إنشاء نسخة تجريبية أولاً.</p> */
+    <p>لم يتم إنشاء نسخة بهذا الإسم، يجب إنشاء النسخة أولاً.</p>
 
     <h1>Access Denied</h1>
     <p>You are not allowed to access this demo. Please create a demo first.</p>
 
     <a href="https://ejargate.com">الصفحة الرئيسية / Go back to Home</a>
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>غير مصرح</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 100px;
+            font-family: Arial, 'Segoe UI', Tahoma, sans-serif;
+            direction: rtl;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: blue;
+        }
+
+        img {
+            max-width: 200px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="assets/images/logo/logo.png" alt="بوابة إيجار">
+
+    <div id="content">
+        <!-- Content will be inserted here based on status -->
+    </div>
+
+    <script>
+        // Get query parameter from URL
+        const params = new URLSearchParams(window.location.search);
+        const comid = params.get('M') || '0';
+        const status = params.get('s');
+
+        const content = document.getElementById('content');
+
+        // Define messages for each status
+        let htmlContent = '';
+        // t=trial     r=renew     d=denied     f=free    a=Always work     c=cancel
+        switch (status) {
+            case 't':
+                htmlContent = `
+                    <h1>النسخة التجريبية</h1>
+                    <p>أنت تستخدم النسخة التجريبية. يرجى الاشتراك لمتابعة الاستخدام.</p>
+                    <h1>Trial Version</h1>
+                    <p>You are using a trial version. Please subscribe to continue.</p>
+                    <a href="https://ejargate.com/subscribe?M=${comid}">اشترك الآن / Subscribe Now</a>
+                `;
+                break;
+            case 'r':
+                htmlContent = `
+                    <h1>انتهاء الاشتراك</h1>
+                    <p>انتهى اشتراكك. يرجى تجديد الاشتراك لمتابعة الاستخدام.</p>
+                    <h1>Subscription Expired</h1>
+                    <p>Your subscription has expired. Please renew it to continue.</p>
+                    <a href="https://ejargate.com/renew?M=${comid}">جدد الاشتراك / Renew Subscription</a>
+                `;
+                break;
+            case 'd':
+                htmlContent = `
+                    <h1>غير مصرح لك بالدخول على (بوابــة إيجــار)</h1>
+                    <p>لم يتم إنشاء نسخة بهذا الإسم، يجب إنشاء النسخة أولاً.</p>
+                    <h1>Access Denied</h1>
+                    <p>You are not allowed to access this demo. Please create a demo first.</p>
+                    <a href="https://ejargate.com">الصفحة الرئيسية / Go back to Home</a>
+                `;
+                break;
+            case 'f':
+                htmlContent = `
+                    <h1>النسخة المجانية</h1>
+                    <p>أنت تستخدم النسخة المجانية. يرجى التواصل مع المنصة لمتابعة الاستخدام (0590252571)ـ.</p>
+                    <h1>Free Version</h1>
+                    <p>You are using a Free version. Please contact with us to continue (0590252571).</p>                    
+                `;
+                break;
+            case 'a':
+                htmlContent = `
+                    <h1>النسخة الدائمة</h1>
+                    <p>أنت تستخدم النسخة الدائمة. يرجى التواصل مع المنصة لمتابعة الاستخدام (0590252571)ـ.</p>
+                    <h1>Always for ever Version</h1>
+                    <p>You are using an (Always for ever) version. Please contact with us to continue (0590252571).</p>                    
+                `;
+                break;
+            case 'c':
+                htmlContent = `
+                    <h1>النسخة ملغاة</h1>
+                    <p>أنت تستخدم نسخة ملغاة. يرجى التواصل مع المنصة لمتابعة الاستخدام (0590252571)ـ.</p>
+                    <h1>Canceled Version</h1>
+                    <p>You are using a Canceled version. Please contact with us to continue (0590252571).</p>                    
+                `;
+                break;
+            default:
+                htmlContent = `
+                    <h1>غير مصرح لك بالدخول على (بوابــة إيجــار)</h1>
+                    <p>لم يتم إنشاء نسخة بهذا الإسم، يجب إنشاء النسخة أولاً.</p>
+                    <h1>Access Denied</h1>
+                    <p>You are not allowed to access this demo. Please create a demo first.</p>
+                    <a href="https://ejargate.com">الصفحة الرئيسية / Go back to Home</a>
+                `;
+        }
+
+        // Insert the generated content
+        content.innerHTML = htmlContent;
+    </script>
 
 </body>
 
