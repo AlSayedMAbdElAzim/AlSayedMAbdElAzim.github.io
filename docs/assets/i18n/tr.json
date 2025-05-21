@@ -84,6 +84,7 @@
   "E-Invoice": "Electronic Invoice",
   "Categories": "Categories",
   "Product_List": "Products and Services List",
+  "MyProfile": "My Profile",
   "SECURITY": {
     "view_permission": "can View Permissions",
     "add_permission": "can Add Permissions",
@@ -585,6 +586,11 @@
     "PayableDocDepositReturn": "Payable Doc for Deposit return"
   },
   "HTML": {
+    "ProfileCompletion": "Profile Completion",
+    "AccountDetails": "Account Details",
+    "MemberSince": "Member since",
+    "Status": "Status",
+    "Role": "Role",
     "ThemeColor": "Theme Color",
     "SystemSetup": "System Setup",
     "OrganizationName": "Organization Name",
@@ -681,6 +687,8 @@
     "IsSUPERUSER": "is Admin",
     "IsSTAFF": "is Staff",
     "IsEMPLOYEE": "is Employee",
+    "IsOwner": "is Owner",
+    "IsTenant": "is Tenant",
     "TENANT_NATURE": "Tenant nature",
     "NATURE_PERSON": "Person",
     "NATURE_COMPANY": "Company",
