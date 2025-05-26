@@ -462,6 +462,7 @@
     "RegisterMsg": "Don't have an account? Sign up now!",
     "MinLength": "number of Char isn't long enough!, minimum of 3 characters",
     "MinLength6": "number of Char isn't long enough!, minimum of 6 characters",
+    "MinLength15": "number of Char isn't long enough!, minimum of 15 characters",
     "ConfirmAction": "Confirm Action",
     "DataSaved": "Data saved",
     "EnterMsgSentTo": "Enter msg sent to",
