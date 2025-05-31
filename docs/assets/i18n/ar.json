@@ -751,6 +751,7 @@
     "PayableDocDepositReturn": "سند صرف مردود عربون"
   },
   "HTML": {
+    "SendWhats": "رسالة واتس اب",
     "ProfileCompletion": "نسبة إكتمال الملف",
     "AccountDetails": "تفاصيل الحساب",
     "MemberSince": "انضم منذ",

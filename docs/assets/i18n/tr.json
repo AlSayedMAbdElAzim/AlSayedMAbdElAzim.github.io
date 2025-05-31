@@ -587,6 +587,7 @@
     "PayableDocDepositReturn": "Payable Doc for Deposit return"
   },
   "HTML": {
+    "SendWhats": "Send Whatsapp msg",
     "ProfileCompletion": "Profile Completion",
     "AccountDetails": "Account Details",
     "MemberSince": "Member since",
