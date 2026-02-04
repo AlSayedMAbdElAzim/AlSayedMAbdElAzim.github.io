@@ -423,6 +423,7 @@
     "delete_taxinvoice_dt": "حذف أحد تفاصيل فاتورة",
     "allow_ejarcode_empty": "السماح رقم العقد في إيجار خالياً",
     "edit_rentalcontract_noofmonths": "تغيير عدد أشهر العقد",
+    "edit_contract_status": "تعديل حالة العقد",
     "edit_renewcontract_startend_date": "تعديل بداية ونهاية العقد المجدد",
     "edit_currentcontract_startend_date": "تعديل بداية ونهاية العقد الحالي",
     "add_ejar_pdf": "اضافة نسخة عقد إيجار PDF",
