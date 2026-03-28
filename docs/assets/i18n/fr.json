@@ -564,6 +564,103 @@
     "CONFIRM_REMOVE_DETAIL": "Are you sure you want to remove this document?",
     "CONFIRM_REMOVE_TITLE": "Confirm Removal"
   },
+  "CASH_RECEIPT": {
+    "VOUCHER_CODE": "Voucher Code",
+    "PAGE_TITLE": "Cash Receipt Vouchers",
+    "PAGE_SUBTITLE": "Manage cash receipt vouchers with OTP verification",
+    "ADD": "New Receipt",
+    "EDIT": "Edit Receipt",
+    "VIEW": "View Receipt",
+    "LIST_TITLE": "Cash Receipts List",
+    "NO_DATA": "No receipts found",
+    "ADD_FIRST": "Add your first cash receipt",
+    "SEARCH_PLACEHOLDER": "Search by owner name or authorized person...",
+    "AUTHORIZED": "Authorized Person",
+    "TYPE": "Receipt Type",
+    "DATE": "Receipt Date",
+    "HAS_DEPOSIT": "Has Linked Deposit",
+    "SEND_APPROVAL": "Send for Approval",
+    "SEND": "Send",
+    "APPROVE": "Approve",
+    "REJECT": "Reject",
+    "VIEW_DEPOSIT": "View Linked Deposit",
+    "STATS": {
+      "TOTAL": "Total Receipts",
+      "PENDING": "Pending Approval",
+      "APPROVED": "Approved",
+      "AVERAGE": "Average Amount"
+    },
+    "STATUS": {
+      "NEW": "New",
+      "WAITING": "Waiting Approval",
+      "APPROVED": "Approved",
+      "REJECTED": "Rejected"
+    },
+    "TYPES": {
+      "CASH": "Cash",
+      "TRANSFER": "Bank Transfer",
+      "CHEQUE": "Cheque",
+      "OTHER": "Other"
+    },
+    "OTP": {
+      "TITLE": "OTP Verification",
+      "MESSAGE": "A verification code has been sent to the authorized person's phone. Please enter the code to approve the receipt.",
+      "CODE": "Verification Code",
+      "TIME_LEFT": "Time Left",
+      "VERIFY": "Verify",
+      "HINT": "Enter 6-digit code",
+      "REQUIRED": "Verification code is required",
+      "INVALID": "Code must be 6 digits"
+    },
+    "SUCCESS": {
+      "CREATE": "Receipt created successfully",
+      "UPDATE": "Receipt updated successfully",
+      "DELETE": "Receipt deleted successfully",
+      "APPROVAL_SENT": "Approval request sent successfully",
+      "APPROVED": "Receipt approved successfully",
+      "REJECTED": "Receipt rejected successfully"
+    },
+    "ERROR": {
+      "LOAD": "Failed to load receipts",
+      "CREATE": "Failed to create receipt",
+      "UPDATE": "Failed to update receipt",
+      "DELETE": "Failed to delete receipt",
+      "SEND_APPROVAL": "Failed to send approval request",
+      "APPROVE": "Failed to approve receipt",
+      "REJECT": "Failed to reject receipt",
+      "PRINT": "Failed to print receipt"
+    },
+    "WARNING": {
+      "CANNOT_EDIT": "Cannot edit receipt in current status",
+      "CANNOT_DELETE": "Cannot delete receipt in current status",
+      "CANNOT_SEND": "Cannot send for approval in current status",
+      "NOT_WAITING": "Receipt is not waiting for approval",
+      "CANNOT_REJECT": "Cannot reject receipt in current status"
+    },
+    "CONFIRM_DELETE": "Are you sure you want to delete receipt #{{code}}?",
+    "CONFIRM_SEND_APPROVAL": "Are you sure you want to send receipt for {{amount}} for approval to {{name}}?",
+    "CONFIRM_REJECT": "Are you sure you want to reject receipt #{{code}}?",
+    "SEND_TO_APPROVAL": "Send for Approval",
+    "REJECT_TITLE": "Reject Receipt",
+    "FORM": {
+      "BASIC_INFO": "Basic Information",
+      "VERIFICATION": "Verification Method",
+      "LINKED_DEPOSIT": "Linked Deposit",
+      "REASON": "Receipt Reason",
+      "ENTER_REASON": "Enter receipt reason",
+      "ENTER_NOTES": "Enter additional notes",
+      "UPLOAD_IMAGE": "Upload Image",
+      "IMAGE_HINT": "Upload a clear image of the receipt or proof",
+      "SELECT_OWNER_FIRST": "Select owner first",
+      "SELECT_AUTHORIZED": "Select authorized person",
+      "NO_AUTHORIZED_PEOPLE": "No authorized people for this owner"
+    },
+    "RECEIVED_BY": "Received By",
+    "DELIVERED_BY": "Delivered By",
+    "DEPOSIT": "Bank Deposit",
+    "REASON": "Reason",
+    "APPROVED_AT": "Approval Date"
+  },
   "COMMON": {
     "CONTRACT": "Contract",
     "BUILDING": "Building",
@@ -647,6 +744,7 @@
       "OTHER": "Other"
     },
     "FORM": {
+      "MOBILE_HINT": "966590252571",
       "PERSONAL_INFO": "Personal Information",
       "CONTACT_INFO": "Contact Information",
       "AUTHORIZATION_INFO": "Authorization Information",
@@ -702,7 +800,7 @@
       "CREATE": "Failed to add authorized person",
       "UPDATE": "Failed to update authorized person",
       "DELETE": "Failed to delete authorized person",
-      "INVALID_MOBILE": "Invalid mobile number (must start with 05 and be 10 digits)"
+      "INVALID_MOBILE": "Invalid mobile number (must start with 9665 and be 12 digits)"
     },
     "CONFIRM_DELETE": "Are you sure you want to delete {{name}}?",
     "CONFIRM_DELETE_SELECTED": "Are you sure you want to delete {{count}} authorized persons?",
@@ -716,6 +814,7 @@
     "CHARACTERS_MAX": "characters max"
   },
   "BANK": {
+    "CASH_RECEIPTS": "Cash Receipts",
     "BANK_DEPOSITS": "Bank Deposits",
     "BANK_ACCOUNTS": "Bank Accounts",
     "MANAGE_BANK_ACCOUNTS_DESC": "Manage bank accounts for owners and authorized persons",
