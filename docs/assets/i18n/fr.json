@@ -159,6 +159,17 @@
     "view_depositmanagement_maindata": "Main Data",
     "view_depositmanagement_actions": "Actions",
     "view_depositmanagement_coding": "Coding",
+    "view_account_statement_report": "View Account Statement Report",
+    "view_trial_balance_report": "View Trial Balance Report",
+    "view_balance_sheet_report": "View Balance Sheet Report",
+    "view_income_statement_report": "View Income Statement Report",
+    "can_view_bankaccounts_list": "View Bank Accounts List",
+    "can_view_authorized_people_list": "View Authorized People List",
+    "can_view_deposit_list": "View Deposits List",
+    "can_view_cash_receipts_list": "View Cash Receipts List",
+    "can_view_reconciliation": "View Bank Reconciliation",
+    "can_reconcile_bank": "Perform Bank Reconciliation",
+    "can_view_bank_transactions_list": "View Bank Transactions List",
     "view_systemmanagement": "Can view System Management",
     "view_systemmanagement_maindata": "Main Data",
     "view_hrmanagement": "Can view HR Management",
@@ -564,6 +575,427 @@
     "CONFIRM_REMOVE_DETAIL": "Are you sure you want to remove this document?",
     "CONFIRM_REMOVE_TITLE": "Confirm Removal"
   },
+  "MAINTENANCE": {
+    "BUILDING": "Building",
+    "TENANT": "Tenant",
+    "OWNER": "Owner",
+    "CONTRACT": "Contract",
+    "REQUEST": "Request",
+    "REQUEST_TYPE": "Request Type",
+    "PRIORITY": "Priority",
+    "CREATE_ORDER": "Create Work Order",
+    "VIEW_ORDER": "View Work Order",
+    "CANCEL_REQUEST": "Cancel Request",
+    "CONFIRM_CANCEL_REQUEST": "Are you sure you want to cancel maintenance request #{{code}}?",
+    "CANCEL_REASON": "Cancellation Reason",
+    "ENTER_CANCEL_REASON": "Please enter the cancellation reason",
+    "RELATED_ORDERS": "Related Orders",
+    "ATTACHED_IMAGE": "Attached Image",
+    "CANCELLATION_INFO": "Cancellation Information",
+    "CANCELLATION_REASON": "Cancellation Reason",
+    "CANCELLATION_DATE": "Cancellation Date",
+    "COST": "Cost",
+    "CREATED_BY": "Created By",
+    "CREATION_DATE": "Creation Date",
+    "LAST_UPDATED": "Last Updated",
+    "CANCELLED_BY": "Cancelled By",
+    "REQUESTS": {
+      "PAGE_TITLE": "Maintenance Requests",
+      "PAGE_SUBTITLE": "Manage and track maintenance requests from tenants",
+      "ADD": "New Request",
+      "LIST_TITLE": "Maintenance Requests List",
+      "NO_DATA": "No maintenance requests found",
+      "ADD_FIRST": "Add your first maintenance request",
+      "SEARCH_PLACEHOLDER": "Search by request code, tenant name or tenant code ...",
+      "EDIT": "Edit Request",
+      "VIEW": "View Request",
+      "DETAILS_TITLE": "Request Details"
+    },
+    "FORM": {
+      "LOCATION_INFO": "Location Information",
+      "REQUEST_DETAILS": "Request Details",
+      "TITLE": "Title",
+      "ENTER_TITLE": "Enter request title",
+      "DESCRIPTION": "Description",
+      "ENTER_DESCRIPTION": "Enter detailed description of the issue",
+      "ATTACH_IMAGE": "Attach Issue Image",
+      "UPLOAD_IMAGE": "Upload Image",
+      "IMAGE_HINT": "Upload a clear image of the issue",
+      "VIEW_IMAGE": "View Image",
+      "ENTER_NOTES": "Enter additional notes",
+      "ORDER_DETAILS": "Order Details",
+      "ESTIMATED_HOURS": "Estimated Hours",
+      "EXPECTED_FINISH_DATE": "Expected Finish Date",
+      "IS_PAYED_BY_TENANT": "Tenant pays the cost",
+      "ASSIGNED_WORKERS": "Assigned Workers",
+      "ADD_WORKER": "Add Worker",
+      "SELECT_WORKER": "Select Worker",
+      "NO_WORKERS_ASSIGNED": "No workers assigned",
+      "ITEMS_USED": "Items Used",
+      "ADD_ITEM": "Add Item",
+      "SELECT_ITEM": "Select Item",
+      "NO_ITEMS_ADDED": "No items added",
+      "STEPS": "Steps",
+      "NO_STEPS_ADDED": "No steps added"
+    },
+    "STATUS": {
+      "NEW": "New",
+      "IN_PROGRESS": "In Progress",
+      "COMPLETED": "Completed",
+      "CANCELLED": "Cancelled"
+    },
+    "PRIORITY_TYPES": {
+      "LOW": "Low",
+      "MEDIUM": "Medium",
+      "HIGH": "High",
+      "URGENT": "Urgent"
+    },
+    "SUCCESS": {
+      "REQUEST_CANCELLED": "Maintenance request cancelled successfully",
+      "REQUEST_CREATED": "Maintenance request created successfully",
+      "REQUEST_UPDATED": "Maintenance request updated successfully"
+    },
+    "ERROR": {
+      "LOAD_REQUESTS": "Failed to load maintenance requests",
+      "LOAD_REQUESTS_TYPES": "Failed to load maintenance requests types",
+      "CANCEL_REQUEST": "Failed to cancel maintenance request",
+      "CREATE_REQUEST": "Failed to create maintenance request",
+      "UPDATE_REQUEST": "Failed to update maintenance request",
+      "LOAD_REQUEST_DETAILS": "Failed to load request details",
+      "UPLOAD_IMAGE": "Failed to upload image"
+    },
+    "WARNING": {
+      "CANNOT_EDIT_REQUEST": "Cannot edit request in current status",
+      "CANNOT_CANCEL_REQUEST": "Cannot cancel request in current status",
+      "CANNOT_CREATE_ORDER": "Cannot create work order for request in current status"
+    },
+    "INFO": {
+      "NO_ORDER_FOUND": "No work order linked to this request"
+    },
+    "ORDERS": {
+      "PAGE_TITLE": "Maintenance Orders",
+      "PAGE_SUBTITLE": "Manage and track maintenance orders and execution",
+      "ADD": "New Work Order",
+      "EDIT": "Edit Work Order",
+      "VIEW": "View Work Order",
+      "LIST_TITLE": "Work Orders List",
+      "NO_DATA": "No work orders found",
+      "ADD_FIRST": "Add your first work order",
+      "SEARCH_PLACEHOLDER": "Search by order code or tenant name or tenant code...",
+      "ORDER_ITEMS": "Items",
+      "ORDER_WORKERS": "Workers",
+      "ORDER_STEPS": "Steps",
+      "START": "Start Execution",
+      "COMPLETE": "Complete",
+      "VIEW_REQUEST": "View Linked Request",
+      "DETAILS_TITLE": "Work Order Details",
+      "START_DATE": "Start Date",
+      "FINISH_DATE": "Finish Date",
+      "TOTAL_COST": "Total Cost",
+      "MIN_PRICE": "Min Price",
+      "MAX_PRICE": "Max Price",
+      "STATS": {
+        "TOTAL": "Total Orders",
+        "IN_PROGRESS": "In Progress",
+        "COMPLETED": "Completed",
+        "TOTAL_COST": "Total Cost"
+      },
+      "ITEMS": {
+        "TITLE": "Order Items",
+        "ADD_ITEM": "Add Item",
+        "EDIT_ITEM": "Edit Item",
+        "NO_ITEMS": "No items added",
+        "CONFIRM_DELETE": "Are you sure you want to delete item {{name}}?",
+        "SELECT_TITLE": "Select Items",
+        "SEARCH_PLACEHOLDER": "Search by item name or code",
+        "NAME": "Item Name",
+        "CATEGORY": "Category",
+        "UNIT": "Unit",
+        "STOCK": "Stock",
+        "HAS_STOCK": "In Stock",
+        "NO_ITEMS_AVAILABLE": "No items available",
+        "SUCCESS": {
+          "ADDED": "Items added successfully",
+          "UPDATED": "Item updated successfully",
+          "DELETED": "Item deleted successfully"
+        },
+        "WARNING": {
+          "NO_ITEMS_SELECTED": "Please select at least one item"
+        },
+        "ERROR": {
+          "LOAD": "Failed to load items",
+          "ADD": "Failed to add items",
+          "UPDATE": "Failed to update item",
+          "DELETE": "Failed to delete item"
+        }
+      },
+      "WORKERS": {
+        "TITLE": "Order Workers",
+        "ADD_WORKER": "Add Worker",
+        "RATE_WORKER": "Rate Worker",
+        "NO_WORKERS": "No workers assigned",
+        "CONFIRM_DELETE": "Are you sure you want to delete worker {{name}}?",
+        "SELECT_TITLE": "Select Workers",
+        "SEARCH_PLACEHOLDER": "Search by worker name or mobile",
+        "NAME": "Worker Name",
+        "DEPARTMENT": "Department",
+        "RATING": "Rating",
+        "ORDERS_COUNT": "Orders Count",
+        "MIN_RATING": "Minimum Rating",
+        "AVAILABLE_ONLY": "Available Only",
+        "NO_WORKERS_AVAILABLE": "No workers available",
+        "SUCCESS": {
+          "ADDED": "Workers added successfully",
+          "RATED": "Worker rated successfully",
+          "DELETED": "Worker deleted successfully"
+        },
+        "WARNING": {
+          "NO_WORKERS_SELECTED": "Please select at least one worker"
+        },
+        "ERROR": {
+          "LOAD": "Failed to load workers",
+          "ADD": "Failed to add workers",
+          "RATE": "Failed to rate worker",
+          "DELETE": "Failed to delete worker"
+        }
+      },
+      "STEPS": {
+        "TITLE": "Order Steps",
+        "ADD_STEP": "Add Step",
+        "ADD_FIRST_STEP": "Add First Step",
+        "NEW_STEP": "New Step",
+        "EDIT_STEP": "Edit Step",
+        "STEP_TYPE": "Step Type",
+        "NO_STEPS": "No steps added",
+        "CONFIRM_DELETE": "Are you sure you want to delete step {{name}}?",
+        "SUCCESS": {
+          "CREATED": "Step created successfully",
+          "UPDATED": "Step updated successfully",
+          "DELETED": "Step deleted successfully"
+        },
+        "ERROR": {
+          "LOAD": "Failed to load steps",
+          "CREATE": "Failed to create step",
+          "UPDATE": "Failed to update step",
+          "DELETE": "Failed to delete step"
+        }
+      },
+      "SUCCESS": {
+        "DELETE": "Work order deleted successfully",
+        "STARTED": "Work order execution started successfully",
+        "COMPLETED": "Work order completed successfully",
+        "CANCELLED": "Work order cancelled successfully",
+        "CREATE": "Work order created successfully",
+        "UPDATE": "Work order updated successfully"
+      },
+      "ERROR": {
+        "LOAD": "Failed to load work orders",
+        "DELETE": "Failed to delete work order",
+        "START": "Failed to start work order",
+        "COMPLETE": "Failed to complete work order",
+        "CANCEL": "Failed to cancel work order",
+        "CREATE": "Failed to create work order",
+        "UPDATE": "Failed to update work order",
+        "LOAD_DETAILS": "Failed to load work order details"
+      },
+      "WARNING": {
+        "CANNOT_EDIT": "Cannot edit work order in current status",
+        "CANNOT_DELETE": "Cannot delete work order in current status",
+        "CANNOT_START": "Cannot start work order in current status",
+        "CANNOT_COMPLETE": "Cannot complete work order in current status",
+        "CANNOT_CANCEL": "Cannot cancel work order in current status"
+      },
+      "CONFIRM_DELETE": "Are you sure you want to delete work order #{{code}}?",
+      "START_TITLE": "Start Execution",
+      "CONFIRM_START": "Are you sure you want to start work order #{{code}}?",
+      "COMPLETE_TITLE": "Complete Order",
+      "CONFIRM_COMPLETE": "Are you sure you want to complete work order #{{code}}?",
+      "CANCEL_TITLE": "Cancel Order",
+      "ENTER_CANCEL_REASON": "Please enter cancellation reason",
+      "CONFIRM_REMOVE_WORKER": "Are you sure you want to remove this worker?",
+      "CONFIRM_REMOVE_ITEM": "Are you sure you want to remove this item?"
+    },
+    "TIME_SHEET": {
+      "PAGE_TITLE": "Maintenance Schedule",
+      "PAGE_SUBTITLE": "Manage and track preventive maintenance schedules for properties and units",
+      "ADD": "Add Schedule",
+      "EDIT": "Edit Schedule",
+      "VIEW": "View Schedule",
+      "LIST_TITLE": "Maintenance Schedules List",
+      "NO_DATA": "No maintenance schedules found",
+      "ADD_FIRST": "Add your first maintenance schedule",
+      "SEARCH_PLACEHOLDER": "Search by schedule code, Owner name or building name...",
+      "ELEMENT": "Maintenance Element",
+      "STATS": {
+        "TOTAL": "Total Schedules",
+        "COMPLETED": "Completed",
+        "ESTIMATED_HOURS": "Estimated Hours"
+      },
+      "CONVERT_TO_ORDER": "Convert to Work Order",
+      "CONVERT_TITLE": "Convert to Work Order",
+      "CONFIRM_CONVERT": "Are you sure you want to convert schedule #{{code}} to a work order?",
+      "SUCCESS": {
+        "DELETE": "Maintenance schedule deleted successfully",
+        "CONVERTED": "Schedule converted to work order successfully",
+        "CREATE": "Maintenance schedule created successfully",
+        "UPDATE": "Maintenance schedule updated successfully"
+      },
+      "ERROR": {
+        "LOAD": "Failed to load maintenance schedules",
+        "DELETE": "Failed to delete schedule",
+        "CONVERT": "Failed to convert schedule",
+        "LOAD_ELEMENTS": "Failed to load maintenance elements",
+        "CREATE": "Failed to create maintenance schedule",
+        "UPDATE": "Failed to update maintenance schedule"
+      },
+      "WARNING": {
+        "CANNOT_EDIT": "Cannot edit schedule in current status",
+        "CANNOT_DELETE": "Cannot delete schedule in current status",
+        "CANNOT_CONVERT": "Cannot convert schedule in current status"
+      },
+      "FORM": {
+        "BASIC_INFO": "Basic Information",
+        "MAINTENANCE_DETAILS": "Maintenance Details",
+        "ELEMENT": "Maintenance Element",
+        "MAINTENANCE_TYPE": "Maintenance Type",
+        "ESTIMATED_HOURS": "Estimated Hours",
+        "DATE": "Maintenance Date",
+        "DESCRIPTION": "Description",
+        "NOTES": "Notes",
+        "ENTER_DESCRIPTION": "Enter maintenance description",
+        "ENTER_NOTES": "Enter additional notes",
+        "SELECT_ELEMENT": "Select maintenance element",
+        "SELECT_MAINTENANCE_TYPE": "Select maintenance type"
+      }
+    }
+  },
+  "RECONCILIATION": {
+    "TITLE": "Bank Reconciliation",
+    "SYSTEM_BALANCE": "System Balance",
+    "STATEMENT_BALANCE": "Statement Balance",
+    "DATE": "Reconciliation Date",
+    "DIFFERENCE": "Difference",
+    "UNRECONCILED_TRANSACTIONS": "Unreconciled Transactions",
+    "SELECTED": "Selected",
+    "RECONCILE": "Reconcile",
+    "PERIOD": "Period",
+    "NOTES_PLACEHOLDER": "Enter notes about this reconciliation",
+    "NO_UNRECONCILED": "No unreconciled transactions",
+    "PAGE_TITLE": "Bank Reconciliations",
+    "PAGE_SUBTITLE": "Manage reconciliation between bank transactions and bank statements",
+    "NEW_RECONCILIATION": "New Reconciliation",
+    "VIEW_DETAILS": "View Details",
+    "BALANCED": "Balanced",
+    "OVER": "Over",
+    "SHORT": "Short",
+    "BANK": "Bank",
+    "ACCOUNT_NUMBER": "Account Number",
+    "MIN_DIFFERENCE": "Min Difference",
+    "MAX_DIFFERENCE": "Max Difference",
+    "LIST_TITLE": "Bank Reconciliations List",
+    "NO_DATA": "No reconciliations found",
+    "ADD_FIRST": "Perform your first bank reconciliation",
+    "SEARCH_PLACEHOLDER": "Search by reconciliation ID or account number...",
+    "STATS": {
+      "TOTAL": "Total Reconciliations",
+      "COMPLETED": "Completed",
+      "PENDING": "Pending",
+      "UNMATCHED": "Unmatched"
+    },
+    "STATUS": {
+      "DRAFT": "Draft",
+      "PENDING": "Pending",
+      "COMPLETED": "Completed",
+      "UNMATCHED": "Unmatched"
+    },
+    "SUCCESS": {
+      "RECONCILED": "Bank reconciliation completed successfully",
+      "DELETE": "Reconciliation deleted successfully"
+    },
+    "ERROR": {
+      "LOAD": "Failed to load unreconciled transactions",
+      "RECONCILE": "Failed to complete reconciliation",
+      "BALANCE_REQUIRED": "Statement balance is required",
+      "LOAD_LIST": "Failed to load reconciliations",
+      "DELETE": "Failed to delete reconciliation",
+      "PRINT": "Failed to print reconciliation"
+    },
+    "WARNING": {
+      "INVALID_FORM": "Please fill all required fields",
+      "UNBALANCED": "System balance and statement balance do not match"
+    },
+    "CONFIRM_DELETE": "Are you sure you want to delete reconciliation for {{account}} on {{date}}?"
+  },
+  "TRANSACTION": {
+    "PAGE_TITLE": "Bank Transactions",
+    "PAGE_SUBTITLE": "Manage all incoming and outgoing transactions on bank accounts",
+    "ADD": "New Transaction",
+    "EDIT": "Edit Transaction",
+    "VIEW": "View Transaction",
+    "LIST_TITLE": "Bank Transactions List",
+    "NO_DATA": "No bank transactions found",
+    "ADD_FIRST": "Add your first bank transaction",
+    "SEARCH_PLACEHOLDER": "Search by description or reference...",
+    "RECONCILIATION_STATUS": "Reconciliation Status",
+    "DESCRIPTION": "Description",
+    "ENTER_DESCRIPTION": "Enter description for Transaction",
+    "BANK_ACCOUNT": "Bank Account",
+    "BANK": "Bank",
+    "ACCOUNT_NUMBER": "Account Number",
+    "DATE": "Date",
+    "TYPE": "Transaction Type",
+    "BALANCE_AFTER": "Balance After",
+    "RECONCILIATION": "Reconciliation",
+    "RECONCILED": "Reconciled",
+    "UNRECONCILED": "Unreconciled",
+    "VIEW_SOURCE": "View Source Document",
+    "RECONCILE": "Bank Reconciliation",
+    "BALANCE_SUMMARY": "Balance Summary",
+    "OPENING_BALANCE": "Opening Balance",
+    "CLOSING_BALANCE": "Closing Balance",
+    "NET_CHANGE": "Net Change",
+    "TOTAL_DEPOSITS": "Total Deposits",
+    "TOTAL_WITHDRAWALS": "Total Withdrawals",   
+    "FORM": {
+      "BASIC_INFO": "Basic Information",
+      "SOURCE_DOCUMENT": "Source Document",
+      "LINK_DOCUMENT": "Link Document",
+      "LINKED_TO": "Linked to",
+      "LINKED_DEPOSIT": "Bank Deposit",
+      "LINKED_RECEIPT": "Cash Receipt",
+      "NO_LINKED_DOCUMENT": "No linked document",
+      "BALANCE_AUTO_CALCULATED": "Balance is auto-calculated after transaction",
+      "ENTER_DESCRIPTION": "Enter transaction description"
+    }, 
+    "STATS": {
+      "TOTAL": "Total Transactions",
+      "DEPOSITS": "Deposits",
+      "WITHDRAWALS": "Withdrawals",
+      "RECONCILED": "Reconciled"
+    },    
+    "TYPES": {
+      "DEPOSIT": "Deposit",
+      "WITHDRAWAL": "Withdrawal"
+    },    
+    "SUCCESS": {
+      "CREATE": "Transaction created successfully",
+      "UPDATE": "Transaction updated successfully",
+      "DELETE": "Transaction deleted successfully"
+    },    
+    "ERROR": {
+      "LOAD": "Failed to load bank transactions",
+      "CREATE": "Failed to create transaction",
+      "UPDATE": "Failed to update transaction",
+      "DELETE": "Failed to delete transaction"
+    },    
+    "WARNING": {
+      "SELECT_ACCOUNT_FOR_RECONCILIATION": "Please select a bank account for reconciliation"
+    },    
+    "INFO": {
+      "NO_SOURCE_DOCUMENT": "No source document for this transaction"
+    },
+    "CONFIRM_DELETE": "Are you sure you want to delete transaction #{{code}}?"
+  },
   "CASH_RECEIPT": {
     "VOUCHER_CODE": "Voucher Code",
     "PAGE_TITLE": "Cash Receipt Vouchers",
@@ -683,6 +1115,7 @@
     "ALL": "All",
     "YES": "Yes",
     "NO": "No",
+    "NONE": "None",
     "ACTIVE": "Active",
     "INACTIVE": "Inactive",
     "STATUS": "Status",
@@ -702,14 +1135,41 @@
     "BANK": "Bank",
     "DATE": "Date",
     "MORE_ACTIONS": "More Actions",
+    "MIN_COST": "Min Cost",
+    "MAX_COST": "Max Cost",
+    "START": "Start",
+    "COMPLETE": "Complete",
+    "ASSIGNMENT_DATE": "Assignment Date",
+    "RATING": "Rating",
+    "STEP_NAME": "Step Name",
+    "HOURS": "Hours",
+    "ITEM": "Item",
+    "WORKER": "Worker",
+    "PRICE": "Price",
+    "QUANTITY": "Quantity",
+    "VIEW_DETAILS": "View Details",
+    "ANY": "Any",
+    "REASON": "Reason",
+    "COUNT": "Count",
+    "CONFIRM_REMOVE_TITLE": "Confirm Removal",
     "CONFIRM_DELETE_TITLE": "Confirm Delete",
     "CONFIRM_DELETE": "Are you sure you want to delete",
     "CONFIRM_DELETE_BANK_ACCOUNT": "Are you sure you want to delete bank account {{number}}?",
+    "YESNO": {
+      "YES": "Yes",
+      "NO": "No"
+    },
     "ERROR": {
       "FIELD_REQUIRED": "This field is required",
       "MAX_LENGTH": "Maximum {{length}} characters",
+      "MAX_VALUE": "Maximum value",
+      "MIN_VALUE": "Minimum value",
       "INVALID_FIELD": "Invalid value",
-      "UPDATE_BANK_ACCOUNT": "Failed to update bank account"
+      "UPDATE_BANK_ACCOUNT": "Failed to update bank account",
+      "RetrieveBuildingForBranch": "Failed to retrieve Properties for Branch",
+      "RetrieveUnitsForBuilding": "Failed to retrieve Units for Property",
+      "RetrieveOwners": "Failed to retrieve Owners",
+      "RetrieveContractUnitsForUnit": "Failed to retrieve Contract Units"
     }
   },
   "AUTHORIZED": {

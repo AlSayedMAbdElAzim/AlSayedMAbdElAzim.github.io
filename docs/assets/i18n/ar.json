@@ -159,6 +159,17 @@
     "view_depositmanagement_maindata": "البيانات الأساسية",
     "view_depositmanagement_actions": "العمليات",
     "view_depositmanagement_coding": "الدليل",
+    "view_account_statement_report": "عرض تقرير كشف الحساب",
+    "view_trial_balance_report": "عرض تقرير ميزان المراجعة",
+    "view_balance_sheet_report": "عرض تقرير الميزانية العمومية",
+    "view_income_statement_report": "عرض تقرير قائمة الدخل",
+    "can_view_bankaccounts_list": "عرض قائمة الحسابات البنكية",
+    "can_view_authorized_people_list": "عرض قائمة الأشخاص المفوضين",
+    "can_view_deposit_list": "عرض قائمة الإيداعات",
+    "can_view_cash_receipts_list": "عرض قائمة المقبوضات النقدية",
+    "can_view_reconciliation": "عرض التسويات البنكية",
+    "can_reconcile_bank": "التسوية البنكية",
+    "can_view_bank_transactions_list": "عرض قائمة الحركات البنكية",
     "view_systemmanagement": "إدارة النظام",
     "view_systemmanagement_maindata": "البيانات الأساسية",
     "view_hrmanagement": "إدارة شئون الموظفين",
@@ -735,6 +746,455 @@
     "CONFIRM_REMOVE_DETAIL": "هل أنت متأكد من إزالة هذا السند؟",
     "CONFIRM_REMOVE_TITLE": "تأكيد الإزالة"
   },
+  "MAINTENANCE": {
+    "BUILDING": "العقار",
+    "TENANT": "المستأجر",
+    "OWNER": "المالك",
+    "CONTRACT": "العقد",
+    "REQUEST": "طلب الصيانة",
+    "REQUEST_TYPE": "نوع الصيانة",
+    "PRIORITY": "الأولوية",
+    "CREATE_ORDER": "إنشاء أمر صيانة",
+    "VIEW_ORDER": "عرض أمر الصيانة",
+    "CANCEL_REQUEST": "إلغاء الطلب",
+    "CONFIRM_CANCEL_REQUEST": "هل أنت متأكد من إلغاء طلب الصيانة رقم {{code}}؟",
+    "CANCEL_REASON": "سبب الإلغاء",
+    "ENTER_CANCEL_REASON": "الرجاء إدخال سبب الإلغاء",
+    "RELATED_ORDERS": "الأوامر المرتبطة",
+    "ATTACHED_IMAGE": "الصورة المرفقة",
+    "CANCELLATION_INFO": "معلومات الإلغاء",
+    "CANCELLATION_REASON": "سبب الإلغاء",
+    "CANCELLATION_DATE": "تاريخ الإلغاء",
+    "COST": "التكلفة",
+    "CREATED_BY": "تم الإنشاء بواسطة",
+    "CREATION_DATE": "تاريخ الإنشاء",
+    "LAST_UPDATED": "آخر تحديث",
+    "CANCELLED_BY": "تم الإلغاء بواسطة",
+    "DASHBOARD": {
+      "TITLE": "لوحة تحكم الصيانة",
+      "SUBTITLE": "نظرة عامة على حالة طلبات وأوامر الصيانة",
+      "PERIOD": "الفترة",
+      "CURRENT_MONTH": "الشهر الحالي",
+      "CURRENT_QUARTER": "الربع الحالي",
+      "CURRENT_YEAR": "السنة الحالية",
+      "CUSTOM": "مخصص",
+      "TOTAL_REQUESTS": "إجمالي الطلبات",
+      "TOTAL_ORDERS": "إجمالي الأوامر",
+      "IN_PROGRESS": "قيد التنفيذ",
+      "COMPLETED": "مكتمل",
+      "TOTAL_COST": "إجمالي التكلفة",
+      "ORDERS_COUNT": "عدد الأوامر",
+      "URGENT": "طارئ",
+      "REQUESTS_DISTRIBUTION": "توزيع طلبات الصيانة",
+      "ORDERS_BY_PRIORITY": "الأوامر حسب الأولوية",
+      "COST_TREND": "اتجاه التكلفة",
+      "RECENT_REQUESTS": "أحدث الطلبات",
+      "RECENT_ORDERS": "أحدث الأوامر",
+      "UPCOMING_SCHEDULES": "الجداول القادمة",
+      "ERROR": {
+        "LOAD": "فشل تحميل بيانات لوحة التحكم"
+      }
+    },
+    "REQUESTS": {
+      "PAGE_TITLE": "طلبات الصيانة",
+      "PAGE_SUBTITLE": "إدارة ومتابعة طلبات الصيانة من المستأجرين",
+      "ADD": "طلب صيانة جديد",
+      "LIST_TITLE": "قائمة طلبات الصيانة",
+      "NO_DATA": "لا توجد طلبات صيانة",
+      "ADD_FIRST": "أضف أول طلب صيانة",
+      "SEARCH_PLACEHOLDER": "بحث برقم الطلب أو اسم المستأجر أو رقم المستأجر...",
+      "EDIT": "تعديل طلب صيانة",
+      "VIEW": "عرض طلب صيانة",
+      "DETAILS_TITLE": "تفاصيل طلب الصيانة"
+    },
+    "FORM": {
+      "LOCATION_INFO": "معلومات الموقع",
+      "REQUEST_DETAILS": "تفاصيل الطلب",
+      "TITLE": "الموضوع",
+      "ENTER_TITLE": "أدخل موضوع الطلب",
+      "DESCRIPTION": "الوصف",
+      "ENTER_DESCRIPTION": "أدخل وصفاً تفصيلياً للمشكلة",
+      "ATTACH_IMAGE": "رفع صورة المشكلة",
+      "UPLOAD_IMAGE": "رفع صورة",
+      "IMAGE_HINT": "يُفضل رفع صورة واضحة للمشكلة",
+      "VIEW_IMAGE": "عرض الصورة",
+      "ENTER_NOTES": "أدخل ملاحظات إضافية",
+      "ORDER_DETAILS": "تفاصيل الأمر",
+      "ESTIMATED_HOURS": "الساعات المقدرة",
+      "EXPECTED_FINISH_DATE": "تاريخ الانتهاء المتوقع",
+      "IS_PAYED_BY_TENANT": "المستأجر يدفع التكلفة",
+      "ASSIGNED_WORKERS": "العمال المكلفين",
+      "ADD_WORKER": "إضافة عامل",
+      "SELECT_WORKER": "اختر عامل",
+      "NO_WORKERS_ASSIGNED": "لم يتم تكليف أي عامل",
+      "ITEMS_USED": "الأصناف المستخدمة",
+      "ADD_ITEM": "إضافة صنف",
+      "SELECT_ITEM": "اختر صنف",
+      "NO_ITEMS_ADDED": "لم يتم إضافة أي أصناف",
+      "STEPS": "الخطوات",
+      "NO_STEPS_ADDED": "لم يتم إضافة أي خطوات"
+    },
+    "STATUS": {
+      "NEW": "جديد",
+      "IN_PROGRESS": "قيد التنفيذ",
+      "COMPLETED": "مكتمل",
+      "CANCELLED": "ملغي"
+    },    
+    "PRIORITY_TYPES": {
+      "LOW": "منخفضة",
+      "MEDIUM": "متوسطة",
+      "HIGH": "عالية",
+      "URGENT": "طارئة"
+    },    
+    "SUCCESS": {
+      "REQUEST_CANCELLED": "تم إلغاء طلب الصيانة بنجاح",
+      "REQUEST_CREATED": "تم إنشاء طلب الصيانة بنجاح",
+      "REQUEST_UPDATED": "تم تحديث طلب الصيانة بنجاح"
+    },    
+    "ERROR": {
+      "LOAD_REQUESTS": "فشل تحميل طلبات الصيانة",
+      "LOAD_REQUESTS_TYPES": "فشل تحميل نوع طلبات الصيانة",
+      "CANCEL_REQUEST": "فشل إلغاء طلب الصيانة",
+      "CREATE_REQUEST": "فشل إنشاء طلب الصيانة",
+      "UPDATE_REQUEST": "فشل تحديث طلب الصيانة",
+      "LOAD_REQUEST_DETAILS": "فشل تحميل تفاصيل طلب الصيانة",
+      "UPLOAD_IMAGE": "فشل رفع الصورة"
+    },    
+    "WARNING": {
+      "CANNOT_EDIT_REQUEST": "لا يمكن تعديل طلب الصيانة في حالته الحالية",
+      "CANNOT_CANCEL_REQUEST": "لا يمكن إلغاء طلب الصيانة في حالته الحالية",
+      "CANNOT_CREATE_ORDER": "لا يمكن إنشاء أمر صيانة لطلب في حالته الحالية"
+    },    
+    "INFO": {
+      "NO_ORDER_FOUND": "لا يوجد أمر صيانة مرتبط بهذا الطلب"
+    },
+    "ORDERS": {
+      "PAGE_TITLE": "أوامر الصيانة",
+      "PAGE_SUBTITLE": "إدارة ومتابعة أوامر الصيانة وتنفيذها",
+      "ADD": "أمر صيانة جديد",
+      "EDIT": "تعديل أمر صيانة",
+      "VIEW": "عرض أمر صيانة",
+      "LIST_TITLE": "قائمة أوامر الصيانة",
+      "NO_DATA": "لا توجد أوامر صيانة",
+      "ADD_FIRST": "أضف أول أمر صيانة",
+      "SEARCH_PLACEHOLDER": "بحث برقم الأمر أو اسم المستأجر أو رقم المستأجر...",
+      "ORDER_ITEMS": "الأصناف",
+      "ORDER_WORKERS": "العمال",
+      "ORDER_STEPS": "الخطوات",
+      "START": "بدء التنفيذ",
+      "COMPLETE": "إكمال",
+      "VIEW_REQUEST": "عرض الطلب المرتبط",
+      "DETAILS_TITLE": "تفاصيل أمر الصيانة",
+      "START_DATE": "تاريخ البدء",
+      "FINISH_DATE": "تاريخ الانتهاء",
+      "TOTAL_COST": "التكلفة الإجمالية",
+      "MIN_PRICE": "الحد الأدنى للسعر",
+      "MAX_PRICE": "الحد الأقصى للسعر",
+      "STATS": {
+        "TOTAL": "إجمالي الأوامر",
+        "IN_PROGRESS": "قيد التنفيذ",
+        "COMPLETED": "مكتملة",
+        "TOTAL_COST": "إجمالي التكلفة"
+      },
+      "ITEMS": {
+        "TITLE": "أصناف أمر الصيانة",
+        "ADD_ITEM": "إضافة صنف",
+        "EDIT_ITEM": "تعديل صنف",
+        "NO_ITEMS": "لم يتم إضافة أي أصناف",
+        "CONFIRM_DELETE": "هل أنت متأكد من حذف الصنف {{name}}؟",
+        "SELECT_TITLE": "اختيار الأصناف",
+        "SEARCH_PLACEHOLDER": "ابحث باسم الصنف أو الكود",
+        "NAME": "اسم الصنف",
+        "CATEGORY": "التصنيف",
+        "UNIT": "الوحدة",
+        "STOCK": "المخزون",
+        "HAS_STOCK": "متوفر في المخزون",
+        "NO_ITEMS_AVAILABLE": "لا توجد أصناف متاحة",
+        "SUCCESS": {
+          "ADDED": "تم إضافة الأصناف بنجاح",
+          "UPDATED": "تم تحديث الصنف بنجاح",
+          "DELETED": "تم حذف الصنف بنجاح"
+        },
+        "WARNING": {
+          "NO_ITEMS_SELECTED": "الرجاء اختيار صنف واحد على الأقل"
+        },
+        "ERROR": {
+          "LOAD": "فشل تحميل الأصناف",
+          "ADD": "فشل إضافة الأصناف",
+          "UPDATE": "فشل تحديث الصنف",
+          "DELETE": "فشل حذف الصنف"
+        }
+      },
+      "WORKERS": {
+        "TITLE": "عمال أمر الصيانة",
+        "ADD_WORKER": "إضافة عامل",
+        "RATE_WORKER": "تقييم العامل",
+        "NO_WORKERS": "لم يتم تكليف أي عامل",
+        "CONFIRM_DELETE": "هل أنت متأكد من حذف العامل {{name}}؟",
+        "SELECT_TITLE": "اختيار العمال",
+        "SEARCH_PLACEHOLDER": "ابحث باسم العامل أو الجوال",
+        "NAME": "اسم العامل",
+        "DEPARTMENT": "القسم",
+        "RATING": "التقييم",
+        "ORDERS_COUNT": "عدد الأوامر",
+        "MIN_RATING": "الحد الأدنى للتقييم",
+        "AVAILABLE_ONLY": "المتاحون فقط",
+        "NO_WORKERS_AVAILABLE": "لا يوجد عمال متاحون",
+        "SUCCESS": {
+          "ADDED": "تم إضافة العمال بنجاح",
+          "RATED": "تم تقييم العامل بنجاح",
+          "DELETED": "تم حذف العامل بنجاح"
+        },
+        "WARNING": {
+          "NO_WORKERS_SELECTED": "الرجاء اختيار عامل واحد على الأقل"
+        },
+        "ERROR": {
+          "LOAD": "فشل تحميل العمال",
+          "ADD": "فشل إضافة العمال",
+          "RATE": "فشل تقييم العامل",
+          "DELETE": "فشل حذف العامل"
+        }
+      },
+      "STEPS": {
+        "TITLE": "خطوات أمر الصيانة",
+        "ADD_STEP": "إضافة خطوة",
+        "ADD_FIRST_STEP": "أضف أول خطوة",
+        "NEW_STEP": "خطوة جديدة",
+        "EDIT_STEP": "تعديل خطوة",
+        "STEP_TYPE": "نوع الخطوة",
+        "NO_STEPS": "لم يتم إضافة أي خطوات",
+        "CONFIRM_DELETE": "هل أنت متأكد من حذف الخطوة {{name}}؟",
+        "SUCCESS": {
+          "CREATED": "تم إنشاء الخطوة بنجاح",
+          "UPDATED": "تم تحديث الخطوة بنجاح",
+          "DELETED": "تم حذف الخطوة بنجاح"
+        },
+        "ERROR": {
+          "LOAD": "فشل تحميل الخطوات",
+          "CREATE": "فشل إنشاء الخطوة",
+          "UPDATE": "فشل تحديث الخطوة",
+          "DELETE": "فشل حذف الخطوة"
+        }
+      },
+      "SUCCESS": {
+        "DELETE": "تم حذف أمر الصيانة بنجاح",
+        "STARTED": "تم بدء تنفيذ أمر الصيانة بنجاح",
+        "COMPLETED": "تم إكمال أمر الصيانة بنجاح",
+        "CANCELLED": "تم إلغاء أمر الصيانة بنجاح",
+        "CREATE": "تم إنشاء أمر الصيانة بنجاح",
+        "UPDATE": "تم تحديث أمر الصيانة بنجاح"
+      },
+      "ERROR": {
+        "LOAD": "فشل تحميل أوامر الصيانة",
+        "DELETE": "فشل حذف أمر الصيانة",
+        "START": "فشل بدء تنفيذ أمر الصيانة",
+        "COMPLETE": "فشل إكمال أمر الصيانة",
+        "CANCEL": "فشل إلغاء أمر الصيانة",
+        "CREATE": "فشل إنشاء أمر الصيانة",
+        "UPDATE": "فشل تحديث أمر الصيانة",
+        "LOAD_DETAILS": "فشل تحميل تفاصيل أمر الصيانة"
+      },
+      "WARNING": {
+        "CANNOT_EDIT": "لا يمكن تعديل أمر الصيانة في حالته الحالية",
+        "CANNOT_DELETE": "لا يمكن حذف أمر الصيانة في حالته الحالية",
+        "CANNOT_START": "لا يمكن بدء تنفيذ أمر الصيانة في حالته الحالية",
+        "CANNOT_COMPLETE": "لا يمكن إكمال أمر الصيانة في حالته الحالية",
+        "CANNOT_CANCEL": "لا يمكن إلغاء أمر الصيانة في حالته الحالية"
+      },
+      "CONFIRM_DELETE": "هل أنت متأكد من حذف أمر الصيانة رقم {{code}}؟",
+      "START_TITLE": "بدء التنفيذ",
+      "CONFIRM_START": "هل أنت متأكد من بدء تنفيذ أمر الصيانة رقم {{code}}؟",
+      "COMPLETE_TITLE": "إكمال الأمر",
+      "CONFIRM_COMPLETE": "هل أنت متأكد من إكمال أمر الصيانة رقم {{code}}؟",
+      "CANCEL_TITLE": "إلغاء الأمر",
+      "ENTER_CANCEL_REASON": "الرجاء إدخال سبب إلغاء الأمر",
+      "CONFIRM_REMOVE_WORKER": "هل أنت متأكد من إزالة هذا العامل؟",
+      "CONFIRM_REMOVE_ITEM": "هل أنت متأكد من إزالة هذا الصنف؟"
+    },
+    "TIME_SHEET": {
+      "PAGE_TITLE": "جدول الصيانة الدورية",
+      "PAGE_SUBTITLE": "إدارة ومتابعة مواعيد الصيانة الوقائية للعقارات والوحدات",
+      "DETAILS_TITLE": "تفاصيل جدول الصيانة",
+      "ADD": "إضافة جدول صيانة",
+      "EDIT": "تعديل جدول صيانة",
+      "VIEW": "عرض جدول صيانة",
+      "LIST_TITLE": "قائمة جداول الصيانة",
+      "NO_DATA": "لا توجد جداول صيانة",
+      "ADD_FIRST": "أضف أول جدول صيانة",
+      "SEARCH_PLACEHOLDER": "بحث برقم الجدول أو اسم المالك أو اسم العقار...",
+      "ELEMENT": "عنصر الصيانة",
+      "NO_RELATED_ORDERS": "لا توجد أوامر صيانة مرتبطة",
+      "STATS": {
+        "TOTAL": "إجمالي الجداول",
+        "COMPLETED": "منفذة",
+        "ESTIMATED_HOURS": "الساعات المقدرة"
+      },
+      "CONVERT_TO_ORDER": "تحويل إلى أمر صيانة",
+      "CONVERT_TITLE": "تحويل إلى أمر صيانة",
+      "CONFIRM_CONVERT": "هل أنت متأكد من تحويل جدول الصيانة رقم {{code}} إلى أمر صيانة؟",
+      "SUCCESS": {
+        "DELETE": "تم حذف جدول الصيانة بنجاح",
+        "CONVERTED": "تم تحويل جدول الصيانة إلى أمر صيانة بنجاح",
+        "CREATE": "تم إنشاء جدول الصيانة بنجاح",
+        "UPDATE": "تم تحديث جدول الصيانة بنجاح"
+      },
+      "ERROR": {
+        "LOAD": "فشل تحميل جداول الصيانة",
+        "DELETE": "فشل حذف جدول الصيانة",
+        "CONVERT": "فشل تحويل جدول الصيانة",
+        "LOAD_ELEMENTS": "فشل تحميل عناصر الصيانة",
+        "CREATE": "فشل إنشاء جدول الصيانة",
+        "UPDATE": "فشل تحديث جدول الصيانة",
+        "LOAD_DETAILS": "فشل تحميل تفاصيل جدول الصيانة"
+      },
+      "WARNING": {
+        "CANNOT_EDIT": "لا يمكن تعديل جدول الصيانة في حالته الحالية",
+        "CANNOT_DELETE": "لا يمكن حذف جدول الصيانة في حالته الحالية",
+        "CANNOT_CONVERT": "لا يمكن تحويل جدول الصيانة في حالته الحالية"
+      },
+      "FORM": {
+        "BASIC_INFO": "معلومات أساسية",
+        "MAINTENANCE_DETAILS": "تفاصيل الصيانة",
+        "ELEMENT": "عنصر الصيانة",
+        "MAINTENANCE_TYPE": "نوع الصيانة",
+        "ESTIMATED_HOURS": "الساعات المقدرة",
+        "DATE": "تاريخ الصيانة",
+        "DESCRIPTION": "الوصف",
+        "NOTES": "ملاحظات",
+        "ENTER_DESCRIPTION": "أدخل وصفاً للصيانة",
+        "ENTER_NOTES": "أدخل ملاحظات إضافية",
+        "SELECT_ELEMENT": "اختر عنصر الصيانة",
+        "SELECT_MAINTENANCE_TYPE": "اختر نوع الصيانة"
+      }
+    }
+  },
+  "RECONCILIATION": {
+    "TITLE": "التسوية البنكية",
+    "SYSTEM_BALANCE": "رصيد النظام",
+    "STATEMENT_BALANCE": "رصيد كشف الحساب",
+    "DATE": "تاريخ التسوية",
+    "DIFFERENCE": "الفرق",
+    "UNRECONCILED_TRANSACTIONS": "الحركات غير المسوية",
+    "SELECTED": "محدد",
+    "RECONCILE": "تسوية",
+    "PERIOD": "الفترة",
+    "NOTES_PLACEHOLDER": "أدخل ملاحظات حول التسوية",
+    "NO_UNRECONCILED": "لا توجد حركات غير مسوية",
+    "PAGE_TITLE": "التسويات البنكية",
+    "PAGE_SUBTITLE": "إدارة عمليات التسوية بين الحركات البنكية وكشوف الحساب",
+    "NEW_RECONCILIATION": "تسوية جديدة",
+    "VIEW_DETAILS": "عرض التفاصيل",
+    "BALANCED": "متوازن",
+    "OVER": "زيادة",
+    "SHORT": "نقص",
+    "BANK": "البنك",
+    "ACCOUNT_NUMBER": "رقم الحساب",
+    "MIN_DIFFERENCE": "الحد الأدنى للفرق",
+    "MAX_DIFFERENCE": "الحد الأقصى للفرق",
+    "LIST_TITLE": "قائمة التسويات البنكية",
+    "NO_DATA": "لا توجد تسويات بنكية",
+    "ADD_FIRST": "قم بإجراء أول تسوية بنكية",
+    "SEARCH_PLACEHOLDER": "بحث برقم التسوية أو رقم الحساب...",
+    "STATS": {
+      "TOTAL": "إجمالي التسويات",
+      "COMPLETED": "مكتملة",
+      "PENDING": "قيد المراجعة",
+      "UNMATCHED": "غير متطابقة"
+    },
+    "STATUS": {
+      "DRAFT": "مسودة",
+      "PENDING": "قيد المراجعة",
+      "COMPLETED": "مكتملة",
+      "UNMATCHED": "غير متطابقة"
+    },
+    "SUCCESS": {
+      "RECONCILED": "تمت التسوية البنكية بنجاح",
+      "DELETE": "تم حذف التسوية بنجاح"
+    },
+    "ERROR": {
+      "LOAD": "فشل تحميل الحركات غير المسوية",
+      "RECONCILE": "فشل إتمام التسوية البنكية",
+      "BALANCE_REQUIRED": "رصيد كشف الحساب مطلوب",
+      "LOAD_LIST": "فشل تحميل قائمة التسويات",
+      "DELETE": "فشل حذف التسوية",
+      "PRINT": "فشل طباعة التسوية"
+    },
+    "WARNING": {
+      "INVALID_FORM": "الرجاء ملء جميع الحقول المطلوبة",
+      "UNBALANCED": "الفرق بين رصيد النظام ورصيد كشف الحساب غير متوازن"
+    },
+    "CONFIRM_DELETE": "هل أنت متأكد من حذف تسوية {{account}} بتاريخ {{date}}؟"
+  },
+  "TRANSACTION": {
+    "PAGE_TITLE": "الحركات البنكية",
+    "PAGE_SUBTITLE": "إدارة جميع الحركات الواردة والصادرة على الحسابات البنكية",
+    "ADD": "حركة جديدة",
+    "EDIT": "تعديل حركة",
+    "VIEW": "عرض حركة",
+    "LIST_TITLE": "قائمة الحركات البنكية",
+    "NO_DATA": "لا توجد حركات بنكية",
+    "ADD_FIRST": "أضف أول حركة بنكية",
+    "SEARCH_PLACEHOLDER": "بحث بالوصف أو رقم المرجع...",
+    "RECONCILIATION_STATUS": "حالة التسوية",
+    "DESCRIPTION": "الوصف",
+    "ENTER_DESCRIPTION": "أدخل وصف حركة الحساب",
+    "BANK_ACCOUNT": "الحساب البنكي",
+    "BANK": "البنك",
+    "ACCOUNT_NUMBER": "رقم الحساب",
+    "DATE": "التاريخ",
+    "TYPE": "نوع الحركة",
+    "BALANCE_AFTER": "الرصيد بعد الحركة",
+    "RECONCILIATION": "التسوية",
+    "RECONCILED": "مسوية",
+    "UNRECONCILED": "غير مسوية",
+    "VIEW_SOURCE": "عرض المستند المصدر",
+    "RECONCILE": "تسوية بنكية",
+    "BALANCE_SUMMARY": "ملخص الرصيد",
+    "OPENING_BALANCE": "الرصيد الافتتاحي",
+    "CLOSING_BALANCE": "الرصيد الختامي",
+    "NET_CHANGE": "صافي التغير",
+    "TOTAL_DEPOSITS": "إجمالي الإيداعات",
+    "TOTAL_WITHDRAWALS": "إجمالي المسحوبات",
+    "FORM": {
+      "BASIC_INFO": "معلومات أساسية",
+      "SOURCE_DOCUMENT": "المستند المصدر",
+      "LINK_DOCUMENT": "ربط مستند",
+      "LINKED_TO": "مرتبط بـ",
+      "LINKED_DEPOSIT": "إيداع بنكي",
+      "LINKED_RECEIPT": "إيصال استلام",
+      "NO_LINKED_DOCUMENT": "لا يوجد مستند مرتبط",
+      "BALANCE_AUTO_CALCULATED": "يتم حساب الرصيد تلقائياً بعد الحركة",
+      "ENTER_DESCRIPTION": "أدخل وصفاً للحركة"
+    },
+    "STATS": {
+      "TOTAL": "إجمالي الحركات",
+      "DEPOSITS": "إيداعات",
+      "WITHDRAWALS": "مسحوبات",
+      "RECONCILED": "مسوية"
+    },
+    "TYPES": {
+      "DEPOSIT": "إيداع",
+      "WITHDRAWAL": "سحب"
+    },
+    "SUCCESS": {
+      "CREATE": "تم إنشاء الحركة بنجاح",
+      "UPDATE": "تم تحديث الحركة بنجاح",
+      "DELETE": "تم حذف الحركة بنجاح"
+    },
+    "ERROR": {
+      "LOAD": "فشل تحميل الحركات البنكية",
+      "CREATE": "فشل إنشاء الحركة",
+      "UPDATE": "فشل تحديث الحركة",
+      "DELETE": "فشل حذف الحركة"
+    },
+    "WARNING": {
+      "SELECT_ACCOUNT_FOR_RECONCILIATION": "الرجاء اختيار حساب بنكي للتسوية"
+    },
+    "INFO": {
+      "NO_SOURCE_DOCUMENT": "لا يوجد مستند مصدر لهذه الحركة"
+    },
+    "CONFIRM_DELETE": "هل أنت متأكد من حذف الحركة رقم {{code}}؟"
+  },
   "CASH_RECEIPT": {
     "VOUCHER_CODE": "رقم إيصال الاستلام",
     "PAGE_TITLE": "إيصالات الاستلام",
@@ -854,6 +1314,7 @@
     "ALL": "الكل",
     "YES": "نعم",
     "NO": "لا",
+    "NONE": "لا شيء",
     "ACTIVE": "نشط",
     "INACTIVE": "غير نشط",
     "STATUS": "الحالة",
@@ -873,14 +1334,41 @@
     "BANK": "البنك",
     "DATE": "التاريخ",
     "MORE_ACTIONS": "مزيد من الإجراءات",
+    "MIN_COST": "الحد الأدنى للتكلفة",
+    "MAX_COST": "الحد الأقصى للتكلفة",
+    "START": "بدء",
+    "COMPLETE": "إكمال",
+    "ASSIGNMENT_DATE": "تاريخ التكليف",
+    "RATING": "التقييم",
+    "STEP_NAME": "اسم الخطوة",
+    "HOURS": "ساعة",
+    "ITEM": "الصنف",
+    "WORKER": "العامل",
+    "PRICE": "السعر",
+    "QUANTITY": "الكمية",
+    "VIEW_DETAILS": "عرض التفاصيل",
+    "ANY": "أي من",
+    "REASON": "السبب",
+    "COUNT": "العدد",
+    "CONFIRM_REMOVE_TITLE": "تأكيد الإزالة",
     "CONFIRM_DELETE_TITLE": "تأكيد الحذف",
     "CONFIRM_DELETE": "هل أنت متأكد من الحذف",
     "CONFIRM_DELETE_BANK_ACCOUNT": "هل أنت متأكد من حذف الحساب البنكي رقم {{number}}؟",
+    "YESNO": {
+      "YES": "نعم",
+      "NO": "لا"
+    },
     "ERROR": {
       "FIELD_REQUIRED": "هذا الحقل مطلوب",
       "MAX_LENGTH": "الحد الأقصى {{length}} حرف",
+      "MAX_VALUE": "أكبر قيمة",
+      "MIN_VALUE": "أقل قيمة",
       "INVALID_FIELD": "قيمة غير صالحة",
-      "UPDATE_BANK_ACCOUNT": "فشل تحديث الحساب البنكي"
+      "UPDATE_BANK_ACCOUNT": "فشل تحديث الحساب البنكي",
+      "RetrieveBuildingForBranch": "فشل استرجاع العقارات التابعة للفرع",
+      "RetrieveUnitsForBuilding": "فشل استرجاع الوحدات التابعة للعقار",
+      "RetrieveOwners": "فشل استرجاع بيانات الملاك",
+      "RetrieveContractUnitsForUnit": "فشل استرجاع وحدات العقد"
     }
   },
   "AUTHORIZED": {
@@ -1020,7 +1508,7 @@
     "ACCOUNT_CODE": "كود الحساب",
     "CREATED_BY": "تم الإنشاء بواسطة",
     "CREATION_DATE": "تاريخ الإنشاء",
-    "LAST_UPDATED": "آخر تحديث",    
+    "LAST_UPDATED": "آخر تحديث", 
     "VIEW_TRANSACTIONS": "عرض الحركات",
     "VIEW_DEPOSITS": "عرض الإيداعات",
     "RECONCILE": "تسوية بنكية",
