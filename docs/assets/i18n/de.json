@@ -599,6 +599,20 @@
     "CREATION_DATE": "Creation Date",
     "LAST_UPDATED": "Last Updated",
     "CANCELLED_BY": "Cancelled By",
+    "REPORTS": {
+      "TITLE": "Maintenance Reports",
+      "REPORT_TYPE": "Report Type",
+      "GROUP_BY": "Group by",
+      "GENERATE_REPORT": "Generate Report",
+      "RESET": "Reset",
+      "COST_REPORT": "Cost Reports",
+      "CURRENT_MONTH": "Current Month",
+      "CURRENT_QUARTER": "Current Quarter",
+      "CURRENT_YEAR": "Current Year",
+      "ERROR": {
+        "GENERATE": "Failed to create a Report"
+      }
+    },
     "DASHBOARD": {
       "TITLE": "Maintenance Dashboard",
       "SUBTITLE": "Overview of maintenance requests and work orders status",
@@ -1179,6 +1193,7 @@
     "ANY": "Any",
     "REASON": "Reason",
     "COUNT": "Count",
+    "Reports": "Reports",
     "CONFIRM_REMOVE_TITLE": "Confirm Removal",
     "CONFIRM_DELETE_TITLE": "Confirm Delete",
     "CONFIRM_DELETE": "Are you sure you want to delete",

@@ -1151,6 +1151,7 @@
     "ANY": "Any",
     "REASON": "Reason",
     "COUNT": "Count",
+    "Reports": "Reports",
     "CONFIRM_REMOVE_TITLE": "Confirm Removal",
     "CONFIRM_DELETE_TITLE": "Confirm Delete",
     "CONFIRM_DELETE": "Are you sure you want to delete",

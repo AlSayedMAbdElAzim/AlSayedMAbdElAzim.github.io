@@ -770,6 +770,20 @@
     "CREATION_DATE": "تاريخ الإنشاء",
     "LAST_UPDATED": "آخر تحديث",
     "CANCELLED_BY": "تم الإلغاء بواسطة",
+    "REPORTS": {
+      "TITLE": "تقارير الصيانة",
+      "REPORT_TYPE": "نوع التقرير",
+      "GROUP_BY": "تجميع حسب",
+      "GENERATE_REPORT": "إنشاء التقرير",
+      "RESET": "إعادة تعيين",
+      "COST_REPORT": "تقرير التكاليف",
+      "CURRENT_MONTH": "الشهر الحالي",
+      "CURRENT_QUARTER": "الربع الحالي",
+      "CURRENT_YEAR": "السنة الحالية",
+      "ERROR": {
+        "GENERATE": "فشل إنشاء التقرير"
+      }
+    },
     "DASHBOARD": {
       "TITLE": "لوحة تحكم الصيانة",
       "SUBTITLE": "نظرة عامة على حالة طلبات وأوامر الصيانة",
@@ -1350,6 +1364,7 @@
     "ANY": "أي من",
     "REASON": "السبب",
     "COUNT": "العدد",
+    "Reports": "التقارير",
     "CONFIRM_REMOVE_TITLE": "تأكيد الإزالة",
     "CONFIRM_DELETE_TITLE": "تأكيد الحذف",
     "CONFIRM_DELETE": "هل أنت متأكد من الحذف",
