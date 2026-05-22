@@ -599,6 +599,45 @@
     "CREATION_DATE": "Creation Date",
     "LAST_UPDATED": "Last Updated",
     "CANCELLED_BY": "Cancelled By",
+    "REPORTS": {
+      "TITLE": "Maintenance Reports",
+      "REPORT_TYPE": "Report Type",
+      "GROUP_BY": "Group by",
+      "GENERATE_REPORT": "Generate Report",
+      "RESET": "Reset",
+      "COST_REPORT": "Cost Reports",
+      "CURRENT_MONTH": "Current Month",
+      "CURRENT_QUARTER": "Current Quarter",
+      "CURRENT_YEAR": "Current Year",
+      "ERROR": {
+        "GENERATE": "Failed to create a Report"
+      }
+    },
+    "DASHBOARD": {
+      "TITLE": "Maintenance Dashboard",
+      "SUBTITLE": "Overview of maintenance requests and work orders status",
+      "PERIOD": "Period",
+      "CURRENT_MONTH": "Current Month",
+      "CURRENT_QUARTER": "Current Quarter",
+      "CURRENT_YEAR": "Current Year",
+      "CUSTOM": "Custom",
+      "TOTAL_REQUESTS": "Total Requests",
+      "TOTAL_ORDERS": "Total Orders",
+      "IN_PROGRESS": "In Progress",
+      "COMPLETED": "Completed",
+      "TOTAL_COST": "Total Cost",
+      "ORDERS_COUNT": "Orders Count",
+      "URGENT": "Urgent",
+      "REQUESTS_DISTRIBUTION": "Requests Distribution",
+      "ORDERS_BY_PRIORITY": "Orders by Priority",
+      "COST_TREND": "Cost Trend",
+      "RECENT_REQUESTS": "Recent Requests",
+      "RECENT_ORDERS": "Recent Orders",
+      "UPCOMING_SCHEDULES": "Upcoming Schedules",
+      "ERROR": {
+        "LOAD": "Failed to load dashboard data"
+      }
+    },
     "REQUESTS": {
       "PAGE_TITLE": "Maintenance Requests",
       "PAGE_SUBTITLE": "Manage and track maintenance requests from tenants",
@@ -818,6 +857,7 @@
     "TIME_SHEET": {
       "PAGE_TITLE": "Maintenance Schedule",
       "PAGE_SUBTITLE": "Manage and track preventive maintenance schedules for properties and units",
+      "DETAILS_TITLE": "Maintenance Schedule Details",
       "ADD": "Add Schedule",
       "EDIT": "Edit Schedule",
       "VIEW": "View Schedule",
@@ -826,6 +866,7 @@
       "ADD_FIRST": "Add your first maintenance schedule",
       "SEARCH_PLACEHOLDER": "Search by schedule code, Owner name or building name...",
       "ELEMENT": "Maintenance Element",
+      "NO_RELATED_ORDERS": "No related work orders",
       "STATS": {
         "TOTAL": "Total Schedules",
         "COMPLETED": "Completed",
@@ -846,7 +887,8 @@
         "CONVERT": "Failed to convert schedule",
         "LOAD_ELEMENTS": "Failed to load maintenance elements",
         "CREATE": "Failed to create maintenance schedule",
-        "UPDATE": "Failed to update maintenance schedule"
+        "UPDATE": "Failed to update maintenance schedule",
+        "LOAD_DETAILS": "Failed to load schedule details"
       },
       "WARNING": {
         "CANNOT_EDIT": "Cannot edit schedule in current status",
