@@ -1212,7 +1212,84 @@
       "RetrieveUnitsForBuilding": "Failed to retrieve Units for Property",
       "RetrieveOwners": "Failed to retrieve Owners",
       "RetrieveContractUnitsForUnit": "Failed to retrieve Contract Units"
-    }
+    },
+    "PRINT": "Print",
+    "NO_DATA": "No data available",
+    "ADD_FIRST": "Add your first item",
+    "CONFIRM_DELETE_SELECTED": "Are you sure you want to delete {{count}} items?",
+    "CONFIRM_REMOVE_ITEM": "Are you sure you want to remove this line?",
+    "CREATED_BY": "Created by",
+    "CREATION_DATE": "Creation date",
+    "DESCRIPTION": "Description",
+    "AMOUNT": "Amount",
+    "TOTAL": "Total",
+    "SUBTOTAL": "Subtotal",
+    "DISCOUNT": "Discount",
+    "TAX": "Tax",
+    "FIXED": "Fixed amount",
+    "PERCENTAGE": "Percentage"
+  },
+  "INVOICE": {
+    "PAGE_TITLE": "Invoices",
+    "PAGE_SUBTITLE": "Manage invoices and financial claims",
+    "ADD": "New Invoice",
+    "EDIT": "Edit Invoice",
+    "VIEW": "View Invoice",
+    "LIST_TITLE": "Invoice List",
+    "NO_DATA": "No invoices found",
+    "ADD_FIRST": "Add your first invoice",
+    "SEARCH_PLACEHOLDER": "Search by invoice number, customer name or property...",
+    "NUMBER": "Invoice Number",
+    "TYPE": "Invoice Type",
+    "DATE": "Invoice Date",
+    "DUE_DATE": "Due Date",
+    "DUE_DATE_FROM": "Due from date",
+    "DUE_DATE_TO": "Due to date",
+    "INV_STATUS": "Status",
+    "PAID": "Paid",
+    "REMAINING": "Remaining",
+    "OVERDUE_ONLY": "Overdue only",
+    "ITEMS": "Invoice Lines",
+    "ADD_ITEM": "Add Line",
+    "BASIC_INFO": "Basic Information",
+    "INSTRUCTIONS": "Additional Instructions",
+    "TAX_RATE": "Tax Rate",
+    "DISCOUNT_AMOUNT": "Discount Amount",
+    "TAX_METHOD": "Tax Calculation Method",
+    "TAX_METHOD_INVOICE": "Invoice Level",
+    "TAX_METHOD_LINE": "Line Level",
+    "STATUS": {
+      "NEW": "New",
+      "PARTIALLY_PAID": "Partially Paid",
+      "PAID": "Fully Paid",
+      "CANCELLED": "Cancelled"
+    },
+    "STATS": {
+      "TOTAL": "Total Invoices",
+      "PAID": "Paid",
+      "UNPAID": "Unpaid",
+      "OVERDUE": "Overdue"
+    },
+    "SUCCESS": {
+      "CREATE": "Invoice created successfully",
+      "UPDATE": "Invoice updated successfully",
+      "DELETE": "Invoice deleted successfully",
+      "DELETE_SELECTED": "Selected invoices deleted successfully"
+    },
+    "ERROR": {
+      "LOAD": "Failed to load invoices",
+      "CREATE": "Failed to create invoice",
+      "UPDATE": "Failed to update invoice",
+      "DELETE": "Failed to delete invoice",
+      "PRINT": "Failed to print invoice"
+    },
+    "WARNING": {
+      "CANNOT_EDIT_PAID": "Cannot edit a fully paid invoice",
+      "CANNOT_DELETE": "Cannot delete invoice in its current state"
+    },
+    "CONFIRM_DELETE": "Are you sure you want to delete invoice number {{number}}?",
+    "CONFIRM_DELETE_SELECTED": "Are you sure you want to delete {{count}} invoices?",
+    "CONFIRM_REMOVE_ITEM": "Are you sure you want to remove this invoice line?"
   },
   "AUTHORIZED": {
     "AUTHORIZED_PEOPLE": "Authorized People",
