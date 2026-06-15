@@ -1199,6 +1199,9 @@
     "CONFIRM_DELETE_TITLE": "Confirm Delete",
     "CONFIRM_DELETE": "Are you sure you want to delete",
     "CONFIRM_DELETE_BANK_ACCOUNT": "Are you sure you want to delete bank account {{number}}?",
+    "CUSTOMER_CODE": "Customer code",
+    "ENTER_CUSTOMER_CODE": "enter Customer code",
+    "SELECT_CUSTOMER": "Select Customer",
     "YESNO": {
       "YES": "Yes",
       "NO": "No"

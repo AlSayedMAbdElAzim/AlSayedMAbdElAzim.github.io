@@ -1370,6 +1370,9 @@
     "CONFIRM_DELETE_TITLE": "تأكيد الحذف",
     "CONFIRM_DELETE": "هل أنت متأكد من الحذف",
     "CONFIRM_DELETE_BANK_ACCOUNT": "هل أنت متأكد من حذف الحساب البنكي رقم {{number}}؟",
+    "CUSTOMER_CODE": "كود العميل",
+    "ENTER_CUSTOMER_CODE": "أدخل كود العميل ثم اضغط Enter",
+    "SELECT_CUSTOMER": "اختر العميل",
     "YESNO": {
       "YES": "نعم",
       "NO": "لا"
