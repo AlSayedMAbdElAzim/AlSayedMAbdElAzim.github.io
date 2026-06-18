@@ -1039,6 +1039,13 @@
     },
     "CONFIRM_DELETE": "Are you sure you want to delete transaction #{{code}}?"
   },
+  "TENANTS": {
+    "MSG": {
+      "ADD_TENANT": "Add Tenant",
+      "EDIT_TENANT": "Edit Tenant",
+      "VIEW_TENANT": "View Tenant"
+    }
+  },
   "CASH_RECEIPT": {
     "VOUCHER_CODE": "Voucher Code",
     "PAGE_TITLE": "Cash Receipt Vouchers",
@@ -2287,6 +2294,9 @@
     "PayableDocDepositReturn": "Payable Doc for Deposit return"
   },
   "HTML": {
+    "RESULTS": "Results",
+    "NO_RESULTS": "No Results",
+    "COMPANIES_TENANTS_LIST": "Companies Tenants List",
     "SendWhats": "Send Whatsapp msg",
     "ProfileCompletion": "Profile Completion",
     "AccountDetails": "Account Details",

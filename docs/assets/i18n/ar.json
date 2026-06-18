@@ -1210,6 +1210,13 @@
     },
     "CONFIRM_DELETE": "هل أنت متأكد من حذف الحركة رقم {{code}}؟"
   },
+  "TENANTS": {
+    "MSG": {
+      "ADD_TENANT": "اضافة مستأجر",
+      "EDIT_TENANT": "تعديل بيانات مستأجر",
+      "VIEW_TENANT": "عرض بيانات مستأجر"
+    }
+  },
   "CASH_RECEIPT": {
     "VOUCHER_CODE": "رقم إيصال الاستلام",
     "PAGE_TITLE": "إيصالات الاستلام",
@@ -2459,6 +2466,9 @@
     "PayableDocDepositReturn": "سند صرف مردود عربون"
   },
   "HTML": {
+    "RESULTS": "العدد",
+    "NO_RESULTS": "لا توجد بيانات",
+    "COMPANIES_TENANTS_LIST": "قائمة المستأجرين الشركات",
     "SendWhats": "رسالة واتس اب",
     "ProfileCompletion": "نسبة إكتمال الملف",
     "AccountDetails": "تفاصيل الحساب",
