@@ -1140,6 +1140,142 @@
     },
     "CONFIRM_DELETE": "هل أنت متأكد من حذف تسوية {{account}} بتاريخ {{date}}؟"
   },
+  "AI": {
+    "Tenant-360": "ai للمستأجر",
+    "TENANT360": {
+      "PAGE_TITLE": "المستأجر",
+      "NO_DATA": "لا توجد بيانات متاحة.",
+      "LOADING": "جاري تحميل بيانات Tenant360..."
+    },
+    "SUCCESS": {      
+    },
+    "ERROR": {      
+    },
+    "WARNING": {
+    },
+    "DASHBOARD": {
+      "CONTRACT": {
+        "TITLE": "بيانات العقد",
+        "TENANT": "المستأجر",
+        "OWNER": "المالك",
+        "BRANCH": "الفرع",
+        "STATUS": "الحالة",
+        "START_DATE": "تاريخ البداية",
+        "END_DATE": "تاريخ النهاية",
+        "UNITS": "الوحدات",
+        "CONTRACT_VALUE": "قيمة العقد"
+      },
+      "FINANCIAL": {
+        "TITLE": "الملخص المالي",
+        "COLLECTION_RATE": "نسبة التحصيل",
+        "PAID": "المحصل",
+        "REMAINING": "المتبقي",
+        "OVERDUE": "المتأخر",
+        "OVERDUE_COUNT": "عدد الأقساط المتأخرة"
+      },
+      "PAYMENTS": {
+        "TITLE": "السندات",
+        "TOTAL_DOCUMENTS": "عدد السندات",
+        "TOTAL_RECEIVED": "إجمالي المقبوض",
+        "LAST_PAYMENT": "آخر دفعة"
+      },
+      "INSTALLMENTS": {
+        "TITLE": "الأقساط",
+        "TOTAL": "الإجمالي",
+        "PAID": "المسددة",
+        "UNPAID": "غير المسددة",
+        "OVERDUE": "المتأخرة"
+      },
+      "MAINTENANCE": {
+        "TITLE": "الصيانة",
+        "REQUESTS": "الطلبات",
+        "ORDERS": "الأوامر",
+        "NEW": "جديد",
+        "IN_PROGRESS": "قيد التنفيذ",
+        "WAITING": "بانتظار التنفيذ",
+        "COMPLETED": "مكتمل",
+        "CANCELLED": "ملغي"
+      },
+      "TIMELINE": {
+        "TITLE": "آخر الأنشطة",
+        "SHOW_ALL": "عرض الكل"
+      },
+      "COMMON": {
+        "NO_DATA": "لا توجد بيانات",
+        "VIEW": "عرض",
+        "OPEN": "فتح",
+        "DETAILS": "التفاصيل"
+      }
+    },
+    "TIMELINE": {
+      "TITLE": "الخط الزمني",
+      "SUBTITLE": "آخر الأحداث المتعلقة بالعقد",
+      "PAYMENT_RECEIVED": "تم استلام دفعة",
+      "PAYMENT_RECEIVED_DESC": "تم تسجيل السند {code} بقيمة {value}.",
+      "INSTALLMENT": "قسط",
+      "INSTALLMENT_DESC": "القسط {code} بقيمة {value}.",
+      "MAINTENANCE_REQUEST": "طلب صيانة",
+      "MAINTENANCE_REQUEST_DESC": "تم تسجيل طلب الصيانة رقم {code}."
+    },
+    "INSIGHT": {
+      "TITLE": "الرؤى الذكية",
+      "SUBTITLE": "تحليلات مبنية على بيانات العقد",
+      "LOW_COLLECTION": "انخفاض في التحصيل",
+      "LOW_COLLECTION_DESC": "تشير البيانات إلى انخفاض معدل التحصيل إلى {rate}%، مما قد يؤثر على التدفقات النقدية.",
+      "OVERDUE_INSTALLMENTS": "زيادة الأقساط المتأخرة",
+      "OVERDUE_INSTALLMENTS_DESC": "تم رصد {count} قسط متأخر، مما يستدعي المتابعة.",
+      "WAITING_MAINTENANCE": "طلبات صيانة معلقة",
+      "WAITING_MAINTENANCE_DESC": "يوجد {count} طلب صيانة لم يتم إنجازه بعد.",
+      "EXCELLENT_HEALTH": "صحة العقد ممتازة",
+      "EXCELLENT_HEALTH_DESC": "حقق العقد درجة صحة {score}% ويعمل بكفاءة عالية."
+    },
+    "ALERT": {
+      "TITLE": "التنبيهات",
+      "SUBTITLE": "العناصر التي تحتاج إلى انتباه",
+      "NO_ALERTS": "لا توجد تنبيهات",
+      "NO_ALERTS_DESC": "لم يتم اكتشاف أي مشكلات تتطلب المتابعة.",
+      "OVERDUE_INSTALLMENTS": "أقساط متأخرة",
+      "OVERDUE_INSTALLMENTS_DESC": "يوجد {count} قسط متأخر يحتاج إلى التحصيل.",
+      "LOW_COLLECTION": "انخفاض معدل التحصيل",
+      "LOW_COLLECTION_DESC": "معدل التحصيل الحالي {rate}% وهو أقل من المستوى المطلوب.",
+      "WAITING_MAINTENANCE": "طلبات صيانة معلقة",
+      "WAITING_MAINTENANCE_DESC": "يوجد {count} طلب صيانة بانتظار التنفيذ."
+    },
+    "RECOMMEND": {
+      "TITLE": "التوصيات",
+      "SUBTITLE": "إجراءات مقترحة لتحسين أداء العقد",
+      "IMPROVE_COLLECTION": "رفع معدل التحصيل المالي.",
+      "COLLECT_OVERDUE": "تحصيل الأقساط المتأخرة في أقرب وقت.",
+      "COMPLETE_MAINTENANCE": "متابعة وإنهاء طلبات الصيانة المعلقة.",
+      "NO_ACTION_REQUIRED": "لا توجد إجراءات مطلوبة حالياً."
+    },
+    "SUMMARY": {
+      "TITLE": "الملخص الذكي",
+      "SUBTITLE": "ملخص سريع لحالة العقد",
+      "EXCELLENT_HEALTH": "العقد يتمتع بصحة ممتازة بنسبة {score}%",
+      "GOOD_HEALTH": "العقد بحالة جيدة بنسبة {score}%",
+      "NEEDS_ATTENTION": "العقد يحتاج إلى متابعة، ومستوى الصحة الحالي {score}%",
+      "CRITICAL": "العقد في حالة حرجة، ومستوى الصحة الحالي {score}%"
+    },
+    "HEALTH": {
+      "TITLE": "صحة العقد",
+      "SUBTITLE": "التقييم العام لحالة العقد",
+      "EXCELLENT": "حالة ممتازة",
+      "EXCELLENT_DESC": "العقد يعمل بكفاءة عالية، ولا توجد مؤشرات تستدعي التدخل حالياً.",
+      "GOOD": "حالة جيدة",
+      "GOOD_DESC": "العقد مستقر بشكل عام، مع وجود بعض الملاحظات البسيطة التي يُنصح بمتابعتها.",
+      "WARNING": "يحتاج إلى متابعة",
+      "WARNING_DESC": "تم رصد بعض المؤشرات التي قد تؤثر على أداء العقد، ويُفضل اتخاذ إجراءات وقائية.",
+      "CRITICAL": "حالة حرجة",
+      "CRITICAL_DESC": "العقد يحتوي على مشكلات جوهرية تتطلب تدخلاً عاجلاً لتجنب تأثيرها على الإيرادات أو سير العمل.",
+      "EXCELLENT_SHORT": "ممتاز",
+      "GOOD_SHORT": "جيد",
+      "WARNING_SHORT": "متابعة",
+      "CRITICAL_SHORT": "حرج",
+      "SCORE": "درجة صحة العقد",
+      "LAST_UPDATED": "آخر تحديث"
+    }
+  },
   "TRANSACTION": {
     "PAGE_TITLE": "الحركات البنكية",
     "PAGE_SUBTITLE": "إدارة جميع الحركات الواردة والصادرة على الحسابات البنكية",
@@ -1315,6 +1451,7 @@
     "APPROVED_AT": "تاريخ الاعتماد"
   }, 
   "COMMON": {
+    "AI": "الذكاء الإصطناعي",
     "CONTRACT": "العقد",
     "BUILDING": "المبنى",
     "UNIT": "الوحدة",

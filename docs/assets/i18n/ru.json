@@ -969,6 +969,139 @@
     },
     "CONFIRM_DELETE": "Are you sure you want to delete reconciliation for {{account}} on {{date}}?"
   },
+  "AI": {
+    "Tenant-360": "ai for Tenant",
+    "TENANT360": {
+      "PAGE_TITLE": "Tenant",
+      "NO_DATA": "No Tenant360 data available.",
+      "LOADING": "Loading Tenant360..."
+    },
+    "SUCCESS": {},
+    "ERROR": {},
+    "WARNING": {},
+    "DASHBOARD": {
+      "CONTRACT": {
+        "TITLE": "Contract",
+        "TENANT": "Tenant",
+        "OWNER": "Owner",
+        "BRANCH": "Branch",
+        "STATUS": "Status",
+        "START_DATE": "Start Date",
+        "END_DATE": "End Date",
+        "UNITS": "Units",
+        "CONTRACT_VALUE": "Contract Value"
+      },
+      "FINANCIAL": {
+        "TITLE": "Financial Summary",
+        "COLLECTION_RATE": "Collection Rate",
+        "PAID": "Collected",
+        "REMAINING": "Remaining",
+        "OVERDUE": "Overdue",
+        "OVERDUE_COUNT": "Overdue Installments"
+      },
+      "PAYMENTS": {
+        "TITLE": "Payments",
+        "TOTAL_DOCUMENTS": "Documents",
+        "TOTAL_RECEIVED": "Total Received",
+        "LAST_PAYMENT": "Last Payment"
+      },
+      "INSTALLMENTS": {
+        "TITLE": "Installments",
+        "TOTAL": "Total",
+        "PAID": "Paid",
+        "UNPAID": "Unpaid",
+        "OVERDUE": "Overdue"
+      },
+      "MAINTENANCE": {
+        "TITLE": "Maintenance",
+        "REQUESTS": "Requests",
+        "ORDERS": "Orders",
+        "NEW": "New",
+        "IN_PROGRESS": "In Progress",
+        "WAITING": "Waiting",
+        "COMPLETED": "Completed",
+        "CANCELLED": "Cancelled"
+      },
+      "TIMELINE": {
+        "TITLE": "Timeline",
+        "SHOW_ALL": "Show All"
+      },
+      "COMMON": {
+        "NO_DATA": "No Data",
+        "VIEW": "View",
+        "OPEN": "Open",
+        "DETAILS": "Details"
+      }
+    },
+    "TIMELINE": {
+      "TITLE": "Timeline",
+      "SUBTITLE": "Recent contract activities",
+      "PAYMENT_RECEIVED": "Payment Received",
+      "PAYMENT_RECEIVED_DESC": "Receipt {code} was recorded with value {value}.",
+      "INSTALLMENT": "Installment",
+      "INSTALLMENT_DESC": "Installment {code} with value {value}.",
+      "MAINTENANCE_REQUEST": "Maintenance Request",
+      "MAINTENANCE_REQUEST_DESC": "Maintenance request {code} was created."
+    },
+    "INSIGHT": {
+      "TITLE": "Insights",
+      "SUBTITLE": "Business insights generated from contract data",
+      "LOW_COLLECTION": "Low Collection",
+      "LOW_COLLECTION_DESC": "The collection rate has dropped to {rate}%, which may affect cash flow.",
+      "OVERDUE_INSTALLMENTS": "Overdue Installments",
+      "OVERDUE_INSTALLMENTS_DESC": "{count} overdue installments have been detected.",
+      "WAITING_MAINTENANCE": "Pending Maintenance",
+      "WAITING_MAINTENANCE_DESC": "{count} maintenance requests are still pending.",
+      "EXCELLENT_HEALTH": "Excellent Contract Health",
+      "EXCELLENT_HEALTH_DESC": "The contract achieved a health score of {score}%."
+    },
+    "ALERT": {
+      "TITLE": "Alerts",
+      "SUBTITLE": "Items requiring attention",
+      "NO_ALERTS": "No Alerts",
+      "NO_ALERTS_DESC": "No issues requiring attention were detected.",
+      "OVERDUE_INSTALLMENTS": "Overdue Installments",
+      "OVERDUE_INSTALLMENTS_DESC": "{count} overdue installments require collection.",
+      "LOW_COLLECTION": "Low Collection Rate",
+      "LOW_COLLECTION_DESC": "Current collection rate is {rate}%, below the expected level.",
+      "WAITING_MAINTENANCE": "Pending Maintenance",
+      "WAITING_MAINTENANCE_DESC": "{count} maintenance requests are waiting."
+    },
+    "RECOMMEND": {
+      "TITLE": "Recommendations",
+      "SUBTITLE": "Suggested actions to improve contract performance",
+      "IMPROVE_COLLECTION": "Improve the collection rate.",
+      "COLLECT_OVERDUE": "Collect overdue installments as soon as possible.",
+      "COMPLETE_MAINTENANCE": "Follow up and complete pending maintenance requests.",
+      "NO_ACTION_REQUIRED": "No action is currently required."
+    },
+    "SUMMARY": {
+      "TITLE": "AI Summary",
+      "SUBTITLE": "Quick overview of the contract",
+      "EXCELLENT_HEALTH": "Contract health is excellent ({score}%).",
+      "GOOD_HEALTH": "Contract health is good ({score}%).",
+      "NEEDS_ATTENTION": "The contract requires attention. Current health score is {score}%.",
+      "CRITICAL": "The contract is in a critical condition. Current health score is {score}%."
+    },
+    "HEALTH": {
+      "TITLE": "Contract Health",
+      "SUBTITLE": "Overall contract health assessment",
+      "EXCELLENT": "Excellent",
+      "EXCELLENT_DESC": "The contract is performing exceptionally well with no significant issues requiring attention.",
+      "GOOD": "Good",
+      "GOOD_DESC": "The contract is generally stable with only minor observations that should be monitored.",
+      "WARNING": "Needs Attention",
+      "WARNING_DESC": "Some indicators require attention and proactive actions are recommended.",
+      "CRITICAL": "Critical",
+      "CRITICAL_DESC": "The contract has major issues that require immediate action to minimize financial and operational risks.",
+      "EXCELLENT_SHORT": "Excellent",
+      "GOOD_SHORT": "Good",
+      "WARNING_SHORT": "Attention",
+      "CRITICAL_SHORT": "Critical",
+      "SCORE": "Health Score",
+      "LAST_UPDATED": "Last Updated"
+    }
+  },
   "TRANSACTION": {
     "PAGE_TITLE": "Bank Transactions",
     "PAGE_SUBTITLE": "Manage all incoming and outgoing transactions on bank accounts",
@@ -1144,6 +1277,7 @@
     "APPROVED_AT": "Approval Date"
   },
   "COMMON": {
+    "AI": "AI",
     "CONTRACT": "Contract",
     "BUILDING": "Building",
     "UNIT": "Unit",
