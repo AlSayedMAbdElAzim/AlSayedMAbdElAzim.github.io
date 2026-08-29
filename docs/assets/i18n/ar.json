@@ -471,6 +471,7 @@
     "delete_taxinvoice_dt": "حذف أحد تفاصيل فاتورة",
     "allow_ejarcode_empty": "السماح رقم العقد في إيجار خالياً",
     "edit_rentalcontract_noofmonths": "تغيير عدد أشهر العقد",
+    "edit_renew_rentalcontractvalue": "تغيير قيمة العقد عند التجديد",
     "edit_contract_status": "تغيير حالة العقد",
     "add_rentcontractdocs": "اضافة مستندات عقد",
     "change_rentcontractdocs": "تعديل مستندات عقد",
@@ -1141,9 +1142,9 @@
     "CONFIRM_DELETE": "هل أنت متأكد من حذف تسوية {{account}} بتاريخ {{date}}؟"
   },
   "AI": {
-    "Tenant-360": "ai للمستأجر",
+    "Tenant-360": "ai للعقود",
     "TENANT360": {
-      "PAGE_TITLE": "المستأجر",
+      "PAGE_TITLE": "تقييم عام للعقود",
       "NO_DATA": "لا توجد بيانات متاحة.",
       "LOADING": "جاري تحميل بيانات Tenant360..."
     },
@@ -1163,6 +1164,8 @@
         "START_DATE": "تاريخ البداية",
         "END_DATE": "تاريخ النهاية",
         "UNITS": "الوحدات",
+        "CONTRACT_CODE": "رقم العقد",
+        "PERIOD": "الفترة",
         "CONTRACT_VALUE": "قيمة العقد"
       },
       "FINANCIAL": {
@@ -1184,6 +1187,7 @@
         "TOTAL": "الإجمالي",
         "PAID": "المسددة",
         "UNPAID": "غير المسددة",
+        "PARTIAL": "مسدد جزئياً",
         "OVERDUE": "المتأخرة"
       },
       "MAINTENANCE": {
@@ -1207,27 +1211,33 @@
         "DETAILS": "التفاصيل"
       }
     },
+    "CHAT": {
+      "TITLE": "اسأل الذكاء الاصطناعي",
+      "SUBTITLE": "اسأل عن العقود",
+      "PLACEHOLDER": "اكتب هنا سؤالك...",
+      "SEND": "إرسال"
+    },
     "TIMELINE": {
       "TITLE": "الخط الزمني",
       "SUBTITLE": "آخر الأحداث المتعلقة بالعقد",
       "PAYMENT_RECEIVED": "تم استلام دفعة",
-      "PAYMENT_RECEIVED_DESC": "تم تسجيل السند {code} بقيمة {value}.",
+      "PAYMENT_RECEIVED_DESC": "تم تسجيل السند {{code}} بقيمة {{value}}.",
       "INSTALLMENT": "قسط",
-      "INSTALLMENT_DESC": "القسط {code} بقيمة {value}.",
+      "INSTALLMENT_DESC": "القسط {{code}} بقيمة {{value}}.",
       "MAINTENANCE_REQUEST": "طلب صيانة",
-      "MAINTENANCE_REQUEST_DESC": "تم تسجيل طلب الصيانة رقم {code}."
+      "MAINTENANCE_REQUEST_DESC": "تم تسجيل طلب الصيانة رقم {{code}}."
     },
     "INSIGHT": {
       "TITLE": "الرؤى الذكية",
       "SUBTITLE": "تحليلات مبنية على بيانات العقد",
       "LOW_COLLECTION": "انخفاض في التحصيل",
-      "LOW_COLLECTION_DESC": "تشير البيانات إلى انخفاض معدل التحصيل إلى {rate}%، مما قد يؤثر على التدفقات النقدية.",
+      "LOW_COLLECTION_DESC": "تشير البيانات إلى انخفاض معدل التحصيل إلى {{rate}}%، مما قد يؤثر على التدفقات النقدية.",
       "OVERDUE_INSTALLMENTS": "زيادة الأقساط المتأخرة",
-      "OVERDUE_INSTALLMENTS_DESC": "تم رصد {count} قسط متأخر، مما يستدعي المتابعة.",
+      "OVERDUE_INSTALLMENTS_DESC": "تم رصد {{count}} قسط متأخر، مما يستدعي المتابعة.",
       "WAITING_MAINTENANCE": "طلبات صيانة معلقة",
-      "WAITING_MAINTENANCE_DESC": "يوجد {count} طلب صيانة لم يتم إنجازه بعد.",
+      "WAITING_MAINTENANCE_DESC": "يوجد {{count}} طلب صيانة لم يتم إنجازه بعد.",
       "EXCELLENT_HEALTH": "صحة العقد ممتازة",
-      "EXCELLENT_HEALTH_DESC": "حقق العقد درجة صحة {score}% ويعمل بكفاءة عالية."
+      "EXCELLENT_HEALTH_DESC": "حقق العقد درجة صحة {{score}}% ويعمل بكفاءة عالية."
     },
     "ALERT": {
       "TITLE": "التنبيهات",
@@ -1235,11 +1245,11 @@
       "NO_ALERTS": "لا توجد تنبيهات",
       "NO_ALERTS_DESC": "لم يتم اكتشاف أي مشكلات تتطلب المتابعة.",
       "OVERDUE_INSTALLMENTS": "أقساط متأخرة",
-      "OVERDUE_INSTALLMENTS_DESC": "يوجد {count} قسط متأخر يحتاج إلى التحصيل.",
+      "OVERDUE_INSTALLMENTS_DESC": "يوجد {{count}} قسط متأخر يحتاج إلى التحصيل.",
       "LOW_COLLECTION": "انخفاض معدل التحصيل",
-      "LOW_COLLECTION_DESC": "معدل التحصيل الحالي {rate}% وهو أقل من المستوى المطلوب.",
+      "LOW_COLLECTION_DESC": "معدل التحصيل الحالي {{rate}}% وهو أقل من المستوى المطلوب.",
       "WAITING_MAINTENANCE": "طلبات صيانة معلقة",
-      "WAITING_MAINTENANCE_DESC": "يوجد {count} طلب صيانة بانتظار التنفيذ."
+      "WAITING_MAINTENANCE_DESC": "يوجد {{count}} طلب صيانة بانتظار التنفيذ."
     },
     "RECOMMEND": {
       "TITLE": "التوصيات",
@@ -1252,10 +1262,10 @@
     "SUMMARY": {
       "TITLE": "الملخص الذكي",
       "SUBTITLE": "ملخص سريع لحالة العقد",
-      "EXCELLENT_HEALTH": "العقد يتمتع بصحة ممتازة بنسبة {score}%",
-      "GOOD_HEALTH": "العقد بحالة جيدة بنسبة {score}%",
-      "NEEDS_ATTENTION": "العقد يحتاج إلى متابعة، ومستوى الصحة الحالي {score}%",
-      "CRITICAL": "العقد في حالة حرجة، ومستوى الصحة الحالي {score}%"
+      "EXCELLENT_HEALTH": "العقد يتمتع بصحة ممتازة بنسبة {{score}}%",
+      "GOOD_HEALTH": "العقد بحالة جيدة بنسبة {{score}}%",
+      "NEEDS_ATTENTION": "العقد يحتاج إلى متابعة، ومستوى الصحة الحالي {{score}}%",
+      "CRITICAL": "العقد في حالة حرجة، ومستوى الصحة الحالي {{score}}%"
     },
     "HEALTH": {
       "TITLE": "صحة العقد",
@@ -2469,6 +2479,7 @@
     "NOTDELETED": "تنبيه: لم يتم الحذف",
     "RegisterMsg": "لا تمتلك حساب؟ قم بإنشاء حساب جديد",
     "MinLength": "عدد الأحرف غير كافي، على الأقل 3أحرف",
+    "MinLength2": "عدد الأحرف غير كافي، على الأقل حرفان",
     "MinLength6": "عدد الأحرف غير كافي، على الأقل 6أحرف",
     "MinLength15": "عدد الأحرف غير كافي، على الأقل 15 حرف",
     "ConfirmAction": "تأكيد العملية",

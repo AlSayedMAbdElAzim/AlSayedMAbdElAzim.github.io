@@ -970,9 +970,9 @@
     "CONFIRM_DELETE": "Are you sure you want to delete reconciliation for {{account}} on {{date}}?"
   },
   "AI": {
-    "Tenant-360": "ai for Tenant",
+    "Tenant-360": "AI for Contracts",
     "TENANT360": {
-      "PAGE_TITLE": "Tenant",
+      "PAGE_TITLE": "Contract Evaluation",
       "NO_DATA": "No Tenant360 data available.",
       "LOADING": "Loading Tenant360..."
     },
@@ -989,6 +989,8 @@
         "START_DATE": "Start Date",
         "END_DATE": "End Date",
         "UNITS": "Units",
+        "CONTRACT_CODE": "Contract Code",
+        "PERIOD": "Period",
         "CONTRACT_VALUE": "Contract Value"
       },
       "FINANCIAL": {
@@ -1010,6 +1012,7 @@
         "TOTAL": "Total",
         "PAID": "Paid",
         "UNPAID": "Unpaid",
+        "PARTIAL": "Partial",
         "OVERDUE": "Overdue"
       },
       "MAINTENANCE": {
@@ -1033,27 +1036,33 @@
         "DETAILS": "Details"
       }
     },
+    "CHAT": {
+      "TITLE": "Ask AI",
+      "SUBTITLE": "Ask about Contracts",
+      "PLACEHOLDER": "type your question here...",
+      "SEND": "Send"
+    },
     "TIMELINE": {
       "TITLE": "Timeline",
       "SUBTITLE": "Recent contract activities",
       "PAYMENT_RECEIVED": "Payment Received",
-      "PAYMENT_RECEIVED_DESC": "Receipt {code} was recorded with value {value}.",
+      "PAYMENT_RECEIVED_DESC": "Receipt {{code}} was recorded with value {{value}}.",
       "INSTALLMENT": "Installment",
-      "INSTALLMENT_DESC": "Installment {code} with value {value}.",
+      "INSTALLMENT_DESC": "Installment {{code}} with value {{value}}.",
       "MAINTENANCE_REQUEST": "Maintenance Request",
-      "MAINTENANCE_REQUEST_DESC": "Maintenance request {code} was created."
+      "MAINTENANCE_REQUEST_DESC": "Maintenance request {{code}} was created."
     },
     "INSIGHT": {
       "TITLE": "Insights",
       "SUBTITLE": "Business insights generated from contract data",
       "LOW_COLLECTION": "Low Collection",
-      "LOW_COLLECTION_DESC": "The collection rate has dropped to {rate}%, which may affect cash flow.",
+      "LOW_COLLECTION_DESC": "The collection rate has dropped to {{rate}}%, which may affect cash flow.",
       "OVERDUE_INSTALLMENTS": "Overdue Installments",
-      "OVERDUE_INSTALLMENTS_DESC": "{count} overdue installments have been detected.",
+      "OVERDUE_INSTALLMENTS_DESC": "{{count}} overdue installments have been detected.",
       "WAITING_MAINTENANCE": "Pending Maintenance",
-      "WAITING_MAINTENANCE_DESC": "{count} maintenance requests are still pending.",
+      "WAITING_MAINTENANCE_DESC": "{{count}} maintenance requests are still pending.",
       "EXCELLENT_HEALTH": "Excellent Contract Health",
-      "EXCELLENT_HEALTH_DESC": "The contract achieved a health score of {score}%."
+      "EXCELLENT_HEALTH_DESC": "The contract achieved a health score of {{score}}%."
     },
     "ALERT": {
       "TITLE": "Alerts",
@@ -1061,12 +1070,12 @@
       "NO_ALERTS": "No Alerts",
       "NO_ALERTS_DESC": "No issues requiring attention were detected.",
       "OVERDUE_INSTALLMENTS": "Overdue Installments",
-      "OVERDUE_INSTALLMENTS_DESC": "{count} overdue installments require collection.",
+      "OVERDUE_INSTALLMENTS_DESC": "{{count}} overdue installments require collection.",
       "LOW_COLLECTION": "Low Collection Rate",
-      "LOW_COLLECTION_DESC": "Current collection rate is {rate}%, below the expected level.",
+      "LOW_COLLECTION_DESC": "Current collection rate is {{rate}}%, below the expected level.",
       "WAITING_MAINTENANCE": "Pending Maintenance",
-      "WAITING_MAINTENANCE_DESC": "{count} maintenance requests are waiting."
-    },    
+      "WAITING_MAINTENANCE_DESC": "{{count}} maintenance requests are waiting."
+    },
     "RECOMMEND": {
       "TITLE": "Recommendations",
       "SUBTITLE": "Suggested actions to improve contract performance",
@@ -1078,10 +1087,10 @@
     "SUMMARY": {
       "TITLE": "AI Summary",
       "SUBTITLE": "Quick overview of the contract",
-      "EXCELLENT_HEALTH": "Contract health is excellent ({score}%).",
-      "GOOD_HEALTH": "Contract health is good ({score}%).",
-      "NEEDS_ATTENTION": "The contract requires attention. Current health score is {score}%.",
-      "CRITICAL": "The contract is in a critical condition. Current health score is {score}%."
+      "EXCELLENT_HEALTH": "Contract health is excellent ({{score}}%).",
+      "GOOD_HEALTH": "Contract health is good ({{score}}%).",
+      "NEEDS_ATTENTION": "The contract requires attention. Current health score is {{score}}%.",
+      "CRITICAL": "The contract is in a critical condition. Current health score is {{score}}%."
     },
     "HEALTH": {
       "TITLE": "Contract Health",
@@ -2294,6 +2303,7 @@
     "NOTDELETED": "Not Deleted",
     "RegisterMsg": "Don't have an account? Sign up now!",
     "MinLength": "number of Char isn't long enough!, minimum of 3 characters",
+    "MinLength2": "number of Char isn't long enough!, minimum of 2 characters",
     "MinLength6": "number of Char isn't long enough!, minimum of 6 characters",
     "MinLength15": "number of Char isn't long enough!, minimum of 15 characters",
     "ConfirmAction": "Confirm Action",
