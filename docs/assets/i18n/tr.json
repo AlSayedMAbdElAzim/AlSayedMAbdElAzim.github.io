@@ -1383,7 +1383,7 @@
     "PERCENTAGE": "Percentage"
   },
   "INVOICE": {
-    "PAGE_TITLE": "Invoices",
+    "PAGE_TITLE": "Invoices and Financial claims",
     "PAGE_SUBTITLE": "Manage invoices and financial claims",
     "ADD": "New Invoice",
     "EDIT": "Edit Invoice",

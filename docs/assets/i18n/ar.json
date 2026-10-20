@@ -441,12 +441,21 @@
     "change_doctypes": "تعديل بيانات أنواع المستندات",
     "delete_doctypes": "حذف أنواع المستندات",
     "print_contractlist": "طباعة العقود",
+
     "view_rentrequest": "عرض جدول المطالبات المالية",
     "view_onerentrequest": "عرض بيانات مطالبة مالية",
     "add_rentrequest": "إضافة مطالبة مالية",
     "change_rentrequest": "تعديل بيانات مطالبة مالية",
     "delete_rentrequest": "حذف مطالبة مالية",
     "print_rentrequest": "طباعة مطالبة مالية",
+
+    "view_invoices_list": "عرض جدول المطالبات المالية",
+    "view_oneinvoice": "عرض بيانات مطالبة مالية",
+    "add_oneinvoice": "إضافة مطالبة مالية",
+    "change_oneinvoice": "تعديل بيانات مطالبة مالية",
+    "delete_oneinvoice": "حذف مطالبة مالية",
+    "print_oneinvoice": "طباعة مطالبة مالية",
+
     "print_taxinvoice": "طباعة الفواتير الضريبية",
     "print_expensesinv": "طباعة فواتير المصروفات",
     "view_expensesinv": "عرض جدول فواتير المصروفات",
@@ -1560,7 +1569,7 @@
     "PERCENTAGE": "نسبة مئوية"
   },
   "INVOICE": {
-    "PAGE_TITLE": "الفواتير",
+    "PAGE_TITLE": "الفواتير والمطالبات المالية",
     "PAGE_SUBTITLE": "إدارة الفواتير والمطالبات المالية",
     "ADD": "فاتورة جديدة",
     "EDIT": "تعديل فاتورة",
